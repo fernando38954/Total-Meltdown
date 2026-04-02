@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://la16ha585b6b"]
+
+[ext_resource type="Texture2D" uid="uid://cudhrfywa7t15" path="res://placeholder/WorkPlace.jpg" id="1_uhqqe"]
+[ext_resource type="Script" uid="uid://c02p4763tkn5d" path="res://region.gd" id="2_sasra"]
+[ext_resource type="Script" uid="uid://bfymxkjtitow5" path="res://workspace_camera.gd" id="3_coq8p"]
+
+[node name="Node2D" type="Node2D" unique_id=1602338920]
+
+[node name="WorkPlace" type="Sprite2D" parent="." unique_id=2114382166]
+position = Vector2(576, 324)
+scale = Vector2(0.8343023, 0.83506495)
+texture = ExtResource("1_uhqqe")
+
+[node name="Screen" type="Area2D" parent="WorkPlace" unique_id=745553579 node_paths=PackedStringArray("focus")]
+script = ExtResource("2_sasra")
+focus = NodePath("Marker2D")
+zoom_level = 1.75
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WorkPlace/Screen" unique_id=1248977769]
+position = Vector2(-49.742188, -115.64929)
+scale = Vector2(0.9999998, 0.99999976)
+polygon = PackedVector2Array(-283.47043, -122.05678, -295.45648, -102.89659, -295.45648, 247.97433, -285.8676, 268.33206, -92.89197, 285.0972, 193.57495, 285.0972, 370.96875, 269.52957, 387.74927, 249.17184, 387.74927, 33.61975, 313.4356, 13.262054, 294.25793, -122.05678)
+
+[node name="Marker2D" type="Marker2D" parent="WorkPlace/Screen" unique_id=1490810461]
+position = Vector2(-1.1986063, -43.110416)
+
+[node name="Screen2" type="Area2D" parent="WorkPlace" unique_id=60524836 node_paths=PackedStringArray("focus")]
+script = ExtResource("2_sasra")
+focus = NodePath("Marker2D")
+zoom_level = 3.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WorkPlace/Screen2" unique_id=1847541070]
+position = Vector2(16.780464, -118.55364)
+scale = Vector2(0.9999998, 0.99999976)
+polygon = PackedVector2Array(238.52264, -170.04668, 231.33105, -155.67654, 251.70734, 3.5925293, 361.97913, 25.147736, 472.25098, 34.727844, 527.38684, 37.122864, 534.5785, 16.765167, 550.1604, -162.8616, 536.9757, -177.23175)
+
+[node name="Marker2D" type="Marker2D" parent="WorkPlace/Screen2" unique_id=1336651855]
+position = Vector2(399.1359, -195.19438)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=661555636]
+position = Vector2(576, 324)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("3_coq8p")
+
+[connection signal="input_event" from="WorkPlace/Screen" to="WorkPlace/Screen" method="_on_input_event"]
+[connection signal="input_event" from="WorkPlace/Screen2" to="WorkPlace/Screen2" method="_on_input_event"]
