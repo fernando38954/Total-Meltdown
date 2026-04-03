@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e5h6k1b0dmgl"
-path="res://.godot/imported/Screen.png-27d6a65f4d301f4accb893a1f0982664.ctex"
+uid="uid://bk348p27nanvm"
+path="res://.godot/imported/WhiteArrow.png-a7c52de12d21bc831b422557e18b52e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholder/Screen.png"
-dest_files=["res://.godot/imported/Screen.png-27d6a65f4d301f4accb893a1f0982664.ctex"]
+source_file="res://placeholder/WhiteArrow.png"
+dest_files=["res://.godot/imported/WhiteArrow.png-a7c52de12d21bc831b422557e18b52e5.ctex"]
 
 [params]
 

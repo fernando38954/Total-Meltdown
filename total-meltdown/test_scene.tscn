@@ -1,46 +1,124 @@
 [gd_scene format=3 uid="uid://la16ha585b6b"]
 
-[ext_resource type="Texture2D" uid="uid://cudhrfywa7t15" path="res://placeholder/WorkPlace.jpg" id="1_uhqqe"]
-[ext_resource type="Script" uid="uid://c02p4763tkn5d" path="res://region.gd" id="2_sasra"]
-[ext_resource type="Script" uid="uid://bfymxkjtitow5" path="res://workspace_camera.gd" id="3_coq8p"]
+[ext_resource type="Texture2D" uid="uid://bfcp40owte7qa" path="res://placeholder/Workspace.png" id="1_8pr8v"]
+[ext_resource type="Script" uid="uid://bycvyp17uw41" path="res://scripts/workspace.gd" id="2_coq8p"]
+[ext_resource type="Script" uid="uid://c02p4763tkn5d" path="res://scripts/workspace_region.gd" id="2_sasra"]
+[ext_resource type="Script" uid="uid://bfymxkjtitow5" path="res://scripts/workspace_camera.gd" id="3_coq8p"]
+[ext_resource type="Texture2D" uid="uid://bk348p27nanvm" path="res://placeholder/WhiteArrow.png" id="5_8pr8v"]
+[ext_resource type="Texture2D" uid="uid://okp1hih2djd1" path="res://placeholder/GrayArrow.png" id="6_buypi"]
+[ext_resource type="Texture2D" uid="uid://dmc2r0c75pl63" path="res://placeholder/LightGrayArrow.png" id="7_njel3"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 
-[node name="WorkPlace" type="Sprite2D" parent="." unique_id=2114382166]
+[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "left_button", "right_button", "return_button")]
 position = Vector2(576, 324)
 scale = Vector2(0.8343023, 0.83506495)
-texture = ExtResource("1_uhqqe")
+texture = ExtResource("1_8pr8v")
+script = ExtResource("2_coq8p")
+workspace_camera = NodePath("../Camera2D")
+left_button = NodePath("../CanvasLayer/LeftButton")
+right_button = NodePath("../CanvasLayer/RightButton")
+return_button = NodePath("../CanvasLayer/ReturnButton")
 
-[node name="Screen" type="Area2D" parent="WorkPlace" unique_id=745553579 node_paths=PackedStringArray("focus")]
+[node name="Screen" type="Area2D" parent="Workspace" unique_id=745553579 node_paths=PackedStringArray("workspace", "left_region", "right_region", "focus")]
 script = ExtResource("2_sasra")
+workspace = NodePath("..")
+left_region = NodePath("../Swebok")
+right_region = NodePath("../Screen2")
 focus = NodePath("Marker2D")
 zoom_level = 1.75
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WorkPlace/Screen" unique_id=1248977769]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/Screen" unique_id=1248977769]
 position = Vector2(-49.742188, -115.64929)
 scale = Vector2(0.9999998, 0.99999976)
 polygon = PackedVector2Array(-283.47043, -122.05678, -295.45648, -102.89659, -295.45648, 247.97433, -285.8676, 268.33206, -92.89197, 285.0972, 193.57495, 285.0972, 370.96875, 269.52957, 387.74927, 249.17184, 387.74927, 33.61975, 313.4356, 13.262054, 294.25793, -122.05678)
 
-[node name="Marker2D" type="Marker2D" parent="WorkPlace/Screen" unique_id=1490810461]
+[node name="Marker2D" type="Marker2D" parent="Workspace/Screen" unique_id=1490810461]
 position = Vector2(-1.1986063, -43.110416)
 
-[node name="Screen2" type="Area2D" parent="WorkPlace" unique_id=60524836 node_paths=PackedStringArray("focus")]
+[node name="Screen2" type="Area2D" parent="Workspace" unique_id=60524836 node_paths=PackedStringArray("workspace", "left_region", "focus")]
 script = ExtResource("2_sasra")
+workspace = NodePath("..")
+left_region = NodePath("../Screen")
 focus = NodePath("Marker2D")
 zoom_level = 3.0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WorkPlace/Screen2" unique_id=1847541070]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/Screen2" unique_id=1847541070]
 position = Vector2(16.780464, -118.55364)
 scale = Vector2(0.9999998, 0.99999976)
 polygon = PackedVector2Array(238.52264, -170.04668, 231.33105, -155.67654, 251.70734, 3.5925293, 361.97913, 25.147736, 472.25098, 34.727844, 527.38684, 37.122864, 534.5785, 16.765167, 550.1604, -162.8616, 536.9757, -177.23175)
 
-[node name="Marker2D" type="Marker2D" parent="WorkPlace/Screen2" unique_id=1336651855]
+[node name="Marker2D" type="Marker2D" parent="Workspace/Screen2" unique_id=1336651855]
 position = Vector2(399.1359, -195.19438)
+
+[node name="Swebok" type="Area2D" parent="Workspace" unique_id=1700712147 node_paths=PackedStringArray("workspace", "right_region", "focus")]
+script = ExtResource("2_sasra")
+workspace = NodePath("..")
+right_region = NodePath("../Screen")
+focus = NodePath("Marker2D")
+zoom_level = 3.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/Swebok" unique_id=1692430133]
+position = Vector2(16.780464, -118.55364)
+scale = Vector2(0.9999998, 0.99999976)
+polygon = PackedVector2Array(-518.99664, 317.3406, -584.92, 402.36398, -584.92, 414.33908, -463.86072, 419.12912, -413.51926, 336.50082, -415.91647, 317.3406)
+
+[node name="Marker2D" type="Marker2D" parent="Workspace/Swebok" unique_id=1526716402]
+position = Vector2(-475.8467, 240.69981)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=661555636]
 position = Vector2(576, 324)
 scale = Vector2(0.99999994, 0.99999994)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
 script = ExtResource("3_coq8p")
 
-[connection signal="input_event" from="WorkPlace/Screen" to="WorkPlace/Screen" method="_on_input_event"]
-[connection signal="input_event" from="WorkPlace/Screen2" to="WorkPlace/Screen2" method="_on_input_event"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=58777912]
+
+[node name="LeftButton" type="TextureButton" parent="CanvasLayer" unique_id=334726376]
+visible = false
+offset_left = -16.000008
+offset_top = 355.0
+offset_right = 240.0
+offset_bottom = 611.0
+rotation = 4.712389
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_8pr8v")
+texture_pressed = ExtResource("6_buypi")
+texture_hover = ExtResource("7_njel3")
+ignore_texture_size = true
+
+[node name="RightButton" type="TextureButton" parent="CanvasLayer" unique_id=1282742258]
+visible = false
+offset_left = 1166.0
+offset_top = 285.00003
+offset_right = 1422.0
+offset_bottom = 541.0
+rotation = 1.5707964
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_8pr8v")
+texture_pressed = ExtResource("6_buypi")
+texture_hover = ExtResource("7_njel3")
+ignore_texture_size = true
+
+[node name="ReturnButton" type="TextureButton" parent="CanvasLayer" unique_id=925521351]
+visible = false
+offset_left = 611.00006
+offset_top = 647.0
+offset_right = 867.00006
+offset_bottom = 903.0
+rotation = 3.1415927
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_8pr8v")
+texture_pressed = ExtResource("6_buypi")
+texture_hover = ExtResource("7_njel3")
+ignore_texture_size = true
+
+[connection signal="input_event" from="Workspace/Screen" to="Workspace/Screen" method="_on_input_event"]
+[connection signal="input_event" from="Workspace/Screen2" to="Workspace/Screen2" method="_on_input_event"]
+[connection signal="input_event" from="Workspace/Swebok" to="Workspace/Swebok" method="_on_input_event"]
+[connection signal="button_down" from="CanvasLayer/LeftButton" to="Workspace" method="_on_left_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/RightButton" to="Workspace" method="_on_right_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/ReturnButton" to="Workspace" method="_on_return_button_button_down"]
