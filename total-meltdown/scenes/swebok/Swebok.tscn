@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bd5f23dl8nicx"]
+
+[ext_resource type="Script" uid="uid://b0fe5ervk1q14" path="res://scripts/swebok/swebok.gd" id="1_6evcd"]
+[ext_resource type="Texture2D" uid="uid://0g7tw8n72gim" path="res://placeholder/Book_white.png" id="2_wlni6"]
+[ext_resource type="PackedScene" uid="uid://bvqa22rf2ptyj" path="res://scenes/swebok/Catalog.tscn" id="2_x7age"]
+[ext_resource type="PackedScene" uid="uid://b2bor1i0t51n0" path="res://scenes/swebok/ContentViewer.tscn" id="3_wlni6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h8ia"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(570, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmiyw"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(760, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7ya"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(950, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hotj"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(1140, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt6x6"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(570, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oo3v"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(0, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hepp"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(190, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abwjj"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(380, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_413ca"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(570, 0, 190, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhdxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h8ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmiyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hotj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt6x6")
+}],
+"loop": false,
+"name": &"flip_left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oo3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hepp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abwjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_413ca")
+}],
+"loop": false,
+"name": &"open_book",
+"speed": 10.0
+}]
+
+[node name="Swebok" type="CanvasLayer" unique_id=129603859]
+script = ExtResource("1_6evcd")
+metadata/_edit_vertical_guides_ = [576.0]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=617863607]
+position = Vector2(593, 283)
+scale = Vector2(4.271875, 4.271875)
+sprite_frames = SubResource("SpriteFrames_qhdxt")
+animation = &"open_book"
+
+[node name="Catalog" parent="." unique_id=997869620 node_paths=PackedStringArray("swebok") instance=ExtResource("2_x7age")]
+swebok = NodePath("..")
+
+[node name="ScrollContainer" parent="Catalog" index="0" unique_id=2104121597]
+offset_left = 276.0
+offset_top = 64.0
+offset_right = 877.0
+offset_bottom = 511.0
+
+[node name="ContentViewer" parent="." unique_id=474821504 node_paths=PackedStringArray("swebok") instance=ExtResource("3_wlni6")]
+swebok = NodePath("..")
+
+[node name="RichTextLabel" parent="ContentViewer" index="0" unique_id=528443857]
+offset_left = 276.0
+offset_top = 64.0
+offset_right = 871.0
+offset_bottom = 500.0
+
+[editable path="Catalog"]
+[editable path="ContentViewer"]

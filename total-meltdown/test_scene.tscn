@@ -7,15 +7,18 @@
 [ext_resource type="Texture2D" uid="uid://bk348p27nanvm" path="res://placeholder/WhiteArrow.png" id="5_8pr8v"]
 [ext_resource type="Texture2D" uid="uid://okp1hih2djd1" path="res://placeholder/GrayArrow.png" id="6_buypi"]
 [ext_resource type="Texture2D" uid="uid://dmc2r0c75pl63" path="res://placeholder/LightGrayArrow.png" id="7_njel3"]
+[ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="8_buypi"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 
-[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "left_button", "right_button", "return_button")]
+[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "swebok", "swebok_region", "left_button", "right_button", "return_button")]
 position = Vector2(576, 324)
 scale = Vector2(0.8343023, 0.83506495)
 texture = ExtResource("1_8pr8v")
 script = ExtResource("2_coq8p")
 workspace_camera = NodePath("../Camera2D")
+swebok = NodePath("../Swebok")
+swebok_region = NodePath("Swebok")
 left_button = NodePath("../CanvasLayer/LeftButton")
 right_button = NodePath("../CanvasLayer/RightButton")
 return_button = NodePath("../CanvasLayer/ReturnButton")
@@ -115,6 +118,8 @@ texture_normal = ExtResource("5_8pr8v")
 texture_pressed = ExtResource("6_buypi")
 texture_hover = ExtResource("7_njel3")
 ignore_texture_size = true
+
+[node name="Swebok" parent="." unique_id=870339263 instance=ExtResource("8_buypi")]
 
 [connection signal="input_event" from="Workspace/Screen" to="Workspace/Screen" method="_on_input_event"]
 [connection signal="input_event" from="Workspace/Screen2" to="Workspace/Screen2" method="_on_input_event"]

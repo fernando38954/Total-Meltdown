@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bvqa22rf2ptyj"]
+
+[ext_resource type="Script" uid="uid://cmx1nvbbbsuxt" path="res://scripts/swebok/catalog.gd" id="1_p726v"]
+
+[node name="Catalog" type="Control" unique_id=997869620]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p726v")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2104121597]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=2008075566]
+layout_mode = 2

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b2bor1i0t51n0"]
+
+[ext_resource type="Script" uid="uid://cgqtegu1605kk" path="res://scripts/swebok/content_viewer.gd" id="1_6tgrj"]
+
+[node name="ContentViewer" type="Control" unique_id=474821504]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6tgrj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=528443857]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 649.0
+
+[node name="BackButton" type="Button" parent="." unique_id=1318762080]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
