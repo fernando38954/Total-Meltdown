@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dnbluou2l5jpn"]
+
+[ext_resource type="Script" uid="uid://bq84bvjq1j3p4" path="res://scripts/radar_chart.gd" id="1_w8ajf"]
+
+[node name="RadarChart" type="Control" unique_id=1384305498]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 400.0
+script = ExtResource("1_w8ajf")

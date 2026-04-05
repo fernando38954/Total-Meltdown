@@ -89,25 +89,42 @@ metadata/_edit_vertical_guides_ = [576.0]
 position = Vector2(593, 283)
 scale = Vector2(4.271875, 4.271875)
 sprite_frames = SubResource("SpriteFrames_qhdxt")
-animation = &"open_book"
+animation = &"flip_left"
 
 [node name="Catalog" parent="." unique_id=997869620 node_paths=PackedStringArray("swebok") instance=ExtResource("2_x7age")]
 swebok = NodePath("..")
 
 [node name="ScrollContainer" parent="Catalog" index="0" unique_id=2104121597]
-offset_left = 276.0
-offset_top = 64.0
-offset_right = 877.0
-offset_bottom = 511.0
+offset_left = 310.0
+offset_top = 93.0
+offset_right = 835.0
+offset_bottom = 459.0
 
 [node name="ContentViewer" parent="." unique_id=474821504 node_paths=PackedStringArray("swebok") instance=ExtResource("3_wlni6")]
 swebok = NodePath("..")
 
-[node name="RichTextLabel" parent="ContentViewer" index="0" unique_id=528443857]
-offset_left = 276.0
-offset_top = 64.0
-offset_right = 871.0
-offset_bottom = 500.0
+[node name="Title" parent="ContentViewer" index="0" unique_id=528443857]
+offset_left = 299.0
+offset_top = 103.0
+offset_right = 553.0
+offset_bottom = 151.0
+
+[node name="Description" parent="ContentViewer" index="1" unique_id=475701691]
+offset_top = 101.0
+offset_right = 857.0
+offset_bottom = 459.0
+
+[node name="BackButton" parent="ContentViewer" index="2" unique_id=1429989153]
+offset_left = 175.00002
+offset_top = -39.00002
+offset_right = 431.0
+offset_bottom = 216.99998
+
+[node name="RadarChart" parent="ContentViewer" index="3" unique_id=1384305498]
+offset_left = 295.0
+offset_top = 189.0
+offset_right = 551.0
+offset_bottom = 445.0
 
 [editable path="Catalog"]
 [editable path="ContentViewer"]
