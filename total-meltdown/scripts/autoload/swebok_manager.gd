@@ -3,6 +3,7 @@ extends Node
 const CHAPTERS_DIR = "res://contents/swebok/"
 
 var chapters: Array = []
+var creation_finished = false
 
 func _ready():
 	load_chapters()
@@ -11,6 +12,7 @@ func load_chapters():
 	chapters.clear()
 	var dir = DirAccess.open(CHAPTERS_DIR)
 	if not dir:
+		creation_finished = true
 		push_error("Error on opening the directory:", CHAPTERS_DIR)
 		return
 	
@@ -33,9 +35,13 @@ func load_chapters():
 						"description": data.get("description", ""),
 					})
 				else:
+					creation_finished = true
 					push_error("Failed to parse JSON：", file_name)
+					return
 				file.close()
 		file_name = dir.get_next()
 	
 	chapters.sort_custom(func(a, b): return a.file_name < b.file_name)
+	creation_finished = true
 	print_debug("Number of chapters loaded：", chapters.size())
+	

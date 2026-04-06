@@ -4,6 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://0g7tw8n72gim" path="res://placeholder/Book_white.png" id="2_wlni6"]
 [ext_resource type="PackedScene" uid="uid://bvqa22rf2ptyj" path="res://scenes/swebok/Catalog.tscn" id="2_x7age"]
 [ext_resource type="PackedScene" uid="uid://b2bor1i0t51n0" path="res://scenes/swebok/ContentViewer.tscn" id="3_wlni6"]
+[ext_resource type="Texture2D" uid="uid://bk348p27nanvm" path="res://placeholder/WhiteArrow.png" id="5_27urn"]
+[ext_resource type="Texture2D" uid="uid://okp1hih2djd1" path="res://placeholder/GrayArrow.png" id="6_1kmui"]
+[ext_resource type="Texture2D" uid="uid://dmc2r0c75pl63" path="res://placeholder/LightGrayArrow.png" id="7_k2pky"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oo3v"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(0, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hepp"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(190, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abwjj"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(380, 0, 190, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_413ca"]
+atlas = ExtResource("2_wlni6")
+region = Rect2(570, 0, 190, 160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h8ia"]
 atlas = ExtResource("2_wlni6")
@@ -25,24 +44,25 @@ region = Rect2(1140, 0, 190, 160)
 atlas = ExtResource("2_wlni6")
 region = Rect2(570, 0, 190, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6oo3v"]
-atlas = ExtResource("2_wlni6")
-region = Rect2(0, 0, 190, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6hepp"]
-atlas = ExtResource("2_wlni6")
-region = Rect2(190, 0, 190, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_abwjj"]
-atlas = ExtResource("2_wlni6")
-region = Rect2(380, 0, 190, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_413ca"]
-atlas = ExtResource("2_wlni6")
-region = Rect2(570, 0, 190, 160)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhdxt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oo3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hepp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abwjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_413ca")
+}],
+"loop": false,
+"name": &"open_book",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0h8ia")
@@ -60,24 +80,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lt6x6")
 }],
 "loop": false,
-"name": &"flip_left",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6oo3v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6hepp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_abwjj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_413ca")
-}],
-"loop": false,
-"name": &"open_book",
+"name": &"turn_page",
 "speed": 10.0
 }]
 
@@ -89,7 +92,7 @@ metadata/_edit_vertical_guides_ = [576.0]
 position = Vector2(593, 283)
 scale = Vector2(4.271875, 4.271875)
 sprite_frames = SubResource("SpriteFrames_qhdxt")
-animation = &"flip_left"
+animation = &"turn_page"
 
 [node name="Catalog" parent="." unique_id=997869620 node_paths=PackedStringArray("swebok") instance=ExtResource("2_x7age")]
 swebok = NodePath("..")
@@ -104,27 +107,63 @@ offset_bottom = 459.0
 swebok = NodePath("..")
 
 [node name="Title" parent="ContentViewer" index="0" unique_id=528443857]
-offset_left = 299.0
-offset_top = 103.0
-offset_right = 553.0
-offset_bottom = 151.0
+offset_left = 354.0
+offset_top = 100.0
+offset_right = 541.0
+offset_bottom = 148.0
 
 [node name="Description" parent="ContentViewer" index="1" unique_id=475701691]
 offset_top = 101.0
-offset_right = 857.0
+offset_right = 822.0
 offset_bottom = 459.0
 
-[node name="BackButton" parent="ContentViewer" index="2" unique_id=1429989153]
-offset_left = 175.00002
-offset_top = -39.00002
-offset_right = 431.0
-offset_bottom = 216.99998
+[node name="RadarChart" parent="ContentViewer" index="2" unique_id=1384305498]
+offset_left = 336.0
+offset_top = 229.0
+offset_right = 538.0
+offset_bottom = 431.0
 
-[node name="RadarChart" parent="ContentViewer" index="3" unique_id=1384305498]
-offset_left = 295.0
-offset_top = 189.0
-offset_right = 551.0
-offset_bottom = 445.0
+[node name="LeftButton" type="TextureButton" parent="." unique_id=1508500181]
+offset_left = 163.00002
+offset_top = 153.99998
+offset_right = 419.0
+offset_bottom = 410.0
+rotation = 4.712389
+scale = Vector2(0.175, 0.175)
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("5_27urn")
+texture_pressed = ExtResource("6_1kmui")
+texture_hover = ExtResource("7_k2pky")
+ignore_texture_size = true
+
+[node name="RightButton" type="TextureButton" parent="." unique_id=1273220789]
+offset_left = 730.99994
+offset_top = 154.99997
+offset_right = 986.99994
+offset_bottom = 410.99994
+rotation = 1.5707964
+scale = Vector2(0.175, 0.175)
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("5_27urn")
+texture_pressed = ExtResource("6_1kmui")
+texture_hover = ExtResource("7_k2pky")
+ignore_texture_size = true
+
+[node name="ReturnButton" type="TextureButton" parent="." unique_id=1488031083]
+offset_left = 168.0
+offset_top = -52.000023
+offset_right = 424.0
+offset_bottom = 203.99997
+rotation = -0.7853982
+scale = Vector2(0.175, 0.175)
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("5_27urn")
+texture_pressed = ExtResource("6_1kmui")
+texture_hover = ExtResource("7_k2pky")
+
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
 
 [editable path="Catalog"]
 [editable path="ContentViewer"]

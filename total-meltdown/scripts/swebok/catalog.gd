@@ -4,7 +4,7 @@ extends Control
 @export var swebok: Swebok = null
 
 func _ready():
-	while SwebokManager.chapters.is_empty():
+	while !SwebokManager.creation_finished:
 		await get_tree().process_frame
 	build_catalog()
 
@@ -23,5 +23,4 @@ func build_catalog():
 		button_container.add_child(button)
 
 func _on_chapter_selected(chapter_idx: int):
-	var chapter_data = SwebokManager.chapters[chapter_idx]
-	swebok.show_chapter_content(chapter_data)
+	swebok.turn_to_page(chapter_idx)
