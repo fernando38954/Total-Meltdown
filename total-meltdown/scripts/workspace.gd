@@ -13,6 +13,11 @@ var current_region: Region = null
 @export var right_button: TextureButton
 @export var return_button: TextureButton
 
+func _ready() -> void:
+	left_button.hide()
+	right_button.hide()
+	return_button.hide()
+
 func switch_region(region: Region):
 	current_region = region
 	return_button.show()
@@ -31,7 +36,7 @@ func check_close_swebok():
 		await swebok.move_animation_finished
 
 
-func _on_return_button_button_down() -> void:
+func _on_return_button_pressed() -> void:
 	await check_close_swebok()
 	current_region = null
 	return_button.hide()
@@ -40,11 +45,11 @@ func _on_return_button_button_down() -> void:
 	workspace_camera.return_default_setting()
 
 
-func _on_left_button_button_down() -> void:
+func _on_left_button_pressed() -> void:
 	await check_close_swebok()
 	switch_region(current_region.left_region)
 
 
-func _on_right_button_button_down() -> void:
+func _on_right_button_pressed() -> void:
 	await check_close_swebok()
 	switch_region(current_region.right_region)

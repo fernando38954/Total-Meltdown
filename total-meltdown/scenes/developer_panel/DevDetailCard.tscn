@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://y8oun4wpf01e"]
+
+[ext_resource type="Script" uid="uid://c0k3lk06x8x27" path="res://scripts/developer_panel/dev_detail_card.gd" id="1_aklcw"]
+[ext_resource type="Texture2D" uid="uid://pkvs8s0720sb" path="res://placeholder/Masculine_A_default.png" id="2_aklcw"]
+[ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="3_2r8c2"]
+
+[node name="DevDetailCard" type="Panel" unique_id=2083043029]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(576, 324)
+script = ExtResource("1_aklcw")
+
+[node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]
+position = Vector2(128, 96)
+scale = Vector2(3, 3)
+texture = ExtResource("2_aklcw")
+
+[node name="DeveloperName" type="RichTextLabel" parent="." unique_id=863743029]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 13.0
+offset_right = 425.0
+offset_bottom = 195.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Name"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("3_2r8c2")]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 227.0
+offset_right = 436.0
+offset_bottom = 627.0
+
+[node name="Description" type="RichTextLabel" parent="." unique_id=1702460825]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 44.0
+offset_right = 1107.0
+offset_bottom = 596.0
+bbcode_enabled = true

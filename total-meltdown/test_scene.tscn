@@ -81,7 +81,6 @@ script = ExtResource("3_coq8p")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=58777912]
 
 [node name="LeftButton" type="TextureButton" parent="CanvasLayer" unique_id=334726376]
-visible = false
 offset_left = -16.000008
 offset_top = 355.0
 offset_right = 240.0
@@ -94,7 +93,6 @@ texture_hover = ExtResource("7_njel3")
 ignore_texture_size = true
 
 [node name="RightButton" type="TextureButton" parent="CanvasLayer" unique_id=1282742258]
-visible = false
 offset_left = 1166.0
 offset_top = 285.00003
 offset_right = 1422.0
@@ -107,7 +105,6 @@ texture_hover = ExtResource("7_njel3")
 ignore_texture_size = true
 
 [node name="ReturnButton" type="TextureButton" parent="CanvasLayer" unique_id=925521351]
-visible = false
 offset_left = 611.00006
 offset_top = 647.0
 offset_right = 867.00006
@@ -124,6 +121,6 @@ ignore_texture_size = true
 [connection signal="input_event" from="Workspace/Screen" to="Workspace/Screen" method="_on_input_event"]
 [connection signal="input_event" from="Workspace/Screen2" to="Workspace/Screen2" method="_on_input_event"]
 [connection signal="input_event" from="Workspace/Swebok" to="Workspace/Swebok" method="_on_input_event"]
-[connection signal="button_down" from="CanvasLayer/LeftButton" to="Workspace" method="_on_left_button_button_down"]
-[connection signal="button_down" from="CanvasLayer/RightButton" to="Workspace" method="_on_right_button_button_down"]
-[connection signal="button_down" from="CanvasLayer/ReturnButton" to="Workspace" method="_on_return_button_button_down"]
+[connection signal="pressed" from="CanvasLayer/LeftButton" to="Workspace" method="_on_left_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RightButton" to="Workspace" method="_on_right_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ReturnButton" to="Workspace" method="_on_return_button_pressed"]
