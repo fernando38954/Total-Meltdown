@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://3v2hesn4ey6s"]
 
-[ext_resource type="Script" uid="uid://cfjluhuafa1gr" path="res://scripts/developer_panel/dev_overview_card.gd" id="1_r5wra"]
-[ext_resource type="Texture2D" uid="uid://pkvs8s0720sb" path="res://placeholder/Masculine_A_default.png" id="2_r5wra"]
+[ext_resource type="Script" uid="uid://cfjluhuafa1gr" path="res://scripts/developer_screen/dev_overview_card.gd" id="1_u3dgd"]
+[ext_resource type="Texture2D" uid="uid://pkvs8s0720sb" path="res://placeholder/Masculine_A_default.png" id="2_jrk3f"]
 
 [node name="DevOverviewCard" type="Button" unique_id=1018254486]
 custom_minimum_size = Vector2(256, 256)
 offset_right = 256.0
 offset_bottom = 256.0
-pivot_offset = Vector2(256, 256)
-script = ExtResource("1_r5wra")
+pivot_offset = Vector2(128, 128)
+script = ExtResource("1_u3dgd")
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]
 position = Vector2(128, 96)
 scale = Vector2(3, 3)
-texture = ExtResource("2_r5wra")
+texture = ExtResource("2_jrk3f")
 
 [node name="DeveloperName" type="RichTextLabel" parent="." unique_id=863743029]
 layout_mode = 0
@@ -24,18 +24,6 @@ mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "Name"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Status" type="RichTextLabel" parent="." unique_id=1882586916]
-visible = false
-layout_mode = 0
-offset_top = 403.0
-offset_right = 512.0
-offset_bottom = 468.0
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "Status: [color=#00ff00]Free[/color]"
 fit_content = true
 horizontal_alignment = 1
 

@@ -1,0 +1,21 @@
+{
+	"name": "influencer_dog",
+	"attribute": {
+		"Functional Suitability": 4,
+		"Performance Efficiency": 2,
+		"Compatibility": 2,
+		"Interaction Capability": 3,
+		"Reliability": 4,
+		"Security": 10,
+		"Maintainability": 3,
+		"Flexibility": 2,
+		"Safety": 2,
+	},
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"bullet_point": {
+		"bullet1": "eu quero algo que eu entenda",
+		"bullet2": "quero que a privacidade do meu cachorro seja garantido"
+	},
+	"resttriction": "MVC and Layer, SOA",
+	"demand": "architecture: MVC, Number less: 2"
+}

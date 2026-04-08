@@ -8,10 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://okp1hih2djd1" path="res://placeholder/GrayArrow.png" id="6_buypi"]
 [ext_resource type="Texture2D" uid="uid://dmc2r0c75pl63" path="res://placeholder/LightGrayArrow.png" id="7_njel3"]
 [ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="8_buypi"]
+[ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperScreen.tscn" id="9_njel3"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 
-[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "swebok", "swebok_region", "left_button", "right_button", "return_button")]
+[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "swebok", "swebok_region", "developer_screen", "developer_screen_region", "left_button", "right_button", "return_button")]
 position = Vector2(576, 324)
 scale = Vector2(0.8343023, 0.83506495)
 texture = ExtResource("1_8pr8v")
@@ -19,15 +20,17 @@ script = ExtResource("2_coq8p")
 workspace_camera = NodePath("../Camera2D")
 swebok = NodePath("../Swebok")
 swebok_region = NodePath("Swebok")
-left_button = NodePath("../CanvasLayer/LeftButton")
-right_button = NodePath("../CanvasLayer/RightButton")
-return_button = NodePath("../CanvasLayer/ReturnButton")
+developer_screen = NodePath("../DeveloperScreen")
+developer_screen_region = NodePath("DeveloperScreen")
+left_button = NodePath("../ScreenButtons/LeftButton")
+right_button = NodePath("../ScreenButtons/RightButton")
+return_button = NodePath("../ScreenButtons/ReturnButton")
 
 [node name="Screen" type="Area2D" parent="Workspace" unique_id=745553579 node_paths=PackedStringArray("workspace", "left_region", "right_region", "focus")]
 script = ExtResource("2_sasra")
 workspace = NodePath("..")
 left_region = NodePath("../Swebok")
-right_region = NodePath("../Screen2")
+right_region = NodePath("../DeveloperScreen")
 focus = NodePath("Marker2D")
 zoom_level = 1.75
 
@@ -39,19 +42,19 @@ polygon = PackedVector2Array(-283.47043, -122.05678, -295.45648, -102.89659, -29
 [node name="Marker2D" type="Marker2D" parent="Workspace/Screen" unique_id=1490810461]
 position = Vector2(-1.1986063, -43.110416)
 
-[node name="Screen2" type="Area2D" parent="Workspace" unique_id=60524836 node_paths=PackedStringArray("workspace", "left_region", "focus")]
+[node name="DeveloperScreen" type="Area2D" parent="Workspace" unique_id=60524836 node_paths=PackedStringArray("workspace", "left_region", "focus")]
 script = ExtResource("2_sasra")
 workspace = NodePath("..")
 left_region = NodePath("../Screen")
 focus = NodePath("Marker2D")
 zoom_level = 3.0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/Screen2" unique_id=1847541070]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/DeveloperScreen" unique_id=1847541070]
 position = Vector2(16.780464, -118.55364)
 scale = Vector2(0.9999998, 0.99999976)
 polygon = PackedVector2Array(238.52264, -170.04668, 231.33105, -155.67654, 251.70734, 3.5925293, 361.97913, 25.147736, 472.25098, 34.727844, 527.38684, 37.122864, 534.5785, 16.765167, 550.1604, -162.8616, 536.9757, -177.23175)
 
-[node name="Marker2D" type="Marker2D" parent="Workspace/Screen2" unique_id=1336651855]
+[node name="Marker2D" type="Marker2D" parent="Workspace/DeveloperScreen" unique_id=1336651855]
 position = Vector2(399.1359, -195.19438)
 
 [node name="Swebok" type="Area2D" parent="Workspace" unique_id=1700712147 node_paths=PackedStringArray("workspace", "right_region", "focus")]
@@ -78,9 +81,9 @@ limit_right = 1152
 limit_bottom = 648
 script = ExtResource("3_coq8p")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=58777912]
+[node name="ScreenButtons" type="CanvasLayer" parent="." unique_id=58777912]
 
-[node name="LeftButton" type="TextureButton" parent="CanvasLayer" unique_id=334726376]
+[node name="LeftButton" type="TextureButton" parent="ScreenButtons" unique_id=334726376]
 offset_left = -16.000008
 offset_top = 355.0
 offset_right = 240.0
@@ -92,7 +95,7 @@ texture_pressed = ExtResource("6_buypi")
 texture_hover = ExtResource("7_njel3")
 ignore_texture_size = true
 
-[node name="RightButton" type="TextureButton" parent="CanvasLayer" unique_id=1282742258]
+[node name="RightButton" type="TextureButton" parent="ScreenButtons" unique_id=1282742258]
 offset_left = 1166.0
 offset_top = 285.00003
 offset_right = 1422.0
@@ -104,7 +107,7 @@ texture_pressed = ExtResource("6_buypi")
 texture_hover = ExtResource("7_njel3")
 ignore_texture_size = true
 
-[node name="ReturnButton" type="TextureButton" parent="CanvasLayer" unique_id=925521351]
+[node name="ReturnButton" type="TextureButton" parent="ScreenButtons" unique_id=925521351]
 offset_left = 611.00006
 offset_top = 647.0
 offset_right = 867.00006
@@ -118,9 +121,11 @@ ignore_texture_size = true
 
 [node name="Swebok" parent="." unique_id=870339263 instance=ExtResource("8_buypi")]
 
+[node name="DeveloperScreen" parent="." unique_id=933529179 instance=ExtResource("9_njel3")]
+
 [connection signal="input_event" from="Workspace/Screen" to="Workspace/Screen" method="_on_input_event"]
-[connection signal="input_event" from="Workspace/Screen2" to="Workspace/Screen2" method="_on_input_event"]
+[connection signal="input_event" from="Workspace/DeveloperScreen" to="Workspace/DeveloperScreen" method="_on_input_event"]
 [connection signal="input_event" from="Workspace/Swebok" to="Workspace/Swebok" method="_on_input_event"]
-[connection signal="pressed" from="CanvasLayer/LeftButton" to="Workspace" method="_on_left_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/RightButton" to="Workspace" method="_on_right_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/ReturnButton" to="Workspace" method="_on_return_button_pressed"]
+[connection signal="pressed" from="ScreenButtons/LeftButton" to="Workspace" method="_on_left_button_pressed"]
+[connection signal="pressed" from="ScreenButtons/RightButton" to="Workspace" method="_on_right_button_pressed"]
+[connection signal="pressed" from="ScreenButtons/ReturnButton" to="Workspace" method="_on_return_button_pressed"]

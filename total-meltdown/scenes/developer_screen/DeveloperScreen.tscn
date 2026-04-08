@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b62dwh5ln2nx"]
+
+[ext_resource type="Script" uid="uid://bomwsklg1ueil" path="res://scripts/developer_screen/developer_screen.gd" id="1_6lvqk"]
+[ext_resource type="Script" uid="uid://bcts06ux0x3fk" path="res://scripts/developer_screen/developer_panel.gd" id="1_ievrq"]
+[ext_resource type="PackedScene" uid="uid://3v2hesn4ey6s" path="res://scenes/developer_screen/DevOverviewCard.tscn" id="2_px104"]
+[ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="3_1bwwp"]
+
+[node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179]
+script = ExtResource("1_6lvqk")
+
+[node name="DeveloperPanel" type="Panel" parent="." unique_id=242474079]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("1_ievrq")
+developer_overview_card_scene = ExtResource("2_px104")
+developer_detail_card_scene = ExtResource("3_1bwwp")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DeveloperPanel" unique_id=1798521291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="DeveloperPanel/ScrollContainer" unique_id=2113858380]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/GridContainer" unique_id=1018254486 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="ClickBlocker" type="ColorRect" parent="DeveloperPanel" unique_id=1053072876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="gui_input" from="DeveloperPanel/ClickBlocker" to="DeveloperPanel" method="_on_click_blocker_gui_input"]

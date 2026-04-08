@@ -8,6 +8,10 @@ var current_region: Region = null
 @export var swebok: Swebok
 @export var swebok_region: Region
 
+@export_category("Developer Screen")
+@export var developer_screen: DeveloperScreen
+@export var developer_screen_region: Region
+
 @export_category("Button")
 @export var left_button: TextureButton
 @export var right_button: TextureButton
@@ -29,11 +33,19 @@ func switch_region(region: Region):
 	if current_region == swebok_region:
 		await workspace_camera.zoom_finished
 		swebok.open_book()
+	
+	if current_region == developer_screen_region:
+		await workspace_camera.zoom_finished
+		developer_screen.open_panel()
 
 func check_close_swebok():
 	if current_region == swebok_region:
 		swebok.close_book()
 		await swebok.move_animation_finished
+	
+	if current_region == developer_screen_region:
+		developer_screen.close_panel()
+		await developer_screen.rescale_animation_finished
 
 
 func _on_return_button_pressed() -> void:
