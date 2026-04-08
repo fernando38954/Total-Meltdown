@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://y8oun4wpf01e"]
 
 [ext_resource type="Script" uid="uid://c0k3lk06x8x27" path="res://scripts/developer_screen/dev_detail_card.gd" id="1_q7v8o"]
-[ext_resource type="Texture2D" uid="uid://pkvs8s0720sb" path="res://placeholder/Masculine_A_default.png" id="2_ekraa"]
+[ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="2_q7v8o"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="3_1dkyr"]
 [ext_resource type="Texture2D" uid="uid://otrus47vg2jc" path="res://placeholder/WhiteX.png" id="4_cjkw6"]
 [ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="5_bdd7n"]
@@ -13,21 +13,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(576, 324)
 script = ExtResource("1_q7v8o")
+font_size = 18
+value_font_size = 12
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]
-position = Vector2(128, 96)
-scale = Vector2(3, 3)
-texture = ExtResource("2_ekraa")
+position = Vector2(495, 488)
+texture = ExtResource("2_q7v8o")
 
 [node name="DeveloperName" type="RichTextLabel" parent="." unique_id=863743029]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 13.0
-offset_right = 425.0
-offset_bottom = 195.0
+offset_left = 1039.0
+offset_top = 141.0
+offset_right = 1804.0
+offset_bottom = 907.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
@@ -37,26 +37,27 @@ horizontal_alignment = 1
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("3_1dkyr")]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 227.0
-offset_right = 436.0
-offset_bottom = 627.0
+offset_left = 367.0
+offset_top = 1040.0
+offset_right = 767.0
+offset_bottom = 1440.0
+scale = Vector2(2.5999992, 2.5999992)
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=1702460825]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 44.0
-offset_right = 1107.0
-offset_bottom = 596.0
+offset_left = 1903.0
+offset_top = 276.0
+offset_right = 3664.0
+offset_bottom = 2009.0
 bbcode_enabled = true
 
 [node name="ReturnButton" type="TextureButton" parent="." unique_id=1238466745]
 layout_mode = 0
-offset_left = 984.75
-offset_top = -89.749985
-offset_right = 1240.75
-offset_bottom = 166.25002
-scale = Vector2(0.175, 0.175)
+offset_left = 3626.9998
+offset_top = 8.000008
+offset_right = 3882.9998
+offset_bottom = 264.0
+scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(128, 128)
 texture_normal = ExtResource("4_cjkw6")
 texture_pressed = ExtResource("5_bdd7n")

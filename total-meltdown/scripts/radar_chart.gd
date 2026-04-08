@@ -27,6 +27,12 @@ var values: Array[float]
 @export var text_color := Color.WHITE
 @export var grid_levels := 5
 
+# Label Settings
+var font
+var font_size
+var value_font_size
+var label_offset
+
 func _init():
 	property_size = property_names.size()
 	reset_values(property_size)
@@ -49,6 +55,12 @@ func set_attributes(attr_dict: Dictionary) -> void:
 		else:
 			values[idx] = lower_limit
 	queue_redraw()
+
+func set_label(p_font, p_font_size: int, p_value_font_size: int, p_label_offset: int):
+	self.font = p_font
+	self.font_size = p_font_size
+	self.value_font_size = p_value_font_size
+	self.label_offset = p_label_offset
 #endregion
 
 #region Draw
@@ -76,12 +88,12 @@ func draw_background(center: Vector2, radius: float, start_angle: float) -> void
 			var angle = start_angle + i * step_angle
 			var point = center + Vector2(cos(angle), sin(angle)) * level_radius
 			points.append(point)
-		draw_polyline(points + [points[0]], line_color, 1.2)
+		draw_polyline(points + [points[0]], line_color, 3.6)
 	
 	for i in range(property_size):
 		var angle = start_angle + i * step_angle
 		var end_point = center + Vector2(cos(angle), sin(angle)) * radius
-		draw_line(center, end_point, line_color, 1.0)
+		draw_line(center, end_point, line_color, 3.0)
 
 
 func draw_data(center: Vector2, radius: float, start_angle: float) -> void:
@@ -96,17 +108,13 @@ func draw_data(center: Vector2, radius: float, start_angle: float) -> void:
 	
 	if data_points.size() >= 3:
 		draw_polygon(data_points, PackedColorArray([fill_color]))
-		draw_polyline(data_points + [data_points[0]], outline_color, 1.2)
+		draw_polyline(data_points + [data_points[0]], outline_color, 3.6)
 		for point in data_points:
 			draw_circle(point, 1.5, outline_color)
 
 
 func draw_labels(center: Vector2, radius: float, start_angle: float) -> void:
 	var step_angle = 2 * PI / property_size
-	var font = ThemeDB.fallback_font
-	var font_size = 14
-	var value_font_size = 12
-	var label_offset = 18
 	
 	for i in range(property_size):
 		var angle = start_angle + i * step_angle

@@ -2,6 +2,7 @@ extends Control
 
 @onready var button_container = $ScrollContainer/VBoxContainer
 @export var swebok: Swebok = null
+@export var label_size: int = 80
 
 func _ready():
 	while !SwebokManager.creation_finished:
@@ -16,6 +17,7 @@ func build_catalog():
 		var chapter = SwebokManager.chapters[idx]
 		var button = Button.new()
 		button.text = chapter.title
+		button.add_theme_font_size_override("font_size", label_size)
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		
 		button.set_meta("chapter_index", idx)

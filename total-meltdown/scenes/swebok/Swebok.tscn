@@ -89,8 +89,8 @@ script = ExtResource("1_6evcd")
 metadata/_edit_vertical_guides_ = [576.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=617863607]
-position = Vector2(593, 283)
-scale = Vector2(4.271875, 4.271875)
+position = Vector2(2015, 950)
+scale = Vector2(14, 14)
 sprite_frames = SubResource("SpriteFrames_qhdxt")
 animation = &"turn_page"
 
@@ -98,38 +98,41 @@ animation = &"turn_page"
 swebok = NodePath("..")
 
 [node name="ScrollContainer" parent="Catalog" index="0" unique_id=2104121597]
-offset_left = 310.0
-offset_top = 93.0
-offset_right = 835.0
-offset_bottom = 459.0
+offset_left = 1093.0
+offset_top = 305.0
+offset_right = 2810.0
+offset_bottom = 1541.0
 
 [node name="ContentViewer" parent="." unique_id=474821504 node_paths=PackedStringArray("swebok") instance=ExtResource("3_wlni6")]
 swebok = NodePath("..")
 
 [node name="Title" parent="ContentViewer" index="0" unique_id=528443857]
-offset_left = 354.0
-offset_top = 100.0
-offset_right = 541.0
-offset_bottom = 148.0
+offset_left = 1076.0
+offset_top = 342.0
+offset_right = 1838.0
+offset_bottom = 524.0
+text = "[center][b][font_size=70]%s[/font_size][/b][/center]"
 
 [node name="Description" parent="ContentViewer" index="1" unique_id=475701691]
-offset_top = 101.0
-offset_right = 822.0
-offset_bottom = 459.0
+offset_left = 2004.0
+offset_top = 279.0
+offset_right = 2833.0
+offset_bottom = 1549.0
+text = "ASD"
 
 [node name="RadarChart" parent="ContentViewer" index="2" unique_id=1384305498]
-offset_left = 336.0
-offset_top = 229.0
-offset_right = 538.0
-offset_bottom = 431.0
+offset_left = 1076.0
+offset_top = 691.0
+offset_right = 1840.0
+offset_bottom = 1455.0
 
 [node name="LeftButton" type="TextureButton" parent="." unique_id=1508500181]
-offset_left = 163.00002
-offset_top = 153.99998
-offset_right = 419.0
-offset_bottom = 410.0
+offset_left = 883.0
+offset_top = 809.00006
+offset_right = 1139.0
+offset_bottom = 1065.0001
 rotation = 4.712389
-scale = Vector2(0.175, 0.175)
+scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(128, 128)
 texture_normal = ExtResource("5_27urn")
 texture_pressed = ExtResource("6_1kmui")
@@ -137,12 +140,12 @@ texture_hover = ExtResource("7_k2pky")
 ignore_texture_size = true
 
 [node name="RightButton" type="TextureButton" parent="." unique_id=1273220789]
-offset_left = 730.99994
-offset_top = 154.99997
-offset_right = 986.99994
-offset_bottom = 410.99994
+offset_left = 2766.0
+offset_top = 809.0
+offset_right = 3022.0
+offset_bottom = 1065.0
 rotation = 1.5707964
-scale = Vector2(0.175, 0.175)
+scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(128, 128)
 texture_normal = ExtResource("5_27urn")
 texture_pressed = ExtResource("6_1kmui")
@@ -150,12 +153,12 @@ texture_hover = ExtResource("7_k2pky")
 ignore_texture_size = true
 
 [node name="ReturnButton" type="TextureButton" parent="." unique_id=1488031083]
-offset_left = 168.0
-offset_top = -52.000023
-offset_right = 424.0
-offset_bottom = 203.99997
+offset_left = 915.99994
+offset_top = 140.99994
+offset_right = 1172.0
+offset_bottom = 396.99994
 rotation = -0.7853982
-scale = Vector2(0.175, 0.175)
+scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(128, 128)
 texture_normal = ExtResource("5_27urn")
 texture_pressed = ExtResource("6_1kmui")

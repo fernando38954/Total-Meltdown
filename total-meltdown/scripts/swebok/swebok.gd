@@ -10,8 +10,8 @@ signal move_animation_finished
 @onready var right_button = $RightButton
 @onready var return_button = $ReturnButton
 
-var open_position = Vector2(593, 283)
-var hide_position = Vector2(1558, 283)
+@export var open_position = Vector2(2015.0, 950.0)
+@export var hide_position = Vector2(5100.0, 950.0)
 var tween: Tween
 
 var current_page_idx: int

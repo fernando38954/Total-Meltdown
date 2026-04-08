@@ -4,13 +4,16 @@ class_name DeveloperOverviewCard
 @onready var portrait = $Portrait
 @onready var developer_name = $DeveloperName
 
+@export_category("Visual Settings")
+@export var name_size: int = 100
+
 var developer_panel: DeveloperPanel = null
 
 func set_panel(panel: DeveloperPanel):
 	developer_panel = panel
 
 func set_content(developer_data: Dictionary):
-	developer_name.text = "[center][font_size=40]%s[/font_size][/center]\n\n" % developer_data.name
+	developer_name.text = "[center][b][font_size=%d]%s[/font_size][/b][/center]\n\n" % [name_size, developer_data.name]
 	
 	var texture = load(developer_data.portrait_path)
 	if texture:

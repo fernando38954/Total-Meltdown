@@ -1,8 +1,8 @@
 extends Panel
 class_name DeveloperPanel
 
-@onready var developer_container = $ScrollContainer/GridContainer
-@onready var click_blocker = $ClickBlocker
+@export var developer_container: GridContainer
+@export var click_blocker: ColorRect
 @export var developer_overview_card_scene: PackedScene
 @export var developer_detail_card_scene: PackedScene
 

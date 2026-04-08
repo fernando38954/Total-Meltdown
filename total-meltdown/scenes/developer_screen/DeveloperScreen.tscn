@@ -8,14 +8,16 @@
 [node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179]
 script = ExtResource("1_6lvqk")
 
-[node name="DeveloperPanel" type="Panel" parent="." unique_id=242474079]
+[node name="DeveloperPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("developer_container", "click_blocker")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(576, 324)
+pivot_offset = Vector2(1952, 1098)
 script = ExtResource("1_ievrq")
+developer_container = NodePath("ScrollContainer/MarginContainer/GridContainer")
+click_blocker = NodePath("ClickBlocker")
 developer_overview_card_scene = ExtResource("2_px104")
 developer_detail_card_scene = ExtResource("3_1bwwp")
 
@@ -24,21 +26,51 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 224.0
 grow_horizontal = 2
 grow_vertical = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="DeveloperPanel/ScrollContainer" unique_id=2113858380]
+[node name="MarginContainer" type="MarginContainer" parent="DeveloperPanel/ScrollContainer" unique_id=1616237988]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 150
+
+[node name="GridContainer" type="GridContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer" unique_id=2113858380]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 40
-theme_override_constants/v_separation = 20
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 60
 columns = 4
 
-[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/GridContainer" unique_id=1018254486 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard2" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1018254486 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1638072232 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="DevOverviewCard3" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=381570448 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="DevOverviewCard4" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1263994531 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="DevOverviewCard5" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1959069799 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="DevOverviewCard6" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1295521702 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="DevOverviewCard7" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=757038978 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="DevOverviewCard8" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=123364912 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="DevOverviewCard9" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1278489871 instance=ExtResource("2_px104")]
 layout_mode = 2
 
 [node name="ClickBlocker" type="ColorRect" parent="DeveloperPanel" unique_id=1053072876]

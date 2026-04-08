@@ -1,6 +1,6 @@
 {
 	"name": "Enzo",
-	"portrait": "res://placeholder/Masculine_A_default.png",
+	"portrait": "res://assets/portrait/portrait_1.png",
 	"attribute": {
 		"Functional Suitability": 10,
 		"Performance Efficiency": 9,
