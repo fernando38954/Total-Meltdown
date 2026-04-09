@@ -3,6 +3,7 @@ extends Node
 const CHAPTERS_DIR = "res://contents/swebok/"
 
 var chapters: Array = []
+var owned_chapters: Array = []
 var creation_finished = false
 
 func _ready():
@@ -44,4 +45,11 @@ func load_chapters():
 	chapters.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
 	print_debug("Number of chapters loaded：", chapters.size())
-	
+
+func add_chapter(target_chapter_file_name: String) -> bool:
+	for chapter_entry in chapters:
+		if chapter_entry.file_name == target_chapter_file_name:
+			owned_chapters.append(chapter_entry)
+			return true
+	push_warning("No developer with file_name" + target_chapter_file_name + "found")
+	return false

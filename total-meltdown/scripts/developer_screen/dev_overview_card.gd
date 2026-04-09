@@ -14,12 +14,7 @@ func set_panel(panel: DeveloperPanel):
 
 func set_content(developer_data: Dictionary):
 	developer_name.text = "[center][b][font_size=%d]%s[/font_size][/b][/center]\n\n" % [name_size, developer_data.name]
-	
-	var texture = load(developer_data.portrait_path)
-	if texture:
-		portrait.texture = texture
-	else:
-		push_error("Error: Unable to load image:", developer_data.portrait_path)
+	portrait.texture = developer_data.portrait
 
 func get_center_position():
 	return global_position + size * 0.5 * scale * developer_panel.scale

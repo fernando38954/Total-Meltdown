@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="8_buypi"]
 [ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperScreen.tscn" id="9_njel3"]
 [ext_resource type="Texture2D" uid="uid://bhlngl6hk38ra" path="res://assets/mask.png" id="10_rpuu0"]
-[ext_resource type="Texture2D" uid="uid://vb3kwyxrbhil" path="res://assets/map.png" id="11_oo8pe"]
+[ext_resource type="PackedScene" uid="uid://cinak64pyd2kv" path="res://scenes/map_screen/MapScreen.tscn" id="12_oo8pe"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 scale = Vector2(3.3999987, 3.3999987)
 
-[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "swebok", "swebok_region", "developer_screen", "developer_screen_region", "left_button", "right_button", "return_button")]
+[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "swebok", "swebok_region", "developer_screen", "developer_screen_region", "map_screen", "map_screen_region", "left_button", "right_button", "return_button")]
 position = Vector2(576, 324)
 scale = Vector2(0.295, 0.295)
 texture = ExtResource("1_njel3")
@@ -25,12 +25,13 @@ swebok = NodePath("../Swebok")
 swebok_region = NodePath("Swebok")
 developer_screen = NodePath("../DeveloperScreen")
 developer_screen_region = NodePath("DeveloperScreen")
+map_screen = NodePath("../ScreenMask/MapScreen")
+map_screen_region = NodePath("MapScreen")
 left_button = NodePath("../ScreenButtons/LeftButton")
 right_button = NodePath("../ScreenButtons/RightButton")
 return_button = NodePath("../ScreenButtons/ReturnButton")
 
-[node name="Screen" type="Area2D" parent="Workspace" unique_id=745553579 node_paths=PackedStringArray("workspace", "left_region", "right_region", "focus")]
-visible = false
+[node name="MapScreen" type="Area2D" parent="Workspace" unique_id=745553579 node_paths=PackedStringArray("workspace", "left_region", "right_region", "focus")]
 position = Vector2(13.559321, 0)
 scale = Vector2(2.8983052, 2.8983052)
 script = ExtResource("2_sasra")
@@ -40,12 +41,12 @@ right_region = NodePath("../DeveloperScreen")
 focus = NodePath("Marker2D")
 zoom_level = 1.6
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/Screen" unique_id=1248977769]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/MapScreen" unique_id=1248977769]
 position = Vector2(-49.742188, -115.64929)
 scale = Vector2(0.9999998, 0.99999976)
 polygon = PackedVector2Array(-283.47043, -122.05678, -295.45648, -102.89659, -295.45648, 247.97433, -285.8676, 268.33206, -92.89197, 285.0972, 193.57495, 285.0972, 370.96875, 269.52957, 387.74927, 249.17184, 387.74927, 33.61975, 313.4356, 13.262054, 294.25793, -122.05678)
 
-[node name="Marker2D" type="Marker2D" parent="Workspace/Screen" unique_id=1490810461]
+[node name="Marker2D" type="Marker2D" parent="Workspace/MapScreen" unique_id=1490810461]
 position = Vector2(-1.1696235, -18.713451)
 
 [node name="DeveloperScreen" type="Area2D" parent="Workspace" unique_id=60524836 node_paths=PackedStringArray("workspace", "left_region", "focus")]
@@ -53,7 +54,7 @@ position = Vector2(6.7796607, 3.3898304)
 scale = Vector2(2.8983052, 2.8983052)
 script = ExtResource("2_sasra")
 workspace = NodePath("..")
-left_region = NodePath("../Screen")
+left_region = NodePath("../MapScreen")
 focus = NodePath("Marker2D")
 zoom_level = 3.0
 
@@ -69,7 +70,7 @@ position = Vector2(399.1359, -195.19438)
 scale = Vector2(3.0588512, 3.0588512)
 script = ExtResource("2_sasra")
 workspace = NodePath("..")
-right_region = NodePath("../Screen")
+right_region = NodePath("../MapScreen")
 focus = NodePath("Marker2D")
 zoom_level = 3.0
 
@@ -131,10 +132,8 @@ texture_hover = ExtResource("7_njel3")
 ignore_texture_size = true
 
 [node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("8_buypi")]
-visible = false
 
 [node name="DeveloperScreen" parent="." unique_id=933529179 instance=ExtResource("9_njel3")]
-visible = false
 
 [node name="ScreenMask" type="Sprite2D" parent="." unique_id=436785057]
 clip_children = 1
@@ -142,16 +141,22 @@ position = Vector2(577.5, 294.5)
 scale = Vector2(0.29492384, 0.29456705)
 texture = ExtResource("10_rpuu0")
 
-[node name="Node2D" type="Node2D" parent="ScreenMask" unique_id=531048670]
+[node name="MapScreen" parent="ScreenMask" unique_id=1876702984 instance=ExtResource("12_oo8pe")]
+position = Vector2(-1070.5653, -613.3627)
+scale = Vector2(0.545, 0.545)
 
-[node name="Ativo5" type="Sprite2D" parent="ScreenMask/Node2D" unique_id=677577832]
-position = Vector2(1.6953125, -0.48205566)
-scale = Vector2(0.54477084, 0.54543036)
-texture = ExtResource("11_oo8pe")
+[node name="SpawnArea" parent="ScreenMask/MapScreen" index="1" unique_id=769389484]
+offset_left = 424.52454
+offset_top = 452.51978
+offset_right = 3463.901
+offset_bottom = 1859.5448
+color = Color(1, 0, 0, 1)
 
-[connection signal="input_event" from="Workspace/Screen" to="Workspace/Screen" method="_on_input_event"]
+[connection signal="input_event" from="Workspace/MapScreen" to="Workspace/MapScreen" method="_on_input_event"]
 [connection signal="input_event" from="Workspace/DeveloperScreen" to="Workspace/DeveloperScreen" method="_on_input_event"]
 [connection signal="input_event" from="Workspace/Swebok" to="Workspace/Swebok" method="_on_input_event"]
 [connection signal="pressed" from="ScreenButtons/LeftButton" to="Workspace" method="_on_left_button_pressed"]
 [connection signal="pressed" from="ScreenButtons/RightButton" to="Workspace" method="_on_right_button_pressed"]
 [connection signal="pressed" from="ScreenButtons/ReturnButton" to="Workspace" method="_on_return_button_pressed"]
+
+[editable path="ScreenMask/MapScreen"]

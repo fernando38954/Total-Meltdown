@@ -9,7 +9,6 @@ func initialize(p_position: Vector2, p_scale: float, p_map: MapScreen):
 	scale = Vector2.ZERO
 	target_scale = p_scale * Vector2.ONE
 	map_screen = p_map
-	pressed.connect(map_screen.delete_event_button.bind(self))
 
 func appear(duration: float = 0.3):
 	var tween: Tween

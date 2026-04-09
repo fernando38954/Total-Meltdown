@@ -3,6 +3,7 @@ extends Node
 const DEVELOPERS_DIR = "res://contents/developer/"
 
 var developers: Array = []
+var owned_developers: Array = []
 var creation_finished = false
 
 func _ready():
@@ -28,10 +29,13 @@ func load_developers():
 				var error = json.parse(json_text)
 				if error == OK:
 					var data = json.data
+					var portrait = load(data.get("portrait", ""))
+					if !portrait:
+						push_error("Error: Unable to load image:", data.get("portrait", ""))
 					developers.append({
 						"file_name": file_name,
 						"name": data.get("name", "Untitled"),
-						"portrait_path": data.get("portrait", ""),
+						"portrait": portrait,
 						"attribute": data.get("attribute", ""),
 						"description": data.get("description", ""),
 					})
@@ -45,4 +49,11 @@ func load_developers():
 	developers.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
 	print_debug("Number of developers loaded：", developers.size())
-	
+
+func hire_developer(target_developer_file_name: String) -> bool:
+	for developer_entry in developers:
+		if developer_entry.file_name == target_developer_file_name:
+			owned_developers.append(developer_entry)
+			return true
+	push_warning("No developer with file_name" + target_developer_file_name + "found")
+	return false

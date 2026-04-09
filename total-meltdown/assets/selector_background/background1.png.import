@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1a0h1m2ia8st"
-path="res://.godot/imported/Job_Fair_Normal.png-09a41f56f890945290992788e00c4325.ctex"
+uid="uid://120gu7oj2m34"
+path="res://.godot/imported/background1.png-0a36533f2e7be3494a19d83ff43dd96e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/event_icons/Job_Fair_Normal.png"
-dest_files=["res://.godot/imported/Job_Fair_Normal.png-09a41f56f890945290992788e00c4325.ctex"]
+source_file="res://assets/selector_background/background1.png"
+dest_files=["res://.godot/imported/background1.png-0a36533f2e7be3494a19d83ff43dd96e.ctex"]
 
 [params]
 

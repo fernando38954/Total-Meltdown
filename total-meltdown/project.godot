@@ -19,11 +19,13 @@ config/icon="res://icon.svg"
 
 SwebokManager="*uid://8eahrr057cgv"
 DeveloperManager="*uid://cs8ieevn54777"
+GlobalSignal="*uid://bhkojwq0xigdv"
 
 [display]
 
 window/size/viewport_width=3904
 window/size/viewport_height=2196
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [physics]

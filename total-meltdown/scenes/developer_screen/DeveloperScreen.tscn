@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://3v2hesn4ey6s" path="res://scenes/developer_screen/DevOverviewCard.tscn" id="2_px104"]
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="3_1bwwp"]
 
-[node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179]
+[node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("developer_panel")]
 script = ExtResource("1_6lvqk")
+developer_panel = NodePath("DeveloperPanel")
 
 [node name="DeveloperPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("developer_container", "click_blocker")]
 anchors_preset = 15

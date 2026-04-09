@@ -1,7 +1,7 @@
 extends Panel
 class_name DeveloperPanel
 
-@export var developer_container: GridContainer
+@export var developer_container: Container
 @export var click_blocker: ColorRect
 @export var developer_overview_card_scene: PackedScene
 @export var developer_detail_card_scene: PackedScene
@@ -18,8 +18,8 @@ func build_developer_panel():
 	for child in developer_container.get_children():
 		child.queue_free()
 	
-	for idx in range(DeveloperManager.developers.size()):
-		var developer = DeveloperManager.developers[idx]
+	for idx in range(DeveloperManager.owned_developers.size()):
+		var developer = DeveloperManager.owned_developers[idx]
 		var developer_overview_instance = developer_overview_card_scene.instantiate()
 		developer_container.add_child(developer_overview_instance)
 		developer_overview_instance.set_panel(self)

@@ -28,10 +28,10 @@ var values: Array[float]
 @export var grid_levels := 5
 
 # Label Settings
-var font
-var font_size
-var value_font_size
-var label_offset
+var font = ThemeDB.fallback_font
+var font_size = 30
+var value_font_size = 25
+var label_offset = 18
 
 func _init():
 	property_size = property_names.size()

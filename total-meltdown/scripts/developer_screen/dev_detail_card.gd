@@ -31,14 +31,9 @@ func initialize_card(target_center_position: Vector2) -> void:
 func set_content(developer_data: Dictionary):
 	developer_name.text = "[center][b][font_size=%d]%s[/font_size][/b][/center]\n\n" % [name_size, developer_data.name]
 	description.text = "[font_size=%d]%s[/font_size]" % [description_size, developer_data.description]
+	portrait.texture = developer_data.portrait
 	radar_chart.set_label(font, font_size, value_font_size, label_offset)
 	radar_chart.set_attributes(developer_data.attribute)
-	
-	var texture = load(developer_data.portrait_path)
-	if texture:
-		portrait.texture = texture
-	else:
-		push_error("Error: Unable to load image:", developer_data.portrait_path)
 
 #region Animation
 func animate_to_center(target_center_position: Vector2, target_scale: Vector2, duration: float, callback: Callable = Callable()):
@@ -59,7 +54,6 @@ func close_card(duration: float = 0.2, callback: Callable = Callable()):
 
 func open_card(duration: float = 0.2, callback: Callable = Callable()):
 	var developer_panel_center_position = developer_panel.get_center_position()
-	print(developer_panel_center_position)
 	animate_to_center(developer_panel_center_position, Vector2(0.8, 0.8), duration, callback)
 #endregion
 
