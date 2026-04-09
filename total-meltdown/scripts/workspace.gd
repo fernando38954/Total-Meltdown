@@ -23,6 +23,10 @@ func _ready() -> void:
 	return_button.hide()
 
 func switch_region(region: Region):
+	if current_region == region:
+		return
+	
+	await check_close_swebok()
 	current_region = region
 	return_button.show()
 	left_button.set_visible(region.left_region != null)

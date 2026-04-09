@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://8kf0febjrfm6"]
+
+[ext_resource type="Texture2D" uid="uid://d1a0h1m2ia8st" path="res://assets/event_icons/Contract_Normal.png" id="1_fefku"]
+[ext_resource type="Texture2D" uid="uid://dt4l3m8fnngf1" path="res://assets/event_icons/Contract_Press.png" id="2_b02q8"]
+[ext_resource type="Texture2D" uid="uid://ba3p517bym7eo" path="res://assets/event_icons/Contract_Hover.png" id="3_ovrbl"]
+[ext_resource type="Script" uid="uid://cl718s7i1kl4n" path="res://scripts/map_screen/contract_event_button.gd" id="4_b02q8"]
+
+[node name="ContractEventButton" type="TextureButton" unique_id=1268619658]
+offset_right = 512.0
+offset_bottom = 632.0
+pivot_offset = Vector2(256, 632)
+texture_normal = ExtResource("1_fefku")
+texture_pressed = ExtResource("2_b02q8")
+texture_hover = ExtResource("3_ovrbl")
+script = ExtResource("4_b02q8")

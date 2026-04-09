@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://te0jm6bnm8wp"]
+
+[ext_resource type="Texture2D" uid="uid://fggw4qhxxq4y" path="res://assets/event_icons/Study_Session_Normal.png" id="1_f8qo2"]
+[ext_resource type="Texture2D" uid="uid://cmoyb6tqk02y4" path="res://assets/event_icons/Study_Session_Press.png" id="2_ya2la"]
+[ext_resource type="Texture2D" uid="uid://dht54bvcy72iy" path="res://assets/event_icons/Study_Session_Hover.png" id="3_vtm8h"]
+[ext_resource type="Script" uid="uid://nw3njp0ic0jx" path="res://scripts/map_screen/study_session_event_button.gd" id="4_ya2la"]
+
+[node name="StudySessionEventButton" type="TextureButton" unique_id=795064733]
+pivot_offset = Vector2(256, 632)
+texture_normal = ExtResource("1_f8qo2")
+texture_pressed = ExtResource("2_ya2la")
+texture_hover = ExtResource("3_vtm8h")
+script = ExtResource("4_ya2la")

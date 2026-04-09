@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="8_buypi"]
 [ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperScreen.tscn" id="9_njel3"]
 [ext_resource type="Texture2D" uid="uid://bhlngl6hk38ra" path="res://assets/mask.png" id="10_rpuu0"]
-[ext_resource type="Texture2D" uid="uid://vb3kwyxrbhil" path="res://assets/Ativo 5.png" id="11_oo8pe"]
+[ext_resource type="Texture2D" uid="uid://vb3kwyxrbhil" path="res://assets/map.png" id="11_oo8pe"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 scale = Vector2(3.3999987, 3.3999987)
@@ -30,6 +30,7 @@ right_button = NodePath("../ScreenButtons/RightButton")
 return_button = NodePath("../ScreenButtons/ReturnButton")
 
 [node name="Screen" type="Area2D" parent="Workspace" unique_id=745553579 node_paths=PackedStringArray("workspace", "left_region", "right_region", "focus")]
+visible = false
 position = Vector2(13.559321, 0)
 scale = Vector2(2.8983052, 2.8983052)
 script = ExtResource("2_sasra")
@@ -130,20 +131,23 @@ texture_hover = ExtResource("7_njel3")
 ignore_texture_size = true
 
 [node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("8_buypi")]
+visible = false
 
 [node name="DeveloperScreen" parent="." unique_id=933529179 instance=ExtResource("9_njel3")]
-
-[node name="Ativo5" type="Sprite2D" parent="." unique_id=677577832]
 visible = false
-position = Vector2(578, 294.358)
-scale = Vector2(0.16066587, 0.16066581)
-texture = ExtResource("11_oo8pe")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=436785057]
+[node name="ScreenMask" type="Sprite2D" parent="." unique_id=436785057]
 clip_children = 1
 position = Vector2(577.5, 294.5)
 scale = Vector2(0.29492384, 0.29456705)
 texture = ExtResource("10_rpuu0")
+
+[node name="Node2D" type="Node2D" parent="ScreenMask" unique_id=531048670]
+
+[node name="Ativo5" type="Sprite2D" parent="ScreenMask/Node2D" unique_id=677577832]
+position = Vector2(1.6953125, -0.48205566)
+scale = Vector2(0.54477084, 0.54543036)
+texture = ExtResource("11_oo8pe")
 
 [connection signal="input_event" from="Workspace/Screen" to="Workspace/Screen" method="_on_input_event"]
 [connection signal="input_event" from="Workspace/DeveloperScreen" to="Workspace/DeveloperScreen" method="_on_input_event"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cinak64pyd2kv"]
+
+[ext_resource type="Texture2D" uid="uid://vb3kwyxrbhil" path="res://assets/map.png" id="1_khwr7"]
+[ext_resource type="Script" uid="uid://b325t8quy5r0d" path="res://scripts/map_screen/map_screen.gd" id="1_rw3jc"]
+[ext_resource type="PackedScene" uid="uid://bkxainvx35n8a" path="res://scenes/map_screen/JobFairEventButton.tscn" id="3_6y1bi"]
+[ext_resource type="PackedScene" uid="uid://8kf0febjrfm6" path="res://scenes/map_screen/ContractEventButton.tscn" id="3_ls7sa"]
+[ext_resource type="PackedScene" uid="uid://te0jm6bnm8wp" path="res://scenes/map_screen/StudySessionEventButton.tscn" id="4_lgmxy"]
+
+[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area")]
+script = ExtResource("1_rw3jc")
+game_map = NodePath("Map")
+spawn_area = NodePath("SpawnArea")
+event_button_list = Array[PackedScene]([ExtResource("3_ls7sa"), ExtResource("3_6y1bi"), ExtResource("4_lgmxy")])
+min_distance = 1000.0
+
+[node name="Map" type="Sprite2D" parent="." unique_id=533150959]
+position = Vector2(1951.9998, 1097.9999)
+scale = Vector2(1.016402, 1.017609)
+texture = ExtResource("1_khwr7")
+
+[node name="SpawnArea" type="ColorRect" parent="." unique_id=769389484]
+offset_left = 261.0
+offset_top = 250.0
+offset_right = 3654.0
+offset_bottom = 1969.0
+color = Color(1, 0, 0, 0.06666667)
