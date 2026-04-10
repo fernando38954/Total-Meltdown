@@ -54,6 +54,7 @@ func open_book(duration: float = 0.5):
 	
 	await move_animation_finished
 	if current_page_idx == BookPage.opening:
+		catalog_view.build_catalog()
 		show_page(BookPage.catalogPage)
 
 func turn_to_page(target_page_idx: int):
@@ -73,7 +74,7 @@ func show_page(page_idx: int):
 	update_buttons_visibility()
 	
 	if page_idx > BookPage.catalogPage:
-		content_view.show_content(SwebokManager.chapters[page_idx])
+		content_view.show_content(SwebokManager.owned_chapters[page_idx])
 
 func update_page_visibility():
 	catalog_view.visible = current_page_idx == BookPage.catalogPage
@@ -81,7 +82,7 @@ func update_page_visibility():
 
 func update_buttons_visibility():
 	var catalog_index = BookPage.catalogPage
-	var last_chapter_index = SwebokManager.chapters.size() - 1
+	var last_chapter_index = SwebokManager.owned_chapters.size() - 1
 	var prev_index = current_page_idx - 1
 	var next_index = current_page_idx + 1
 	

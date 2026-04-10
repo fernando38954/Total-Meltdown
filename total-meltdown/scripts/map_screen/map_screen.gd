@@ -12,9 +12,11 @@ class_name MapScreen
 @export var click_blocker: ColorRect
 @export var event_blocker: ColorRect
 @export var job_fair_screen: DeveloperScreen
+@export var study_session_screen: DeveloperScreen
 
 var current_event_button_list: Array[EventButton] = []
 var current_active_event_button: EventButton = null
+var current_active_screen: DeveloperScreen
 var valid_region: Rect2
 var button_size: Vector2
 var button_pivot_offset: Vector2
@@ -24,6 +26,7 @@ func _ready() -> void:
 	initialize_parameters()
 	close_click_blocker()
 	GlobalSignal.hire_developer.connect(_on_receive_hire_developer)
+	GlobalSignal.study_chapter.connect(_on_receive_study_chapter)
 	
 	while true: # Para teste
 		await get_tree().create_timer(spawn_interval).timeout
@@ -40,7 +43,9 @@ func initialize_parameters():
 
 #region Event Button
 func create_event_button():
-	var rand_type = randi_range(0, event_button_list.size() - 1)
+	var rand_type = get_rand_type()
+	if rand_type == -1:
+		return
 	var rand_scale = randf_range(0.5, 1.0)
 	var rand_position = get_rand_position(rand_scale * Vector2.ONE)
 	if rand_position == -1 * Vector2.ONE:
@@ -51,6 +56,19 @@ func create_event_button():
 	button_instance.initialize(rand_position, rand_scale, self)
 	spawn_area.add_child(button_instance)
 	button_instance.appear()
+
+func get_rand_type() -> int:
+	var rand_type = randi_range(0, event_button_list.size() - 1)
+	for i in range(3):
+		var idx = (rand_type + i) % 3
+		var button_type = event_button_list[idx].get_state().get_node_name(0)
+		if button_type == "JobFairEventButton" and DeveloperManager.remaining_developers.size() > 0:
+			return idx
+		elif button_type == "StudySessionEventButton" and SwebokManager.remaining_chapters.size() > 0:
+			return idx
+		elif button_type == "ContractEventButton":
+			return idx
+	return -1
 
 func get_rand_position(button_scale: Vector2) -> Vector2:
 	var pivot_offset_scale_fix = button_pivot_offset * (Vector2.ONE-button_scale)
@@ -95,7 +113,7 @@ func close_click_blocker():
 
 func _on_click_blocker_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		job_fair_screen.close_panel()
+		close_event_screen(current_active_screen)
 		current_active_event_button = null
 		close_click_blocker()
 
@@ -105,17 +123,31 @@ func enable_event_blocker():
 func disable_event_blocker():
 	event_blocker.hide()
 
-func close_all_event_screen():
+func close_event_screen(event_screen: DeveloperScreen = current_active_screen):
+	if event_screen != null:
+		event_screen.close_panel()
+	current_active_screen = null
 	close_click_blocker()
-	job_fair_screen.close_panel()
 
 func open_job_fair_screen():
 	open_click_blocker()
 	job_fair_screen.open_panel()
+	current_active_screen = job_fair_screen
+
+func open_study_session_screen():
+	open_click_blocker()
+	study_session_screen.open_panel()
+	current_active_screen = study_session_screen
+
+func finish_current_event():
+	close_event_button(current_active_event_button)
+	close_event_screen(current_active_screen)
 
 func _on_receive_hire_developer(developer_file_name):
 	DeveloperManager.hire_developer(developer_file_name)
-	close_event_button(current_active_event_button)
-	job_fair_screen.close_panel()
-	close_click_blocker()
+	finish_current_event()
+
+func _on_receive_study_chapter(chapter_file_name):
+	SwebokManager.study_chapter(chapter_file_name)
+	finish_current_event()
 #endregion

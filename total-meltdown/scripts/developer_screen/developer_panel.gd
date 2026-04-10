@@ -31,7 +31,7 @@ func open_developer_detail(idx: int, initial_center: Vector2):
 		close_developer_detail()
 	
 	open_click_blocker()
-	var developer = DeveloperManager.developers[idx]
+	var developer = DeveloperManager.owned_developers[idx]
 	developer_detail_card_instance = developer_detail_card_scene.instantiate()
 	add_child(developer_detail_card_instance)
 	developer_detail_card_instance.set_panel(self)

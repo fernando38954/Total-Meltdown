@@ -1,0 +1,16 @@
+{
+	"name": "Ana “Refactor” Martins",
+	"portrait": "res://assets/portrait/portrait_2.png",
+	"attribute": {
+		"Functional Suitability": 1.2,
+		"Performance Efficiency": 1,
+		"Compatibility": 0.8,
+		"Interaction Capability": 0.9,
+		"Reliability": 1.3,
+		"Security": 1,
+		"Maintainability": 2,
+		"Flexibility": 1.1,
+		"Safety": 1.2,
+	},
+	"description": "Programadora experiente, apaixonada por código limpo e refatoração. Vive reclamando de código legado e sempre propõe melhorias estruturais."
+}

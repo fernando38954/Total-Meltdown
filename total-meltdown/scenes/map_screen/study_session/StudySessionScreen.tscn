@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://d0lcshv562d4e"]
+
+[ext_resource type="Script" uid="uid://bomwsklg1ueil" path="res://scripts/developer_screen/developer_screen.gd" id="1_lsu86"]
+[ext_resource type="Script" uid="uid://dmp6hn3cimuco" path="res://scripts/map_screen/study_session/study_session_panel.gd" id="2_3evn0"]
+[ext_resource type="PackedScene" uid="uid://whjllpdpvskl" path="res://scenes/map_screen/study_session/Course.tscn" id="3_l1ove"]
+[ext_resource type="PackedScene" uid="uid://q61o5yikp86s" path="res://scenes/map_screen/study_session/ChapterDetailCard.tscn" id="4_l1ove"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssrtq"]
+
+[node name="StudySessionScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("developer_panel")]
+script = ExtResource("1_lsu86")
+developer_panel = NodePath("StudySessionPanel")
+
+[node name="StudySessionPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("developer_container", "click_blocker")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1952, 1098)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ssrtq")
+script = ExtResource("2_3evn0")
+developer_container = NodePath("ScrollContainer/MarginContainer/HBoxContainer")
+click_blocker = NodePath("ClickBlocker")
+developer_overview_card_scene = ExtResource("3_l1ove")
+developer_detail_card_scene = ExtResource("4_l1ove")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="StudySessionPanel" unique_id=1798521291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="StudySessionPanel/ScrollContainer" unique_id=1616237988]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StudySessionPanel/ScrollContainer/MarginContainer" unique_id=1027314339]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Course" parent="StudySessionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1570528027 instance=ExtResource("3_l1ove")]
+layout_mode = 2
+
+[node name="Course2" parent="StudySessionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1883378060 instance=ExtResource("3_l1ove")]
+layout_mode = 2
+
+[node name="Course3" parent="StudySessionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=497402908 instance=ExtResource("3_l1ove")]
+layout_mode = 2
+
+[node name="ClickBlocker" type="ColorRect" parent="StudySessionPanel" unique_id=1053072876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="gui_input" from="StudySessionPanel/ClickBlocker" to="StudySessionPanel" method="_on_click_blocker_gui_input"]

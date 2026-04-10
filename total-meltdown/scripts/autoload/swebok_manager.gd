@@ -4,10 +4,12 @@ const CHAPTERS_DIR = "res://contents/swebok/"
 
 var chapters: Array = []
 var owned_chapters: Array = []
+var remaining_chapters: Array = []
 var creation_finished = false
 
 func _ready():
 	load_chapters()
+	remaining_chapters = chapters.duplicate()
 
 func load_chapters():
 	chapters.clear()
@@ -46,9 +48,10 @@ func load_chapters():
 	creation_finished = true
 	print_debug("Number of chapters loaded：", chapters.size())
 
-func add_chapter(target_chapter_file_name: String) -> bool:
-	for chapter_entry in chapters:
+func study_chapter(target_chapter_file_name: String) -> bool:
+	for chapter_entry in remaining_chapters:
 		if chapter_entry.file_name == target_chapter_file_name:
+			remaining_chapters.erase(chapter_entry)
 			owned_chapters.append(chapter_entry)
 			return true
 	push_warning("No developer with file_name" + target_chapter_file_name + "found")

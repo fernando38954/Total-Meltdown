@@ -13,8 +13,8 @@ func build_catalog():
 	for child in button_container.get_children():
 		child.queue_free()
 	
-	for idx in range(SwebokManager.chapters.size()):
-		var chapter = SwebokManager.chapters[idx]
+	for idx in range(SwebokManager.owned_chapters.size()):
+		var chapter = SwebokManager.owned_chapters[idx]
 		var button = Button.new()
 		button.text = chapter.title
 		button.add_theme_font_size_override("font_size", label_size)

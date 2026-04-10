@@ -3,11 +3,13 @@ extends Node
 const DEVELOPERS_DIR = "res://contents/developer/"
 
 var developers: Array = []
+var remaining_developers: Array = []
 var owned_developers: Array = []
 var creation_finished = false
 
 func _ready():
 	load_developers()
+	remaining_developers = developers.duplicate()
 
 func load_developers():
 	developers.clear()
@@ -51,8 +53,9 @@ func load_developers():
 	print_debug("Number of developers loaded：", developers.size())
 
 func hire_developer(target_developer_file_name: String) -> bool:
-	for developer_entry in developers:
+	for developer_entry in remaining_developers:
 		if developer_entry.file_name == target_developer_file_name:
+			remaining_developers.erase(developer_entry)
 			owned_developers.append(developer_entry)
 			return true
 	push_warning("No developer with file_name" + target_developer_file_name + "found")

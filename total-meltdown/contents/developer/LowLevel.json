@@ -1,0 +1,16 @@
+{
+	"name": "Bruno “LowLevel” Takeda",
+	"portrait": "res://assets/portrait/portrait_1.png",
+	"attribute": {
+		"Functional Suitability": 1,
+		"Performance Efficiency": 2,
+		"Compatibility": 0.7,
+		"Interaction Capability": 0.6,
+		"Reliability": 1.2,
+		"Security": 1,
+		"Maintainability": 0.8,
+		"Flexibility": 0.9,
+		"Safety": 1.5,
+	},
+	"description": "Especialista em performance. Ama otimizar algoritmos e mexer em memória, threads e estruturas de baixo nível."
+}

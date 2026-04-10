@@ -58,7 +58,7 @@ func check_close_swebok():
 		developer_screen.close_panel(0.3)
 	
 	if current_region == map_screen_region:
-		map_screen.close_all_event_screen()
+		map_screen.close_event_screen()
 		map_screen.enable_event_blocker()
 
 

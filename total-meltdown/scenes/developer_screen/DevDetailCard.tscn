@@ -42,6 +42,7 @@ offset_top = 1040.0
 offset_right = 767.0
 offset_bottom = 1440.0
 scale = Vector2(2.5999992, 2.5999992)
+upper_limit = 2.0
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=1702460825]
 layout_mode = 0

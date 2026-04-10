@@ -1,0 +1,16 @@
+{
+	"name": "Carla “UX” Duarte",
+	"portrait": "res://assets/portrait/portrait_3.png",
+	"attribute": {
+		"Functional Suitability": 1.1,
+		"Performance Efficiency": 0.8,
+		"Compatibility": 1.2,
+		"Interaction Capability": 2,
+		"Reliability": 0.9,
+		"Security": 0.7,
+		"Maintainability": 1,
+		"Flexibility": 1.3,
+		"Safety": 0.8,
+	},
+	"description": "Front-end e UX designer. Defensora ferrenha da experiência do usuário e da simplicidade de uso."
+}
