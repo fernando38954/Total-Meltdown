@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://3v2hesn4ey6s"]
 
+[ext_resource type="Texture2D" uid="uid://bo1o2leu06uk0" path="res://placeholder/WhiteSquare.png" id="1_jrk3f"]
 [ext_resource type="Script" uid="uid://cfjluhuafa1gr" path="res://scripts/developer_screen/dev_overview_card.gd" id="1_u3dgd"]
 [ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="2_u3dgd"]
 
-[node name="DevOverviewCard" type="Button" unique_id=1018254486]
+[node name="DevOverviewCard" type="TextureButton" unique_id=1138141655]
+self_modulate = Color(0, 0, 0, 0.23137255)
 custom_minimum_size = Vector2(900, 900)
-offset_right = 800.0
-offset_bottom = 800.0
+offset_right = 900.0
+offset_bottom = 900.0
 pivot_offset = Vector2(450, 450)
+texture_normal = ExtResource("1_jrk3f")
 script = ExtResource("1_u3dgd")
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]

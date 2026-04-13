@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://3v2hesn4ey6s" path="res://scenes/developer_screen/DevOverviewCard.tscn" id="2_px104"]
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="3_1bwwp"]
 
-[node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("developer_panel")]
+[node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("panel")]
 script = ExtResource("1_6lvqk")
-developer_panel = NodePath("DeveloperPanel")
+panel = NodePath("DeveloperPanel")
 
-[node name="DeveloperPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("developer_container", "click_blocker")]
+[node name="DeveloperPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("container", "click_blocker")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,10 +17,10 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1952, 1098)
 script = ExtResource("1_ievrq")
-developer_container = NodePath("ScrollContainer/MarginContainer/GridContainer")
+container = NodePath("ScrollContainer/MarginContainer/GridContainer")
 click_blocker = NodePath("ClickBlocker")
-developer_overview_card_scene = ExtResource("2_px104")
-developer_detail_card_scene = ExtResource("3_1bwwp")
+overview_card_scene = ExtResource("2_px104")
+detail_card_scene = ExtResource("3_1bwwp")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DeveloperPanel" unique_id=1798521291]
 layout_mode = 1
@@ -47,31 +47,28 @@ theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 60
 columns = 4
 
-[node name="DevOverviewCard2" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1018254486 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1138141655 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1638072232 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard2" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1562145468 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard3" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=381570448 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard3" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1519978805 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard4" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1263994531 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard4" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=730625493 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard5" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1959069799 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard5" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1102955207 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard6" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1295521702 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard6" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=546471694 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard7" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=757038978 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard7" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=913582948 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard8" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=123364912 instance=ExtResource("2_px104")]
-layout_mode = 2
-
-[node name="DevOverviewCard9" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1278489871 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard8" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1359388645 instance=ExtResource("2_px104")]
 layout_mode = 2
 
 [node name="ClickBlocker" type="ColorRect" parent="DeveloperPanel" unique_id=1053072876]

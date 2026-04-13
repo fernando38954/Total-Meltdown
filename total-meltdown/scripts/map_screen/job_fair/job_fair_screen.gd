@@ -1,0 +1,2 @@
+extends BaseScreen
+class_name JobFairScreen

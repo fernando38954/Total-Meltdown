@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://bq5lgvuwbxpki"]
 
-[ext_resource type="Script" uid="uid://bomwsklg1ueil" path="res://scripts/developer_screen/developer_screen.gd" id="1_ssrtq"]
+[ext_resource type="Script" uid="uid://cm1paeoxfsmov" path="res://scripts/map_screen/job_fair/job_fair_screen.gd" id="1_34td2"]
 [ext_resource type="Script" uid="uid://cfg3p8o145d8d" path="res://scripts/map_screen/job_fair/job_fair_panel.gd" id="2_buk3p"]
 [ext_resource type="PackedScene" uid="uid://im44emtumyuk" path="res://scenes/map_screen/job_fair/Resume.tscn" id="4_1inak"]
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="4_4w2io"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssrtq"]
 
-[node name="JobFairScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("developer_panel")]
-script = ExtResource("1_ssrtq")
-developer_panel = NodePath("JobFairPanel")
+[node name="JobFairScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("panel")]
+script = ExtResource("1_34td2")
+panel = NodePath("JobFairPanel")
 
-[node name="JobFairPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("developer_container", "click_blocker")]
+[node name="JobFairPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("container", "click_blocker")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,10 +20,10 @@ grow_vertical = 2
 pivot_offset = Vector2(1952, 1098)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ssrtq")
 script = ExtResource("2_buk3p")
-developer_container = NodePath("ScrollContainer/MarginContainer/HBoxContainer")
+container = NodePath("ScrollContainer/MarginContainer/HBoxContainer")
 click_blocker = NodePath("ClickBlocker")
-developer_overview_card_scene = ExtResource("4_1inak")
-developer_detail_card_scene = ExtResource("4_4w2io")
+overview_card_scene = ExtResource("4_1inak")
+detail_card_scene = ExtResource("4_4w2io")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="JobFairPanel" unique_id=1798521291]
 layout_mode = 1

@@ -11,12 +11,12 @@ class_name MapScreen
 @export_category("Event Screen")
 @export var click_blocker: ColorRect
 @export var event_blocker: ColorRect
-@export var job_fair_screen: DeveloperScreen
-@export var study_session_screen: DeveloperScreen
+@export var job_fair_screen: JobFairScreen
+@export var study_session_screen: StudySessionScreen
 
 var current_event_button_list: Array[EventButton] = []
 var current_active_event_button: EventButton = null
-var current_active_screen: DeveloperScreen
+var current_active_screen: BaseScreen
 var valid_region: Rect2
 var button_size: Vector2
 var button_pivot_offset: Vector2
@@ -123,7 +123,7 @@ func enable_event_blocker():
 func disable_event_blocker():
 	event_blocker.hide()
 
-func close_event_screen(event_screen: DeveloperScreen = current_active_screen):
+func close_event_screen(event_screen: BaseScreen = current_active_screen):
 	if event_screen != null:
 		event_screen.close_panel()
 	current_active_screen = null

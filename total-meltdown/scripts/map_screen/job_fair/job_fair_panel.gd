@@ -1,27 +1,9 @@
-extends DeveloperPanel
+extends BaseItemPanel
 class_name JobFairPanel
 
-func build_developer_panel():
-	for child in developer_container.get_children():
-		child.queue_free()
-	
-	for idx in range(DeveloperManager.remaining_developers.size()):
-		var developer = DeveloperManager.remaining_developers[idx]
-		var developer_overview_instance = developer_overview_card_scene.instantiate()
-		developer_container.add_child(developer_overview_instance)
-		developer_overview_instance.set_panel(self)
-		developer_overview_instance.set_content(developer)
-		developer_overview_instance.set_meta("developer_index", idx)
+func get_items() -> Array:
+	return DeveloperManager.remaining_developers
 
-func open_developer_detail(idx: int, initial_center: Vector2):
-	if developer_detail_card_instance:
-		close_developer_detail()
-	
-	open_click_blocker()
-	var developer = DeveloperManager.remaining_developers[idx]
-	developer_detail_card_instance = developer_detail_card_scene.instantiate()
-	add_child(developer_detail_card_instance)
-	developer_detail_card_instance.set_panel(self)
-	developer_detail_card_instance.initialize_card(initial_center)
-	developer_detail_card_instance.set_content(developer)
-	developer_detail_card_instance.open_card()
+func _ready_prerequisites():
+	while !DeveloperManager.creation_finished:
+		await get_tree().process_frame
