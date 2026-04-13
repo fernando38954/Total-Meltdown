@@ -14,8 +14,8 @@ class_name MapScreen
 @export var job_fair_screen: JobFairScreen
 @export var study_session_screen: StudySessionScreen
 
-var current_event_button_list: Array[EventButton] = []
-var current_active_event_button: EventButton = null
+var current_event_button_list: Array[BaseEventButton] = []
+var current_active_event_button: BaseEventButton = null
 var current_active_screen: BaseScreen
 var valid_region: Rect2
 var button_size: Vector2
@@ -98,7 +98,7 @@ func check_position_validity(p_position: Vector2) -> bool:
 			return false
 	return true
 
-func close_event_button(event_button: EventButton):
+func close_event_button(event_button: BaseEventButton):
 	current_event_button_list.erase(event_button)
 	event_button.queue_free()
 	current_active_event_button = null

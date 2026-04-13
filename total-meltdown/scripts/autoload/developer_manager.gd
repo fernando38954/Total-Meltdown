@@ -36,9 +36,9 @@ func load_developers():
 						push_error("Error: Unable to load image:", data.get("portrait", ""))
 					developers.append({
 						"file_name": file_name,
-						"name": data.get("name", "Untitled"),
+						"name": data.get("name", "Unknown"),
 						"portrait": portrait,
-						"attribute": data.get("attribute", ""),
+						"attribute": data.get("attribute", {}),
 						"description": data.get("description", ""),
 					})
 				else:

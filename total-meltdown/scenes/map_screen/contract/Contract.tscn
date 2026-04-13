@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://c1hn7mnqjje01"]
+
+[ext_resource type="Script" uid="uid://c7py0sc7jvypc" path="res://scripts/map_screen/contract/contract.gd" id="1_s0427"]
+[ext_resource type="Texture2D" uid="uid://cn2m8q41pcwac" path="res://assets/drawing_board.png" id="2_iqxvp"]
+[ext_resource type="Texture2D" uid="uid://cg38eyq2aqff7" path="res://assets/post-it.png" id="3_3e3mo"]
+[ext_resource type="Texture2D" uid="uid://bo1o2leu06uk0" path="res://placeholder/WhiteSquare.png" id="4_rj8at"]
+[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/dog.png" id="5_jusyd"]
+[ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="6_hk8vl"]
+
+[node name="Contract" type="CanvasLayer" unique_id=1964947095 node_paths=PackedStringArray("drawing_board", "post_it", "quest_panel")]
+script = ExtResource("1_s0427")
+drawing_board = NodePath("DrawingBoard")
+drawing_board_hide_position = Vector2(2029, -700)
+post_it = NodePath("PostIt")
+post_it_show_position = Vector2(3237, 782)
+post_it_hide_position = Vector2(4400, 782)
+quest_panel = NodePath("QuestPanel")
+quest_panel_show_position = Vector2(690, 780.5)
+quest_panel_hide_position = Vector2(-480, 780.5)
+
+[node name="DrawingBoard" type="Sprite2D" parent="." unique_id=346058551]
+position = Vector2(2029, -700)
+texture = ExtResource("2_iqxvp")
+
+[node name="RadarChart" parent="DrawingBoard" unique_id=1384305498 instance=ExtResource("6_hk8vl")]
+offset_left = -363.0
+offset_top = -499.5
+offset_right = 316.0
+offset_bottom = 179.5
+
+[node name="PostIt" type="Sprite2D" parent="." unique_id=1054801193]
+position = Vector2(4400, 782)
+texture = ExtResource("3_3e3mo")
+
+[node name="BulletPoints" type="RichTextLabel" parent="PostIt" unique_id=2058413578]
+offset_left = -338.0
+offset_top = -380.5
+offset_right = 337.0
+offset_bottom = 303.5
+
+[node name="Footnote" type="RichTextLabel" parent="PostIt" unique_id=706512616]
+offset_left = -368.0
+offset_top = 340.5
+offset_right = 345.0
+offset_bottom = 415.5
+
+[node name="QuestPanel" type="Sprite2D" parent="." unique_id=1365175804]
+self_modulate = Color(0.92099476, 0.9209946, 0.9209946, 1)
+position = Vector2(-480, 781)
+scale = Vector2(1, 1.3033333)
+texture = ExtResource("4_rj8at")
+
+[node name="Title" type="RichTextLabel" parent="QuestPanel" unique_id=71571072]
+offset_left = -343.0
+offset_top = -422.37854
+offset_right = 350.0
+offset_bottom = -334.14325
+
+[node name="Dog" type="Sprite2D" parent="QuestPanel" unique_id=287756834]
+position = Vector2(2, -154.60358)
+scale = Vector2(1, 0.7672635)
+texture = ExtResource("5_jusyd")
+
+[node name="Description" type="RichTextLabel" parent="QuestPanel" unique_id=1652129290]
+offset_left = -355.0
+offset_top = 16.496155
+offset_right = 401.0
+offset_bottom = 398.59338

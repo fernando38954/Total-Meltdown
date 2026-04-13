@@ -15,11 +15,13 @@ func zoom_to_point(target_global_position: Vector2, target_zoom: Vector2, durati
 	if tween and tween.is_running():
 		tween.kill()
 	
-	tween = create_tween()
-	tween.set_parallel(true)
+	tween = create_tween().set_parallel(true)
 	tween.tween_property(self, "global_position", target_global_position, duration)
 	tween.tween_property(self, "zoom", target_zoom, duration)
-	tween.tween_callback(zoom_finished.emit)
+	tween.finished.connect(emit_zoom_finished)
 
 func return_default_setting(duration: float = 0.3):
 	zoom_to_point(default_position, default_zoom, duration)
+
+func emit_zoom_finished():
+	zoom_finished.emit()

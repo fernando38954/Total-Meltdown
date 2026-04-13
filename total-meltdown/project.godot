@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SwebokManager="*uid://8eahrr057cgv"
 DeveloperManager="*uid://cs8ieevn54777"
 GlobalSignal="*uid://bhkojwq0xigdv"
+QuestManager="*uid://ocrn727wdrpe"
 
 [display]
 

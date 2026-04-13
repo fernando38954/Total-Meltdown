@@ -42,7 +42,7 @@ func move_book(target_position: Vector2, duration: float = 1.0):
 	tween.tween_property(book_sprite, "position", target_position, duration)
 	tween.tween_callback(move_animation_finished.emit)
 
-func close_book(duration: float = 0.5):
+func close_book(duration: float = 1):
 	move_book(hide_position, duration)
 	show_page(BookPage.close)
 	book_sprite.play_backwards("open_book")
@@ -50,9 +50,10 @@ func close_book(duration: float = 0.5):
 func open_book(duration: float = 0.5):
 	current_page_idx = BookPage.opening
 	move_book(open_position, duration)
-	book_sprite.play("open_book")
 	
 	await move_animation_finished
+	book_sprite.play("open_book")
+	await book_sprite.animation_finished
 	if current_page_idx == BookPage.opening:
 		catalog_view.build_catalog()
 		show_page(BookPage.catalogPage)

@@ -52,7 +52,7 @@ func switch_region(region: Region):
 
 func check_close_swebok():
 	if current_region == swebok_region:
-		swebok.close_book(0.3)
+		swebok.close_book()
 	
 	if current_region == developer_screen_region:
 		developer_screen.close_panel(0.3)

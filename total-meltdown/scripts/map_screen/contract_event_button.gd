@@ -1,4 +1,4 @@
-extends EventButton
+extends BaseEventButton
 class_name ContractEventButton
 
 func _on_pressed() -> void:

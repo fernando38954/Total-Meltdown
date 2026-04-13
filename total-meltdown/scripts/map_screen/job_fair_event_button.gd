@@ -1,4 +1,4 @@
-extends EventButton
+extends BaseEventButton
 class_name JobFairEventButton
 
 func _on_pressed() -> void:

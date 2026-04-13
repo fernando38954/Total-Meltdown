@@ -1,5 +1,5 @@
 extends TextureButton
-class_name EventButton
+class_name BaseEventButton
 
 var map_screen: MapScreen
 var target_scale
