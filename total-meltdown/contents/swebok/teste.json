@@ -1,5 +1,6 @@
 {
 	"title": "MVC",
+	"icon": "res://assets/pattern_icons/MVC.png",
 	"attribute": {
 		"Functional Suitability": 5,
 		"Performance Efficiency": 2,

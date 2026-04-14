@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b3bukuv2wbe4u"]
+
+[ext_resource type="Texture2D" uid="uid://byr0iwoj0htr4" path="res://placeholder/white_square_512.png" id="1_c5wgc"]
+[ext_resource type="Script" uid="uid://bvf0xs3mqmcx0" path="res://scripts/map_screen/contract/option_box.gd" id="2_wr6js"]
+
+[node name="PatternOptionBox" type="TextureRect" unique_id=2142991914]
+self_modulate = Color(0, 0, 0, 0.23137255)
+custom_minimum_size = Vector2(512, 512)
+offset_right = 512.0
+offset_bottom = 512.0
+mouse_filter = 0
+texture = ExtResource("1_c5wgc")
+script = ExtResource("2_wr6js")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1354965367]
+position = Vector2(256, 256)
+scale = Vector2(0.9, 0.9)
+region_rect = Rect2(2, 0, 725, 725)

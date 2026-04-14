@@ -1,5 +1,6 @@
 {
 	"title": "ABC",
+	"icon": "res://assets/pattern_icons/MVC.png",
 	"attribute": {
 		"Functional Suitability": 1,
 		"Performance Efficiency": 6,

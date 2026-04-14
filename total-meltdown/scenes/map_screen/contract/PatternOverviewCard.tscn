@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://w0kr78thnd8b"]
+
+[ext_resource type="Texture2D" uid="uid://byr0iwoj0htr4" path="res://placeholder/white_square_512.png" id="1_xxibn"]
+[ext_resource type="Script" uid="uid://b6wde27bkgw7i" path="res://scripts/map_screen/contract/pattern_overview_card.gd" id="2_osv0u"]
+[ext_resource type="Texture2D" uid="uid://s3ija5g1sq4f" path="res://assets/pattern_icons/MVC.png" id="2_xxibn"]
+
+[node name="PatternOverviewCard" type="TextureButton" unique_id=186634182]
+self_modulate = Color(0, 0, 0, 0.23137255)
+custom_minimum_size = Vector2(512, 512)
+offset_right = 512.0
+offset_bottom = 512.0
+texture_normal = ExtResource("1_xxibn")
+script = ExtResource("2_osv0u")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1354965367]
+position = Vector2(256, 256)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_xxibn")
+region_rect = Rect2(2, 0, 725, 725)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

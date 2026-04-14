@@ -1,68 +1,197 @@
 [gd_scene format=3 uid="uid://c1hn7mnqjje01"]
 
 [ext_resource type="Script" uid="uid://c7py0sc7jvypc" path="res://scripts/map_screen/contract/contract.gd" id="1_s0427"]
-[ext_resource type="Texture2D" uid="uid://cn2m8q41pcwac" path="res://assets/drawing_board.png" id="2_iqxvp"]
+[ext_resource type="Texture2D" uid="uid://cjq7gm75x871k" path="res://assets/drawing_board.png" id="2_xc3rv"]
 [ext_resource type="Texture2D" uid="uid://cg38eyq2aqff7" path="res://assets/post-it.png" id="3_3e3mo"]
+[ext_resource type="PackedScene" uid="uid://b3bukuv2wbe4u" path="res://scenes/map_screen/contract/PatternOptionBox.tscn" id="3_fvv71"]
 [ext_resource type="Texture2D" uid="uid://bo1o2leu06uk0" path="res://placeholder/WhiteSquare.png" id="4_rj8at"]
+[ext_resource type="Script" uid="uid://b4d6dwxqyelhh" path="res://scripts/map_screen/contract/post_it.gd" id="5_hk8vl"]
 [ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/dog.png" id="5_jusyd"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="6_hk8vl"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="6_xc3rv"]
+[ext_resource type="Script" uid="uid://cluwb52on6g7k" path="res://scripts/map_screen/contract/quest_panel.gd" id="8_xc3rv"]
+[ext_resource type="PackedScene" uid="uid://w0kr78thnd8b" path="res://scenes/map_screen/contract/PatternOverviewCard.tscn" id="10_5ppia"]
+[ext_resource type="Script" uid="uid://6fx2nw7gqoaj" path="res://scripts/map_screen/contract/pattern_selector_panel.gd" id="10_07g81"]
+[ext_resource type="PackedScene" uid="uid://q61o5yikp86s" path="res://scenes/map_screen/study_session/ChapterDetailCard.tscn" id="12_bskk8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bskk8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Contract" type="CanvasLayer" unique_id=1964947095 node_paths=PackedStringArray("drawing_board", "post_it", "quest_panel")]
 script = ExtResource("1_s0427")
 drawing_board = NodePath("DrawingBoard")
-drawing_board_hide_position = Vector2(2029, -700)
 post_it = NodePath("PostIt")
-post_it_show_position = Vector2(3237, 782)
-post_it_hide_position = Vector2(4400, 782)
 quest_panel = NodePath("QuestPanel")
-quest_panel_show_position = Vector2(690, 780.5)
-quest_panel_hide_position = Vector2(-480, 780.5)
 
 [node name="DrawingBoard" type="Sprite2D" parent="." unique_id=346058551]
 position = Vector2(2029, -700)
-texture = ExtResource("2_iqxvp")
+texture = ExtResource("2_xc3rv")
 
-[node name="RadarChart" parent="DrawingBoard" unique_id=1384305498 instance=ExtResource("6_hk8vl")]
-offset_left = -363.0
-offset_top = -499.5
-offset_right = 316.0
-offset_bottom = 179.5
+[node name="PatternOverviewCard" parent="DrawingBoard" unique_id=186634182 instance=ExtResource("3_fvv71")]
+offset_left = -795.0
+offset_top = -142.0
+offset_right = -283.0
+offset_bottom = 370.0
+scale = Vector2(0.5, 0.5)
+
+[node name="RadarChart" parent="DrawingBoard" unique_id=1405360752 instance=ExtResource("6_hk8vl")]
+offset_left = -572.0
+offset_top = -566.0
+offset_right = 546.0
+offset_bottom = 552.0
 
 [node name="PostIt" type="Sprite2D" parent="." unique_id=1054801193]
-position = Vector2(4400, 782)
+position = Vector2(3260, 782)
 texture = ExtResource("3_3e3mo")
+script = ExtResource("5_hk8vl")
 
-[node name="BulletPoints" type="RichTextLabel" parent="PostIt" unique_id=2058413578]
-offset_left = -338.0
+[node name="BulletPoints" type="RichTextLabel" parent="PostIt" unique_id=1920870500]
+offset_left = -421.0
 offset_top = -380.5
-offset_right = 337.0
+offset_right = 389.0
 offset_bottom = 303.5
+theme_override_font_sizes/normal_font_size = 45
+theme_override_font_sizes/bold_font_size = 45
+theme_override_font_sizes/bold_italics_font_size = 45
+theme_override_font_sizes/italics_font_size = 45
+theme_override_font_sizes/mono_font_size = 45
+bbcode_enabled = true
+text = "[ul]
+Aqui entra os bullet points
+Cada um separado por um /n
+Pode adicionar quanto que quiser
+[/ul]"
+script = ExtResource("6_xc3rv")
+min_font_size = 30
+max_font_size = 45
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
-[node name="Footnote" type="RichTextLabel" parent="PostIt" unique_id=706512616]
-offset_left = -368.0
+[node name="Footnote" type="RichTextLabel" parent="PostIt" unique_id=300561734]
+offset_left = -408.0
 offset_top = 340.5
-offset_right = 345.0
-offset_bottom = 415.5
+offset_right = 364.0
+offset_bottom = 439.0
+theme_override_font_sizes/normal_font_size = 38
+theme_override_font_sizes/bold_font_size = 38
+theme_override_font_sizes/bold_italics_font_size = 38
+theme_override_font_sizes/italics_font_size = 38
+theme_override_font_sizes/mono_font_size = 38
+bbcode_enabled = true
+text = "[i]~ I'm a lonely footnote[/i]"
+horizontal_alignment = 2
+script = ExtResource("6_xc3rv")
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="QuestPanel" type="Sprite2D" parent="." unique_id=1365175804]
 self_modulate = Color(0.92099476, 0.9209946, 0.9209946, 1)
 position = Vector2(-480, 781)
 scale = Vector2(1, 1.3033333)
 texture = ExtResource("4_rj8at")
+script = ExtResource("8_xc3rv")
 
-[node name="Title" type="RichTextLabel" parent="QuestPanel" unique_id=71571072]
+[node name="Title" type="RichTextLabel" parent="QuestPanel" unique_id=1049790072]
 offset_left = -343.0
 offset_top = -422.37854
 offset_right = 350.0
-offset_bottom = -334.14325
+offset_bottom = -310.7417
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 80
+theme_override_font_sizes/mono_font_size = 80
+bbcode_enabled = true
+horizontal_alignment = 1
+script = ExtResource("6_xc3rv")
+watch_text_change = true
+max_font_size = 80
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
-[node name="Dog" type="Sprite2D" parent="QuestPanel" unique_id=287756834]
-position = Vector2(2, -154.60358)
-scale = Vector2(1, 0.7672635)
+[node name="Icon" type="Sprite2D" parent="QuestPanel" unique_id=287756834]
+position = Vector2(0, -227.11)
+scale = Vector2(0.5, 0.384)
 texture = ExtResource("5_jusyd")
 
-[node name="Description" type="RichTextLabel" parent="QuestPanel" unique_id=1652129290]
-offset_left = -355.0
-offset_top = 16.496155
+[node name="Description" type="RichTextLabel" parent="QuestPanel" unique_id=2041493134]
+offset_left = -397.0
+offset_top = -124.29667
 offset_right = 401.0
-offset_bottom = 398.59338
+offset_bottom = 397.82614
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+script = ExtResource("6_xc3rv")
+max_font_size = 30
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="PatternSelectorPanel" type="Panel" parent="." unique_id=759250611 node_paths=PackedStringArray("container", "click_blocker")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bskk8")
+script = ExtResource("10_07g81")
+target_detail_card_center = Vector2(1952, 0)
+container = NodePath("OptionPanel/ScrollContainer/MarginContainer/HBoxContainer")
+click_blocker = NodePath("ClickBlocker")
+overview_card_scene = ExtResource("10_5ppia")
+detail_card_scene = ExtResource("12_bskk8")
+
+[node name="OptionPanel" type="Panel" parent="PatternSelectorPanel" unique_id=1958228938]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 1595.0
+offset_right = 3425.0
+offset_bottom = 2173.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PatternSelectorPanel/OptionPanel" unique_id=1495977691]
+layout_mode = 0
+offset_left = 23.0
+offset_right = 3023.0
+offset_bottom = 559.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PatternSelectorPanel/OptionPanel/ScrollContainer" unique_id=1986066976]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PatternSelectorPanel/OptionPanel/ScrollContainer/MarginContainer" unique_id=279033059]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="PatternOverviewCard" parent="PatternSelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1306637032 instance=ExtResource("10_5ppia")]
+layout_mode = 2
+
+[node name="PatternOverviewCard2" parent="PatternSelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=313832057 instance=ExtResource("10_5ppia")]
+layout_mode = 2
+
+[node name="PatternOverviewCard3" parent="PatternSelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=797862038 instance=ExtResource("10_5ppia")]
+layout_mode = 2
+
+[node name="PatternOverviewCard4" parent="PatternSelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1236125067 instance=ExtResource("10_5ppia")]
+layout_mode = 2
+
+[node name="PatternOverviewCard5" parent="PatternSelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1748771038 instance=ExtResource("10_5ppia")]
+layout_mode = 2
+
+[node name="PatternOverviewCard6" parent="PatternSelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1865839947 instance=ExtResource("10_5ppia")]
+layout_mode = 2
+
+[node name="ClickBlocker" type="ColorRect" parent="PatternSelectorPanel" unique_id=57147646]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="gui_input" from="PatternSelectorPanel/ClickBlocker" to="PatternSelectorPanel" method="_on_click_blocker_gui_input"]

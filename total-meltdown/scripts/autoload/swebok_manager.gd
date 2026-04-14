@@ -31,9 +31,13 @@ func load_chapters():
 				var error = json.parse(json_text)
 				if error == OK:
 					var data = json.data
+					var icon = load(data.get("icon", ""))
+					if !icon:
+						push_error("Error: Unable to load image:", data.get("icon", ""))
 					chapters.append({
 						"file_name": file_name,
 						"title": data.get("title", "Untitled"),
+						"icon": icon,
 						"attribute": data.get("attribute", ""),
 						"description": data.get("description", ""),
 					})
