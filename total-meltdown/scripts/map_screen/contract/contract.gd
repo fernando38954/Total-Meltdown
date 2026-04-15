@@ -80,9 +80,20 @@ func hide_selector_panel(duration: float = 0.3):
 	if is_selector_panel_open:
 		translate_panels(selector_panel_hide_position - selector_panel_show_position, duration)
 
+func switch_selector_panel(option_type: OptionBox.OptionType, duration: float = 0.3):
+	if tween and tween.is_running():
+		return
+	tween = create_tween()
+	tween.tween_property(selector_panel, "position", selector_panel_hide_position, duration)
+	tween.tween_callback(selector_panel.set_option_type.bind(option_type))
+	tween.tween_property(selector_panel, "position", selector_panel_show_position, duration)
+
 func toggle_selector_panel(option_type: OptionBox.OptionType):
 	if is_selector_panel_open:
-		hide_selector_panel()
+		if selector_panel.option_type != option_type:
+			switch_selector_panel(option_type)
+		else:
+			hide_selector_panel()
 	else:
 		open_selector_panel(option_type)
 #endregion
