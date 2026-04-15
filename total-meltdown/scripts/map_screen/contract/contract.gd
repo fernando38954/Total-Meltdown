@@ -3,18 +3,19 @@ class_name Contract
 
 @export_category("Drawing Board")
 @export var drawing_board: DrawingBoard
-@export var drawing_board_show_position = Vector2(2029.0, 1106.5)
-@export var drawing_board_hide_position = Vector2(2029.0, -700.5)
+@export var drawing_board_show_position = Vector2(1005.0, 416.0)
+@export var drawing_board_hide_position = Vector2(1005.0, -1390.5)
 
 @export_category("Post-It")
 @export var post_it: PostIt
+@export var post_it_default_position = Vector2(2799.0, 518.0)
 @export var post_it_show_scale = Vector2(1, 1)
 @export var post_it_hide_scale = Vector2(2, 2)
 
 @export_category("Quest Panel")
 @export var quest_panel: QuestPanel
-@export var quest_panel_show_position = Vector2(690, 1080.5)
-@export var quest_panel_hide_position = Vector2(-480.0, 1080.5)
+@export var quest_panel_show_position = Vector2(240, 500.0)
+@export var quest_panel_hide_position = Vector2(-930.0, 500.0)
 
 @export_category("Selector Panel")
 @export var selector_panel: SelectorPanel
@@ -24,7 +25,6 @@ var is_selector_panel_open: bool
 
 func _ready():
 	close_panel(0)
-	initialize_selector_panel()
 	#await get_tree().create_timer(1).timeout
 	set_content(QuestManager.quests[0])
 	#open_panel()
@@ -48,20 +48,19 @@ func move_panel_content(target_drawing_board_pos: Vector2, target_post_it_scale:
 	tween.tween_property(quest_panel, "position", target_quest_panel_pos, duration).set_delay(duration/5)
 
 func close_panel(duration: float = 0.5):
-	if is_selector_panel_open:
-		hide_selector_panel()
-	else:
-		move_panel_content(drawing_board_hide_position, post_it_hide_scale, 0, quest_panel_hide_position, duration)
+	is_selector_panel_open = false
+	var temporaty_tween = create_tween()
+	temporaty_tween.tween_property(selector_panel, "position", selector_panel_hide_position, duration)
+	post_it.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	move_panel_content(drawing_board_hide_position, post_it_hide_scale, 0, quest_panel_hide_position, duration)
 
 func open_panel(duration: float = 0.5):
+	post_it.position = post_it_default_position
+	post_it.mouse_filter = Control.MOUSE_FILTER_STOP
 	move_panel_content(drawing_board_show_position, post_it_show_scale, 1, quest_panel_show_position, duration)
 #endregion
 
 #region Selector Panel Actiom
-func initialize_selector_panel():
-	selector_panel.position = selector_panel_hide_position
-	is_selector_panel_open = false
-
 func translate_panels(direction: Vector2, duration: float = 0.3):
 	if tween and tween.is_running():
 		return
@@ -78,7 +77,8 @@ func open_selector_panel(option_type: OptionBox.OptionType, duration: float = 0.
 	translate_panels(selector_panel_show_position - selector_panel_hide_position, duration)
 
 func hide_selector_panel(duration: float = 0.3):
-	translate_panels(selector_panel_hide_position - selector_panel_show_position, duration)
+	if is_selector_panel_open:
+		translate_panels(selector_panel_hide_position - selector_panel_show_position, duration)
 
 func toggle_selector_panel(option_type: OptionBox.OptionType):
 	if is_selector_panel_open:

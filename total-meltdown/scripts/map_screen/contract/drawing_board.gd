@@ -1,5 +1,7 @@
-extends Sprite2D
+extends TextureRect
 class_name DrawingBoard
+
+@export var contract_screen: Contract
 
 @export_category("Radar Chart")
 @export var radar_chart: RadarChart
@@ -24,3 +26,8 @@ func multiply_dicts(dict_a: Dictionary, dict_b: Dictionary):
 	for key in dict_a:
 		result[key] = dict_a[key] * dict_b.get(key, 0.0)
 	return result
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		contract_screen.hide_selector_panel()

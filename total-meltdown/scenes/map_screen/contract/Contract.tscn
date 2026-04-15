@@ -28,29 +28,37 @@ post_it = NodePath("PostIt")
 quest_panel = NodePath("QuestPanel")
 selector_panel = NodePath("SelectorPanel")
 
-[node name="DrawingBoard" type="Sprite2D" parent="." unique_id=346058551 node_paths=PackedStringArray("radar_chart", "pattern_box", "developer_boxes")]
-position = Vector2(2029, -700)
+[node name="DrawingBoard" type="TextureRect" parent="." unique_id=1413654943 node_paths=PackedStringArray("contract_screen", "radar_chart", "pattern_box", "developer_boxes")]
+offset_left = 1005.0
+offset_top = -1390.5
+offset_right = 3053.0
+offset_bottom = -9.5
+mouse_filter = 0
 texture = ExtResource("2_xc3rv")
 script = ExtResource("3_ov8hi")
+contract_screen = NodePath("..")
 radar_chart = NodePath("RadarChart")
 pattern_box = NodePath("PatternBox")
 developer_boxes = NodePath("DeveloperBoxSet")
 
 [node name="PatternBox" parent="DrawingBoard" unique_id=186634182 node_paths=PackedStringArray("contract_screen") instance=ExtResource("3_fvv71")]
-offset_left = -795.0
-offset_top = -142.0
-offset_right = -283.0
-offset_bottom = 370.0
+layout_mode = 0
+offset_left = 229.0
+offset_top = 548.5
+offset_right = 741.0
+offset_bottom = 1060.5
 scale = Vector2(0.5, 0.5)
 contract_screen = NodePath("../..")
 
 [node name="RadarChart" parent="DrawingBoard" unique_id=1405360752 instance=ExtResource("6_hk8vl")]
-offset_left = -572.0
-offset_top = -566.0
-offset_right = 546.0
-offset_bottom = 552.0
+layout_mode = 0
+offset_left = 452.0
+offset_top = 124.5
+offset_right = 1570.0
+offset_bottom = 1242.5
 
 [node name="DeveloperBoxSet" type="Node2D" parent="DrawingBoard" unique_id=1955975961 node_paths=PackedStringArray("box_set")]
+position = Vector2(1024, 690.5)
 script = ExtResource("5_2ney3")
 box_set = [NodePath("DeveloperBox"), NodePath("DeveloperBox2"), NodePath("DeveloperBox3")]
 
@@ -81,16 +89,22 @@ scale = Vector2(0.5, 0.5)
 contract_screen = NodePath("../../..")
 option_type = 1
 
-[node name="PostIt" type="Sprite2D" parent="." unique_id=1054801193]
-position = Vector2(3260, 1030)
+[node name="PostIt" type="TextureRect" parent="." unique_id=707217834 node_paths=PackedStringArray("contract_screen")]
+offset_left = 2799.0
+offset_top = 518.0
+offset_right = 3721.0
+offset_bottom = 1542.0
+mouse_filter = 0
 texture = ExtResource("3_3e3mo")
 script = ExtResource("5_hk8vl")
+contract_screen = NodePath("..")
 
 [node name="BulletPoints" type="RichTextLabel" parent="PostIt" unique_id=1920870500]
-offset_left = -421.0
-offset_top = -380.5
-offset_right = 389.0
-offset_bottom = 303.5
+layout_mode = 0
+offset_left = 40.0
+offset_top = 131.5
+offset_right = 850.0
+offset_bottom = 815.5
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 45
 theme_override_font_sizes/bold_font_size = 45
@@ -109,10 +123,11 @@ max_font_size = 45
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="Footnote" type="RichTextLabel" parent="PostIt" unique_id=300561734]
-offset_left = -408.0
-offset_top = 340.5
-offset_right = 364.0
-offset_bottom = 439.0
+layout_mode = 0
+offset_left = 53.0
+offset_top = 852.5
+offset_right = 825.0
+offset_bottom = 951.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 38
 theme_override_font_sizes/bold_font_size = 38
@@ -125,19 +140,25 @@ horizontal_alignment = 2
 script = ExtResource("6_xc3rv")
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
-[node name="QuestPanel" type="Sprite2D" parent="." unique_id=1365175804]
+[node name="QuestPanel" type="TextureRect" parent="." unique_id=103033231 node_paths=PackedStringArray("contract_screen")]
 self_modulate = Color(0.92099476, 0.9209946, 0.9209946, 1)
-position = Vector2(-480, 781)
-scale = Vector2(1, 1.3033333)
+offset_left = -930.0
+offset_top = 500.0
+offset_right = -30.0
+offset_bottom = 1400.0
+scale = Vector2(0.998, 1.3)
+mouse_filter = 0
 texture = ExtResource("4_rj8at")
 script = ExtResource("8_xc3rv")
+contract_screen = NodePath("..")
 
 [node name="Title" type="RichTextLabel" parent="QuestPanel" unique_id=1049790072]
-offset_left = -343.0
-offset_top = -422.37854
-offset_right = 350.0
-offset_bottom = -310.7417
-mouse_filter = 2
+layout_mode = 0
+offset_left = 107.0
+offset_top = 35.0
+offset_right = 800.0
+offset_bottom = 146.63684
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 80
 theme_override_font_sizes/bold_font_size = 80
@@ -152,16 +173,17 @@ max_font_size = 80
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="Icon" type="Sprite2D" parent="QuestPanel" unique_id=287756834]
-position = Vector2(0, -227.11)
+position = Vector2(450, 251)
 scale = Vector2(0.5, 0.384)
 texture = ExtResource("5_jusyd")
 
 [node name="Description" type="RichTextLabel" parent="QuestPanel" unique_id=2041493134]
-offset_left = -397.0
-offset_top = -124.29667
-offset_right = 401.0
-offset_bottom = 397.82614
-mouse_filter = 2
+layout_mode = 0
+offset_left = 53.0
+offset_top = 345.0
+offset_right = 851.0
+offset_bottom = 867.1228
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
@@ -240,8 +262,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
+[connection signal="gui_input" from="DrawingBoard" to="DrawingBoard" method="_on_gui_input"]
 [connection signal="gui_input" from="DrawingBoard/PatternBox" to="DrawingBoard/PatternBox" method="_on_gui_input"]
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox" to="DrawingBoard/DeveloperBoxSet/DeveloperBox" method="_on_gui_input"]
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox2" to="DrawingBoard/DeveloperBoxSet/DeveloperBox2" method="_on_gui_input"]
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox3" to="DrawingBoard/DeveloperBoxSet/DeveloperBox3" method="_on_gui_input"]
+[connection signal="gui_input" from="PostIt" to="PostIt" method="_on_gui_input"]
+[connection signal="gui_input" from="QuestPanel" to="QuestPanel" method="_on_gui_input"]
 [connection signal="gui_input" from="SelectorPanel/ClickBlocker" to="SelectorPanel" method="_on_click_blocker_gui_input"]
