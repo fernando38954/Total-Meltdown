@@ -3,6 +3,7 @@ class_name RadarChart
 
 var property_size
 var values: Array[float]
+var second_values: Array[float]
 
 @export_category("Content Settings")
 @export var property_names: Array[String] = [
@@ -23,7 +24,9 @@ var values: Array[float]
 @export var bg_color := Color(0.15, 0.15, 0.2)
 @export var line_color := Color(0.6, 0.7, 0.9)
 @export var fill_color := Color(0.3, 0.6, 0.9, 0.5)
+@export var second_fill_color := Color(0.9, 0.6, 0.3, 0.5)
 @export var outline_color := Color(0.2, 0.9, 0.6)
+@export var second_outline_color := Color(0.6, 0.9, 0.2)
 @export var text_color := Color.WHITE
 @export var grid_levels := 5
 
@@ -40,10 +43,12 @@ func _init():
 #region Value Setting
 func reset_values(array_size: int):
 	values.resize(array_size)
+	second_values.resize(array_size)
 	for i in range(array_size):
 		values[i] = lower_limit
+		second_values[i] = lower_limit
 
-func set_attributes(attr_dict: Dictionary) -> void:
+func set_attributes(attr_dict: Dictionary, second_attr_dict: Dictionary = {}) -> void:
 	for idx in range(property_size):
 		var key = property_names[idx]
 		if attr_dict.has(key):
@@ -54,6 +59,15 @@ func set_attributes(attr_dict: Dictionary) -> void:
 				values[idx] = lower_limit
 		else:
 			values[idx] = lower_limit
+		
+		if second_attr_dict.has(key):
+			var value = second_attr_dict[key]
+			if typeof(value) in [TYPE_FLOAT, TYPE_INT]:
+				second_values[idx] = clamp(float(value), lower_limit, upper_limit)
+			else:
+				second_values[idx] = lower_limit
+		else:
+			second_values[idx] = lower_limit
 	queue_redraw()
 
 func set_label(p_font, p_font_size: int, p_value_font_size: int, p_label_offset: int):
@@ -76,6 +90,7 @@ func _draw() -> void:
 	draw_background(center, radius, start_angle)
 	draw_data(center, radius, start_angle)
 	draw_labels(center, radius, start_angle)
+	
 
 
 func draw_background(center: Vector2, radius: float, start_angle: float) -> void:
@@ -99,18 +114,28 @@ func draw_background(center: Vector2, radius: float, start_angle: float) -> void
 func draw_data(center: Vector2, radius: float, start_angle: float) -> void:
 	var step_angle = 2 * PI / property_size
 	var data_points = []
+	var second_data_points = []
 	
 	for i in range(property_size):
 		var r = radius * (values[i] - lower_limit) / (upper_limit - lower_limit)
+		var second_r = radius * (second_values[i] - lower_limit) / (upper_limit - lower_limit)
 		var angle = start_angle + i * step_angle
 		var point = center + Vector2(cos(angle), sin(angle)) * r
+		var second_point = center + Vector2(cos(angle), sin(angle)) * second_r
 		data_points.append(point)
+		second_data_points.append(second_point)
 	
 	if data_points.size() >= 3:
 		draw_polygon(data_points, PackedColorArray([fill_color]))
 		draw_polyline(data_points + [data_points[0]], outline_color, 3.6)
 		for point in data_points:
 			draw_circle(point, 1.5, outline_color)
+	
+	if second_data_points.size() >= 3:
+		draw_polygon(second_data_points, PackedColorArray([second_fill_color]))
+		draw_polyline(second_data_points + [second_data_points[0]], second_outline_color, 3.6)
+		for point in second_data_points:
+			draw_circle(point, 1.5, second_outline_color)
 
 
 func draw_labels(center: Vector2, radius: float, start_angle: float) -> void:

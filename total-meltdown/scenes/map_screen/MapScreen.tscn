@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://te0jm6bnm8wp" path="res://scenes/map_screen/StudySessionEventButton.tscn" id="4_lgmxy"]
 [ext_resource type="PackedScene" uid="uid://bq5lgvuwbxpki" path="res://scenes/map_screen/job_fair/JobFairScreen.tscn" id="6_6y1bi"]
 [ext_resource type="PackedScene" uid="uid://d0lcshv562d4e" path="res://scenes/map_screen/study_session/StudySessionScreen.tscn" id="7_lgmxy"]
+[ext_resource type="PackedScene" uid="uid://c1hn7mnqjje01" path="res://scenes/map_screen/contract/Contract.tscn" id="8_fidt4"]
 
-[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen")]
+[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
 script = ExtResource("1_rw3jc")
 game_map = NodePath("Map")
 spawn_area = NodePath("SpawnArea")
@@ -17,6 +18,7 @@ click_blocker = NodePath("ClickBlocker")
 event_blocker = NodePath("EventBlocker")
 job_fair_screen = NodePath("JobFairScreen")
 study_session_screen = NodePath("StudySessionScreen")
+contract_screen = NodePath("Contract")
 
 [node name="Map" type="Sprite2D" parent="." unique_id=533150959]
 position = Vector2(1951.9998, 1097.9999)
@@ -42,6 +44,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="EventBlocker" type="ColorRect" parent="." unique_id=1263998012]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,5 +58,7 @@ color = Color(1, 1, 1, 0)
 [node name="JobFairScreen" parent="." unique_id=933529179 instance=ExtResource("6_6y1bi")]
 
 [node name="StudySessionScreen" parent="." unique_id=1940889858 instance=ExtResource("7_lgmxy")]
+
+[node name="Contract" parent="." unique_id=1964947095 instance=ExtResource("8_fidt4")]
 
 [connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]

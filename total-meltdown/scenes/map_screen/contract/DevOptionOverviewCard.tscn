@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://3vsra0gkbynx"]
+
+[ext_resource type="Texture2D" uid="uid://byr0iwoj0htr4" path="res://placeholder/white_square_512.png" id="1_wdfvw"]
+[ext_resource type="Script" uid="uid://bgiv44wfpmgyv" path="res://scripts/map_screen/contract/dev_option_overview_card.gd" id="2_jmn4g"]
+[ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="3_hgjex"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="4_jhe0y"]
+
+[node name="DevOptionOverviewCard" type="TextureButton" unique_id=1138141655]
+self_modulate = Color(0, 0, 0, 0.23137255)
+offset_right = 512.0
+offset_bottom = 512.0
+pivot_offset = Vector2(256, 256)
+texture_normal = ExtResource("1_wdfvw")
+script = ExtResource("2_jmn4g")
+
+[node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]
+position = Vector2(255.00002, 189.00002)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_hgjex")
+region_rect = Rect2(2, 0, 725, 725)
+
+[node name="DeveloperName" type="RichTextLabel" parent="." unique_id=1691064886]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 399.0
+offset_right = 510.0
+offset_bottom = 498.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/bold_font_size = 72
+theme_override_font_sizes/bold_italics_font_size = 72
+theme_override_font_sizes/italics_font_size = 72
+theme_override_font_sizes/mono_font_size = 72
+bbcode_enabled = true
+text = "Name"
+horizontal_alignment = 1
+script = ExtResource("4_jhe0y")
+watch_text_change = true
+max_font_size = 80
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

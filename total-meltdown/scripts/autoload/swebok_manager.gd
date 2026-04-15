@@ -52,6 +52,13 @@ func load_chapters():
 	creation_finished = true
 	print_debug("Number of chapters loaded：", chapters.size())
 
+func find_chapter(target_chapter_file_name: String):
+	for chapter_entry in chapters:
+		if chapter_entry.file_name == target_chapter_file_name:
+			return chapter_entry
+	push_warning("No developer with file_name" + target_chapter_file_name + "found")
+	return {}
+
 func study_chapter(target_chapter_file_name: String) -> bool:
 	for chapter_entry in remaining_chapters:
 		if chapter_entry.file_name == target_chapter_file_name:

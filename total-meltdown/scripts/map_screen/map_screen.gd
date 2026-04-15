@@ -13,6 +13,7 @@ class_name MapScreen
 @export var event_blocker: ColorRect
 @export var job_fair_screen: JobFairScreen
 @export var study_session_screen: StudySessionScreen
+@export var contract_screen: Contract
 
 var current_event_button_list: Array[BaseEventButton] = []
 var current_active_event_button: BaseEventButton = null
@@ -138,6 +139,11 @@ func open_study_session_screen():
 	open_click_blocker()
 	study_session_screen.open_panel()
 	current_active_screen = study_session_screen
+
+func open_contract_screen():
+	open_click_blocker()
+	contract_screen.open_panel()
+	current_active_screen = contract_screen
 
 func finish_current_event():
 	close_event_button(current_active_event_button)
