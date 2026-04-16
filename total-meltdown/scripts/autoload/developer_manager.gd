@@ -2,17 +2,20 @@ extends Node
 
 const DEVELOPERS_DIR = "res://contents/developer/"
 
-var developers: Array = []
-var remaining_developers: Array = []
-var owned_developers: Array = []
+var all_developers: Array = []
+var locked_developers: Array = []
+var recruitable_developers: Array = []
+var idle_developers: Array = []
+var working_developers: Array = []
 var creation_finished = false
 
+#region Load Data
 func _ready():
 	load_developers()
-	remaining_developers = developers.duplicate()
+	locked_developers = all_developers.duplicate()
 
 func load_developers():
-	developers.clear()
+	all_developers.clear()
 	var dir = DirAccess.open(DEVELOPERS_DIR)
 	if not dir:
 		creation_finished = true
@@ -34,7 +37,7 @@ func load_developers():
 					var portrait = load(data.get("portrait", ""))
 					if !portrait:
 						push_error("Error: Unable to load image:", data.get("portrait", ""))
-					developers.append({
+					all_developers.append({
 						"file_name": file_name,
 						"name": data.get("name", "Unknown"),
 						"portrait": portrait,
@@ -48,15 +51,47 @@ func load_developers():
 				file.close()
 		file_name = dir.get_next()
 	
-	developers.sort_custom(func(a, b): return a.file_name < b.file_name)
+	all_developers.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
-	print_debug("Number of developers loaded：", developers.size())
+	print_debug("Number of developers loaded：", all_developers.size())
+#endregion
 
-func hire_developer(target_developer_file_name: String) -> bool:
-	for developer_entry in remaining_developers:
-		if developer_entry.file_name == target_developer_file_name:
-			remaining_developers.erase(developer_entry)
-			owned_developers.append(developer_entry)
-			return true
-	push_warning("No developer with file_name" + target_developer_file_name + "found")
-	return false
+#region Array Operation
+func prepare_random_developers(count: int = 3) -> Array:
+	var number = min(count, locked_developers.size())
+	var shuffled = locked_developers.duplicate()
+	shuffled.shuffle()
+	var selected = shuffled.slice(0, number)
+	
+	for developer_entry in selected:
+		locked_developers.erase(developer_entry)
+		recruitable_developers.append(developer_entry)
+	return selected
+
+func hire_developer(recruitable_developers_list: Array, target_developer_data: Dictionary):
+	for developer_entry in recruitable_developers_list:
+		if recruitable_developers.has(developer_entry):
+			recruitable_developers.erase(developer_entry)
+			if developer_entry == target_developer_data:
+				idle_developers.append(developer_entry)
+			else:
+				locked_developers.append(developer_entry)
+		else:
+			push_error("hire_developer: No developer with file_name" + developer_entry.file_name + "found in recruitable_developers")
+
+func assign_work(developers_list: Array):
+	for developer_entry in developers_list:
+		if idle_developers.has(developer_entry):
+			idle_developers.erase(developer_entry)
+			working_developers.append(developer_entry)
+		else:
+			push_error("assign_work: No developer with file_name" + developer_entry.file_name + "found in idle_developers")
+
+func finish_work(developers_list: Array):
+	for developer_entry in developers_list:
+		if working_developers.has(developer_entry):
+			working_developers.erase(developer_entry)
+			idle_developers.append(developer_entry)
+		else:
+			push_error("finish_work: No developer with file_name" + developer_entry.file_name + "found in working_developers")
+#endregion

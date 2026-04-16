@@ -5,7 +5,7 @@ class_name OptionBox
 @onready var portrait = $Portrait
 @onready var developer_name = $DeveloperName
 
-@export var contract_screen: Contract
+@export var drawing_board: DrawingBoard
 @export var option_type: OptionType
 
 var box_data = null
@@ -30,12 +30,16 @@ func _drop_data(at_position: Vector2, data):
 	refresh_box_data()
 #endregion
 
+func reset_box_content():
+	box_data = null
+	refresh_box_data()
+
 func assign_box_set(new_box_set: OptionBoxSet):
 	box_set = new_box_set
 
 func refresh_box_data():
 	clear_box_display()
-	contract_screen.update_radar_chart()
+	drawing_board.update_radar_chart()
 	if box_data == null:
 		return
 	if option_type == OptionType.Pattern:
@@ -55,7 +59,7 @@ func get_attribute_data() -> Dictionary:
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			contract_screen.toggle_selector_panel(option_type)
+			drawing_board.contract_screen.toggle_selector_panel(option_type)
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			box_data = null
 			refresh_box_data()

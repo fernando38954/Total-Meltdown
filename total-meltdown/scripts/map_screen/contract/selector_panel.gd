@@ -11,9 +11,9 @@ func set_option_type(new_type: OptionBox.OptionType):
 
 func get_items():
 	if option_type == OptionBox.OptionType.Pattern:
-		return SwebokManager.chapters
+		return SwebokManager.owned_chapters
 	elif option_type == OptionBox.OptionType.Developer:
-		return DeveloperManager.developers
+		return DeveloperManager.idle_developers
 	else:
 		push_error("Unknown Option Type in Selector Panel: ", option_type)
 		return {}

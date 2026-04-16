@@ -1,6 +1,8 @@
 extends BaseScreen
 class_name Contract
 
+var actived_quest: Dictionary = {}
+
 @export_category("Drawing Board")
 @export var drawing_board: DrawingBoard
 @export var drawing_board_show_position = Vector2(1005.0, 416.0)
@@ -26,15 +28,14 @@ var is_selector_panel_open: bool
 func _ready():
 	close_panel(0)
 	#await get_tree().create_timer(1).timeout
-	set_content(QuestManager.quests[0])
+	set_content(QuestManager.all_quests[0])
 	#open_panel()
 
 func set_content(quest_data: Dictionary):
+	actived_quest = quest_data
 	quest_panel.set_content(quest_data.title, quest_data.icon, quest_data.description)
 	post_it.set_content(quest_data.bullet_point, quest_data.footnote)
-
-func update_radar_chart():
-	drawing_board.update_radar_chart()
+	drawing_board.reset_content()
 
 #region Panel Action
 func move_panel_content(target_drawing_board_pos: Vector2, target_post_it_scale: Vector2, target_post_it_alpha: float, target_quest_panel_pos: Vector2, duration: float = 1.0):
@@ -60,7 +61,7 @@ func open_panel(duration: float = 0.5):
 	move_panel_content(drawing_board_show_position, post_it_show_scale, 1, quest_panel_show_position, duration)
 #endregion
 
-#region Selector Panel Actiom
+#region Selector Panel Action
 func translate_panels(direction: Vector2, duration: float = 0.3):
 	if tween and tween.is_running():
 		return
@@ -97,3 +98,8 @@ func toggle_selector_panel(option_type: OptionBox.OptionType):
 	else:
 		open_selector_panel(option_type)
 #endregion
+
+
+func _on_submit_button_pressed() -> void:
+	QuestManager.complete_quest(actived_quest)
+	GlobalSignal.emit_signal("current_map_event_finished")

@@ -14,14 +14,11 @@ class_name JobFairResume
 @export var value_font_size = 25
 @export var label_offset = 18
 
-var resume_developer_data = null
-
 func set_content(item_data: Dictionary):
-	resume_developer_data = item_data
 	developer_name.text = "[center][b][font_size=%d]%s[/font_size][/b][/center]\n\n" % [name_size, item_data.name]
 	portrait.texture = item_data.portrait
 	radar_chart.set_label(font, font_size, value_font_size, label_offset)
 	radar_chart.set_attributes(item_data.attribute)
 
 func _on_hire_button_pressed() -> void:
-	GlobalSignal.emit_signal("hire_developer", resume_developer_data.file_name)
+	GlobalSignal.emit_signal("hire_developer", item_index)

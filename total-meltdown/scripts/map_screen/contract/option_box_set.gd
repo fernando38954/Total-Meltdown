@@ -7,6 +7,10 @@ func _ready() -> void:
 	for option_box in box_set:
 		option_box.assign_box_set(self)
 
+func reset_boxes_data():
+	for option_box in box_set:
+		option_box.reset_box_content()
+
 func check_set_duplication(target_option_box: OptionBox, new_box_data: Dictionary):
 	for option_box in box_set:
 		if option_box != target_option_box and option_box.box_data == new_box_data:

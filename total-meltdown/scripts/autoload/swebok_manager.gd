@@ -2,17 +2,19 @@ extends Node
 
 const CHAPTERS_DIR = "res://contents/swebok/"
 
-var chapters: Array = []
+var all_chapters: Array = []
+var locked_chapters: Array = []
+var studiable_chapters: Array = []
 var owned_chapters: Array = []
-var remaining_chapters: Array = []
 var creation_finished = false
 
+#region Load Data
 func _ready():
 	load_chapters()
-	remaining_chapters = chapters.duplicate()
+	locked_chapters = all_chapters.duplicate()
 
 func load_chapters():
-	chapters.clear()
+	all_chapters.clear()
 	var dir = DirAccess.open(CHAPTERS_DIR)
 	if not dir:
 		creation_finished = true
@@ -34,7 +36,7 @@ func load_chapters():
 					var icon = load(data.get("icon", ""))
 					if !icon:
 						push_error("Error: Unable to load image:", data.get("icon", ""))
-					chapters.append({
+					all_chapters.append({
 						"file_name": file_name,
 						"title": data.get("title", "Untitled"),
 						"icon": icon,
@@ -48,22 +50,38 @@ func load_chapters():
 				file.close()
 		file_name = dir.get_next()
 	
-	chapters.sort_custom(func(a, b): return a.file_name < b.file_name)
+	all_chapters.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
-	print_debug("Number of chapters loaded：", chapters.size())
+	print_debug("Number of chapters loaded：", all_chapters.size())
+#endregion
 
+#region Array Operation
 func find_chapter(target_chapter_file_name: String):
-	for chapter_entry in chapters:
+	for chapter_entry in all_chapters:
 		if chapter_entry.file_name == target_chapter_file_name:
 			return chapter_entry
 	push_warning("No developer with file_name" + target_chapter_file_name + "found")
 	return {}
 
-func study_chapter(target_chapter_file_name: String) -> bool:
-	for chapter_entry in remaining_chapters:
-		if chapter_entry.file_name == target_chapter_file_name:
-			remaining_chapters.erase(chapter_entry)
-			owned_chapters.append(chapter_entry)
-			return true
-	push_warning("No developer with file_name" + target_chapter_file_name + "found")
-	return false
+func prepare_random_chapters(count: int = 3) -> Array:
+	var number = min(count, locked_chapters.size())
+	var shuffled = locked_chapters.duplicate()
+	shuffled.shuffle()
+	var selected = shuffled.slice(0, number)
+	
+	for chapter_entry in selected:
+		locked_chapters.erase(chapter_entry)
+		studiable_chapters.append(chapter_entry)
+	return selected
+
+func study_chapter(studiable_chapters_list: Array, target_chapter_data: Dictionary):
+	for chapter_entry in studiable_chapters_list:
+		if studiable_chapters.has(chapter_entry):
+			studiable_chapters.erase(chapter_entry)
+			if chapter_entry == target_chapter_data:
+				owned_chapters.append(chapter_entry)
+			else:
+				locked_chapters.append(chapter_entry)
+		else:
+			push_error("study_chapter: No chapter with file_name" + chapter_entry.file_name + "found in studiable_chapters_list")
+#endregion

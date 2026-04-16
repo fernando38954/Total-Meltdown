@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/dog.png" id="5_jusyd"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="6_hk8vl"]
 [ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="6_xc3rv"]
+[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="7_oey3q"]
 [ext_resource type="Script" uid="uid://cluwb52on6g7k" path="res://scripts/map_screen/contract/quest_panel.gd" id="8_xc3rv"]
 [ext_resource type="PackedScene" uid="uid://w0kr78thnd8b" path="res://scenes/map_screen/contract/PatternOptionOverviewCard.tscn" id="10_5ppia"]
 [ext_resource type="Script" uid="uid://6fx2nw7gqoaj" path="res://scripts/map_screen/contract/selector_panel.gd" id="10_07g81"]
@@ -28,7 +29,7 @@ post_it = NodePath("PostIt")
 quest_panel = NodePath("QuestPanel")
 selector_panel = NodePath("SelectorPanel")
 
-[node name="DrawingBoard" type="TextureRect" parent="." unique_id=1413654943 node_paths=PackedStringArray("contract_screen", "radar_chart", "pattern_box", "developer_boxes")]
+[node name="DrawingBoard" type="TextureRect" parent="." unique_id=1413654943 node_paths=PackedStringArray("contract_screen", "radar_chart", "pattern_box", "developer_boxes", "submit_button")]
 offset_left = 1005.0
 offset_top = -1390.5
 offset_right = 3053.0
@@ -40,15 +41,16 @@ contract_screen = NodePath("..")
 radar_chart = NodePath("RadarChart")
 pattern_box = NodePath("PatternBox")
 developer_boxes = NodePath("DeveloperBoxSet")
+submit_button = NodePath("SubmitButton")
 
-[node name="PatternBox" parent="DrawingBoard" unique_id=186634182 node_paths=PackedStringArray("contract_screen") instance=ExtResource("3_fvv71")]
+[node name="PatternBox" parent="DrawingBoard" unique_id=186634182 node_paths=PackedStringArray("drawing_board") instance=ExtResource("3_fvv71")]
 layout_mode = 0
 offset_left = 229.0
 offset_top = 548.5
 offset_right = 741.0
 offset_bottom = 1060.5
 scale = Vector2(0.5, 0.5)
-contract_screen = NodePath("../..")
+drawing_board = NodePath("..")
 
 [node name="RadarChart" parent="DrawingBoard" unique_id=1405360752 instance=ExtResource("6_hk8vl")]
 layout_mode = 0
@@ -62,32 +64,45 @@ position = Vector2(1024, 690.5)
 script = ExtResource("5_2ney3")
 box_set = [NodePath("DeveloperBox"), NodePath("DeveloperBox2"), NodePath("DeveloperBox3")]
 
-[node name="DeveloperBox" parent="DrawingBoard/DeveloperBoxSet" unique_id=2142991914 node_paths=PackedStringArray("contract_screen") instance=ExtResource("3_fvv71")]
+[node name="DeveloperBox" parent="DrawingBoard/DeveloperBoxSet" unique_id=2142991914 node_paths=PackedStringArray("drawing_board") instance=ExtResource("3_fvv71")]
 offset_left = 512.0
 offset_top = -487.0
 offset_right = 1024.0
 offset_bottom = 25.0
 scale = Vector2(0.5, 0.5)
-contract_screen = NodePath("../../..")
+drawing_board = NodePath("../..")
 option_type = 1
 
-[node name="DeveloperBox2" parent="DrawingBoard/DeveloperBoxSet" unique_id=1665986538 node_paths=PackedStringArray("contract_screen") instance=ExtResource("3_fvv71")]
+[node name="DeveloperBox2" parent="DrawingBoard/DeveloperBoxSet" unique_id=1665986538 node_paths=PackedStringArray("drawing_board") instance=ExtResource("3_fvv71")]
 offset_left = 512.0
 offset_top = -142.0
 offset_right = 1024.0
 offset_bottom = 370.0
 scale = Vector2(0.5, 0.5)
-contract_screen = NodePath("../../..")
+drawing_board = NodePath("../..")
 option_type = 1
 
-[node name="DeveloperBox3" parent="DrawingBoard/DeveloperBoxSet" unique_id=943285246 node_paths=PackedStringArray("contract_screen") instance=ExtResource("3_fvv71")]
+[node name="DeveloperBox3" parent="DrawingBoard/DeveloperBoxSet" unique_id=943285246 node_paths=PackedStringArray("drawing_board") instance=ExtResource("3_fvv71")]
 offset_left = 512.0
 offset_top = 206.0
 offset_right = 1024.0
 offset_bottom = 718.0
 scale = Vector2(0.5, 0.5)
-contract_screen = NodePath("../../..")
+drawing_board = NodePath("../..")
 option_type = 1
+
+[node name="SubmitButton" type="Button" parent="DrawingBoard" unique_id=1603576432]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 1190.5
+offset_right = 1282.0
+offset_bottom = 1319.5
+theme_override_font_sizes/font_size = 1
+clip_text = true
+script = ExtResource("7_oey3q")
+button_text = "Submit"
+max_font_size = 180
+metadata/_custom_type_script = "uid://bnaosc552evuy"
 
 [node name="PostIt" type="TextureRect" parent="." unique_id=707217834 node_paths=PackedStringArray("contract_screen")]
 offset_left = 2799.0
@@ -267,6 +282,7 @@ color = Color(1, 1, 1, 0)
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox" to="DrawingBoard/DeveloperBoxSet/DeveloperBox" method="_on_gui_input"]
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox2" to="DrawingBoard/DeveloperBoxSet/DeveloperBox2" method="_on_gui_input"]
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox3" to="DrawingBoard/DeveloperBoxSet/DeveloperBox3" method="_on_gui_input"]
+[connection signal="pressed" from="DrawingBoard/SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="gui_input" from="PostIt" to="PostIt" method="_on_gui_input"]
 [connection signal="gui_input" from="QuestPanel" to="QuestPanel" method="_on_gui_input"]
 [connection signal="gui_input" from="SelectorPanel/ClickBlocker" to="SelectorPanel" method="_on_click_blocker_gui_input"]

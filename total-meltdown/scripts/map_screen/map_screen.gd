@@ -26,10 +26,9 @@ func _ready() -> void:
 	spawn_area.color = Color.TRANSPARENT
 	initialize_parameters()
 	close_click_blocker()
-	GlobalSignal.hire_developer.connect(_on_receive_hire_developer)
-	GlobalSignal.study_chapter.connect(_on_receive_study_chapter)
+	GlobalSignal.current_map_event_finished.connect(finish_current_event)
 	
-	while true: # Para teste
+	while true:
 		await get_tree().create_timer(spawn_interval).timeout
 		if current_event_button_list.size() < 3:
 			create_event_button()
@@ -63,11 +62,11 @@ func get_rand_type() -> int:
 	for i in range(3):
 		var idx = (rand_type + i) % 3
 		var button_type = event_button_list[idx].get_state().get_node_name(0)
-		if button_type == "JobFairEventButton" and DeveloperManager.remaining_developers.size() > 0:
+		if button_type == "JobFairEventButton" and not DeveloperManager.locked_developers.is_empty():
 			return idx
-		elif button_type == "StudySessionEventButton" and SwebokManager.remaining_chapters.size() > 0:
+		elif button_type == "StudySessionEventButton" and not SwebokManager.locked_chapters.is_empty():
 			return idx
-		elif button_type == "ContractEventButton":
+		elif button_type == "ContractEventButton" and not QuestManager.pending_quests.is_empty():
 			return idx
 	return -1
 
@@ -130,30 +129,25 @@ func close_event_screen(event_screen: BaseScreen = current_active_screen):
 	current_active_screen = null
 	close_click_blocker()
 
-func open_job_fair_screen():
+func open_job_fair_screen(recruitable_developers_list: Array):
 	open_click_blocker()
+	job_fair_screen.set_content(recruitable_developers_list)
 	job_fair_screen.open_panel()
 	current_active_screen = job_fair_screen
 
-func open_study_session_screen():
+func open_study_session_screen(studiable_chapters_list: Array):
 	open_click_blocker()
+	study_session_screen.set_content(studiable_chapters_list)
 	study_session_screen.open_panel()
 	current_active_screen = study_session_screen
 
-func open_contract_screen():
+func open_contract_screen(actived_quest):
 	open_click_blocker()
+	contract_screen.set_content(actived_quest)
 	contract_screen.open_panel()
 	current_active_screen = contract_screen
 
 func finish_current_event():
 	close_event_button(current_active_event_button)
 	close_event_screen(current_active_screen)
-
-func _on_receive_hire_developer(developer_file_name):
-	DeveloperManager.hire_developer(developer_file_name)
-	finish_current_event()
-
-func _on_receive_study_chapter(chapter_file_name):
-	SwebokManager.study_chapter(chapter_file_name)
-	finish_current_event()
 #endregion

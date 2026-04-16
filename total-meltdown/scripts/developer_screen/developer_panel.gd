@@ -2,7 +2,7 @@ extends BaseItemPanel
 class_name DeveloperPanel
 
 func get_items() -> Array:
-	return DeveloperManager.owned_developers
+	return DeveloperManager.idle_developers
 
 func _ready_prerequisites():
 	while !DeveloperManager.creation_finished:
