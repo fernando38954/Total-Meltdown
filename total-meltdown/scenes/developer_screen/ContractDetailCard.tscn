@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://jbp51x0i3qgi"]
+
+[ext_resource type="Script" uid="uid://c1egxsan0lidv" path="res://scripts/developer_screen/contract_detail_card.gd" id="1_1mseo"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_ym2eu"]
+[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/dog.png" id="3_oevvo"]
+[ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="4_f0yuo"]
+[ext_resource type="Texture2D" uid="uid://dojl0r0nbpusc" path="res://placeholder/white_circle_512.png" id="5_1ai8r"]
+[ext_resource type="Texture2D" uid="uid://s3ija5g1sq4f" path="res://assets/pattern_icons/MVC.png" id="6_o6ckt"]
+[ext_resource type="Texture2D" uid="uid://otrus47vg2jc" path="res://placeholder/WhiteX.png" id="7_2edc3"]
+[ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="8_x0m52"]
+[ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="9_wj6ve"]
+
+[node name="ContractDetailCard" type="Panel" unique_id=564842012]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1mseo")
+
+[node name="QuestTitle" type="RichTextLabel" parent="." unique_id=801408526]
+layout_mode = 0
+offset_right = 1878.0
+offset_bottom = 219.0
+theme_override_font_sizes/normal_font_size = 160
+theme_override_font_sizes/bold_font_size = 160
+theme_override_font_sizes/bold_italics_font_size = 160
+theme_override_font_sizes/italics_font_size = 160
+theme_override_font_sizes/mono_font_size = 160
+text = "Quest Title"
+script = ExtResource("2_ym2eu")
+watch_text_change = true
+max_font_size = 500
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="QuestIcon" type="TextureRect" parent="." unique_id=1835281315]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 321.0
+offset_right = 670.0
+offset_bottom = 833.0
+texture = ExtResource("3_oevvo")
+
+[node name="BulletPoints" type="RichTextLabel" parent="." unique_id=1489580463]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 316.0
+offset_right = 1809.0
+offset_bottom = 820.0
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 80
+theme_override_font_sizes/mono_font_size = 80
+bbcode_enabled = true
+text = "[ul]
+sadsad
+happyhappy
+[/ul]"
+script = ExtResource("2_ym2eu")
+watch_text_change = true
+max_font_size = 80
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="Description" type="RichTextLabel" parent="." unique_id=795254943]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 962.0
+offset_right = 1829.0
+offset_bottom = 1977.0
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 80
+theme_override_font_sizes/mono_font_size = 80
+bbcode_enabled = true
+text = "I'm a descriptiioooon"
+script = ExtResource("2_ym2eu")
+watch_text_change = true
+max_font_size = 80
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="Footnote" type="RichTextLabel" parent="." unique_id=641953686]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 2005.0
+offset_right = 1795.0
+offset_bottom = 2146.0
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 80
+theme_override_font_sizes/mono_font_size = 80
+bbcode_enabled = true
+text = "[i]~ I'm a footnote[/i]"
+horizontal_alignment = 2
+script = ExtResource("2_ym2eu")
+watch_text_change = true
+max_font_size = 80
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("4_f0yuo")]
+layout_mode = 0
+offset_left = 1971.0
+offset_top = 330.0
+offset_right = 3271.0
+offset_bottom = 1630.0
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1379655912]
+self_modulate = Color(0, 0.59607846, 0, 1)
+layout_mode = 0
+offset_left = 2375.0
+offset_top = 1657.0
+offset_right = 2887.0
+offset_bottom = 2169.0
+value = 50.0
+fill_mode = 4
+texture_progress = ExtResource("5_1ai8r")
+
+[node name="DevelopementContainer" type="VBoxContainer" parent="." unique_id=2060312681]
+layout_mode = 0
+offset_left = 3377.0
+offset_top = 357.0
+offset_right = 3777.0
+offset_bottom = 2047.0
+theme_override_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="DevelopementContainer" unique_id=223255815]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("6_o6ckt")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="DevelopementContainer" unique_id=1942117831]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("6_o6ckt")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="DevelopementContainer" unique_id=2141353547]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("6_o6ckt")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="DevelopementContainer" unique_id=1038098008]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("6_o6ckt")
+expand_mode = 1
+
+[node name="ReturnButton" type="TextureButton" parent="." unique_id=469167188]
+layout_mode = 0
+offset_left = 3652.9998
+offset_top = -6.000004
+offset_right = 3908.9998
+offset_bottom = 250.0
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("7_2edc3")
+texture_pressed = ExtResource("8_x0m52")
+texture_hover = ExtResource("9_wj6ve")

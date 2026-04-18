@@ -14,7 +14,7 @@ class_name JobFairResume
 @export var value_font_size = 25
 @export var label_offset = 18
 
-func set_content(item_data: Dictionary):
+func set_content(item_data: Variant):
 	developer_name.text = "[center][b][font_size=%d]%s[/font_size][/b][/center]\n\n" % [name_size, item_data.name]
 	portrait.texture = item_data.portrait
 	radar_chart.set_label(font, font_size, value_font_size, label_offset)

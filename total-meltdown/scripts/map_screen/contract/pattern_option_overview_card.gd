@@ -4,7 +4,7 @@ class_name PatternOptionOverviewCard
 @onready var icon = $Icon
 var stored_item_data = null
 
-func set_content(item_data: Dictionary):
+func set_content(item_data: Variant):
 	icon.texture = item_data.icon
 	stored_item_data = item_data
 

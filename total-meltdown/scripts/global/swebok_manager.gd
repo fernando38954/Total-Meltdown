@@ -83,5 +83,5 @@ func study_chapter(studiable_chapters_list: Array, target_chapter_data: Dictiona
 			else:
 				locked_chapters.append(chapter_entry)
 		else:
-			push_error("study_chapter: No chapter with file_name" + chapter_entry.file_name + "found in studiable_chapters_list")
+			push_error("study_chapter: No chapter with file_name " + chapter_entry.file_name + " found in studiable_chapters_list")
 #endregion

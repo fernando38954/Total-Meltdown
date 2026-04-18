@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bcts06ux0x3fk" path="res://scripts/developer_screen/developer_panel.gd" id="1_ievrq"]
 [ext_resource type="PackedScene" uid="uid://3v2hesn4ey6s" path="res://scenes/developer_screen/DevOverviewCard.tscn" id="2_px104"]
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="3_1bwwp"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="5_d844j"]
 
 [node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("panel")]
 script = ExtResource("1_6lvqk")
@@ -17,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1952, 1098)
 script = ExtResource("1_ievrq")
-container = NodePath("ScrollContainer/MarginContainer/GridContainer")
+container = NodePath("ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer")
 click_blocker = NodePath("ClickBlocker")
 overview_card_scene = ExtResource("2_px104")
 detail_card_scene = ExtResource("3_1bwwp")
@@ -27,6 +28,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_right = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 follow_focus = true
@@ -35,11 +38,63 @@ horizontal_scroll_mode = 0
 [node name="MarginContainer" type="MarginContainer" parent="DeveloperPanel/ScrollContainer" unique_id=1616237988]
 layout_mode = 2
 theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 150
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 150
 
-[node name="GridContainer" type="GridContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer" unique_id=2113858380]
+[node name="VBoxContainer" type="VBoxContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer" unique_id=1368132302]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1674667056]
+layout_mode = 2
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=416048663]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ContractLabel" type="RichTextLabel" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=846343785]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 109
+theme_override_font_sizes/bold_font_size = 109
+theme_override_font_sizes/bold_italics_font_size = 109
+theme_override_font_sizes/italics_font_size = 109
+theme_override_font_sizes/mono_font_size = 109
+text = "Ongoing Contracts"
+script = ExtResource("5_d844j")
+watch_text_change = true
+max_font_size = 500
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="GridContainer2" type="GridContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=378712485]
+layout_mode = 2
+
+[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer2" unique_id=1138141655 instance=ExtResource("2_px104")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1434955179]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2" unique_id=687197849]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="DeveloperLabel" type="RichTextLabel" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1677748604]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 109
+theme_override_font_sizes/bold_font_size = 109
+theme_override_font_sizes/bold_italics_font_size = 109
+theme_override_font_sizes/italics_font_size = 109
+theme_override_font_sizes/mono_font_size = 109
+text = "Idle Developers"
+script = ExtResource("5_d844j")
+watch_text_change = true
+max_font_size = 500
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="DeveloperContainer" type="GridContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=2113858380]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -47,28 +102,28 @@ theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 60
 columns = 4
 
-[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1138141655 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer" unique_id=1612494776 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard2" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1562145468 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard2" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer" unique_id=1562145468 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard3" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1519978805 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard3" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer" unique_id=1519978805 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard4" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=730625493 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard4" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer" unique_id=730625493 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard5" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1102955207 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard5" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer" unique_id=1102955207 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard6" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=546471694 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard6" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer" unique_id=546471694 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard7" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=913582948 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard7" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer" unique_id=913582948 instance=ExtResource("2_px104")]
 layout_mode = 2
 
-[node name="DevOverviewCard8" parent="DeveloperPanel/ScrollContainer/MarginContainer/GridContainer" unique_id=1359388645 instance=ExtResource("2_px104")]
+[node name="DevOverviewCard8" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer" unique_id=1359388645 instance=ExtResource("2_px104")]
 layout_mode = 2
 
 [node name="ClickBlocker" type="ColorRect" parent="DeveloperPanel" unique_id=1053072876]

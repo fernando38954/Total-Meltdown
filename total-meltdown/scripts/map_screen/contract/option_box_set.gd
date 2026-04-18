@@ -31,3 +31,11 @@ func get_attribute_data() -> Dictionary:
 		for key in attr:
 			result[key] = result.get(key, 0.0) + attr[key]
 	return result
+
+func get_developer_data_list() -> Array:
+	var developer_data_list: Array
+	for option_box in box_set:
+		var developer_data = option_box.get_box_item_data()
+		if not developer_data.is_empty():
+			developer_data_list.append(developer_data)
+	return developer_data_list

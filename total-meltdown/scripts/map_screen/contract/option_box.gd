@@ -53,6 +53,9 @@ func clear_box_display():
 	portrait.texture = null
 	developer_name.text = ""
 
+func get_box_item_data() -> Dictionary:
+	return box_data if box_data != null else {}
+
 func get_attribute_data() -> Dictionary:
 	return box_data.attribute if box_data != null else {}
 

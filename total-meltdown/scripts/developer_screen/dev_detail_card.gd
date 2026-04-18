@@ -16,7 +16,7 @@ class_name DeveloperDetailCard
 @export var value_font_size = 25
 @export var label_offset = 18
 
-func set_content(item_data: Dictionary):
+func set_content(item_data: Variant):
 	developer_name.text = "[center][b][font_size=%d]%s[/font_size][/b][/center]\n\n" % [name_size, item_data.name]
 	description.text = "[font_size=%d]%s[/font_size]" % [description_size, item_data.description]
 	portrait.texture = item_data.portrait

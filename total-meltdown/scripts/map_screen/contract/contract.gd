@@ -101,5 +101,8 @@ func toggle_selector_panel(option_type: OptionBox.OptionType):
 
 
 func _on_submit_button_pressed() -> void:
-	QuestManager.complete_quest(actived_quest)
+	var pattern_data = drawing_board.get_pattern_data()
+	var developer_data_list = drawing_board.get_developer_data_list()
+	var total_attribute = drawing_board.final_attribute
+	ContractManager.start_contract(actived_quest, pattern_data, developer_data_list, total_attribute)
 	GlobalSignal.emit_signal("current_map_event_finished")

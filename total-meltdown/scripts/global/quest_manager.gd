@@ -5,6 +5,7 @@ const QUEST_DIR = "res://contents/quest/"
 var all_quests: Array = []
 var pending_quests: Array = []
 var actived_quests: Array = []
+var accepted_quests: Array = []
 var completed_quests: Array = []
 var creation_finished = false
 
@@ -67,10 +68,17 @@ func prepare_random_quest() -> Dictionary:
 	actived_quests.append(quest_entry)
 	return quest_entry
 
-func complete_quest(target_quest_data: Dictionary):
+func start_quest(target_quest_data: Dictionary):
 	if actived_quests.has(target_quest_data):
 		actived_quests.erase(target_quest_data)
+		accepted_quests.append(target_quest_data)
+	else:
+		push_error("start_quest: No quest with file_name " + target_quest_data.file_name + " found in actived_quests")
+
+func complete_quest(target_quest_data: Dictionary):
+	if accepted_quests.has(target_quest_data):
+		accepted_quests.erase(target_quest_data)
 		completed_quests.append(target_quest_data)
 	else:
-		push_error("complete_quest: No quest with file_name" + target_quest_data.file_name + "found in actived_quests")
+		push_error("complete_quest: No quest with file_name " + target_quest_data.file_name + " found in accepted_quests")
 #endregion

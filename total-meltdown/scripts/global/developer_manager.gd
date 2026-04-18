@@ -77,7 +77,7 @@ func hire_developer(recruitable_developers_list: Array, target_developer_data: D
 			else:
 				locked_developers.append(developer_entry)
 		else:
-			push_error("hire_developer: No developer with file_name" + developer_entry.file_name + "found in recruitable_developers")
+			push_error("hire_developer: No developer with file_name " + developer_entry.file_name + " found in recruitable_developers")
 
 func assign_work(developers_list: Array):
 	for developer_entry in developers_list:
@@ -85,7 +85,7 @@ func assign_work(developers_list: Array):
 			idle_developers.erase(developer_entry)
 			working_developers.append(developer_entry)
 		else:
-			push_error("assign_work: No developer with file_name" + developer_entry.file_name + "found in idle_developers")
+			push_error("assign_work: No developer with file_name " + developer_entry.file_name + " found in idle_developers")
 
 func finish_work(developers_list: Array):
 	for developer_entry in developers_list:
@@ -93,5 +93,5 @@ func finish_work(developers_list: Array):
 			working_developers.erase(developer_entry)
 			idle_developers.append(developer_entry)
 		else:
-			push_error("finish_work: No developer with file_name" + developer_entry.file_name + "found in working_developers")
+			push_error("finish_work: No developer with file_name " + developer_entry.file_name + " found in working_developers")
 #endregion

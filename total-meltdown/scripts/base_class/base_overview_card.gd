@@ -11,7 +11,7 @@ func set_panel(p_panel: BaseItemPanel):
 func set_index(idx: int):
 	item_index = idx
 
-@abstract func set_content(item_data: Dictionary)
+@abstract func set_content(item_data: Variant)
 
 func get_center_position() -> Vector2:
 	return global_position + size * 0.5 * scale * panel.scale

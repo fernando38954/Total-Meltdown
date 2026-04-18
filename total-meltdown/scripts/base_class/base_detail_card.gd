@@ -14,7 +14,7 @@ func initialize_card(target_center_position: Vector2) -> void:
 	initial_center_position = target_center_position
 	global_position = initial_center_position
 
-@abstract func set_content(item_data: Dictionary)
+@abstract func set_content(item_data: Variant)
 
 #region Animation
 func animate_to_center(target_center_position: Vector2, target_scale: Vector2, duration: float, callback: Callable = Callable()):
