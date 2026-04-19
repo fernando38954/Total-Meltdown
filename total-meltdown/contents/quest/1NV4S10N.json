@@ -1,0 +1,33 @@
+{
+	"title": "1NV4S40",
+	"icon": "res://assets/contract_icons/1NV4S10N.png",
+	"attribute": {
+		"Functional Suitability": 6,
+		"Performance Efficiency": 5,
+		"Compatibility": 3,
+		"Interaction Capability": 9,
+		"Reliability": 7,
+		"Security": 10,
+		"Maintainability": 4,
+		"Flexibility": 3,
+		"Safety": 8,
+	},
+	"description": {
+		"paragraph1": "Meu sistema está constantemente sendo [b]atacado[/b].",
+		"paragraph2": "[b]Hackers[/b], bots, scripts estranhos… tudo.",
+		"paragraph3": "Para piorar, vivo me [b]perdendo nas interfaces[/b] infinitas do sistema.",
+	},
+	"bullet_point": {
+		"bullet1": "O sistema precisa resistir a ataques constantes, [b]mantendo tudo protegido[/b].",
+		"bullet2": "As informações devem permanecer [b]íntegras[/b], [b]autênticas[/b] e [b]inacessíveis[/b] a invasores.",
+		"bullet3": "E, apesar do caos, a [b]interface[/b] precisa ser [b]clara o suficiente[/b] para não me perder nela.",
+		"bullet4": "Na sala de servidores preciso que os [b]possíveis riscos[/b] me sejam [b]notificados[/b]. A equipe de manutenção precisa estar segura.",
+	},
+	"footnote": "[i]~Se até eu me perco, imagina o hacker[/i]",
+	"requirements": {
+		"pattern1": "Layered",
+		"pattern2": "Microservice",
+		"pattern3": "Hexagonal"
+	},
+	"demand": ""
+}

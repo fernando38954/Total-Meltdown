@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b54ljffatl0v4"
-path="res://.godot/imported/Dog.png-9749d748034c6116eb6251a13c29a02c.ctex"
+uid="uid://b6gajanwqvnns"
+path="res://.godot/imported/Puzzle.png-f506dc1d8b46ee1690f8496873abecb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/contract_icons/Dog.png"
-dest_files=["res://.godot/imported/Dog.png-9749d748034c6116eb6251a13c29a02c.ctex"]
+source_file="res://assets/contract_icons/Puzzle.png"
+dest_files=["res://.godot/imported/Puzzle.png-f506dc1d8b46ee1690f8496873abecb1.ctex"]
 
 [params]
 

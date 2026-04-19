@@ -1,0 +1,31 @@
+{
+	"title": "Café?! Eu quero",
+	"icon": "res://assets/contract_icons/Coffee.png",
+	"attribute": {
+		"Functional Suitability": 5,
+		"Performance Efficiency": 10,
+		"Compatibility": 4,
+		"Interaction Capability": 3,
+		"Reliability": 6,
+		"Security": 2,
+		"Maintainability": 2,
+		"Flexibility": 6,
+		"Safety": 1,
+	},
+	"description": {
+		"paragraph1": "Meu sistema precisa entregar café MAIS RÁPIDO que o cérebro humano percebe o cansaço.",
+		"paragraph2": "Se demorar, perdeu. [b]Se travar[/b], morreu. Se não escalar… eu também morro (financeiramente).",
+		"paragraph3": "Honestamente? Pode ser feio, inseguro, difícil de manter… só [b]NÃO[/b] pode ser lento."
+	},
+	"bullet_point": {
+		"bullet1": "O [b]tempo de resposta[/b] deve ser instantâneo.",
+		"bullet2": "Cada vez mais estão acessando o site, a [b]escalabilidade[/b] e [b]disponibilidade[/b] do sistema devem ser prioridade."
+	},
+	"footnote": "[i]~Tem café?[/i]",
+	"requirements": {
+		"pattern1": "Event-Driven",
+		"pattern2": "Microservice",
+		"pattern3": "Client-Server"
+	},
+	"demand": ""
+}

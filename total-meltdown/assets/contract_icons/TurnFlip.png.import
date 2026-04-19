@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b54ljffatl0v4"
-path="res://.godot/imported/Dog.png-9749d748034c6116eb6251a13c29a02c.ctex"
+uid="uid://dl6hptkv4fkqk"
+path="res://.godot/imported/TurnFlip.png-bf9a0a82cd97fa5f357777744ddfaf76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/contract_icons/Dog.png"
-dest_files=["res://.godot/imported/Dog.png-9749d748034c6116eb6251a13c29a02c.ctex"]
+source_file="res://assets/contract_icons/TurnFlip.png"
+dest_files=["res://.godot/imported/TurnFlip.png-bf9a0a82cd97fa5f357777744ddfaf76.ctex"]
 
 [params]
 

@@ -1,0 +1,16 @@
+{
+	"name": "Elisa “FullStack” Ferreira",
+	"portrait": "res://assets/portrait/portrait_5.png",
+	"attribute": {
+		"Functional Suitability": 1.3,
+		"Performance Efficiency": 1.1,
+		"Compatibility": 1.2,
+		"Interaction Capability": 1.1,
+		"Reliability": 1.2,
+		"Security": 1.0,
+		"Maintainability": 1.2,
+		"Flexibility": 1.1,
+		"Safety": 1.2,
+	},
+	"description": "Desenvolvedora versátil que faz de tudo um pouco. Não é especialista, mas consegue equilibrar o time."
+}

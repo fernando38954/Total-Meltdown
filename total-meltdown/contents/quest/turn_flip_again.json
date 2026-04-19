@@ -1,0 +1,30 @@
+{
+	"title": "Vire... desvire... agora repete!",
+	"icon": "res://assets/contract_icons/TurnFlip.png",
+	"attribute": {
+		"Functional Suitability": 6,
+		"Performance Efficiency": 3,
+		"Compatibility": 10,
+		"Interaction Capability": 4,
+		"Reliability": 4,
+		"Security": 2,
+		"Maintainability": 3,
+		"Flexibility": 5,
+		"Safety": 1,
+	},
+	"description": {
+		"paragraph1": "Eu preciso de um sistema que converta QUALQUER arquivo em QUALQUER outro formato.",
+		"paragraph2": "[b]Se ele não funcionar com outro sistema[/b], outro app ou outro planeta… não me serve.",
+	},
+	"bullet_point": {
+		"bullet1": "O sistema tem que [b]coexistir[/b] com os outros.",
+		"bullet2": "Foca na [b]interoperabilidade[/b].",
+	},
+	"footnote": "[i]~Comunicação é tudo em um relacionamento[/i]",
+	"requirements": {
+		"pattern1": "Client-Server",
+		"pattern2": "Microservice",
+		"pattern3": "Hexagonal"
+	},
+	"demand": ""
+}

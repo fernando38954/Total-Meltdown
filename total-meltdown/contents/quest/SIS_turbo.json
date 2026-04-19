@@ -1,0 +1,33 @@
+{
+	"title": "SSI-Turbo",
+	"icon": "res://assets/contract_icons/SSI-Turbo.png",
+	"attribute": {
+		"Functional Suitability": 6,
+		"Performance Efficiency": 8,
+		"Compatibility": 3,
+		"Interaction Capability": 2,
+		"Reliability": 10,
+		"Security": 4,
+		"Maintainability": 5,
+		"Flexibility": 4,
+		"Safety": 9,
+	},
+	"description": {
+		"paragraph1": "Esse sistem [b]NÃO pode morrer[/b].",
+		"paragraph2": "Pode falhar, pode quebrar, pode pegar fogo… mas tem que continuar funcionando. E funcionando muito mesmo.",
+		"paragraph3": "Preciso que o sistema seja [b]rápido como a luz[/b], complexidade linear ou menor.",
+		"paragraph4": "Falando de luz... aqui tem oscilado a energia, seria interessante alguma forma de manter o controle dela."
+	},
+	"bullet_point": {
+		"bullet1": "[b]Não pode falhar[/b]! Precisa estar sempre [b]disponível[/b].",
+		"bullet2": "Identificar possíveis quedas de energia, [b]avisar sobre as falhas[/b] e tentar remediá-las de forma segura.",
+		"bullet3": "O sistema precisa ser bem [b]rápido em processamento[/b]."
+	},
+	"footnote": "[i]~Caiu? Eu não vi[/i]",
+	"requirements": {
+		"pattern1": "Event-Driven",
+		"pattern2": "Microservice",
+		"pattern3": "Client_Server"
+	},
+	"demand": ""
+}

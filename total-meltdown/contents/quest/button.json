@@ -1,0 +1,29 @@
+{
+	"title": "BOTÃO",
+	"icon": "res://assets/contract_icons/Button.png",
+	"attribute": {
+		"Functional Suitability": 5,
+		"Performance Efficiency": 3,
+		"Compatibility": 2,
+		"Interaction Capability": 10,
+		"Reliability": 3,
+		"Security": 1,
+		"Maintainability": 3,
+		"Flexibility": 2,
+		"Safety": 1,
+	},
+	"description": {
+		"paragraph1": "Eu quero um aplicativo com UM botão. Só um. A pessoa abre, aperta, e pronto.",
+		"paragraph2": "[b]Se alguém não entender como usar[/b]... eu desisto da humanidade.",
+	},
+	"bullet_point": {
+		"bullet1": "A [b]usabilidade[/b] é a chave. [b]Fácil de aprender[/b], fácil de [b]operar[/b], é um botão simples.",
+		"bullet2": "Autoexplicativo, [b]autodescritivo[/b], use o termo que preferir.",
+	},
+	"footnote": "[i]~I am just a lonely button[/i]",
+	"requirements": {
+		"pattern1": "MVC",
+		"pattern2": "Monolithic",
+	},
+	"demand": ""
+}

@@ -1,0 +1,16 @@
+{
+	"name": "X “Mysterious” Y",
+	"portrait": "res://assets/portrait/portrait_7.png",
+	"attribute": {
+		"Functional Suitability": 2,
+		"Performance Efficiency": 0,
+		"Compatibility": 1.9,
+		"Interaction Capability": 0,
+		"Reliability": 1.8,
+		"Security": 0,
+		"Maintainability": 0,
+		"Flexibility": 2,
+		"Safety": 0,
+	},
+	"description": "Guess what my attribute is?"
+}

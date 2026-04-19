@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b54ljffatl0v4"
-path="res://.godot/imported/Dog.png-9749d748034c6116eb6251a13c29a02c.ctex"
+uid="uid://ds1lf7qf1rj86"
+path="res://.godot/imported/Meltdown.png-93ead8e294480251d9c6bdb0a2922f2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/contract_icons/Dog.png"
-dest_files=["res://.godot/imported/Dog.png-9749d748034c6116eb6251a13c29a02c.ctex"]
+source_file="res://assets/contract_icons/Meltdown.png"
+dest_files=["res://.godot/imported/Meltdown.png-93ead8e294480251d9c6bdb0a2922f2b.ctex"]
 
 [params]
 

@@ -1,0 +1,32 @@
+{
+	"title": "GPS",
+	"icon": "res://assets/contract_icons/GPS.png",
+	"attribute": {
+		"Functional Suitability": 7,
+		"Performance Efficiency": 4,
+		"Compatibility": 4,
+		"Interaction Capability": 4,
+		"Reliability": 8,
+		"Security": 10,
+		"Maintainability": 5,
+		"Flexibility": 3,
+		"Safety": 5,
+	},
+	"description": {
+		"paragraph1": "Tudo que acontece no sistema precisa ser [b]rastreável[/b].",
+		"paragraph2": "Quem fez, quando fez, por que fez… e ninguém pode negar depois.",
+		"paragraph3": "Se alguém disser ‘não fui eu’, o sistema precisa provar o contrário.",
+	},
+	"bullet_point": {
+		"bullet1": "A [b]integridade[/b] e [b]autenticidade[/b] dos dados precisam ser mantidas.",
+		"bullet2": "[b]Rastreabilidade de uso[/b]: quero saber quem, quando e onde.",
+		"bullet3": "Seria bom se ele [b]não falhasse[/b]. Nem tivessem funções [b]incompletas[/b] ou [b]incorretas[/b].",
+	},
+	"footnote": "[i]~Estou de olho em você[/i]",
+	"requirements": {
+		"pattern1": "Microservice",
+		"pattern2": "Hexagonal",
+		"pattern3": "Layered"
+	},
+	"demand": ""
+}

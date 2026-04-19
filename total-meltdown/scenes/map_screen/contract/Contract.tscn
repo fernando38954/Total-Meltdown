@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bo1o2leu06uk0" path="res://placeholder/WhiteSquare.png" id="4_rj8at"]
 [ext_resource type="Script" uid="uid://d03h22mxa4ts1" path="res://scripts/map_screen/contract/option_box_set.gd" id="5_2ney3"]
 [ext_resource type="Script" uid="uid://b4d6dwxqyelhh" path="res://scripts/map_screen/contract/post_it.gd" id="5_hk8vl"]
-[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/dog.png" id="5_jusyd"]
+[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/Dog.png" id="5_jusyd"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="6_hk8vl"]
 [ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="6_xc3rv"]
 [ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="7_oey3q"]

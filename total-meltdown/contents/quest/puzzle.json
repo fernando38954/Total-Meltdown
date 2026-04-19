@@ -1,0 +1,30 @@
+{
+	"title": "Quebra-cabeça",
+	"icon": "res://assets/contract_icons/Puzzle.png",
+	"attribute": {
+		"Functional Suitability": 6,
+		"Performance Efficiency": 4,
+		"Compatibility": 6,
+		"Interaction Capability": 3,
+		"Reliability": 5,
+		"Security": 3,
+		"Maintainability": 8,
+		"Flexibility": 9,
+		"Safety": 2,
+	},
+	"description": {
+		"paragraph1": "Eu quero poder [b]trocar partes do sistema[/b] como se fossem peças de montar.",
+		"paragraph2": "Hoje uso um banco, amanhã outro, depois outro… e ninguém pode perceber.",
+	},
+	"bullet_point": {
+		"bullet1": "[b]Módulos[/b], [b]módulos[/b] e [b]módulos[/b]! Devem ser fáceis de [b]substituir[/b].",
+		"bullet2": "O sistema tem que se [b]adaptar[/b].",
+	},
+	"footnote": "[i]~A última peça faltante...[/i]",
+	"requirements": {
+		"pattern1": "Microservice",
+		"pattern2": "Hexagonal",
+		"pattern3": "Layered",
+	},
+	"demand": ""
+}

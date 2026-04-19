@@ -1,6 +1,6 @@
 {
-	"title": "Influencer Dog",
-	"icon": "res://assets/contract_icons/dog.png",
+	"title": "Cão Influenciador",
+	"icon": "res://assets/contract_icons/Dog.png",
 	"attribute": {
 		"Functional Suitability": 4,
 		"Performance Efficiency": 2,
@@ -15,7 +15,7 @@
 	"description": {
 		"paragraph1": "Meu cachorro virou influencer e agora eu tenho inimigos. Muitos inimigos. Gente querendo roubar as fotos [b]EXCLUSIVAS[/b] dele de pijama.",
 		"paragraph2": "Eu preciso de um sistema onde ninguém consiga acessar essas fotos, nem por acidente, nem por mágica, nem por gambiarra.",
-		"paragraph3": "Se alguém conseguir entrar… acabou minha carreira. E a dele também. Principalmente a dele."
+		"paragraph3": "Se alguém conseguir entrar... acabou minha carreira. E a dele também. Principalmente a dele."
 	},
 	"bullet_point": {
 		"bullet1": "Preciso de muita discrição e [b]confidencialidade[/b].",
@@ -24,7 +24,7 @@
 	"footnote": "[i]~Ele fica tão fofinho de sapatinho[/i]",
 	"requirements": {
 		"pattern1": "MVC",
-		"pattern2": "Layer",
+		"pattern2": "Layered",
 		"pattern3": "Monolithic"
 	},
 	"demand": "architecture: MVC, Number less: 2"

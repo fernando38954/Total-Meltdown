@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dxum8cp4bjndm" path="res://scripts/developer_screen/contract_overview_card.gd" id="2_1hnla"]
 [ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_4mry3"]
 [ext_resource type="Texture2D" uid="uid://dojl0r0nbpusc" path="res://placeholder/white_circle_512.png" id="3_1hnla"]
-[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/dog.png" id="4_lh3lp"]
+[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/Dog.png" id="4_lh3lp"]
 [ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="5_ujq2w"]
 
 [node name="ContractOverviewCard" type="TextureButton" unique_id=564084957]

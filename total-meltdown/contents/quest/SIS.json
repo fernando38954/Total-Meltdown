@@ -1,0 +1,32 @@
+{
+	"title": "SSI: Sistema Super Importante",
+	"icon": "res://assets/contract_icons/SSI.png",
+	"attribute": {
+		"Functional Suitability": 6,
+		"Performance Efficiency": 4,
+		"Compatibility": 3,
+		"Interaction Capability": 2,
+		"Reliability": 10,
+		"Security": 5,
+		"Maintainability": 4,
+		"Flexibility": 3,
+		"Safety": 6,
+	},
+	"description": {
+		"paragraph1": "O sistema vai controlar recursos essenciais. Se ele parar… pessoas param também.",
+		"paragraph2": "Não importa se é bonito. Não importa se é moderno. Ele precisa [b]continuar funcionando[/b] mesmo quando tudo dá errado.",
+		"paragraph3": "E quando der errado (porque vai), ele precisa voltar rápido. Tipo… imediatamente."
+	},
+	"bullet_point": {
+		"bullet1": "[b]Tolerância a falhas[/b]. Mesmo com falhas, devem funcionar direito!",
+		"bullet2": "Caiu? [b]Recupere-se, rápido![/b]",
+		"bullet3": "O sistema precisa estar sempre [b]disponível[/b]."
+	},
+	"footnote": "[i]~♫Continue a rodar... ♫continue a rodar...[/i]",
+	"requirements": {
+		"pattern1": "Layered",
+		"pattern2": "Microservice",
+		"pattern3": "Hexagonal"
+	},
+	"demand": ""
+}

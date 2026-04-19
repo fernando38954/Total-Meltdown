@@ -1,0 +1,16 @@
+{
+	"name": "Diego “SecOps” Navarro",
+	"portrait": "res://assets/portrait/portrait_4.png",
+	"attribute": {
+		"Functional Suitability": 1.0,
+		"Performance Efficiency": 0.89,
+		"Compatibility": 1.0,
+		"Interaction Capability": 0.7,
+		"Reliability": 1.4,
+		"Security": 2.0,
+		"Maintainability": 1.1,
+		"Flexibility": 0.9,
+		"Safety": 1.0,
+	},
+	"description": "Engenheiro de segurança paranoico. Nunca confia em input do usuário e sempre quer colocar mais camadas de proteção."
+}

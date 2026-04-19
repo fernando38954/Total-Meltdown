@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1egxsan0lidv" path="res://scripts/developer_screen/contract_detail_card.gd" id="1_1mseo"]
 [ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_ym2eu"]
-[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/dog.png" id="3_oevvo"]
+[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/Dog.png" id="3_oevvo"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="4_f0yuo"]
 [ext_resource type="Texture2D" uid="uid://dojl0r0nbpusc" path="res://placeholder/white_circle_512.png" id="5_1ai8r"]
 [ext_resource type="Texture2D" uid="uid://s3ija5g1sq4f" path="res://assets/pattern_icons/MVC.png" id="6_o6ckt"]

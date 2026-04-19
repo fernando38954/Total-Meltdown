@@ -1,0 +1,32 @@
+{
+	"title": "Total Meltdown",
+	"icon": "res://assets/contract_icons/Meltdown.png",
+	"attribute": {
+		"Functional Suitability": 8,
+		"Performance Efficiency": 9,
+		"Compatibility": 7,
+		"Interaction Capability": 7,
+		"Reliability": 9,
+		"Security": 9,
+		"Maintainability": 9,
+		"Flexibility": 9,
+		"Safety": 7,
+	},
+	"description": {
+		"paragraph1": "Eu quero [b]TUDO[/b].",
+		"paragraph2": "Rápido, seguro, fácil de usar, adaptável, confiável, escalável, fácil de manter...",
+		"paragraph3": "E [b]barato[/b].",
+		"paragraph4": "Ah, e pra [b]ontem[/b].",
+	},
+	"bullet_point": {
+		"bullet1": "Você ouviu ele, precisamos de: [b]performance[/b], [b]segurança[/b], [b]confiança[/b], [b]manutenibilidade[/b], [b]flexibilidade[/b]...",
+		"bullet2": "Resumindo. [b]TUDO[/b].",
+	},
+	"footnote": "[i]~É bastante coisa mesmo[/i]",
+	"requirements": {
+		"pattern1": "Event_Driven",
+		"pattern2": "Microservice",
+		"pattern3": "Hexagonal"
+	},
+	"demand": ""
+}

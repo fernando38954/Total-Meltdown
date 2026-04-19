@@ -1,0 +1,16 @@
+{
+	"name": "Snow “Snowman” Man",
+	"portrait": "res://assets/portrait/portrait_6.png",
+	"attribute": {
+		"Functional Suitability": 1.8,
+		"Performance Efficiency": 1.8,
+		"Compatibility": 0.3,
+		"Interaction Capability": 1.0,
+		"Reliability": 1.8,
+		"Security": 1.8,
+		"Maintainability": 1.0,
+		"Flexibility": 0.3,
+		"Safety": 1.8,
+	},
+	"description": "Do You Want to Build a Snowman?"
+}

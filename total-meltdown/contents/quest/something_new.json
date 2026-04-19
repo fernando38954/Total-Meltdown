@@ -1,0 +1,30 @@
+{
+	"title": "Por que não testar algo novo?",
+	"icon": "res://assets/contract_icons/New.png",
+	"attribute": {
+		"Functional Suitability": 6,
+		"Performance Efficiency": 3,
+		"Compatibility": 3,
+		"Interaction Capability": 4,
+		"Reliability": 5,
+		"Security": 3,
+		"Maintainability": 10,
+		"Flexibility": 8,
+		"Safety": 2,
+	},
+	"description": {
+		"paragraph1": "Meu software precisa ser [b]atualizado o tempo todo[/b]. Tipo… SEMPRE.",
+		"paragraph2": "Quero mudar coisas rápido, testar ideias, quebrar tudo e consertar no mesmo dia.",
+		"paragraph3": "[b]Se for difícil de mexer no código[/b]... esquece, já basta minha mente bagunçada.",
+	},
+	"bullet_point": {
+		"bullet1": "Preciso muito que seja fácil de [b]modificar[/b], de [b]testar[/b] e de [b]analisar[/b] o código.",
+		"bullet2": "Ele também precisa se [b]adaptar[/b] melhor nos dispositivos.",
+	},
+	"footnote": "[i]~Testando... som... testando[/i]",
+	"requirements": {
+		"pattern1": "Microservice",
+		"pattern2": "Hexagonal"
+	},
+	"demand": ""
+}

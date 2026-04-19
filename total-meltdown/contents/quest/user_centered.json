@@ -1,0 +1,33 @@
+{
+	"title": "User-centered",
+	"icon": "res://assets/contract_icons/User.png",
+	"attribute": {
+		"Functional Suitability": 8,
+		"Performance Efficiency": 3,
+		"Compatibility": 3,
+		"Interaction Capability": 9,
+		"Reliability": 5,
+		"Security": 3,
+		"Maintainability": 4,
+		"Flexibility": 3,
+		"Safety": 6,
+	},
+	"description": {
+		"paragraph1": "Erros acontecem.",
+		"paragraph2": "Os usuários vão fazer besteira. Eu sei. Você sabe. Todo mundo sabe.",
+		"paragraph3": "[b]O sistema precisa impedir isso[/b]. Ou pelo menos tentar [b]MUITO[/b].",
+	},
+	"bullet_point": {
+		"bullet1": "O sistema tem que ser [b]protegido contra erros dos usuários[/b].",
+		"bullet2": "[b]Todo mundo[/b] tem que conseguir usar o sistema.",
+		"bullet3": "A [b]operação[/b] precisa ser facilitada.",
+		"bullet4": "Também não podem ter erros de retorno, as [b]funções devem funcionar apropriadamente[/b].",
+	},
+	"footnote": "[i]~Era só um botão, como que o sistema quebrou?[/i]",
+	"requirements": {
+		"pattern1": "MVC",
+		"pattern2": "Client-Server",
+		"pattern3": "Layered"
+	},
+	"demand": ""
+}
