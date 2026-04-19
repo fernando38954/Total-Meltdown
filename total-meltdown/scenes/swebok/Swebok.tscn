@@ -106,14 +106,19 @@ offset_bottom = 1541.0
 [node name="ContentViewer" parent="." unique_id=474821504 node_paths=PackedStringArray("swebok") instance=ExtResource("3_wlni6")]
 swebok = NodePath("..")
 
-[node name="Title" parent="ContentViewer" index="0" unique_id=528443857]
+[node name="Title" parent="ContentViewer" index="0" unique_id=1862295967]
 offset_left = 1076.0
 offset_top = 342.0
 offset_right = 1838.0
 offset_bottom = 524.0
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
 text = "[center][b][font_size=70]%s[/font_size][/b][/center]"
 
-[node name="Description" parent="ContentViewer" index="1" unique_id=475701691]
+[node name="Description" parent="ContentViewer" index="1" unique_id=1581382412]
 offset_left = 2004.0
 offset_top = 279.0
 offset_right = 2833.0

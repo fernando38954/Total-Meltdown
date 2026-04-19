@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://120gu7oj2m34" path="res://assets/selector_background/background1.png" id="1_qu0mc"]
 [ext_resource type="Script" uid="uid://cxsew1wiolk0r" path="res://scripts/map_screen/study_session/course.gd" id="2_il80u"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="3_8o413"]
+[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="4_yh3db"]
 
 [node name="Course" type="TextureButton" unique_id=1570528027]
 offset_right = 1200.0
@@ -9,7 +11,7 @@ offset_bottom = 1771.0
 texture_normal = ExtResource("1_qu0mc")
 script = ExtResource("2_il80u")
 
-[node name="PatternName" type="RichTextLabel" parent="." unique_id=1901262230]
+[node name="PatternName" type="RichTextLabel" parent="." unique_id=1415404183]
 layout_mode = 0
 offset_left = 89.0
 offset_top = 153.0
@@ -18,32 +20,48 @@ offset_bottom = 309.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 100
 theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
 bbcode_enabled = true
 text = "[b]Name[/b]"
-fit_content = true
 horizontal_alignment = 1
+script = ExtResource("3_8o413")
+watch_text_change = true
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
-[node name="Description" type="RichTextLabel" parent="." unique_id=1351121114]
+[node name="Description" type="RichTextLabel" parent="." unique_id=1693264309]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 341.0
 offset_right = 1120.0
 offset_bottom = 1555.0
 mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
 bbcode_enabled = true
 text = "sadasdasdasdasd"
+script = ExtResource("3_8o413")
+watch_text_change = true
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
-[node name="StudyButton" type="Button" parent="." unique_id=1930850301]
+[node name="StudyButton" type="Button" parent="." unique_id=1041590031]
 layout_mode = 0
 offset_left = 167.0
 offset_top = 1814.0
 offset_right = 1026.0
 offset_bottom = 2027.0
-theme_override_font_sizes/font_size = 150
-text = "Study"
-
-[node name="Portrait" type="Sprite2D" parent="." unique_id=297931075]
+theme_override_font_sizes/font_size = 1
+clip_text = true
+script = ExtResource("4_yh3db")
+button_text = "Study"
+max_font_size = 150
+metadata/_custom_type_script = "uid://bnaosc552evuy"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="StudyButton" to="." method="_on_study_button_pressed"]

@@ -2,26 +2,50 @@
 
 [ext_resource type="Script" uid="uid://cgqtegu1605kk" path="res://scripts/swebok/content_viewer.gd" id="1_6tgrj"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="2_1ym60"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_jkyab"]
 
 [node name="ContentViewer" type="Control" unique_id=474821504]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_6tgrj")
 
-[node name="Title" type="RichTextLabel" parent="." unique_id=528443857]
+[node name="Title" type="RichTextLabel" parent="." unique_id=1862295967]
 layout_mode = 0
 offset_left = 198.0
 offset_top = 173.0
 offset_right = 517.0
 offset_bottom = 235.0
+theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/bold_font_size = 44
+theme_override_font_sizes/bold_italics_font_size = 44
+theme_override_font_sizes/italics_font_size = 44
+theme_override_font_sizes/mono_font_size = 44
 bbcode_enabled = true
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_jkyab")
+watch_text_change = true
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
-[node name="Description" type="RichTextLabel" parent="." unique_id=475701691]
+[node name="Description" type="RichTextLabel" parent="." unique_id=1581382412]
 layout_mode = 0
 offset_left = 603.0
 offset_right = 1151.0
 offset_bottom = 649.0
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
 bbcode_enabled = true
+text = "Test Description"
+script = ExtResource("2_jkyab")
+watch_text_change = true
+min_font_size = 30
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("2_1ym60")]
 layout_mode = 0
