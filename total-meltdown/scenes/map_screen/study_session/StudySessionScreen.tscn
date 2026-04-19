@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cngwkfrgjpfbk" path="res://scripts/map_screen/study_session/study_session_screen.gd" id="1_l1ove"]
 [ext_resource type="Script" uid="uid://dmp6hn3cimuco" path="res://scripts/map_screen/study_session/study_session_panel.gd" id="2_3evn0"]
 [ext_resource type="PackedScene" uid="uid://whjllpdpvskl" path="res://scenes/map_screen/study_session/Course.tscn" id="3_l1ove"]
-[ext_resource type="PackedScene" uid="uid://q61o5yikp86s" path="res://scenes/map_screen/study_session/ChapterDetailCard.tscn" id="4_l1ove"]
+[ext_resource type="PackedScene" uid="uid://q61o5yikp86s" path="res://scenes/map_screen/study_session/PatternDetailCard.tscn" id="4_l1ove"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssrtq"]
 

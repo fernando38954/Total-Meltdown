@@ -1,7 +1,7 @@
 extends BaseDetailCard
-class_name ChapterDetailCard
+class_name PatternDetailCard
 
-@onready var developer_name = $DeveloperName
+@onready var pattern_name = $PatternName
 @onready var radar_chart = $RadarChart
 @onready var description = $Description
 
@@ -16,7 +16,7 @@ class_name ChapterDetailCard
 @export var label_offset = 18
 
 func set_content(item_data: Variant):
-	developer_name.text = "[center][b][font_size=%d]%s[/font_size][/b][/center]\n\n" % [name_size, item_data.title]
+	pattern_name.text = "[center][b][font_size=%d]%s[/font_size][/b][/center]\n\n" % [name_size, item_data.title]
 	description.text = "[font_size=%d]%s[/font_size]" % [description_size, item_data.description]
 	radar_chart.set_label(font, font_size, value_font_size, label_offset)
 	radar_chart.set_attributes(item_data.attribute)

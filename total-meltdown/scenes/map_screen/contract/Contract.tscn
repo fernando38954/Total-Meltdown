@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://cluwb52on6g7k" path="res://scripts/map_screen/contract/quest_panel.gd" id="8_xc3rv"]
 [ext_resource type="PackedScene" uid="uid://w0kr78thnd8b" path="res://scenes/map_screen/contract/PatternOptionOverviewCard.tscn" id="10_5ppia"]
 [ext_resource type="Script" uid="uid://6fx2nw7gqoaj" path="res://scripts/map_screen/contract/selector_panel.gd" id="10_07g81"]
-[ext_resource type="PackedScene" uid="uid://q61o5yikp86s" path="res://scenes/map_screen/study_session/ChapterDetailCard.tscn" id="12_bskk8"]
+[ext_resource type="PackedScene" uid="uid://q61o5yikp86s" path="res://scenes/map_screen/study_session/PatternDetailCard.tscn" id="12_bskk8"]
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="13_2ney3"]
 [ext_resource type="PackedScene" uid="uid://3vsra0gkbynx" path="res://scenes/map_screen/contract/DevOptionOverviewCard.tscn" id="14_2ney3"]
 

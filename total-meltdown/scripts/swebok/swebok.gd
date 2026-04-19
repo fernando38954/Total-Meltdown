@@ -75,7 +75,7 @@ func show_page(page_idx: int):
 	update_buttons_visibility()
 	
 	if page_idx > BookPage.catalogPage:
-		content_view.show_content(SwebokManager.owned_chapters[page_idx])
+		content_view.show_content(PatternManager.owned_patterns[page_idx])
 
 func update_page_visibility():
 	catalog_view.visible = current_page_idx == BookPage.catalogPage
@@ -83,12 +83,12 @@ func update_page_visibility():
 
 func update_buttons_visibility():
 	var catalog_index = BookPage.catalogPage
-	var last_chapter_index = SwebokManager.owned_chapters.size() - 1
+	var last_pattern_index = PatternManager.owned_patterns.size() - 1
 	var prev_index = current_page_idx - 1
 	var next_index = current_page_idx + 1
 	
-	left_button.visible = prev_index >= catalog_index and prev_index <= last_chapter_index
-	right_button.visible = current_page_idx >= catalog_index and next_index <= last_chapter_index
+	left_button.visible = prev_index >= catalog_index and prev_index <= last_pattern_index
+	right_button.visible = current_page_idx >= catalog_index and next_index <= last_pattern_index
 	return_button.visible = current_page_idx > catalog_index
 #endregion
 

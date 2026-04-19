@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SwebokManager="*uid://8eahrr057cgv"
+PatternManager="*uid://8eahrr057cgv"
 DeveloperManager="*uid://cs8ieevn54777"
 GlobalSignal="*uid://bhkojwq0xigdv"
 QuestManager="*uid://ocrn727wdrpe"

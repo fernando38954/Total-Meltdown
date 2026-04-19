@@ -11,7 +11,7 @@ func set_option_type(new_type: OptionBox.OptionType):
 
 func get_items():
 	if option_type == OptionBox.OptionType.Pattern:
-		return SwebokManager.owned_chapters
+		return PatternManager.owned_patterns
 	elif option_type == OptionBox.OptionType.Developer:
 		return DeveloperManager.idle_developers
 	else:
@@ -19,7 +19,7 @@ func get_items():
 		return {}
 
 func _ready_prerequisites():
-	while !SwebokManager.creation_finished or !DeveloperManager.creation_finished:
+	while !PatternManager.creation_finished or !DeveloperManager.creation_finished:
 		await get_tree().process_frame
 
 #region Override Functions

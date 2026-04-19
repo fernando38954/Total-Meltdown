@@ -64,7 +64,7 @@ func get_rand_type() -> int:
 		var button_type = event_button_list[idx].get_state().get_node_name(0)
 		if button_type == "JobFairEventButton" and not DeveloperManager.locked_developers.is_empty():
 			return idx
-		elif button_type == "StudySessionEventButton" and not SwebokManager.locked_chapters.is_empty():
+		elif button_type == "StudySessionEventButton" and not PatternManager.locked_patterns.is_empty():
 			return idx
 		elif button_type == "ContractEventButton" and not QuestManager.pending_quests.is_empty():
 			return idx
@@ -135,9 +135,9 @@ func open_job_fair_screen(recruitable_developers_list: Array):
 	job_fair_screen.open_panel()
 	current_active_screen = job_fair_screen
 
-func open_study_session_screen(studiable_chapters_list: Array):
+func open_study_session_screen(studiable_patterns_list: Array):
 	open_click_blocker()
-	study_session_screen.set_content(studiable_chapters_list)
+	study_session_screen.set_content(studiable_patterns_list)
 	study_session_screen.open_panel()
 	current_active_screen = study_session_screen
 
