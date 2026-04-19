@@ -7,7 +7,7 @@ var developers_data: Array
 var total_attribute: Dictionary
 var base_money_reward: int = 0
 var progress: float
-var progress_per_update: float = 1
+var progress_per_update: float = 10
 
 func _init(p_quest_data, p_pattern_data, p_developers_data, p_total_attribute):
 	quest_data = p_quest_data

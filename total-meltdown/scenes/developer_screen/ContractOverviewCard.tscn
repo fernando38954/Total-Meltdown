@@ -17,6 +17,7 @@ layout_mode = 0
 offset_left = 35.0
 offset_right = 1176.0
 offset_bottom = 200.0
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 146
 theme_override_font_sizes/bold_font_size = 146
@@ -76,3 +77,5 @@ layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("5_ujq2w")
 expand_mode = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

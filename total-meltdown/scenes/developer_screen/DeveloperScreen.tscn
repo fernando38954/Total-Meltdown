@@ -4,13 +4,15 @@
 [ext_resource type="Script" uid="uid://bcts06ux0x3fk" path="res://scripts/developer_screen/developer_panel.gd" id="1_ievrq"]
 [ext_resource type="PackedScene" uid="uid://3v2hesn4ey6s" path="res://scenes/developer_screen/DevOverviewCard.tscn" id="2_px104"]
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="3_1bwwp"]
+[ext_resource type="PackedScene" uid="uid://boay6nwifi3hv" path="res://scenes/developer_screen/ContractOverviewCard.tscn" id="3_3iscn"]
+[ext_resource type="PackedScene" uid="uid://jbp51x0i3qgi" path="res://scenes/developer_screen/ContractDetailCard.tscn" id="4_c4ukx"]
 [ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="5_d844j"]
 
 [node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("panel")]
 script = ExtResource("1_6lvqk")
 panel = NodePath("DeveloperPanel")
 
-[node name="DeveloperPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("container", "click_blocker")]
+[node name="DeveloperPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("extra_container", "container", "click_blocker")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,6 +20,9 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1952, 1098)
 script = ExtResource("1_ievrq")
+extra_container = NodePath("ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ContractContainer2")
+extra_overview_card_scene = ExtResource("3_3iscn")
+extra_detail_card_scene = ExtResource("4_c4ukx")
 container = NodePath("ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/DeveloperContainer")
 click_blocker = NodePath("ClickBlocker")
 overview_card_scene = ExtResource("2_px104")
@@ -67,10 +72,22 @@ watch_text_change = true
 max_font_size = 500
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
-[node name="GridContainer2" type="GridContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=378712485]
+[node name="ContractContainer2" type="GridContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=378712485]
+layout_mode = 2
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 70
+columns = 3
+
+[node name="ContractOverviewCard" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ContractContainer2" unique_id=564084957 instance=ExtResource("3_3iscn")]
 layout_mode = 2
 
-[node name="DevOverviewCard" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer2" unique_id=1138141655 instance=ExtResource("2_px104")]
+[node name="ContractOverviewCard2" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ContractContainer2" unique_id=979672624 instance=ExtResource("3_3iscn")]
+layout_mode = 2
+
+[node name="ContractOverviewCard3" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ContractContainer2" unique_id=334234487 instance=ExtResource("3_3iscn")]
+layout_mode = 2
+
+[node name="ContractOverviewCard4" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ContractContainer2" unique_id=43420348 instance=ExtResource("3_3iscn")]
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1434955179]

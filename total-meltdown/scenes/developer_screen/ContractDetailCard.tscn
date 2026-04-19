@@ -113,9 +113,28 @@ offset_left = 2375.0
 offset_top = 1657.0
 offset_right = 2887.0
 offset_bottom = 2169.0
-value = 50.0
+mouse_filter = 0
+value = 100.0
 fill_mode = 4
 texture_progress = ExtResource("5_1ai8r")
+
+[node name="ClaimLabel" type="RichTextLabel" parent="ProgressBar" unique_id=1374247740]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 156.0
+offset_right = 438.0
+offset_bottom = 386.0
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 127
+theme_override_font_sizes/bold_font_size = 127
+theme_override_font_sizes/bold_italics_font_size = 127
+theme_override_font_sizes/italics_font_size = 127
+theme_override_font_sizes/mono_font_size = 127
+text = "Claim"
+script = ExtResource("2_ym2eu")
+watch_text_change = true
+max_font_size = 500
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="DevelopementContainer" type="VBoxContainer" parent="." unique_id=2060312681]
 layout_mode = 0
@@ -160,3 +179,6 @@ pivot_offset = Vector2(128, 128)
 texture_normal = ExtResource("7_2edc3")
 texture_pressed = ExtResource("8_x0m52")
 texture_hover = ExtResource("9_wj6ve")
+
+[connection signal="gui_input" from="ProgressBar" to="." method="_on_progress_bar_gui_input"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

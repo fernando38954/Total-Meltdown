@@ -9,12 +9,6 @@ class_name ContractOverviewCard
 var current_contract_data = null
 
 func _ready() -> void:
-	var test_quest = QuestManager.all_quests[0]
-	var test_pattern = SwebokManager.all_chapters[0]
-	var test_developer_data_list = [DeveloperManager.all_developers[0], DeveloperManager.all_developers[1]]
-	var test_attribute = DeveloperManager.all_developers[0].attribute
-	ContractManager.start_contract(test_quest, test_pattern, test_developer_data_list, test_attribute)
-	set_content(ContractManager.active_contract_list[0])
 	GlobalSignal.timer_update.connect(update_progress)
 
 func set_content(item_data: Variant) -> void:
@@ -22,7 +16,7 @@ func set_content(item_data: Variant) -> void:
 	quest_title.text = item_data.quest_data.title
 	icon.texture = item_data.quest_data.icon
 	progress_bar.value = item_data.progress
-	progress_bar.self_modulate = Color(0.8, 0, 0)
+	progress_bar.self_modulate = Color(0, 0.5, 0) if progress_bar.value >= 100 else Color(0.8, 0, 0)
 	
 	for child in developer_container.get_children():
 		child.queue_free()

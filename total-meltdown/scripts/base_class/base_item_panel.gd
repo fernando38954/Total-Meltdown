@@ -11,8 +11,9 @@ var current_detail_card_instance: BaseDetailCard = null
 
 @abstract func get_items()
 
-func get_item(index: int) -> Dictionary:
-	var items = get_items()
+func get_item(index: int, items: Array = []):
+	if items.is_empty():
+		items = get_items()
 	if index < 0 or index >= items.size():
 		return {}
 	return items[index]

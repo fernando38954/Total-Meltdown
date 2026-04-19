@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://pmeorxyc53vn"]
+
+[ext_resource type="Script" uid="uid://bsf44ou2kgnl1" path="res://scripts/reward_popup.gd" id="1_33lh1"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_vnkxr"]
+[ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="3_7mqrl"]
+[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="4_ep1wj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33lh1"]
+
+[node name="RewardPopup" type="CanvasLayer" unique_id=1588903239]
+script = ExtResource("1_33lh1")
+
+[node name="Popup" type="Panel" parent="." unique_id=968011549]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -650.0
+offset_right = 500.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 650)
+theme_override_styles/panel = SubResource("StyleBoxFlat_33lh1")
+
+[node name="RewardLabel" type="RichTextLabel" parent="Popup" unique_id=1869404710]
+layout_mode = 0
+offset_right = 997.0
+offset_bottom = 165.0
+theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/bold_font_size = 120
+theme_override_font_sizes/bold_italics_font_size = 120
+theme_override_font_sizes/italics_font_size = 120
+theme_override_font_sizes/mono_font_size = 120
+bbcode_enabled = true
+text = "Reward"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_vnkxr")
+watch_text_change = true
+max_font_size = 500
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="RadarChart" parent="Popup" unique_id=1384305498 instance=ExtResource("3_7mqrl")]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 182.0
+offset_right = 872.0
+offset_bottom = 915.0
+
+[node name="Description" type="RichTextLabel" parent="Popup" unique_id=1856748988]
+layout_mode = 0
+offset_top = 944.0
+offset_right = 988.0
+offset_bottom = 1097.0
+theme_override_font_sizes/normal_font_size = 55
+theme_override_font_sizes/bold_font_size = 55
+theme_override_font_sizes/bold_italics_font_size = 55
+theme_override_font_sizes/italics_font_size = 55
+theme_override_font_sizes/mono_font_size = 55
+bbcode_enabled = true
+text = "Base Profit: 1000 | Multiplier: 0.37
+[color=yellow]Final Profit: 370[/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_vnkxr")
+watch_text_change = true
+max_font_size = 500
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="ConfirmButton" type="Button" parent="Popup" unique_id=1758196319]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 1128.0
+offset_right = 760.0
+offset_bottom = 1265.0
+theme_override_font_sizes/font_size = 1
+clip_text = true
+script = ExtResource("4_ep1wj")
+button_text = "Confirm"
+max_font_size = 500
+metadata/_custom_type_script = "uid://bnaosc552evuy"
+
+[node name="ClickBlocker" type="ColorRect" parent="." unique_id=1029015259]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="pressed" from="Popup/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]

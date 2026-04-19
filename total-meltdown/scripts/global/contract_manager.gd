@@ -1,5 +1,7 @@
 extends Node
 
+const REWARD_POPUP_SCENE = preload("res://scenes/RewardPopup.tscn")
+
 var active_contract_list: Array[ContractData]
 var claimable_contracts: Array[ContractData]
 var completed_contracts: Array[ContractData]
@@ -23,6 +25,8 @@ func claim_contract(target_contrat_data: ContractData) -> void:
 		claimable_contracts.erase(target_contrat_data)
 		give_reward(target_contrat_data)
 		completed_contracts.append(target_contrat_data)
+		QuestManager.complete_quest(target_contrat_data.quest_data)
+		DeveloperManager.finish_work(target_contrat_data.developers_data)
 	else:
 		push_error("claim_contract: No contract with quest filename " + target_contrat_data.quest_data.file_name + " found in claimable_contracts")
 #endregion
@@ -37,3 +41,6 @@ func update_contracts() -> void:
 func give_reward(target_contrat_data: ContractData):
 	var profit = target_contrat_data.base_money_reward * target_contrat_data.calculate_compatibility()
 	GlobalResource.change_money(profit)
+	var reward_popup = REWARD_POPUP_SCENE.instantiate()
+	get_tree().root.add_child(reward_popup)
+	reward_popup.show_reward(target_contrat_data, profit)
