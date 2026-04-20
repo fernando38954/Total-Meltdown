@@ -12,6 +12,7 @@ var creation_finished = false
 func _ready():
 	load_patterns()
 	locked_patterns = all_patterns.duplicate()
+	initialize()
 
 func load_patterns():
 	all_patterns.clear()
@@ -53,6 +54,10 @@ func load_patterns():
 	all_patterns.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
 	print_debug("Number of patterns loaded：", all_patterns.size())
+
+func initialize():
+	var random_pattern = prepare_random_patterns(1)
+	study_pattern(random_pattern, random_pattern[0])
 #endregion
 
 #region Array Operation

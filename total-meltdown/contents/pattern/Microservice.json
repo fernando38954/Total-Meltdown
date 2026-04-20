@@ -1,0 +1,23 @@
+{
+	"title": "Microserviços",
+	"icon": "res://assets/pattern_icons/Microservice.png",
+	"attribute": {
+		"Functional Suitability": 1.4,
+		"Performance Efficiency": 1.3,
+		"Compatibility": 1.5,
+		"Interaction Capability": 1.4,
+		"Reliability": 1.2,
+		"Security": 1.1,
+		"Maintainability": 1.5,
+		"Flexibility": 1.6,
+		"Safety": 1.3,
+	},
+	"description": "	A arquitetura de microserviços estrutura sistemas como um conjunto de serviços pequenos, independentes e fracamente acoplados, onde cada serviço implementa uma capacidade específica do domínio. Esses serviços são desenvolvidos, implantados e escalados de forma autônoma, comunicando-se por meio de mecanismos leves, geralmente baseados em rede. Sua organização fundamenta-se nos seguintes blocos conceituais:
+[ul]
+[b]Serviços Independentes[/b]: Unidades autônomas que encapsulam funcionalidades específicas do sistema, com controle próprio de lógica e, frequentemente, de dados.
+[b]Comunicação entre Serviços[/b]: Realizada por meio de APIs (ex.: HTTP/REST, mensageria), permitindo integração entre serviços distribuídos.
+[b]Gerenciamento e Orquestração[/b]: Responsável por lidar com descoberta de serviços, balanceamento de carga, monitoramento e coordenação (ex.: API Gateway, service registry).
+[b]Infraestrutura Distribuída[/b]: Ambiente que suporta a execução dos serviços, incluindo containers, orquestradores e mecanismos de deploy contínuo.[/ul]
+	Essa arquitetura oferece vantagens como: [b]boa manutenibilidade[/b], pois serviços menores e isolados facilitam entendimento, testes e evolução independente; e [b]alta flexibilidade[/b], já que cada serviço pode ser implantado em diferentes ambientes de forma independente, favorecendo adaptação e escalabilidade.
+	Como desvantagem, destaca-se o [b]baixo desempenho[/b] em determinados cenários, devido à sobrecarga de comunicação em rede, latência entre serviços e necessidade de sincronização distribuída. Além disso, a natureza distribuída pode aumentar a complexidade operacional e exigir mecanismos adicionais de gerenciamento."
+}

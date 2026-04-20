@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://q3sp0p4elclv"]
+
+[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="1_m161p"]
+
+[node name="CatalogEntry" type="Button" unique_id=1958583275]
+custom_minimum_size = Vector2(800, 128)
+offset_right = 800.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 1
+alignment = 2
+clip_text = true
+expand_icon = true
+script = ExtResource("1_m161p")
+button_text = "MVC"
+max_font_size = 100
+metadata/_custom_type_script = "uid://bnaosc552evuy"

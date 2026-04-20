@@ -1,6 +1,7 @@
 extends Control
 
 @onready var button_container = $ScrollContainer/VBoxContainer
+@export var entry_scene: PackedScene
 @export var swebok: Swebok = null
 @export var label_size: int = 80
 
@@ -15,10 +16,8 @@ func build_catalog():
 	
 	for idx in range(PatternManager.owned_patterns.size()):
 		var pattern = PatternManager.owned_patterns[idx]
-		var button = Button.new()
-		button.text = pattern.title
-		button.add_theme_font_size_override("font_size", label_size)
-		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		var button = entry_scene.instantiate()
+		button.button_text = pattern.title
 		
 		button.set_meta("pattern_index", idx)
 		button.pressed.connect(_on_pattern_selected.bind(idx))

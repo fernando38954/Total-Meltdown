@@ -1,0 +1,22 @@
+{
+	"title": "Cliente-Servidor",
+	"icon": "res://assets/pattern_icons/Client-Server.png",
+	"attribute": {
+		"Functional Suitability": 1.3,
+		"Performance Efficiency": 1.4,
+		"Compatibility": 1.6,
+		"Interaction Capability": 1.4,
+		"Reliability": 1.2,
+		"Security": 1.1,
+		"Maintainability": 1.0,
+		"Flexibility": 1.1,
+		"Safety": 1.2,
+	},
+	"description": "	A arquitetura Cliente-Servidor organiza sistemas distribuídos a partir da separação entre entidades que consomem serviços (clientes) e entidades que os provêm (servidores). Essa estrutura é amplamente utilizada em aplicações de rede, onde múltiplos clientes interagem com um ou mais servidores centralizados. Sua organização fundamenta-se em dois blocos principais:
+[ul]
+[b]Cliente (Client)[/b]: Responsável pela interface com o usuário e pela solicitação de serviços ao servidor. Gerencia a interação, coleta entradas e apresenta os resultados processados.
+[b]Servidor (Server)[/b]: Responsável por processar requisições, executar regras de negócio, acessar dados e retornar respostas aos clientes. Pode atender múltiplos clientes simultaneamente.
+[b]Mecanismo de Comunicação[/b]: Define o protocolo de troca de mensagens entre cliente e servidor (ex.: HTTP, sockets), sendo essencial para garantir interoperabilidade e funcionamento distribuído.[/ul]
+	Essa arquitetura oferece vantagens como: [b]alta flexibilidade[/b], pois clientes podem ser executados em diferentes plataformas desde que consigam se comunicar com o servidor; [b]boa usabilidade[/b], já que a interface pode evoluir independentemente do processamento; e [b]boa segurança[/b], uma vez que o controle e proteção de dados podem ser centralizados no servidor.
+	Como desvantagens, destacam-se a [b]baixa manutenibilidade[/b], devido à dependência do servidor central e à possível dificuldade de evoluir o sistema sem impactar clientes; e a [b]baixa confiabilidade[/b], já que o servidor representa um ponto único de falha, problemas nele podem comprometer todo o sistema."
+}

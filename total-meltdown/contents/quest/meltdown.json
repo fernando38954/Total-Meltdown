@@ -24,7 +24,7 @@
 	},
 	"footnote": "[i]~É bastante coisa mesmo[/i]",
 	"requirements": {
-		"pattern1": "Event_Driven",
+		"pattern1": "Event-Driven",
 		"pattern2": "Microservice",
 		"pattern3": "Hexagonal"
 	},

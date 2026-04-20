@@ -1,0 +1,23 @@
+{
+	"title": "Arquitetura em Camadas",
+	"icon": "res://assets/pattern_icons/Layered.png",
+	"attribute": {
+		"Functional Suitability": 1.2,
+		"Performance Efficiency": 0.7,
+		"Compatibility": 1.0,
+		"Interaction Capability": 1.0,
+		"Reliability": 1.1,
+		"Security": 1.8,
+		"Maintainability": 1.2,
+		"Flexibility": 0.7,
+		"Safety": 1.3,
+	},
+	"description": "	A arquitetura em camadas organiza o sistema em níveis hierárquicos, onde cada camada possui responsabilidades bem definidas e se comunica, em geral, apenas com as camadas adjacentes. Essa estrutura promove separação de interesses e controle sobre o fluxo de dados e dependências. Sua organização fundamenta-se em blocos conceituais organizados verticalmente:
+[ul]
+[b]Camada de Apresentação[/b]: Responsável pela interface com o usuário, tratando entrada e saída de dados.
+[b]Camada de Aplicação[/b]: Coordena os fluxos de uso do sistema, orquestrando operações e regras de negócio sem implementá-las diretamente.
+[b]Camada de Domínio[/b]: Contém a lógica de negócio central, regras e políticas que governam o funcionamento do sistema.
+[b]Camada de Infraestrutura[/b]: Responsável pelo acesso a dados, persistência e comunicação com sistemas externos (bancos de dados, APIs, etc.).[/ul]
+	Essa arquitetura oferece vantagens como: [b]alta segurança[/b], pois o controle de acesso pode ser centralizado e restrito entre camadas; [b]boa manutenibilidade[/b], devido ao baixo acoplamento entre níveis e à organização modular; e [b]boa confiabilidade[/b], uma vez que a separação facilita testes, isolamento de falhas e previsibilidade no comportamento do sistema.
+	Como desvantagens, destacam-se o [b]baixo desempenho[/b], já que requisições frequentemente precisam atravessar múltiplas camadas, aumentando a sobrecarga; e a [b]baixa compatibilidade[/b], pois a rigidez estrutural pode dificultar a integração com sistemas externos ou arquiteturas que não seguem a mesma organização em camadas."
+}

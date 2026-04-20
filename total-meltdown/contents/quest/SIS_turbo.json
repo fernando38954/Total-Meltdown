@@ -27,7 +27,7 @@
 	"requirements": {
 		"pattern1": "Event-Driven",
 		"pattern2": "Microservice",
-		"pattern3": "Client_Server"
+		"pattern3": "Client-Server"
 	},
 	"demand": ""
 }

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bvqa22rf2ptyj"]
 
 [ext_resource type="Script" uid="uid://cmx1nvbbbsuxt" path="res://scripts/swebok/catalog.gd" id="1_p726v"]
+[ext_resource type="PackedScene" uid="uid://q3sp0p4elclv" path="res://scenes/swebok/CatalogEntry.tscn" id="2_ggrdu"]
 
 [node name="Catalog" type="Control" unique_id=997869620]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_p726v")
+entry_scene = ExtResource("2_ggrdu")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2104121597]
 layout_mode = 0

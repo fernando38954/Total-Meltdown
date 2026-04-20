@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cgqtegu1605kk" path="res://scripts/swebok/content_viewer.gd" id="1_6tgrj"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="2_1ym60"]
 [ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_jkyab"]
+[ext_resource type="Texture2D" uid="uid://dcdnocfly16ac" path="res://assets/pattern_icons/Client-Server.png" id="4_yiari"]
 
 [node name="ContentViewer" type="Control" unique_id=474821504]
 layout_mode = 3
@@ -29,6 +30,14 @@ watch_text_change = true
 max_font_size = 100
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
+[node name="Icon" type="TextureRect" parent="." unique_id=947132389]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+texture = ExtResource("4_yiari")
+expand_mode = 1
+
 [node name="Description" type="RichTextLabel" parent="." unique_id=1581382412]
 layout_mode = 0
 offset_left = 603.0
@@ -43,7 +52,7 @@ bbcode_enabled = true
 text = "Test Description"
 script = ExtResource("2_jkyab")
 watch_text_change = true
-min_font_size = 30
+min_font_size = 38
 max_font_size = 100
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
@@ -53,3 +62,4 @@ offset_left = 219.0
 offset_top = 284.0
 offset_right = 475.0
 offset_bottom = 540.0
+upper_limit = 2.0

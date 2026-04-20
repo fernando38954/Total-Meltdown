@@ -44,6 +44,7 @@ offset_left = 138.0
 offset_top = 315.0
 offset_right = 1910.0
 offset_bottom = 2087.0
+upper_limit = 2.0
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=2038739943]
 layout_mode = 0

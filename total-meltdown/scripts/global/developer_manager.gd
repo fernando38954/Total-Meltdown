@@ -13,6 +13,7 @@ var creation_finished = false
 func _ready():
 	load_developers()
 	locked_developers = all_developers.duplicate()
+	initialize()
 
 func load_developers():
 	all_developers.clear()
@@ -54,6 +55,10 @@ func load_developers():
 	all_developers.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
 	print_debug("Number of developers loaded：", all_developers.size())
+
+func initialize():
+	var random_developer = prepare_random_developers(1)
+	hire_developer(random_developer, random_developer[0])
 #endregion
 
 #region Array Operation
