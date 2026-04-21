@@ -18,5 +18,8 @@
 [b]View (Visão)[/b]: Camada de apresentação responsável por exibir os dados ao usuário. Obtém informações do modelo e as renderiza de forma adequada, podendo haver múltiplas visões para o mesmo modelo.
 [b]Controller (Controlador)[/b]: Atua como intermediário entre Model e View. Recebe entradas do usuário, interpreta essas ações e coordena as atualizações no modelo e na visão.[/ul]
 	Essa arquitetura oferece vantagens como: [b]alta usabilidade[/b], pois a separação permite múltiplas interfaces e facilita a adaptação da apresentação ao usuário; e [b]boa manutenibilidade[/b], já que alterações em uma camada (especialmente na interface) podem ser realizadas com impacto reduzido nas demais.
-	Como desvantagem, destaca-se a [b]baixa compatibilidade[/b], uma vez que a separação rígida entre componentes pode dificultar a integração com sistemas legados ou arquiteturas que não seguem o mesmo padrão estrutural. "
+	Como desvantagem, destaca-se a [b]baixa compatibilidade[/b], uma vez que a separação rígida entre componentes pode dificultar a integração com sistemas legados ou arquiteturas que não seguem o mesmo padrão estrutural.",
+	"abstract": "[b]Conceito[/b]: Separação entre dados (Model), interface (View) e lógica de entrada (Controller).
+[b]Vantagem[/b]: Alta Usabilidade. Permite criar múltiplas interfaces para os mesmos dados com facilidade.
+[b]Desvantagem[/b]: Baixa Compatibilidade. Difícil de integrar com sistemas que não seguem esse padrão rígido."
 }

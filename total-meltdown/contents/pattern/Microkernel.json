@@ -18,5 +18,8 @@
 [b]Plug-ins (Servidores/Extensões)[/b]: Componentes externos que implementam funcionalidades adicionais, podendo ser adicionados, removidos ou modificados sem impactar diretamente o núcleo.
 [b]Mecanismo de Comunicação[/b]: Interface padronizada que permite a interação entre o núcleo e os plug-ins, garantindo desacoplamento e interoperabilidade interna.
 	Essa arquitetura oferece vantagens como: [b]alta manutenibilidade[/b], uma vez que alterações em funcionalidades específicas podem ser realizadas por meio da modificação ou substituição de plug-ins sem afetar o núcleo; [b]boa flexibilidade[/b], pois o núcleo mínimo pode ser adaptado a diferentes ambientes enquanto os plug-ins permanecem reutilizáveis; e [b]boa confiabilidade[/b], já que falhas em plug-ins tendem a ser isoladas, reduzindo o impacto no sistema como um todo.
-	Como desvantagem, destaca-se o [b]baixo desempenho[/b], devido à sobrecarga de comunicação entre o núcleo e os módulos externos, o que pode introduzir latência adicional em comparação a arquiteturas mais monolíticas. Além disso, o gerenciamento das interações entre múltiplos plug-ins pode aumentar a complexidade do sistema."
+	Como desvantagem, destaca-se o [b]baixo desempenho[/b], devido à sobrecarga de comunicação entre o núcleo e os módulos externos, o que pode introduzir latência adicional em comparação a arquiteturas mais monolíticas. Além disso, o gerenciamento das interações entre múltiplos plug-ins pode aumentar a complexidade do sistema.",
+	"abstract": "[b]Conceito[/b]: Um núcleo mínimo essencial cercado por plug-ins (módulos externos) que estendem o sistema.
+[b]Vantagem[/b]: Extensibilidade. É muito fácil adicionar ou remover funcionalidades sem tocar no núcleo.
+[b]Desvantagem[/b]: Sobrecarga de Comunicação. A troca de mensagens entre o núcleo e os plug-ins gera latência."
 }

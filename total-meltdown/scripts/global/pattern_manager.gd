@@ -43,6 +43,7 @@ func load_patterns():
 						"icon": icon,
 						"attribute": data.get("attribute", ""),
 						"description": data.get("description", ""),
+						"abstract": data.get("abstract", ""),
 					})
 				else:
 					creation_finished = true

@@ -19,5 +19,8 @@
 [b]Camada de Domínio[/b]: Contém a lógica de negócio central, regras e políticas que governam o funcionamento do sistema.
 [b]Camada de Infraestrutura[/b]: Responsável pelo acesso a dados, persistência e comunicação com sistemas externos (bancos de dados, APIs, etc.).[/ul]
 	Essa arquitetura oferece vantagens como: [b]alta segurança[/b], pois o controle de acesso pode ser centralizado e restrito entre camadas; [b]boa manutenibilidade[/b], devido ao baixo acoplamento entre níveis e à organização modular; e [b]boa confiabilidade[/b], uma vez que a separação facilita testes, isolamento de falhas e previsibilidade no comportamento do sistema.
-	Como desvantagens, destacam-se o [b]baixo desempenho[/b], já que requisições frequentemente precisam atravessar múltiplas camadas, aumentando a sobrecarga; e a [b]baixa compatibilidade[/b], pois a rigidez estrutural pode dificultar a integração com sistemas externos ou arquiteturas que não seguem a mesma organização em camadas."
+	Como desvantagens, destacam-se o [b]baixo desempenho[/b], já que requisições frequentemente precisam atravessar múltiplas camadas, aumentando a sobrecarga; e a [b]baixa compatibilidade[/b], pois a rigidez estrutural pode dificultar a integração com sistemas externos ou arquiteturas que não seguem a mesma organização em camadas.",
+	"abstract": "[b]Conceito[/b]: Organização hierárquica (Apresentação, Aplicação, Domínio e Infraestrutura).
+[b]Vantagem[/b]: Segurança e Confiabilidade. Controle rigoroso de acesso e isolamento de falhas entre os níveis.
+[b]Desvantagem[/b]: Baixo Desempenho. O dado precisa atravessar todas as camadas, gerando sobrecarga."
 }

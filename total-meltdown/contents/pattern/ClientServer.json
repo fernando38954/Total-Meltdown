@@ -18,5 +18,8 @@
 [b]Servidor (Server)[/b]: Responsável por processar requisições, executar regras de negócio, acessar dados e retornar respostas aos clientes. Pode atender múltiplos clientes simultaneamente.
 [b]Mecanismo de Comunicação[/b]: Define o protocolo de troca de mensagens entre cliente e servidor (ex.: HTTP, sockets), sendo essencial para garantir interoperabilidade e funcionamento distribuído.[/ul]
 	Essa arquitetura oferece vantagens como: [b]alta flexibilidade[/b], pois clientes podem ser executados em diferentes plataformas desde que consigam se comunicar com o servidor; [b]boa usabilidade[/b], já que a interface pode evoluir independentemente do processamento; e [b]boa segurança[/b], uma vez que o controle e proteção de dados podem ser centralizados no servidor.
-	Como desvantagens, destacam-se a [b]baixa manutenibilidade[/b], devido à dependência do servidor central e à possível dificuldade de evoluir o sistema sem impactar clientes; e a [b]baixa confiabilidade[/b], já que o servidor representa um ponto único de falha, problemas nele podem comprometer todo o sistema."
+	Como desvantagens, destacam-se a [b]baixa manutenibilidade[/b], devido à dependência do servidor central e à possível dificuldade de evoluir o sistema sem impactar clientes; e a [b]baixa confiabilidade[/b], já que o servidor representa um ponto único de falha, problemas nele podem comprometer todo o sistema.",
+	"abstract": "[b]Conceito[/b]: Divisão entre quem solicita serviços (Cliente) e quem os provê centralizadamente (Servidor).
+[b]Vantagem[/b]: Flexibilidade. Clientes podem rodar em qualquer plataforma, e a interface evolui sozinha.
+[b]Desvantagem[/b]: Ponto Único de Falha. Se o servidor cair, todo o sistema fica indisponível (Baixa Confiabilidade)."
 }

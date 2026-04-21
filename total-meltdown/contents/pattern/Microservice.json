@@ -19,5 +19,8 @@
 [b]Gerenciamento e Orquestração[/b]: Responsável por lidar com descoberta de serviços, balanceamento de carga, monitoramento e coordenação (ex.: API Gateway, service registry).
 [b]Infraestrutura Distribuída[/b]: Ambiente que suporta a execução dos serviços, incluindo containers, orquestradores e mecanismos de deploy contínuo.[/ul]
 	Essa arquitetura oferece vantagens como: [b]boa manutenibilidade[/b], pois serviços menores e isolados facilitam entendimento, testes e evolução independente; e [b]alta flexibilidade[/b], já que cada serviço pode ser implantado em diferentes ambientes de forma independente, favorecendo adaptação e escalabilidade.
-	Como desvantagem, destaca-se o [b]baixo desempenho[/b] em determinados cenários, devido à sobrecarga de comunicação em rede, latência entre serviços e necessidade de sincronização distribuída. Além disso, a natureza distribuída pode aumentar a complexidade operacional e exigir mecanismos adicionais de gerenciamento."
+	Como desvantagem, destaca-se o [b]baixo desempenho[/b] em determinados cenários, devido à sobrecarga de comunicação em rede, latência entre serviços e necessidade de sincronização distribuída. Além disso, a natureza distribuída pode aumentar a complexidade operacional e exigir mecanismos adicionais de gerenciamento.",
+	"abstract": "[b]Conceito[/b]: Sistema composto por pequenos serviços independentes que se comunicam via rede.
+[b]Vantagem[/b]: Escalabilidade e Evolução. Cada serviço pode ser atualizado ou substituído sem parar os outros.
+[b]Desvantagem[/b]: Complexidade de Rede. A latência da comunicação distribuída pode prejudicar o desempenho."
 }

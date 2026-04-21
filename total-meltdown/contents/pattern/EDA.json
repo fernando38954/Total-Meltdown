@@ -23,5 +23,8 @@
 [b]Processamento Complexo (CEP)[/b]: Correlação entre múltiplos eventos para inferir situações mais elaboradas.[/ul]
 [b]Consumidores[/b]: Componentes que reagem aos eventos, executando ações como atualização de estado, chamadas de serviços ou disparo de novos eventos.[/ul]
 	Essa arquitetura oferece vantagens como: [b]alta flexibilidade[/b], devido ao forte desacoplamento entre componentes; e [b]boa performance[/b] em cenários distribuídos, já que a comunicação assíncrona permite paralelismo e melhor uso de recursos.
-	Como desvantagens, destacam-se a [b]baixa manutenibilidade[/b], devido à dificuldade de rastrear fluxos de execução e depurar sistemas orientados a eventos; e a [b]baixa confiabilidade[/b], uma vez que a natureza assíncrona pode introduzir problemas como perda de eventos, processamento duplicado e dificuldade em garantir consistência."
+	Como desvantagens, destacam-se a [b]baixa manutenibilidade[/b], devido à dificuldade de rastrear fluxos de execução e depurar sistemas orientados a eventos; e a [b]baixa confiabilidade[/b], uma vez que a natureza assíncrona pode introduzir problemas como perda de eventos, processamento duplicado e dificuldade em garantir consistência.",
+	"abstract": "[b]Conceito[/b]: Componentes reagem a eventos disparados de forma assíncrona, sem se conhecerem diretamente.
+[b]Vantagem[/b]: Agilidade e Paralelismo. Ótimo desempenho em sistemas distribuídos e altamente desacoplados.
+[b]Desvantagem[/b]: Rastreabilidade Difícil. É um desafio depurar ou garantir que um evento não seja perdido (Baixa Confiabilidade)."
 }
