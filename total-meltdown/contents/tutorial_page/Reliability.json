@@ -1,0 +1,11 @@
+{
+	"order": 5,
+	"title": "Confiabilidade",
+	"image": "res://assets/attribute_icons/Reliability.png",
+	"description": "	Indica a capacidade do sistema de operar de forma consistente e sem falhas ao longo do tempo. Um sistema confiável mantém seu funcionamento mesmo sob condições adversas.
+[ul]
+[b]Ausência de falhas[/b]: funciona sem falhas frequentes.
+[b]Disponibilidade[/b]: está acessível quando necessário.
+[b]Tolerância a falhas[/b]: continua operando mesmo com erros.
+[b]Recuperabilidade[/b]: recupera dados e estado após falhas.[/ul]"
+}

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d14tylfnorq6o"
-path="res://.godot/imported/Monolithic.png-cf63f60f19216196b7836489443ce6f4.ctex"
+uid="uid://dcdnocfly16ac"
+path="res://.godot/imported/ClientServer.png-c0842c308665757843ee78ad37552ec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pattern_icons/Monolithic.png"
-dest_files=["res://.godot/imported/Monolithic.png-cf63f60f19216196b7836489443ce6f4.ctex"]
+source_file="res://assets/pattern_icons/ClientServer.png"
+dest_files=["res://.godot/imported/ClientServer.png-c0842c308665757843ee78ad37552ec2.ctex"]
 
 [params]
 

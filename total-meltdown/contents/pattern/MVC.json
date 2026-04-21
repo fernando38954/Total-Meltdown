@@ -2,15 +2,15 @@
 	"title": "Modelo-Visão-Controlador",
 	"icon": "res://assets/pattern_icons/MVC.png",
 	"attribute": {
-		"Functional Suitability": 1.4,
+		"Functional Suitability": 1.1,
 		"Performance Efficiency": 1.1,
-		"Compatibility": 1.4,
-		"Interaction Capability": 1.5,
-		"Reliability": 1.2,
-		"Security": 1.0,
-		"Maintainability": 1.3,
-		"Flexibility": 1.2,
-		"Safety": 1.0,
+		"Compatibility": 0.8,
+		"Interaction Capability": 1.7,
+		"Reliability": 1.1,
+		"Security": 1.1,
+		"Maintainability": 1.4,
+		"Flexibility": 1.1,
+		"Safety": 1.1,
 	},
 	"description": "	A arquitetura MVC organiza sistemas interativos separando responsabilidades em três componentes principais, com o objetivo de isolar a lógica de negócio da interface com o usuário e do controle de fluxo da aplicação. Essa separação promove uma estrutura modular e facilita a evolução do sistema ao longo do tempo. Sua organização fundamenta-se em três blocos conceituais:
 [ul]

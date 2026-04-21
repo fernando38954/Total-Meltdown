@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bd5f23dl8nicx"]
 
 [ext_resource type="Script" uid="uid://b0fe5ervk1q14" path="res://scripts/swebok/swebok.gd" id="1_6evcd"]
+[ext_resource type="AudioStream" uid="uid://dofnpp8wdackx" path="res://assets/sfx/BookPageTurning_1.mp3" id="2_k2pky"]
 [ext_resource type="Texture2D" uid="uid://0g7tw8n72gim" path="res://placeholder/Book_white.png" id="2_wlni6"]
 [ext_resource type="PackedScene" uid="uid://bvqa22rf2ptyj" path="res://scenes/swebok/Catalog.tscn" id="2_x7age"]
+[ext_resource type="AudioStream" uid="uid://w6cvvip8jvoy" path="res://assets/sfx/BookPageTurning_2.mp3" id="3_0h8ia"]
 [ext_resource type="PackedScene" uid="uid://b2bor1i0t51n0" path="res://scenes/swebok/ContentViewer.tscn" id="3_wlni6"]
 [ext_resource type="Texture2D" uid="uid://bk348p27nanvm" path="res://placeholder/WhiteArrow.png" id="5_27urn"]
 [ext_resource type="Texture2D" uid="uid://okp1hih2djd1" path="res://placeholder/GrayArrow.png" id="6_1kmui"]
@@ -86,6 +88,8 @@ animations = [{
 
 [node name="Swebok" type="CanvasLayer" unique_id=129603859]
 script = ExtResource("1_6evcd")
+flip_page_right_SFX = ExtResource("2_k2pky")
+flip_page_left_SFX = ExtResource("3_0h8ia")
 metadata/_edit_vertical_guides_ = [576.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=617863607]
@@ -97,11 +101,17 @@ animation = &"turn_page"
 [node name="Catalog" parent="." unique_id=997869620 node_paths=PackedStringArray("swebok") instance=ExtResource("2_x7age")]
 swebok = NodePath("..")
 
-[node name="ScrollContainer" parent="Catalog" index="0" unique_id=2104121597]
-offset_left = 1093.0
+[node name="TutorialPage" parent="Catalog" index="0" unique_id=2104121597]
+offset_left = 1039.0
 offset_top = 305.0
-offset_right = 2810.0
-offset_bottom = 1541.0
+offset_right = 1839.0
+offset_bottom = 1585.0
+
+[node name="PatternPage" parent="Catalog" index="1" unique_id=755935879]
+offset_left = 2024.0
+offset_top = 305.0
+offset_right = 2824.0
+offset_bottom = 1585.0
 
 [node name="ContentViewer" parent="." unique_id=474821504 node_paths=PackedStringArray("swebok") instance=ExtResource("3_wlni6")]
 swebok = NodePath("..")
@@ -124,15 +134,20 @@ offset_top = 487.0
 offset_right = 1588.0
 offset_bottom = 743.0
 
-[node name="Description" parent="ContentViewer" index="2" unique_id=1581382412]
+[node name="Image" parent="ContentViewer" index="2" unique_id=1532388983]
+offset_left = 1078.0
+offset_top = 498.0
+offset_right = 1878.0
+offset_bottom = 1498.0
+
+[node name="Description" parent="ContentViewer" index="3" unique_id=1581382412]
 offset_left = 2004.0
 offset_top = 279.0
 offset_right = 2833.0
 offset_bottom = 1549.0
 text = "ASD"
-min_font_size = 37
 
-[node name="RadarChart" parent="ContentViewer" index="3" unique_id=1384305498]
+[node name="RadarChart" parent="ContentViewer" index="4" unique_id=1384305498]
 offset_left = 1076.0
 offset_top = 792.0
 offset_right = 1840.0
@@ -175,6 +190,8 @@ pivot_offset = Vector2(128, 128)
 texture_normal = ExtResource("5_27urn")
 texture_pressed = ExtResource("6_1kmui")
 texture_hover = ExtResource("7_k2pky")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1170580997]
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]

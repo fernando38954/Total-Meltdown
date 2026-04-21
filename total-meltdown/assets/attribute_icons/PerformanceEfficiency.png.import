@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcdnocfly16ac"
-path="res://.godot/imported/Client-Server.png-6cd8f4ddb791b887b756ce06b4fe7b53.ctex"
+uid="uid://dvo7pmomqwxyv"
+path="res://.godot/imported/PerformanceEfficiency.png-4c7a037577811f5e600641b20c26368c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pattern_icons/Client-Server.png"
-dest_files=["res://.godot/imported/Client-Server.png-6cd8f4ddb791b887b756ce06b4fe7b53.ctex"]
+source_file="res://assets/attribute_icons/PerformanceEfficiency.png"
+dest_files=["res://.godot/imported/PerformanceEfficiency.png-4c7a037577811f5e600641b20c26368c.ctex"]
 
 [params]
 

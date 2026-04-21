@@ -1,0 +1,9 @@
+{
+	"order": 3,
+	"title": "Compatibilidade",
+	"image": "res://assets/attribute_icons/Compatibility.png",
+	"description": "	Define o quão bem o sistema opera em conjunto com outros sistemas ou ambientes. Um software compatível consegue coexistir e interoperar sem conflitos.
+[ul]
+[b]Coexistência[/b]: funciona sem prejudicar outros sistemas.
+[b]Interoperabilidade[/b]: troca e utiliza informações corretamente.[/ul]"
+}

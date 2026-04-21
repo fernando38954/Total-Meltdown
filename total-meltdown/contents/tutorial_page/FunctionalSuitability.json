@@ -1,0 +1,10 @@
+{
+	"order": 1,
+	"title": "Adequação Funcional",
+	"image": "res://assets/attribute_icons/FunctionalSuitability.png",
+	"description": "	Refere-se à capacidade do sistema de fornecer funções que atendam corretamente às necessidades do usuário. Um software adequado resolve o problema proposto com completude e precisão.
+[ul]
+[b]Integridade funcional[/b]: cobre todas as tarefas e objetivos esperados.
+[b]Correção funcional[/b]: produz resultados corretos.
+[b]Adequação funcional[/b]: facilita a realização das tarefas[/ul]"
+}

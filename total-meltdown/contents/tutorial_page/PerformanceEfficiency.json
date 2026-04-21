@@ -1,0 +1,10 @@
+{
+	"order": 2,
+	"title": "Eficiência de Desempenho",
+	"image": "res://assets/attribute_icons/PerformanceEfficiency.png",
+	"description": "	Avalia o desempenho do sistema em relação ao uso de recursos. Um sistema eficiente responde rapidamente e utiliza bem CPU, memória e rede.
+[ul]
+[b]Comportamento de tempo[/b]: tempos de resposta e processamento adequados.
+[b]Utilização de recursos[/b]: uso eficiente de CPU, memória etc.
+[b]Capacidade[/b]: suporta volumes e limites esperados.[/ul]"
+}

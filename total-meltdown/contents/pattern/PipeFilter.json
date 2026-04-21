@@ -1,0 +1,22 @@
+{
+	"title": "Pipe and Filter",
+	"icon": "res://assets/pattern_icons/PipeFilter.png",
+	"attribute": {
+		"Functional Suitability": 1.1,
+		"Performance Efficiency": 1.4,
+		"Compatibility": 1.8,
+		"Interaction Capability": 0.8,
+		"Reliability": 0.8,
+		"Security": 1.1,
+		"Maintainability": 1.4,
+		"Flexibility": 1.1,
+		"Safety": 1.1,
+	},
+	"description": "	A arquitetura Pipe-and-Filter organiza o sistema como uma sequência de etapas de processamento independentes (filtros), conectadas por canais de comunicação (pipes). Cada filtro recebe dados de entrada, realiza uma transformação e produz uma saída que é repassada ao próximo estágio, formando um fluxo contínuo de processamento. Essa abordagem é comum em sistemas de processamento de dados, compiladores e pipelines de transformação. Sua organização fundamenta-se nos seguintes blocos conceituais:
+[ul]
+[b]Filtros (Filters)[/b]: Componentes responsáveis por processar dados de entrada e gerar dados de saída, sem conhecimento direto sobre a origem ou destino final dos dados. Cada filtro executa uma tarefa específica e bem definida.
+[b]Pipes (Canais)[/b]: Estruturas responsáveis por transportar os dados entre filtros, garantindo o fluxo sequencial ou em streaming das informações.
+[b]Fluxo de Dados (Data Flow)[/b]: Define a ordem de execução dos filtros, podendo ser linear ou mais complexo, dependendo da composição do pipeline.[/ul]
+	Essa arquitetura oferece vantagens como: [b]boa manutenibilidade[/b], pois filtros podem ser modificados ou substituídos isoladamente; [b]boa performance[/b], especialmente em cenários de processamento em fluxo ou paralelismo entre filtros; e [b]alta compatibilidade[/b], já que diferentes filtros podem ser desenvolvidos em tecnologias distintas, desde que respeitem o formato de entrada e saída.
+	Como desvantagens, destacam-se a [b]baixa confiabilidade[/b], uma vez que falhas em um filtro podem interromper todo o pipeline; e a [b]baixa usabilidade[/b], já que essa arquitetura não é naturalmente voltada para interação com o usuário final, sendo mais adequada para processamento interno de dados."
+}

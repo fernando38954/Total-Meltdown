@@ -1,0 +1,15 @@
+{
+	"order": 4,
+	"title": "Capacidade de Interação",
+	"image": "res://assets/attribute_icons/InteractionCapability.png",
+	"description": "	Refere-se à facilidade de uso e à experiência do usuário ao interagir com o sistema. Um bom sistema é intuitivo, acessível e fácil de aprender.
+[ul]
+[b]Adequação Reconhecível[/b]: usuário entende se o sistema atende suas necessidades.
+[b]Aprendibilidade[/b]: facilidade de aprender a usar.
+[b]Operabilidade[/b]: facilidade de operação e controle.
+[b]Proteção contra erros do usuário[/b]: evita ou reduz erros.
+[b]Engajamento do usuário[/b]: interface atrativa e motivadora.
+[b]Inclusividade[/b]: acessível a diferentes perfis de usuários.
+[b]Assistência ao usuário[/b]: fornece suporte e ajuda.
+[b]Autodescritividade[/b]: uso intuitivo sem necessidade de instruções externas.[/ul]"
+}

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyphdvb7ymbcm"
-path="res://.godot/imported/Hexagonal.png-a2ccc9ae8140b60a1a73851eb9d85339.ctex"
+uid="uid://kpdfkn4quiwn"
+path="res://.godot/imported/Safety.png-8830efe740a768ad6968140a6709464f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pattern_icons/Hexagonal.png"
-dest_files=["res://.godot/imported/Hexagonal.png-a2ccc9ae8140b60a1a73851eb9d85339.ctex"]
+source_file="res://assets/attribute_icons/Safety.png"
+dest_files=["res://.godot/imported/Safety.png-8830efe740a768ad6968140a6709464f.ctex"]
 
 [params]
 

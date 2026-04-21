@@ -21,16 +21,26 @@ var current_region: Region = null
 @export var right_button: TextureButton
 @export var return_button: TextureButton
 
+@export_category("SFX")
+@export var screen_open_SFX: AudioStream
+@export var screen_button_SFX: AudioStream
+
+@export_category("BGM")
+@export var main_BGM: AudioStream
+
 func _ready() -> void:
 	left_button.hide()
 	right_button.hide()
 	return_button.hide()
+	AudioManager.play_bgm(main_BGM)
 
 func switch_region(region: Region):
 	if current_region == region:
 		return
+	if current_region == null:
+		AudioManager.play_sfx(screen_open_SFX)
 	
-	await check_close_swebok()
+	await check_close_screen()
 	current_region = region
 	return_button.show()
 	left_button.set_visible(region.left_region != null)
@@ -50,7 +60,7 @@ func switch_region(region: Region):
 		await workspace_camera.zoom_finished
 		map_screen.disable_event_blocker()
 
-func check_close_swebok():
+func check_close_screen():
 	if current_region == swebok_region:
 		swebok.close_book()
 	
@@ -63,7 +73,8 @@ func check_close_swebok():
 
 
 func _on_return_button_pressed() -> void:
-	await check_close_swebok()
+	AudioManager.play_sfx(screen_button_SFX)
+	await check_close_screen()
 	current_region = null
 	return_button.hide()
 	left_button.hide()
@@ -72,10 +83,12 @@ func _on_return_button_pressed() -> void:
 
 
 func _on_left_button_pressed() -> void:
-	await check_close_swebok()
+	AudioManager.play_sfx(screen_button_SFX)
+	await check_close_screen()
 	switch_region(current_region.left_region)
 
 
 func _on_right_button_pressed() -> void:
-	await check_close_swebok()
+	AudioManager.play_sfx(screen_button_SFX)
+	await check_close_screen()
 	switch_region(current_region.right_region)
