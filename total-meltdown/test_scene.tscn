@@ -6,12 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="3_4gito"]
 [ext_resource type="Script" uid="uid://bfymxkjtitow5" path="res://scripts/workspace/workspace_camera.gd" id="3_coq8p"]
 [ext_resource type="AudioStream" uid="uid://bcgcxhx6i2fpl" path="res://assets/sfx/ButtonPress.mp3" id="4_fbuy2"]
-[ext_resource type="Texture2D" uid="uid://bk348p27nanvm" path="res://placeholder/WhiteArrow.png" id="5_8pr8v"]
 [ext_resource type="AudioStream" uid="uid://cv1y556ftyvhv" path="res://assets/bgm/MainBGM.ogg" id="5_fbuy2"]
-[ext_resource type="Texture2D" uid="uid://okp1hih2djd1" path="res://placeholder/GrayArrow.png" id="6_buypi"]
-[ext_resource type="Texture2D" uid="uid://dmc2r0c75pl63" path="res://placeholder/LightGrayArrow.png" id="7_njel3"]
 [ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="8_buypi"]
+[ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/button/Arrow_Normal.png" id="8_fbuy2"]
+[ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/button/Arrow_Press.png" id="9_0k8yu"]
 [ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperScreen.tscn" id="9_njel3"]
+[ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/button/Arrow_Hover.png" id="10_hiucn"]
 [ext_resource type="Texture2D" uid="uid://bhlngl6hk38ra" path="res://assets/mask.png" id="10_rpuu0"]
 [ext_resource type="PackedScene" uid="uid://cinak64pyd2kv" path="res://scenes/map_screen/MapScreen.tscn" id="12_oo8pe"]
 
@@ -108,9 +108,9 @@ offset_right = 240.0
 offset_bottom = 611.0
 rotation = 4.712389
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("5_8pr8v")
-texture_pressed = ExtResource("6_buypi")
-texture_hover = ExtResource("7_njel3")
+texture_normal = ExtResource("8_fbuy2")
+texture_pressed = ExtResource("9_0k8yu")
+texture_hover = ExtResource("10_hiucn")
 ignore_texture_size = true
 
 [node name="RightButton" type="TextureButton" parent="ScreenButtons" unique_id=1282742258]
@@ -120,9 +120,9 @@ offset_right = 1422.0
 offset_bottom = 541.0
 rotation = 1.5707964
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("5_8pr8v")
-texture_pressed = ExtResource("6_buypi")
-texture_hover = ExtResource("7_njel3")
+texture_normal = ExtResource("8_fbuy2")
+texture_pressed = ExtResource("9_0k8yu")
+texture_hover = ExtResource("10_hiucn")
 ignore_texture_size = true
 
 [node name="ReturnButton" type="TextureButton" parent="ScreenButtons" unique_id=925521351]
@@ -132,9 +132,9 @@ offset_right = 867.00006
 offset_bottom = 903.0
 rotation = 3.1415927
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("5_8pr8v")
-texture_pressed = ExtResource("6_buypi")
-texture_hover = ExtResource("7_njel3")
+texture_normal = ExtResource("8_fbuy2")
+texture_pressed = ExtResource("9_0k8yu")
+texture_hover = ExtResource("10_hiucn")
 ignore_texture_size = true
 
 [node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("8_buypi")]
