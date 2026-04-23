@@ -22,6 +22,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bskk8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oey3q"]
+
 [node name="Contract" type="CanvasLayer" unique_id=1964947095 node_paths=PackedStringArray("drawing_board", "post_it", "quest_panel", "selector_panel")]
 script = ExtResource("1_s0427")
 drawing_board = NodePath("DrawingBoard")
@@ -232,6 +234,7 @@ offset_left = 377.0
 offset_top = 1595.0
 offset_right = 3425.0
 offset_bottom = 2173.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oey3q")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SelectorPanel/OptionPanel" unique_id=1495977691]
 layout_mode = 0

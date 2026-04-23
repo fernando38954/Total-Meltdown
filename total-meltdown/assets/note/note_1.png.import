@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j414mjwuim6w"
-path="res://.godot/imported/Note.png-30744399bcac623598e80cfaddba95b2.ctex"
+uid="uid://doquprocr2u70"
+path="res://.godot/imported/note_1.png-2ed050b280f0a69450aa00a28a290ed1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Note.png"
-dest_files=["res://.godot/imported/Note.png-30744399bcac623598e80cfaddba95b2.ctex"]
+source_file="res://assets/note/note_1.png"
+dest_files=["res://.godot/imported/note_1.png-2ed050b280f0a69450aa00a28a290ed1.ctex"]
 
 [params]
 

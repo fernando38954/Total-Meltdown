@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="5_bdd7n"]
 [ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="6_fopsv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekraa"]
+bg_color = Color(0.4, 0.3882353, 0.3764706, 1)
+
 [node name="DevDetailCard" type="Panel" unique_id=2083043029]
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(576, 324)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekraa")
 script = ExtResource("1_q7v8o")
 font_size = 18
 value_font_size = 12

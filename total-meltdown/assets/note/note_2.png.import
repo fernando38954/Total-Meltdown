@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2govlso8m3u1"
-path="res://.godot/imported/Livro (2).png-7e631df8d4d871140129676ad4796c1e.ctex"
+path="res://.godot/imported/note_2.png-2660c5aa4cd7edb07e4f8121c49c5436.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Livro (2).png"
-dest_files=["res://.godot/imported/Livro (2).png-7e631df8d4d871140129676ad4796c1e.ctex"]
+source_file="res://assets/note/note_2.png"
+dest_files=["res://.godot/imported/note_2.png-2660c5aa4cd7edb07e4f8121c49c5436.ctex"]
 
 [params]
 

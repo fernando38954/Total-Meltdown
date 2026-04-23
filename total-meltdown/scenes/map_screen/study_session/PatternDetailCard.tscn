@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="4_13mco"]
 [ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="5_grlnv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p2in"]
+bg_color = Color(0.4, 0.3882353, 0.3764706, 1)
+
 [node name="PatternDetailCard" type="Panel" unique_id=2083043029]
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(576, 324)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7p2in")
 script = ExtResource("1_ydam8")
 font_size = 18
 value_font_size = 12
@@ -35,6 +39,7 @@ text = "Name"
 horizontal_alignment = 1
 script = ExtResource("2_jph2o")
 watch_text_change = true
+min_font_size = 37
 max_font_size = 150
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
@@ -61,7 +66,8 @@ bbcode_enabled = true
 text = "Test description"
 script = ExtResource("2_jph2o")
 watch_text_change = true
-max_font_size = 100
+min_font_size = 70
+max_font_size = 71
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="ReturnButton" type="TextureButton" parent="." unique_id=1238466745]

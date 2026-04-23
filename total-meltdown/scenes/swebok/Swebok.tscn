@@ -5,45 +5,46 @@
 [ext_resource type="PackedScene" uid="uid://bvqa22rf2ptyj" path="res://scenes/swebok/Catalog.tscn" id="2_x7age"]
 [ext_resource type="AudioStream" uid="uid://w6cvvip8jvoy" path="res://assets/sfx/BookPageTurning_2.mp3" id="3_0h8ia"]
 [ext_resource type="PackedScene" uid="uid://b2bor1i0t51n0" path="res://scenes/swebok/ContentViewer.tscn" id="3_wlni6"]
-[ext_resource type="Texture2D" uid="uid://j414mjwuim6w" path="res://assets/Note.png" id="4_k2pky"]
+[ext_resource type="Texture2D" uid="uid://doquprocr2u70" path="res://assets/note/note_1.png" id="4_0h8ia"]
+[ext_resource type="Texture2D" uid="uid://b2govlso8m3u1" path="res://assets/note/note_2.png" id="5_0h8ia"]
 [ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/button/Arrow_Normal.png" id="7_k2pky"]
 [ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/button/Arrow_Press.png" id="8_0h8ia"]
 [ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/button/Arrow_Hover.png" id="9_gmiyw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h8ia"]
-atlas = ExtResource("4_k2pky")
+atlas = ExtResource("4_0h8ia")
 region = Rect2(0, 0, 2660, 2240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmiyw"]
-atlas = ExtResource("4_k2pky")
+atlas = ExtResource("4_0h8ia")
 region = Rect2(2660, 0, 2660, 2240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7ya"]
-atlas = ExtResource("4_k2pky")
+atlas = ExtResource("4_0h8ia")
 region = Rect2(5320, 0, 2660, 2240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hotj"]
-atlas = ExtResource("4_k2pky")
+atlas = ExtResource("4_0h8ia")
 region = Rect2(7980, 0, 2660, 2240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lt6x6"]
-atlas = ExtResource("4_k2pky")
+atlas = ExtResource("4_0h8ia")
 region = Rect2(7980, 0, 2660, 2240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cshef"]
-atlas = ExtResource("4_k2pky")
-region = Rect2(10640, 0, 2660, 2240)
+atlas = ExtResource("5_0h8ia")
+region = Rect2(0, 0, 2660, 2240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1xhr"]
-atlas = ExtResource("4_k2pky")
-region = Rect2(13300, 0, 2660, 2240)
+atlas = ExtResource("5_0h8ia")
+region = Rect2(2660, 0, 2660, 2240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1d12q"]
-atlas = ExtResource("4_k2pky")
-region = Rect2(15960, 0, 2660, 2240)
+atlas = ExtResource("5_0h8ia")
+region = Rect2(5320, 0, 2660, 2240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oyjut"]
-atlas = ExtResource("4_k2pky")
+atlas = ExtResource("4_0h8ia")
 region = Rect2(7980, 0, 2660, 2240)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhdxt"]
@@ -98,8 +99,7 @@ metadata/_edit_vertical_guides_ = [576.0]
 position = Vector2(2007, 1007)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_qhdxt")
-animation = &"open_book"
-frame = 3
+animation = &"turn_page"
 
 [node name="Catalog" parent="." unique_id=997869620 node_paths=PackedStringArray("swebok") instance=ExtResource("2_x7age")]
 swebok = NodePath("..")

@@ -30,7 +30,6 @@ TutorialPageManager="*uid://d0kjkfoa2j7wp"
 
 window/size/viewport_width=3904
 window/size/viewport_height=2196
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [physics]

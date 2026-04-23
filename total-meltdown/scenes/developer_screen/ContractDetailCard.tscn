@@ -10,12 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="8_x0m52"]
 [ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="9_wj6ve"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mseo"]
+bg_color = Color(0.4, 0.3882353, 0.3764706, 1)
+
 [node name="ContractDetailCard" type="Panel" unique_id=564842012]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1mseo")
 script = ExtResource("1_1mseo")
 
 [node name="QuestTitle" type="RichTextLabel" parent="." unique_id=801408526]
