@@ -49,7 +49,7 @@ offset_left = 138.0
 offset_top = 315.0
 offset_right = 1910.0
 offset_bottom = 2087.0
-upper_limit = 2.0
+upper_limit = 4.0
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=2038739943]
 layout_mode = 0
@@ -57,16 +57,16 @@ offset_left = 2044.0
 offset_top = 357.0
 offset_right = 3805.0
 offset_bottom = 2090.0
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 100
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 100
+theme_override_font_sizes/normal_font_size = 71
+theme_override_font_sizes/bold_font_size = 71
+theme_override_font_sizes/bold_italics_font_size = 71
+theme_override_font_sizes/italics_font_size = 71
+theme_override_font_sizes/mono_font_size = 71
 bbcode_enabled = true
 text = "Test description"
 script = ExtResource("2_jph2o")
 watch_text_change = true
-min_font_size = 70
+min_font_size = 37
 max_font_size = 71
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 

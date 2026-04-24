@@ -11,7 +11,13 @@ var creation_finished = false
 #region Load Data
 func _ready():
 	load_patterns()
+	temporary_fix()
 	GlobalSignal.game_start.connect(initialize)
+
+func temporary_fix():
+	for pattern in all_patterns:
+		for attribute_idx in pattern["attribute"]:
+			pattern["attribute"][attribute_idx] = pattern["attribute"][attribute_idx] * 2
 
 func load_patterns():
 	all_patterns.clear()
