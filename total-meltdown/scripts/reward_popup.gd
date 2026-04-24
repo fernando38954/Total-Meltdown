@@ -41,8 +41,8 @@ func show_reward(contract_data: ContractData, final_profit: float) -> void:
 	description.text = reward_text
 
 func generate_reward_description(contract_data: ContractData, final_profit: float) -> String:
-	var description_text = "Base Profit: %.2f | Multiplier: %.2f\n" % [contract_data.base_money_reward, contract_data.calculate_compatibility()]
-	description_text += "[color=yellow]Final Profit: %.2f[/color]" % final_profit
+	var description_text = "Lucro básico: %.2f | Multiplicador: %.2f\n" % [contract_data.base_money_reward, contract_data.calculate_compatibility()]
+	description_text += "[color=yellow]Lucro final: %.2f[/color]" % final_profit
 	return description_text
 
 func _on_confirm_button_pressed() -> void:

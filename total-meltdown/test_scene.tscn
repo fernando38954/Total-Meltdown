@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://la16ha585b6b"]
 
-[ext_resource type="Texture2D" uid="uid://b5hksq765l3mh" path="res://assets/workspace.png" id="1_njel3"]
+[ext_resource type="Texture2D" uid="uid://dfyx368pcw4ef" path="res://assets/Prancheta.png" id="1_fbuy2"]
 [ext_resource type="Script" uid="uid://bycvyp17uw41" path="res://scripts/workspace/workspace.gd" id="2_coq8p"]
 [ext_resource type="Script" uid="uid://c02p4763tkn5d" path="res://scripts/workspace/workspace_region.gd" id="2_sasra"]
 [ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="3_4gito"]
@@ -21,7 +21,7 @@ scale = Vector2(3.3999987, 3.3999987)
 [node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "swebok", "swebok_region", "developer_screen", "developer_screen_region", "map_screen", "map_screen_region", "left_button", "right_button", "return_button")]
 position = Vector2(576, 324)
 scale = Vector2(0.295, 0.295)
-texture = ExtResource("1_njel3")
+texture = ExtResource("1_fbuy2")
 script = ExtResource("2_coq8p")
 workspace_camera = NodePath("../Camera2D")
 swebok = NodePath("../Swebok")

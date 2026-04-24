@@ -4,7 +4,7 @@
 	"image": "res://assets/tutorial_images/Screens.png",
 	"description": "	O jogo é dividido em 3 regiões:
 [ul]
-1 - Map Screen: Tela contendo o mapa do jogo, é onde que será realizado as principais interações com o jogo.
-2 - Developer Panel: Tela utilizada para verificar os status do developers que possui atualmente e o andamento do contrato aceito.
-3 - Note: Tela utilizada para verificar os conhecimentos básicos do jogo e as informações das arquiteturas que já foram aprendidas até o momento.[/ul]"
+1 - Mapa: Tela contendo o mapa do jogo, é onde que será realizado as principais interações com o jogo.
+2 - Painel de Desenvolvedores: Tela utilizada para verificar os status do developers que possui atualmente e o andamento do contrato aceito.
+3 - Nota: Tela utilizada para verificar os conhecimentos básicos do jogo e as informações das arquiteturas que já foram aprendidas até o momento.[/ul]"
 }

@@ -61,7 +61,7 @@ offset_bottom = 2027.0
 theme_override_font_sizes/font_size = 1
 clip_text = true
 script = ExtResource("4_yh3db")
-button_text = "Study"
+button_text = "Estudar"
 max_font_size = 150
 metadata/_custom_type_script = "uid://bnaosc552evuy"
 
