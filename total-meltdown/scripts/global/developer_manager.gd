@@ -74,6 +74,7 @@ func prepare_random_developers(count: int = 3) -> Array:
 	return selected
 
 func hire_developer(recruitable_developers_list: Array, target_developer_data: Dictionary):
+	GlobalResource.pay_developer_price()
 	for developer_entry in recruitable_developers_list:
 		if recruitable_developers.has(developer_entry):
 			recruitable_developers.erase(developer_entry)

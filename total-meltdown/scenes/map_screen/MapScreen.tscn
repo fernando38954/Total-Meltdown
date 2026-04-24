@@ -6,14 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://te0jm6bnm8wp" path="res://scenes/map_screen/StudySessionEventButton.tscn" id="4_lgmxy"]
 [ext_resource type="Texture2D" uid="uid://tbax5qnrpv8j" path="res://assets/map.png" id="5_fidt4"]
 [ext_resource type="PackedScene" uid="uid://bq5lgvuwbxpki" path="res://scenes/map_screen/job_fair/JobFairScreen.tscn" id="6_6y1bi"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="6_ku3ts"]
 [ext_resource type="PackedScene" uid="uid://d0lcshv562d4e" path="res://scenes/map_screen/study_session/StudySessionScreen.tscn" id="7_lgmxy"]
 [ext_resource type="PackedScene" uid="uid://c1hn7mnqjje01" path="res://scenes/map_screen/contract/Contract.tscn" id="8_fidt4"]
 
-[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
+[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "money_label", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
 script = ExtResource("1_rw3jc")
 game_map = NodePath("Map")
 spawn_area = NodePath("SpawnArea")
 event_button_list = Array[PackedScene]([ExtResource("3_ls7sa"), ExtResource("3_6y1bi"), ExtResource("4_lgmxy")])
+money_label = NodePath("MoneyLabel")
 click_blocker = NodePath("ClickBlocker")
 event_blocker = NodePath("EventBlocker")
 job_fair_screen = NodePath("JobFairScreen")
@@ -24,6 +26,24 @@ contract_screen = NodePath("Contract")
 position = Vector2(1951.9998, 1097.9999)
 scale = Vector2(1.016402, 1.017609)
 texture = ExtResource("5_fidt4")
+
+[node name="MoneyLabel" type="RichTextLabel" parent="." unique_id=877837989]
+offset_left = 111.0
+offset_top = 17.0
+offset_right = 702.0
+offset_bottom = 235.0
+theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/bold_font_size = 150
+theme_override_font_sizes/bold_italics_font_size = 150
+theme_override_font_sizes/italics_font_size = 150
+theme_override_font_sizes/mono_font_size = 150
+bbcode_enabled = true
+text = "[color=yellow][b]$ = %.2f[/b][/color]"
+vertical_alignment = 1
+script = ExtResource("6_ku3ts")
+watch_text_change = true
+max_font_size = 500
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="SpawnArea" type="ColorRect" parent="." unique_id=769389484]
 offset_left = 261.0
@@ -55,9 +75,12 @@ mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
 [node name="JobFairScreen" parent="." unique_id=933529179 instance=ExtResource("6_6y1bi")]
+visible = false
 
 [node name="StudySessionScreen" parent="." unique_id=1940889858 instance=ExtResource("7_lgmxy")]
+visible = false
 
 [node name="Contract" parent="." unique_id=1964947095 instance=ExtResource("8_fidt4")]
+visible = false
 
 [connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]

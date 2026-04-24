@@ -138,8 +138,10 @@ texture_hover = ExtResource("10_hiucn")
 ignore_texture_size = true
 
 [node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("8_buypi")]
+visible = false
 
 [node name="DeveloperScreen" parent="." unique_id=933529179 instance=ExtResource("9_njel3")]
+visible = false
 
 [node name="ScreenMask" type="Sprite2D" parent="." unique_id=436785057]
 clip_children = 1
@@ -151,7 +153,13 @@ texture = ExtResource("10_rpuu0")
 position = Vector2(-1070.5653, -613.3627)
 scale = Vector2(0.545, 0.545)
 
-[node name="SpawnArea" parent="ScreenMask/MapScreen" index="1" unique_id=769389484]
+[node name="MoneyLabel" parent="ScreenMask/MapScreen" index="1" unique_id=877837989]
+offset_left = 219.58176
+offset_top = 42.13748
+offset_right = 810.5818
+offset_bottom = 260.13748
+
+[node name="SpawnArea" parent="ScreenMask/MapScreen" index="2" unique_id=769389484]
 offset_left = 424.52454
 offset_top = 452.51978
 offset_right = 3463.901

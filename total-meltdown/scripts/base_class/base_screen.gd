@@ -12,6 +12,7 @@ var tween: Tween
 
 func _ready():
 	close_panel(0)
+	show()
 
 #region Panel Action
 func rescale_panel(target_scale: Vector2, duration: float = 1.0):

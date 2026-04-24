@@ -25,12 +25,6 @@ var actived_quest: Dictionary = {}
 @export var selector_panel_hide_position = Vector2(0, 660)
 var is_selector_panel_open: bool
 
-func _ready():
-	close_panel(0)
-	#await get_tree().create_timer(1).timeout
-	set_content(QuestManager.all_quests[0])
-	#open_panel()
-
 func set_content(quest_data: Dictionary):
 	actived_quest = quest_data
 	quest_panel.set_content(quest_data.title, quest_data.icon, quest_data.description)

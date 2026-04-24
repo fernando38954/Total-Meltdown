@@ -7,6 +7,7 @@ class_name MapScreen
 @export var min_distance: float = 1000.0
 @export var spawn_interval: float = 1.0
 @export var max_spawn_attempts: int = 50
+@export var money_label: RichTextLabel
 
 @export_category("Event Screen")
 @export var click_blocker: ColorRect
@@ -26,7 +27,9 @@ func _ready() -> void:
 	spawn_area.color = Color.TRANSPARENT
 	initialize_parameters()
 	close_click_blocker()
+	update_money_label()
 	GlobalSignal.current_map_event_finished.connect(finish_current_event)
+	GlobalSignal.money_value_changed.connect(update_money_label)
 	
 	while true:
 		await get_tree().create_timer(spawn_interval).timeout
@@ -40,6 +43,9 @@ func initialize_parameters():
 	button_size = temp_button.texture_normal.get_size()
 	button_pivot_offset = temp_button.get_pivot_offset()
 	temp_button.queue_free()
+
+func update_money_label():
+	money_label.text = "[color=yellow][b]$ = %.2f[/b][/color]" % GlobalResource.money
 
 #region Event Button
 func create_event_button():

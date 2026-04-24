@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cm1paeoxfsmov" path="res://scripts/map_screen/job_fair/job_fair_screen.gd" id="1_34td2"]
 [ext_resource type="Script" uid="uid://cfg3p8o145d8d" path="res://scripts/map_screen/job_fair/job_fair_panel.gd" id="2_buk3p"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_efkay"]
 [ext_resource type="PackedScene" uid="uid://im44emtumyuk" path="res://scenes/map_screen/job_fair/Resume.tscn" id="4_1inak"]
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="4_4w2io"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssrtq"]
 
-[node name="JobFairScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("panel")]
+[node name="JobFairScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("current_developer_price_label", "panel")]
 script = ExtResource("1_34td2")
+current_developer_price_label = NodePath("JobFairPanel/CurrentDeveloperPrice")
 panel = NodePath("JobFairPanel")
 
 [node name="JobFairPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("container", "click_blocker")]
@@ -67,5 +69,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="CurrentDeveloperPrice" type="RichTextLabel" parent="JobFairPanel" unique_id=1046482468]
+layout_mode = 0
+offset_right = 3868.0
+offset_bottom = 148.0
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+bbcode_enabled = true
+text = "Preço de Contratação: [color=yellow]%.2f[/color]"
+horizontal_alignment = 1
+script = ExtResource("2_efkay")
+watch_text_change = true
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [connection signal="gui_input" from="JobFairPanel/ClickBlocker" to="JobFairPanel" method="_on_click_blocker_gui_input"]

@@ -74,6 +74,7 @@ func prepare_random_patterns(count: int = 3) -> Array:
 	return selected
 
 func study_pattern(studiable_patterns_list: Array, target_pattern_data: Dictionary):
+	GlobalResource.pay_pattern_price()
 	for pattern_entry in studiable_patterns_list:
 		if studiable_patterns.has(pattern_entry):
 			studiable_patterns.erase(pattern_entry)

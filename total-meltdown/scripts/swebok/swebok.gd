@@ -39,6 +39,7 @@ enum PageDirection {
 func _ready():
 	BookPage["tutorialPageLimit"] = TutorialPageManager.all_pages.size()
 	close_book(0)
+	show()
 
 #region Book Action
 func move_book(target_position: Vector2, duration: float = 1.0):
