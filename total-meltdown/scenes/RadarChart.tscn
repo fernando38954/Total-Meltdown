@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://dnbluou2l5jpn"]
 
 [ext_resource type="Script" uid="uid://bq84bvjq1j3p4" path="res://scripts/radar_chart.gd" id="1_w8ajf"]
+[ext_resource type="Texture2D" uid="uid://cxhj1axiuxj4i" path="res://assets/attribute_icons/FunctionalSuitability.png" id="2_vc8ff"]
+[ext_resource type="Texture2D" uid="uid://dvo7pmomqwxyv" path="res://assets/attribute_icons/PerformanceEfficiency.png" id="3_rxcum"]
+[ext_resource type="Texture2D" uid="uid://cdn4wy5dtlt7f" path="res://assets/attribute_icons/Compatibility.png" id="4_kvtco"]
+[ext_resource type="Texture2D" uid="uid://swewmltwft3f" path="res://assets/attribute_icons/InteractionCapability.png" id="5_lkqy0"]
+[ext_resource type="Texture2D" uid="uid://dkucqncfvswpr" path="res://assets/attribute_icons/Reliability.png" id="6_j7v4h"]
+[ext_resource type="Texture2D" uid="uid://br44t6v2cppos" path="res://assets/attribute_icons/Security.png" id="7_44ybw"]
+[ext_resource type="Texture2D" uid="uid://ck10kdpp0llcq" path="res://assets/attribute_icons/Maintainability.png" id="8_8fsnt"]
+[ext_resource type="Texture2D" uid="uid://b1wea2tuliju" path="res://assets/attribute_icons/Flexibility.png" id="9_kxq7d"]
+[ext_resource type="Texture2D" uid="uid://kpdfkn4quiwn" path="res://assets/attribute_icons/Safety.png" id="10_50gfi"]
 
 [node name="RadarChart" type="Control" unique_id=1384305498]
 layout_mode = 3
@@ -8,3 +17,4 @@ anchors_preset = 0
 offset_right = 400.0
 offset_bottom = 400.0
 script = ExtResource("1_w8ajf")
+icon_textures = Array[Texture2D]([ExtResource("2_vc8ff"), ExtResource("3_rxcum"), ExtResource("4_kvtco"), ExtResource("5_lkqy0"), ExtResource("6_j7v4h"), ExtResource("7_44ybw"), ExtResource("8_8fsnt"), ExtResource("9_kxq7d"), ExtResource("10_50gfi")])

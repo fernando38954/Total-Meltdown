@@ -12,7 +12,6 @@ class_name ContentViewer
 @export var font = ThemeDB.fallback_font
 @export var font_size = 30
 @export var value_font_size = 25
-@export var label_offset = 18
 
 enum ContentType{
 	Tutorial, Pattern
@@ -31,5 +30,5 @@ func show_content(content_data: Dictionary, content_type: ContentType):
 		radar_chart.show()
 		image.hide()
 		icon.texture = content_data.icon
-		radar_chart.set_label(font, font_size, value_font_size, label_offset)
+		radar_chart.set_label(font, font_size, value_font_size)
 		radar_chart.set_attributes(content_data.attribute)

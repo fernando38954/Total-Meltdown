@@ -10,11 +10,10 @@ class_name DeveloperDetailCard
 @export var font = ThemeDB.fallback_font
 @export var font_size = 30
 @export var value_font_size = 25
-@export var label_offset = 18
 
 func set_content(item_data: Variant):
 	developer_name.text = "[b]%s[/b]\n\n" % [item_data.name]
 	description.text = "%s" % [item_data.description]
 	portrait.texture = item_data.portrait
-	radar_chart.set_label(font, font_size, value_font_size, label_offset)
+	radar_chart.set_label(font, font_size, value_font_size)
 	radar_chart.set_attributes(item_data.attribute)
