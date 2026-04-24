@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfyx368pcw4ef"
-path="res://.godot/imported/workspace.png-1e8f3826407661c8b6f726c25fbf170e.ctex"
+uid="uid://b8fv1o6talbu6"
+path="res://.godot/imported/Noise.png-49623d22636507f04adfc06869f390a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/workspace.png"
-dest_files=["res://.godot/imported/workspace.png-1e8f3826407661c8b6f726c25fbf170e.ctex"]
+source_file="res://addons/UniversalFade/Patterns/Noise.png"
+dest_files=["res://.godot/imported/Noise.png-49623d22636507f04adfc06869f390a7.ctex"]
 
 [params]
 

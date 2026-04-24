@@ -10,12 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://d0lcshv562d4e" path="res://scenes/map_screen/study_session/StudySessionScreen.tscn" id="7_lgmxy"]
 [ext_resource type="PackedScene" uid="uid://c1hn7mnqjje01" path="res://scenes/map_screen/contract/Contract.tscn" id="8_fidt4"]
 
-[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "money_label", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
+[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "money_label", "contract_label", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
 script = ExtResource("1_rw3jc")
 game_map = NodePath("Map")
 spawn_area = NodePath("SpawnArea")
 event_button_list = Array[PackedScene]([ExtResource("3_ls7sa"), ExtResource("3_6y1bi"), ExtResource("4_lgmxy")])
 money_label = NodePath("MoneyLabel")
+contract_label = NodePath("RemainingContract")
 click_blocker = NodePath("ClickBlocker")
 event_blocker = NodePath("EventBlocker")
 job_fair_screen = NodePath("JobFairScreen")
@@ -40,6 +41,23 @@ theme_override_font_sizes/mono_font_size = 150
 bbcode_enabled = true
 text = "[color=yellow][b]$ = %.2f[/b][/color]"
 vertical_alignment = 1
+script = ExtResource("6_ku3ts")
+watch_text_change = true
+max_font_size = 500
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="RemainingContract" type="RichTextLabel" parent="." unique_id=179789233]
+offset_left = 2358.0
+offset_top = 39.0
+offset_right = 3750.0
+offset_bottom = 218.0
+theme_override_font_sizes/normal_font_size = 130
+theme_override_font_sizes/bold_font_size = 130
+theme_override_font_sizes/bold_italics_font_size = 130
+theme_override_font_sizes/italics_font_size = 130
+theme_override_font_sizes/mono_font_size = 130
+bbcode_enabled = true
+text = "[color=red]Contratos Restantes[/color]"
 script = ExtResource("6_ku3ts")
 watch_text_change = true
 max_font_size = 500

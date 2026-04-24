@@ -3,6 +3,7 @@ class_name Workspace
 
 @export var workspace_camera: WorkspaceCamera
 var current_region: Region = null
+@export var finish_screen: FinishScreen
 
 @export_category("Swebok")
 @export var swebok: Swebok
@@ -33,6 +34,10 @@ func _ready() -> void:
 	right_button.hide()
 	return_button.hide()
 	AudioManager.play_bgm(main_BGM)
+	GlobalSignal.game_finished.connect(game_finish)
+
+func game_finish():
+	finish_screen.show_screen()
 
 func switch_region(region: Region):
 	if current_region == region:

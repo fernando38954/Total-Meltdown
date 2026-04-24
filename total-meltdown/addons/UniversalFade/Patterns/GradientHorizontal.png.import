@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfyx368pcw4ef"
-path="res://.godot/imported/Prancheta.png-bcfc7fc69c24ac207066f12d1c9c789b.ctex"
+uid="uid://ctt8g27w12u2l"
+path="res://.godot/imported/GradientHorizontal.png-f4eb9b0388dd8c45558ad74d4b2d35c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Prancheta.png"
-dest_files=["res://.godot/imported/Prancheta.png-bcfc7fc69c24ac207066f12d1c9c789b.ctex"]
+source_file="res://addons/UniversalFade/Patterns/GradientHorizontal.png"
+dest_files=["res://.godot/imported/GradientHorizontal.png-f4eb9b0388dd8c45558ad74d4b2d35c7.ctex"]
 
 [params]
 

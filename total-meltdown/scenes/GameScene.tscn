@@ -1,29 +1,31 @@
 [gd_scene format=3 uid="uid://la16ha585b6b"]
 
-[ext_resource type="Texture2D" uid="uid://dfyx368pcw4ef" path="res://assets/Prancheta.png" id="1_fbuy2"]
-[ext_resource type="Script" uid="uid://bycvyp17uw41" path="res://scripts/workspace/workspace.gd" id="2_coq8p"]
-[ext_resource type="Script" uid="uid://c02p4763tkn5d" path="res://scripts/workspace/workspace_region.gd" id="2_sasra"]
-[ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="3_4gito"]
-[ext_resource type="Script" uid="uid://bfymxkjtitow5" path="res://scripts/workspace/workspace_camera.gd" id="3_coq8p"]
-[ext_resource type="AudioStream" uid="uid://bcgcxhx6i2fpl" path="res://assets/sfx/ButtonPress.mp3" id="4_fbuy2"]
-[ext_resource type="AudioStream" uid="uid://cv1y556ftyvhv" path="res://assets/bgm/MainBGM.ogg" id="5_fbuy2"]
-[ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="8_buypi"]
-[ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/button/Arrow_Normal.png" id="8_fbuy2"]
-[ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/button/Arrow_Press.png" id="9_0k8yu"]
-[ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperScreen.tscn" id="9_njel3"]
-[ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/button/Arrow_Hover.png" id="10_hiucn"]
-[ext_resource type="Texture2D" uid="uid://bhlngl6hk38ra" path="res://assets/mask.png" id="10_rpuu0"]
-[ext_resource type="PackedScene" uid="uid://cinak64pyd2kv" path="res://scenes/map_screen/MapScreen.tscn" id="12_oo8pe"]
+[ext_resource type="Texture2D" uid="uid://dfyx368pcw4ef" path="res://assets/workspace.png" id="1_qitmq"]
+[ext_resource type="Script" uid="uid://bycvyp17uw41" path="res://scripts/workspace/workspace.gd" id="2_kxqg4"]
+[ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="3_21xg8"]
+[ext_resource type="AudioStream" uid="uid://bcgcxhx6i2fpl" path="res://assets/sfx/ButtonPress.mp3" id="4_icif4"]
+[ext_resource type="AudioStream" uid="uid://cv1y556ftyvhv" path="res://assets/bgm/MainBGM.ogg" id="5_iaegw"]
+[ext_resource type="Script" uid="uid://c02p4763tkn5d" path="res://scripts/workspace/workspace_region.gd" id="6_2gh7q"]
+[ext_resource type="Script" uid="uid://bfymxkjtitow5" path="res://scripts/workspace/workspace_camera.gd" id="7_a5tct"]
+[ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/button/Arrow_Normal.png" id="8_1npfk"]
+[ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/button/Arrow_Press.png" id="9_6nmf6"]
+[ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/button/Arrow_Hover.png" id="10_lk0vr"]
+[ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="11_f2kej"]
+[ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperScreen.tscn" id="12_3t3mo"]
+[ext_resource type="Texture2D" uid="uid://bhlngl6hk38ra" path="res://assets/mask.png" id="13_a8ip2"]
+[ext_resource type="PackedScene" uid="uid://cinak64pyd2kv" path="res://scenes/map_screen/MapScreen.tscn" id="14_03l4r"]
+[ext_resource type="PackedScene" uid="uid://cixmygurc8m6" path="res://scenes/component/GameFinishScreen.tscn" id="15_lpvha"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 scale = Vector2(3.3999987, 3.3999987)
 
-[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "swebok", "swebok_region", "developer_screen", "developer_screen_region", "map_screen", "map_screen_region", "left_button", "right_button", "return_button")]
+[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "finish_screen", "swebok", "swebok_region", "developer_screen", "developer_screen_region", "map_screen", "map_screen_region", "left_button", "right_button", "return_button")]
 position = Vector2(576, 324)
 scale = Vector2(0.295, 0.295)
-texture = ExtResource("1_fbuy2")
-script = ExtResource("2_coq8p")
+texture = ExtResource("1_qitmq")
+script = ExtResource("2_kxqg4")
 workspace_camera = NodePath("../Camera2D")
+finish_screen = NodePath("../CanvasLayer/GameFinishScreen")
 swebok = NodePath("../Swebok")
 swebok_region = NodePath("Swebok")
 developer_screen = NodePath("../DeveloperScreen")
@@ -33,14 +35,14 @@ map_screen_region = NodePath("MapScreen")
 left_button = NodePath("../ScreenButtons/LeftButton")
 right_button = NodePath("../ScreenButtons/RightButton")
 return_button = NodePath("../ScreenButtons/ReturnButton")
-screen_open_SFX = ExtResource("3_4gito")
-screen_button_SFX = ExtResource("4_fbuy2")
-main_BGM = ExtResource("5_fbuy2")
+screen_open_SFX = ExtResource("3_21xg8")
+screen_button_SFX = ExtResource("4_icif4")
+main_BGM = ExtResource("5_iaegw")
 
 [node name="MapScreen" type="Area2D" parent="Workspace" unique_id=745553579 node_paths=PackedStringArray("workspace", "left_region", "right_region", "focus")]
 position = Vector2(13.559321, 0)
 scale = Vector2(2.8983052, 2.8983052)
-script = ExtResource("2_sasra")
+script = ExtResource("6_2gh7q")
 workspace = NodePath("..")
 left_region = NodePath("../Swebok")
 right_region = NodePath("../DeveloperScreen")
@@ -58,7 +60,7 @@ position = Vector2(-1.1696235, -18.713451)
 [node name="DeveloperScreen" type="Area2D" parent="Workspace" unique_id=60524836 node_paths=PackedStringArray("workspace", "left_region", "focus")]
 position = Vector2(6.7796607, 3.3898304)
 scale = Vector2(2.8983052, 2.8983052)
-script = ExtResource("2_sasra")
+script = ExtResource("6_2gh7q")
 workspace = NodePath("..")
 left_region = NodePath("../MapScreen")
 focus = NodePath("Marker2D")
@@ -74,7 +76,7 @@ position = Vector2(399.1359, -195.19438)
 
 [node name="Swebok" type="Area2D" parent="Workspace" unique_id=1700712147 node_paths=PackedStringArray("workspace", "right_region", "focus")]
 scale = Vector2(3.0588512, 3.0588512)
-script = ExtResource("2_sasra")
+script = ExtResource("6_2gh7q")
 workspace = NodePath("..")
 right_region = NodePath("../MapScreen")
 focus = NodePath("Marker2D")
@@ -95,7 +97,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 3904
 limit_bottom = 2196
-script = ExtResource("3_coq8p")
+script = ExtResource("7_a5tct")
 
 [node name="ScreenButtons" type="CanvasLayer" parent="." unique_id=58777912]
 scale = Vector2(3.4, 3.4)
@@ -108,9 +110,9 @@ offset_right = 240.0
 offset_bottom = 611.0
 rotation = 4.712389
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("8_fbuy2")
-texture_pressed = ExtResource("9_0k8yu")
-texture_hover = ExtResource("10_hiucn")
+texture_normal = ExtResource("8_1npfk")
+texture_pressed = ExtResource("9_6nmf6")
+texture_hover = ExtResource("10_lk0vr")
 ignore_texture_size = true
 
 [node name="RightButton" type="TextureButton" parent="ScreenButtons" unique_id=1282742258]
@@ -120,9 +122,9 @@ offset_right = 1422.0
 offset_bottom = 541.0
 rotation = 1.5707964
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("8_fbuy2")
-texture_pressed = ExtResource("9_0k8yu")
-texture_hover = ExtResource("10_hiucn")
+texture_normal = ExtResource("8_1npfk")
+texture_pressed = ExtResource("9_6nmf6")
+texture_hover = ExtResource("10_lk0vr")
 ignore_texture_size = true
 
 [node name="ReturnButton" type="TextureButton" parent="ScreenButtons" unique_id=925521351]
@@ -132,24 +134,24 @@ offset_right = 867.00006
 offset_bottom = 903.0
 rotation = 3.1415927
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("8_fbuy2")
-texture_pressed = ExtResource("9_0k8yu")
-texture_hover = ExtResource("10_hiucn")
+texture_normal = ExtResource("8_1npfk")
+texture_pressed = ExtResource("9_6nmf6")
+texture_hover = ExtResource("10_lk0vr")
 ignore_texture_size = true
 
-[node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("8_buypi")]
+[node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("11_f2kej")]
 visible = false
 
-[node name="DeveloperScreen" parent="." unique_id=933529179 instance=ExtResource("9_njel3")]
+[node name="DeveloperScreen" parent="." unique_id=933529179 instance=ExtResource("12_3t3mo")]
 visible = false
 
 [node name="ScreenMask" type="Sprite2D" parent="." unique_id=436785057]
 clip_children = 1
 position = Vector2(577.5, 294.5)
 scale = Vector2(0.29492384, 0.29456705)
-texture = ExtResource("10_rpuu0")
+texture = ExtResource("13_a8ip2")
 
-[node name="MapScreen" parent="ScreenMask" unique_id=1876702984 instance=ExtResource("12_oo8pe")]
+[node name="MapScreen" parent="ScreenMask" unique_id=1876702984 instance=ExtResource("14_03l4r")]
 position = Vector2(-1070.5653, -613.3627)
 scale = Vector2(0.545, 0.545)
 
@@ -159,12 +161,27 @@ offset_top = 42.13748
 offset_right = 810.5818
 offset_bottom = 260.13748
 
-[node name="SpawnArea" parent="ScreenMask/MapScreen" index="2" unique_id=769389484]
+[node name="RemainingContract" parent="ScreenMask/MapScreen" index="2" unique_id=179789233]
+offset_left = 1200.3798
+offset_top = 38.473328
+offset_right = 2592.38
+offset_bottom = 217.47333
+
+[node name="SpawnArea" parent="ScreenMask/MapScreen" index="3" unique_id=769389484]
 offset_left = 424.52454
 offset_top = 452.51978
 offset_right = 3463.901
 offset_bottom = 1859.5448
 color = Color(1, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1890244953]
+
+[node name="GameFinishScreen" parent="CanvasLayer" unique_id=22837909 instance=ExtResource("15_lpvha")]
+visible = false
+offset_left = 8.999878
+offset_top = 7.0
+offset_right = 9.0
+offset_bottom = 7.0
 
 [connection signal="input_event" from="Workspace/MapScreen" to="Workspace/MapScreen" method="_on_input_event"]
 [connection signal="input_event" from="Workspace/DeveloperScreen" to="Workspace/DeveloperScreen" method="_on_input_event"]

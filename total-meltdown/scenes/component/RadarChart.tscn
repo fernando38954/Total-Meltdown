@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnbluou2l5jpn"]
 
-[ext_resource type="Script" uid="uid://bq84bvjq1j3p4" path="res://scripts/radar_chart.gd" id="1_w8ajf"]
+[ext_resource type="Script" uid="uid://bq84bvjq1j3p4" path="res://scripts/component/radar_chart.gd" id="1_w8ajf"]
 [ext_resource type="Texture2D" uid="uid://cxhj1axiuxj4i" path="res://assets/attribute_icons/FunctionalSuitability.png" id="2_vc8ff"]
 [ext_resource type="Texture2D" uid="uid://dvo7pmomqwxyv" path="res://assets/attribute_icons/PerformanceEfficiency.png" id="3_rxcum"]
 [ext_resource type="Texture2D" uid="uid://cdn4wy5dtlt7f" path="res://assets/attribute_icons/Compatibility.png" id="4_kvtco"]

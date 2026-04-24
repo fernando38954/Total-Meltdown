@@ -12,7 +12,7 @@ var creation_finished = false
 #region Load Data
 func _ready():
 	load_quests()
-	pending_quests = all_quests.duplicate()
+	GlobalSignal.game_start.connect(initialize)
 
 func load_quests():
 	all_quests.clear()
@@ -57,6 +57,12 @@ func load_quests():
 	all_quests.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
 	print_debug("Number of quests loaded：", all_quests.size())
+
+func initialize():
+	pending_quests = all_quests.duplicate()
+	actived_quests.clear()
+	accepted_quests.clear()
+	completed_quests.clear()
 #endregion
 
 #region Array Operation

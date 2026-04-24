@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfyx368pcw4ef"
-path="res://.godot/imported/workspace.png-1e8f3826407661c8b6f726c25fbf170e.ctex"
+uid="uid://sal52o0d7t5p"
+path="res://.godot/imported/Diamond.png-26b051a14662aeb800de43bcfdb19bb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/workspace.png"
-dest_files=["res://.godot/imported/workspace.png-1e8f3826407661c8b6f726c25fbf170e.ctex"]
+source_file="res://addons/UniversalFade/Patterns/Diamond.png"
+dest_files=["res://.godot/imported/Diamond.png-26b051a14662aeb800de43bcfdb19bb0.ctex"]
 
 [params]
 

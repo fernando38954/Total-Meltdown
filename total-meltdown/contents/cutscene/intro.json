@@ -1,0 +1,29 @@
+{
+	"part1": {
+		"paragraph1": "Tudo começou com uma promessa simples... deixar as máquinas programarem.",
+		"paragraph2": "Era rápido. Muito rápido.",
+		"paragraph3": "Entregas em minutos. Sistemas inteiros em horas.",
+		"paragraph4": "Revisar código? Pra quê?",
+		"paragraph5": "Se funciona... está perfeito, né?",
+	},
+	"part2": {
+		"paragraph1": "Funcionava... até parar de funcionar.",
+		"paragraph2": "Pequenos erros viraram desastres.",
+		"paragraph3": "Sistemas começaram a quebrar... um após o outro.",
+		"paragraph4": "Ninguém sabia como consertar.",
+		"paragraph5": "Afinal... ninguém realmente escreveu aquilo.",
+		"paragraph5": "O mundo rodava em código que ninguém entendia.",
+	},
+	"part3": {
+		"paragraph1": "Mas nem todos seguiram esse caminho.",
+		"paragraph2": "Uma empresa foi... teimosa.",
+		"paragraph3": "RetroCODE.",
+		"paragraph4": "Eles ainda revisavam código.",
+		"paragraph5": "Ainda discutiam arquitetura.",
+		"paragraph6": "Ainda sabiam o que estavam fazendo.",
+		"paragraph7": "Agora, com tudo em Total Meldown lá fora...",
+		"paragraph8": "Eles precisam de ajuda.",
+		"paragraph9": "Eles precisam de alguém que entenda o sistema.",
+		"paragraph10": "Eles precisam de VOCÊ."
+	},
+}

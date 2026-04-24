@@ -12,8 +12,7 @@ var creation_finished = false
 #region Load Data
 func _ready():
 	load_developers()
-	locked_developers = all_developers.duplicate()
-	initialize()
+	GlobalSignal.game_start.connect(initialize)
 
 func load_developers():
 	all_developers.clear()
@@ -57,6 +56,10 @@ func load_developers():
 	print_debug("Number of developers loaded：", all_developers.size())
 
 func initialize():
+	locked_developers = all_developers.duplicate()
+	recruitable_developers.clear()
+	idle_developers.clear()
+	working_developers.clear()
 	var random_developer = prepare_random_developers(1)
 	hire_developer(random_developer, random_developer[0])
 #endregion

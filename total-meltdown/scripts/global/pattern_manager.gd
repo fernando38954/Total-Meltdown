@@ -11,8 +11,7 @@ var creation_finished = false
 #region Load Data
 func _ready():
 	load_patterns()
-	locked_patterns = all_patterns.duplicate()
-	initialize()
+	GlobalSignal.game_start.connect(initialize)
 
 func load_patterns():
 	all_patterns.clear()
@@ -57,6 +56,9 @@ func load_patterns():
 	print_debug("Number of patterns loaded：", all_patterns.size())
 
 func initialize():
+	locked_patterns = all_patterns.duplicate()
+	studiable_patterns.clear()
+	owned_patterns.clear()
 	var random_pattern = prepare_random_patterns(1)
 	study_pattern(random_pattern, random_pattern[0])
 #endregion

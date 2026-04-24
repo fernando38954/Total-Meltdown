@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://cixmygurc8m6"]
+
+[ext_resource type="Script" uid="uid://ct7wt67ty1ts7" path="res://scripts/component/game_finish_screen.gd" id="1_igbxn"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_8ip4g"]
+[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="3_8ip4g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ip4g"]
+bg_color = Color(0, 0.015686275, 0, 0.6392157)
+
+[node name="GameFinishScreen" type="Panel" unique_id=22837909]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1952, 1098)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ip4g")
+script = ExtResource("1_igbxn")
+metadata/_edit_vertical_guides_ = [1952.0]
+
+[node name="DeveloperLabel" type="RichTextLabel" parent="." unique_id=1078282132]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 285.0
+offset_right = 3455.0
+offset_bottom = 460.0
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+text = "Número de Desenvolvedores Contratados:"
+horizontal_alignment = 1
+script = ExtResource("2_8ip4g")
+watch_text_change = true
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="PatternLabel" type="RichTextLabel" parent="." unique_id=1914521569]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 513.0
+offset_right = 3455.0
+offset_bottom = 688.0
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+text = "Número de Padrões Aprendidos:"
+horizontal_alignment = 1
+script = ExtResource("2_8ip4g")
+watch_text_change = true
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="ContractLabel" type="RichTextLabel" parent="." unique_id=883755258]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 751.0
+offset_right = 3455.0
+offset_bottom = 926.0
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+text = "Número de Contratos Resolvidos:"
+horizontal_alignment = 1
+script = ExtResource("2_8ip4g")
+watch_text_change = true
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="MoneyLabel" type="RichTextLabel" parent="." unique_id=1481710500]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 1009.0
+offset_right = 3455.0
+offset_bottom = 1184.0
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+text = "Quantidade de Dinheiro Adquirido:"
+horizontal_alignment = 1
+script = ExtResource("2_8ip4g")
+watch_text_change = true
+max_font_size = 100
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="FinalScore" type="RichTextLabel" parent="." unique_id=119894750]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 1358.0
+offset_right = 3641.0
+offset_bottom = 1820.0
+theme_override_font_sizes/normal_font_size = 184
+theme_override_font_sizes/bold_font_size = 184
+theme_override_font_sizes/bold_italics_font_size = 184
+theme_override_font_sizes/italics_font_size = 184
+theme_override_font_sizes/mono_font_size = 184
+bbcode_enabled = true
+text = "[color=yellow]Pontuação Final:[/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_8ip4g")
+watch_text_change = true
+max_font_size = 200
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
+
+[node name="MenuButton" type="Button" parent="." unique_id=848590666]
+layout_mode = 0
+offset_left = 1406.0
+offset_top = 1907.0
+offset_right = 2507.0
+offset_bottom = 2103.0
+theme_override_font_sizes/font_size = 1
+clip_text = true
+script = ExtResource("3_8ip4g")
+button_text = "Voltar para Menu"
+max_font_size = 100
+metadata/_custom_type_script = "uid://bnaosc552evuy"
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

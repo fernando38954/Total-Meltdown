@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2bor1i0t51n0"]
 
 [ext_resource type="Script" uid="uid://cgqtegu1605kk" path="res://scripts/swebok/content_viewer.gd" id="1_6tgrj"]
-[ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/RadarChart.tscn" id="2_1ym60"]
+[ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="2_1ym60"]
 [ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_jkyab"]
 [ext_resource type="Texture2D" uid="uid://dcdnocfly16ac" path="res://assets/pattern_icons/ClientServer.png" id="4_yiari"]
 

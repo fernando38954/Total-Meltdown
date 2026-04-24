@@ -5,3 +5,6 @@ signal study_pattern(pattern_file_name)
 signal current_map_event_finished
 signal timer_update
 signal money_value_changed
+signal contract_value_changed
+signal game_start
+signal game_finished

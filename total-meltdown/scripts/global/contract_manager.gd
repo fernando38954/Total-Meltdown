@@ -1,6 +1,6 @@
 extends Node
 
-const REWARD_POPUP_SCENE = preload("res://scenes/RewardPopup.tscn")
+const REWARD_POPUP_SCENE = preload("res://scenes/component/RewardPopup.tscn")
 
 var active_contract_list: Array[ContractData]
 var claimable_contracts: Array[ContractData]
@@ -27,12 +27,19 @@ func claim_contract(target_contrat_data: ContractData) -> void:
 		completed_contracts.append(target_contrat_data)
 		QuestManager.complete_quest(target_contrat_data.quest_data)
 		DeveloperManager.finish_work(target_contrat_data.developers_data)
+		GlobalResource.contract_done()
 	else:
 		push_error("claim_contract: No contract with quest filename " + target_contrat_data.quest_data.file_name + " found in claimable_contracts")
 #endregion
 
 func _ready() -> void:
 	GlobalSignal.timer_update.connect(update_contracts)
+	GlobalSignal.game_start.connect(initialize)
+
+func initialize():
+	active_contract_list.clear()
+	claimable_contracts.clear()
+	completed_contracts.clear()
 
 func update_contracts() -> void:
 	for contract in active_contract_list:
