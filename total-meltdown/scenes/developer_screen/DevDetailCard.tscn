@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c0k3lk06x8x27" path="res://scripts/developer_screen/dev_detail_card.gd" id="1_q7v8o"]
 [ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="2_q7v8o"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="3_1dkyr"]
-[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="3_ekraa"]
 [ext_resource type="Texture2D" uid="uid://otrus47vg2jc" path="res://placeholder/WhiteX.png" id="4_cjkw6"]
 [ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="5_bdd7n"]
 [ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="6_fopsv"]
@@ -33,18 +32,11 @@ offset_left = 931.0
 offset_top = 141.0
 offset_right = 1794.0
 offset_bottom = 907.0
-theme_override_font_sizes/normal_font_size = 150
-theme_override_font_sizes/bold_font_size = 150
-theme_override_font_sizes/bold_italics_font_size = 150
-theme_override_font_sizes/italics_font_size = 150
-theme_override_font_sizes/mono_font_size = 150
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
 bbcode_enabled = true
 text = "Name"
 horizontal_alignment = 1
-script = ExtResource("3_ekraa")
-watch_text_change = true
-max_font_size = 150
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("3_1dkyr")]
 layout_mode = 0
@@ -61,17 +53,10 @@ offset_left = 1903.0
 offset_top = 276.0
 offset_right = 3664.0
 offset_bottom = 2009.0
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 100
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 100
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
 bbcode_enabled = true
 text = "test description"
-script = ExtResource("3_ekraa")
-watch_text_change = true
-max_font_size = 100
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="ReturnButton" type="TextureButton" parent="." unique_id=1238466745]
 layout_mode = 0

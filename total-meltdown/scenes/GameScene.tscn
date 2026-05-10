@@ -156,23 +156,22 @@ position = Vector2(-1070.5653, -613.3627)
 scale = Vector2(0.545, 0.545)
 
 [node name="MoneyLabel" parent="ScreenMask/MapScreen" index="1" unique_id=877837989]
-offset_left = 219.58176
-offset_top = 42.13748
-offset_right = 810.5818
-offset_bottom = 260.13748
+offset_left = 254.34885
+offset_top = 34.809227
+offset_right = 1056.3489
+offset_bottom = 252.80923
 
 [node name="RemainingContract" parent="ScreenMask/MapScreen" index="2" unique_id=179789233]
-offset_left = 1200.3798
-offset_top = 38.473328
-offset_right = 2592.38
-offset_bottom = 217.47333
+offset_left = 1209.529
+offset_top = 62.290157
+offset_right = 2601.5288
+offset_bottom = 241.29016
 
 [node name="SpawnArea" parent="ScreenMask/MapScreen" index="3" unique_id=769389484]
-offset_left = 424.52454
-offset_top = 452.51978
-offset_right = 3463.901
-offset_bottom = 1859.5448
-color = Color(1, 0, 0, 1)
+offset_left = 473.9303
+offset_top = 278.4737
+offset_right = 3436.4531
+offset_bottom = 1993.2854
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1890244953]
 

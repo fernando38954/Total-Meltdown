@@ -5,7 +5,7 @@ class_name StudySessionCourse
 @onready var description_label = $Description
 
 func set_content(item_data: Variant):
-	pattern_title.text = "[b]%s[/b]\n\n" % [item_data.title]
+	pattern_title.text = "[b]%s[/b]" % [item_data.title]
 	description_label.text = "%s" % [item_data.abstract]
 
 func _on_study_button_pressed() -> void:

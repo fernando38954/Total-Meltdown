@@ -125,12 +125,10 @@ offset_top = 190.0
 offset_right = 1960.4504
 offset_bottom = 382.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 100
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 100
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
 text = "[b]%s[/b]"
+script = null
 
 [node name="Icon" parent="ContentViewer" index="1" unique_id=947132389]
 offset_left = 1317.0
@@ -151,6 +149,7 @@ offset_right = 3013.0
 offset_bottom = 1605.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "ASD"
+script = null
 
 [node name="RadarChart" parent="ContentViewer" index="4" unique_id=1384305498]
 offset_left = 1036.0

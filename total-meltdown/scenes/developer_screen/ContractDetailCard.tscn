@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://jbp51x0i3qgi"]
 
 [ext_resource type="Script" uid="uid://c1egxsan0lidv" path="res://scripts/developer_screen/contract_detail_card.gd" id="1_1mseo"]
-[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_ym2eu"]
 [ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/Dog.png" id="3_oevvo"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="4_f0yuo"]
 [ext_resource type="Texture2D" uid="uid://dojl0r0nbpusc" path="res://placeholder/white_circle_512.png" id="5_1ai8r"]
@@ -32,9 +31,6 @@ theme_override_font_sizes/bold_italics_font_size = 160
 theme_override_font_sizes/italics_font_size = 160
 theme_override_font_sizes/mono_font_size = 160
 text = "Quest Title"
-script = ExtResource("2_ym2eu")
-watch_text_change = true
-max_font_size = 500
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="QuestIcon" type="TextureRect" parent="." unique_id=1835281315]
@@ -61,9 +57,6 @@ text = "[ul]
 sadsad
 happyhappy
 [/ul]"
-script = ExtResource("2_ym2eu")
-watch_text_change = true
-max_font_size = 80
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=795254943]
@@ -79,9 +72,6 @@ theme_override_font_sizes/italics_font_size = 80
 theme_override_font_sizes/mono_font_size = 80
 bbcode_enabled = true
 text = "I'm a descriptiioooon"
-script = ExtResource("2_ym2eu")
-watch_text_change = true
-max_font_size = 80
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="Footnote" type="RichTextLabel" parent="." unique_id=641953686]
@@ -98,9 +88,6 @@ theme_override_font_sizes/mono_font_size = 80
 bbcode_enabled = true
 text = "[i]~ I'm a footnote[/i]"
 horizontal_alignment = 2
-script = ExtResource("2_ym2eu")
-watch_text_change = true
-max_font_size = 80
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("4_f0yuo")]
@@ -136,9 +123,6 @@ theme_override_font_sizes/italics_font_size = 100
 theme_override_font_sizes/mono_font_size = 100
 text = "Resgatar"
 vertical_alignment = 1
-script = ExtResource("2_ym2eu")
-watch_text_change = true
-max_font_size = 500
 metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="DevelopementContainer" type="VBoxContainer" parent="." unique_id=2060312681]

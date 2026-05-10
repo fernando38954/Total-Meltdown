@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://pmeorxyc53vn"]
 
 [ext_resource type="Script" uid="uid://bsf44ou2kgnl1" path="res://scripts/component/reward_popup.gd" id="1_33lh1"]
-[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_vnkxr"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="3_7mqrl"]
-[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="4_ep1wj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33lh1"]
 
@@ -38,10 +36,6 @@ bbcode_enabled = true
 text = "Lucro"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_vnkxr")
-watch_text_change = true
-max_font_size = 500
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="RadarChart" parent="Popup" unique_id=1384305498 instance=ExtResource("3_7mqrl")]
 layout_mode = 0
@@ -55,20 +49,12 @@ layout_mode = 0
 offset_top = 944.0
 offset_right = 988.0
 offset_bottom = 1097.0
-theme_override_font_sizes/normal_font_size = 55
-theme_override_font_sizes/bold_font_size = 55
-theme_override_font_sizes/bold_italics_font_size = 55
-theme_override_font_sizes/italics_font_size = 55
-theme_override_font_sizes/mono_font_size = 55
+theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "Base Profit: 1000 | Multiplier: 0.37
 [color=yellow]Final Profit: 370[/color]"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_vnkxr")
-watch_text_change = true
-max_font_size = 500
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="ConfirmButton" type="Button" parent="Popup" unique_id=1758196319]
 layout_mode = 0
@@ -76,12 +62,9 @@ offset_left = 263.0
 offset_top = 1128.0
 offset_right = 760.0
 offset_bottom = 1265.0
-theme_override_font_sizes/font_size = 1
+theme_override_font_sizes/font_size = 70
+text = "Confirmar"
 clip_text = true
-script = ExtResource("4_ep1wj")
-button_text = "Confirmar"
-max_font_size = 500
-metadata/_custom_type_script = "uid://bnaosc552evuy"
 
 [node name="ClickBlocker" type="ColorRect" parent="." unique_id=1029015259]
 anchors_preset = 15

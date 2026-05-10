@@ -10,8 +10,6 @@
 [ext_resource type="Script" uid="uid://b4d6dwxqyelhh" path="res://scripts/map_screen/contract/post_it.gd" id="5_hk8vl"]
 [ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/Dog.png" id="5_jusyd"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="6_hk8vl"]
-[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="6_xc3rv"]
-[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="7_oey3q"]
 [ext_resource type="Script" uid="uid://cluwb52on6g7k" path="res://scripts/map_screen/contract/quest_panel.gd" id="8_xc3rv"]
 [ext_resource type="PackedScene" uid="uid://w0kr78thnd8b" path="res://scenes/map_screen/contract/PatternOptionOverviewCard.tscn" id="10_5ppia"]
 [ext_resource type="Script" uid="uid://6fx2nw7gqoaj" path="res://scripts/map_screen/contract/selector_panel.gd" id="10_07g81"]
@@ -99,12 +97,9 @@ offset_left = 756.0
 offset_top = 1190.5
 offset_right = 1282.0
 offset_bottom = 1319.5
-theme_override_font_sizes/font_size = 1
+theme_override_font_sizes/font_size = 80
+text = "Submeter"
 clip_text = true
-script = ExtResource("7_oey3q")
-button_text = "Submeter"
-max_font_size = 180
-metadata/_custom_type_script = "uid://bnaosc552evuy"
 
 [node name="PostIt" type="TextureRect" parent="." unique_id=707217834 node_paths=PackedStringArray("contract_screen")]
 offset_left = 2799.0
@@ -123,21 +118,14 @@ offset_top = 131.5
 offset_right = 850.0
 offset_bottom = 815.5
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 45
-theme_override_font_sizes/bold_font_size = 45
-theme_override_font_sizes/bold_italics_font_size = 45
-theme_override_font_sizes/italics_font_size = 45
-theme_override_font_sizes/mono_font_size = 45
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "[ul]
 Aqui entra os bullet points
 Cada um separado por um /n
 Pode adicionar quanto que quiser
 [/ul]"
-script = ExtResource("6_xc3rv")
-min_font_size = 30
-max_font_size = 45
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="Footnote" type="RichTextLabel" parent="PostIt" unique_id=300561734]
 layout_mode = 0
@@ -146,16 +134,12 @@ offset_top = 852.5
 offset_right = 825.0
 offset_bottom = 951.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 38
-theme_override_font_sizes/bold_font_size = 38
-theme_override_font_sizes/bold_italics_font_size = 38
-theme_override_font_sizes/italics_font_size = 38
-theme_override_font_sizes/mono_font_size = 38
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
 bbcode_enabled = true
 text = "[i]~ I'm a lonely footnote[/i]"
 horizontal_alignment = 2
-script = ExtResource("6_xc3rv")
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="QuestPanel" type="TextureRect" parent="." unique_id=103033231 node_paths=PackedStringArray("contract_screen")]
 self_modulate = Color(0.92099476, 0.9209946, 0.9209946, 1)
@@ -177,17 +161,11 @@ offset_right = 800.0
 offset_bottom = 146.63684
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 80
-theme_override_font_sizes/bold_font_size = 80
-theme_override_font_sizes/bold_italics_font_size = 80
-theme_override_font_sizes/italics_font_size = 80
-theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
+text = "Title"
 horizontal_alignment = 1
-script = ExtResource("6_xc3rv")
-watch_text_change = true
-max_font_size = 80
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="Icon" type="Sprite2D" parent="QuestPanel" unique_id=287756834]
 position = Vector2(450, 251)
@@ -208,9 +186,7 @@ theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-script = ExtResource("6_xc3rv")
-max_font_size = 30
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
+text = "Description"
 
 [node name="SelectorPanel" type="Panel" parent="." unique_id=759250611 node_paths=PackedStringArray("container", "click_blocker")]
 anchors_preset = 15

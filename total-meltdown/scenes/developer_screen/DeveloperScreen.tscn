@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="3_1bwwp"]
 [ext_resource type="PackedScene" uid="uid://boay6nwifi3hv" path="res://scenes/developer_screen/ContractOverviewCard.tscn" id="3_3iscn"]
 [ext_resource type="PackedScene" uid="uid://jbp51x0i3qgi" path="res://scenes/developer_screen/ContractDetailCard.tscn" id="4_c4ukx"]
-[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="5_d844j"]
 
 [node name="DeveloperScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("panel")]
 script = ExtResource("1_6lvqk")
@@ -59,7 +58,7 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="ContractLabel" type="RichTextLabel" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=846343785]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(3750, 150)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 109
 theme_override_font_sizes/bold_font_size = 109
@@ -67,10 +66,6 @@ theme_override_font_sizes/bold_italics_font_size = 109
 theme_override_font_sizes/italics_font_size = 109
 theme_override_font_sizes/mono_font_size = 109
 text = "Contratos em andamento"
-script = ExtResource("5_d844j")
-watch_text_change = true
-max_font_size = 500
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="ContractContainer2" type="GridContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=378712485]
 layout_mode = 2
@@ -98,7 +93,7 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="DeveloperLabel" type="RichTextLabel" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1677748604]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(3750, 150)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 109
 theme_override_font_sizes/bold_font_size = 109
@@ -106,10 +101,6 @@ theme_override_font_sizes/bold_italics_font_size = 109
 theme_override_font_sizes/italics_font_size = 109
 theme_override_font_sizes/mono_font_size = 109
 text = "Desenvolvedores Livres"
-script = ExtResource("5_d844j")
-watch_text_change = true
-max_font_size = 500
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="DeveloperContainer" type="GridContainer" parent="DeveloperPanel/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=2113858380]
 layout_mode = 2

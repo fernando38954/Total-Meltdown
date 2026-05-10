@@ -11,7 +11,7 @@ class_name PatternDetailCard
 @export var value_font_size = 25
 
 func set_content(item_data: Variant):
-	pattern_name.text = "[b]%s[/b]\n\n" % [item_data.title]
+	pattern_name.text = "[b]%s[/b]" % [item_data.title]
 	description.text = "%s" % [item_data.description]
 	radar_chart.set_label(font, font_size, value_font_size)
 	radar_chart.set_attributes(item_data.attribute)

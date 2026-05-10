@@ -19,14 +19,14 @@ func build_catalog():
 	for idx in range(TutorialPageManager.all_pages.size()):
 		var page = TutorialPageManager.all_pages[idx]
 		var button = button_entry_scene.instantiate()
-		button.button_text = page.title
+		button.text = page.title
 		button.pressed.connect(_on_page_selected.bind(idx, ContentViewer.ContentType.Tutorial))
 		tutorial_container.add_child(button)
 	
 	for idx in range(PatternManager.owned_patterns.size()):
 		var pattern = PatternManager.owned_patterns[idx]
 		var button = button_entry_scene.instantiate()
-		button.button_text = pattern.title
+		button.text = pattern.title
 		button.pressed.connect(_on_page_selected.bind(idx, ContentViewer.ContentType.Pattern))
 		pattern_container.add_child(button)
 

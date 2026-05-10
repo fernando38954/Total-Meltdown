@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://c8iulswg23omd" path="res://scripts/map_screen/job_fair/resume.gd" id="2_u6tmt"]
 [ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="3_vx1ot"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="4_tv364"]
-[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="4_vx1ot"]
-[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="6_tv364"]
 
 [node name="Resume" type="TextureButton" unique_id=1570528027]
 offset_right = 1200.0
@@ -27,18 +25,11 @@ offset_right = 1121.0
 offset_bottom = 644.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 100
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 100
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
 bbcode_enabled = true
 text = "Name"
 horizontal_alignment = 1
-script = ExtResource("4_vx1ot")
-watch_text_change = true
-max_font_size = 100
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("4_tv364")]
 layout_mode = 0
@@ -55,12 +46,9 @@ offset_left = 167.0
 offset_top = 1814.0
 offset_right = 1026.0
 offset_bottom = 2027.0
-theme_override_font_sizes/font_size = 1
+theme_override_font_sizes/font_size = 100
+text = "Contratar"
 clip_text = true
-script = ExtResource("6_tv364")
-button_text = "Contratar"
-max_font_size = 150
-metadata/_custom_type_script = "uid://bnaosc552evuy"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="HireButton" to="." method="_on_hire_button_pressed"]

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bew0lc5x3wvft" path="res://scripts/start_menu.gd" id="1_fgoeh"]
 [ext_resource type="Texture2D" uid="uid://tbax5qnrpv8j" path="res://assets/map.png" id="1_kmax6"]
 [ext_resource type="Texture2D" uid="uid://dug7typense55" path="res://assets/GameLogo.png" id="2_cp7se"]
-[ext_resource type="Script" uid="uid://bnaosc552evuy" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="3_cp7se"]
 
 [node name="StartMenu" type="Node2D" unique_id=2061493644]
 script = ExtResource("1_fgoeh")
@@ -24,11 +23,8 @@ offset_left = 1235.0
 offset_top = 1224.0
 offset_right = 2723.0
 offset_bottom = 1458.0
-theme_override_font_sizes/font_size = 1
+theme_override_font_sizes/font_size = 150
+text = "Começar o Jogo"
 clip_text = true
-script = ExtResource("3_cp7se")
-button_text = "Começar o Jogo"
-max_font_size = 500
-metadata/_custom_type_script = "uid://bnaosc552evuy"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

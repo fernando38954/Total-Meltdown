@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://behglkn5tpfjf" path="res://scripts/map_screen/study_session/pattern_detail_card.gd" id="1_ydam8"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="2_7p2in"]
-[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_jph2o"]
 [ext_resource type="Texture2D" uid="uid://otrus47vg2jc" path="res://placeholder/WhiteX.png" id="3_jph2o"]
 [ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="4_13mco"]
 [ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="5_grlnv"]
@@ -29,19 +28,11 @@ offset_top = 111.0
 offset_right = 1901.0
 offset_bottom = 300.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 138
-theme_override_font_sizes/bold_font_size = 138
-theme_override_font_sizes/bold_italics_font_size = 138
-theme_override_font_sizes/italics_font_size = 138
-theme_override_font_sizes/mono_font_size = 138
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
 bbcode_enabled = true
 text = "Name"
 horizontal_alignment = 1
-script = ExtResource("2_jph2o")
-watch_text_change = true
-min_font_size = 37
-max_font_size = 150
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("2_7p2in")]
 layout_mode = 0
@@ -64,11 +55,6 @@ theme_override_font_sizes/italics_font_size = 71
 theme_override_font_sizes/mono_font_size = 71
 bbcode_enabled = true
 text = "Test description"
-script = ExtResource("2_jph2o")
-watch_text_change = true
-min_font_size = 37
-max_font_size = 71
-metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="ReturnButton" type="TextureButton" parent="." unique_id=1238466745]
 layout_mode = 0
