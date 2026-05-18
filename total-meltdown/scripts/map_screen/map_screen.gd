@@ -8,7 +8,6 @@ class_name MapScreen
 @export var spawn_interval: float = 1.0
 @export var max_spawn_attempts: int = 50
 @export var money_label: RichTextLabel
-@export var contract_label: RichTextLabel
 
 @export_category("Event Screen")
 @export var click_blocker: ColorRect
@@ -29,10 +28,8 @@ func _ready() -> void:
 	initialize_parameters()
 	close_click_blocker()
 	update_money_label()
-	update_contract_label()
 	GlobalSignal.current_map_event_finished.connect(finish_current_event)
 	GlobalSignal.money_value_changed.connect(update_money_label)
-	GlobalSignal.contract_value_changed.connect(update_contract_label)
 	
 	while true:
 		await get_tree().create_timer(spawn_interval).timeout
@@ -48,10 +45,7 @@ func initialize_parameters():
 	temp_button.queue_free()
 
 func update_money_label():
-	money_label.text = "[color=yellow][b]$ = %.2f[/b][/color]" % GlobalResource.money
-
-func update_contract_label():
-	contract_label.text = "[color=red]Contratos Restantes: %d[/color]" % GlobalResource.remaining_contract
+	money_label.text = "[color=yellow][b]%.2f[/b][/color]" % GlobalResource.money
 
 #region Event Button
 func create_event_button():

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp6uck75lgybu"
-path="res://.godot/imported/DinheiroDisplay.png-19561a46d78b16c42f0e983f07a1a8e0.ctex"
+path="res://.godot/imported/MoneyDisplay.png-f12c4b708f16b604396669ca024bb94e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map_screen/DinheiroDisplay.png"
-dest_files=["res://.godot/imported/DinheiroDisplay.png-19561a46d78b16c42f0e983f07a1a8e0.ctex"]
+source_file="res://assets/sprites/map_screen/MoneyDisplay.png"
+dest_files=["res://.godot/imported/MoneyDisplay.png-f12c4b708f16b604396669ca024bb94e.ctex"]
 
 [params]
 

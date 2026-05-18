@@ -8,14 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://bq5lgvuwbxpki" path="res://scenes/map_screen/job_fair/JobFairScreen.tscn" id="6_6y1bi"]
 [ext_resource type="PackedScene" uid="uid://d0lcshv562d4e" path="res://scenes/map_screen/study_session/StudySessionScreen.tscn" id="7_lgmxy"]
 [ext_resource type="PackedScene" uid="uid://c1hn7mnqjje01" path="res://scenes/map_screen/contract/Contract.tscn" id="8_fidt4"]
+[ext_resource type="Texture2D" uid="uid://cp6uck75lgybu" path="res://assets/sprites/map_screen/MoneyDisplay.png" id="9_ku3ts"]
 
-[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "money_label", "contract_label", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
+[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "money_label", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
 script = ExtResource("1_rw3jc")
 game_map = NodePath("Map")
 spawn_area = NodePath("SpawnArea")
 event_button_list = Array[PackedScene]([ExtResource("3_ls7sa"), ExtResource("3_6y1bi"), ExtResource("4_lgmxy")])
-money_label = NodePath("MoneyLabel")
-contract_label = NodePath("RemainingContract")
+money_label = NodePath("DinheiroDisplay/MoneyLabel")
 click_blocker = NodePath("ClickBlocker")
 event_blocker = NodePath("EventBlocker")
 job_fair_screen = NodePath("JobFairScreen")
@@ -26,27 +26,6 @@ contract_screen = NodePath("Contract")
 position = Vector2(1951.9998, 1097.9999)
 scale = Vector2(1.016402, 1.017609)
 texture = ExtResource("5_fidt4")
-
-[node name="MoneyLabel" type="RichTextLabel" parent="." unique_id=877837989]
-offset_left = 111.0
-offset_top = 17.0
-offset_right = 913.0
-offset_bottom = 235.0
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-bbcode_enabled = true
-text = "[color=yellow][b]$ = %.2f[/b][/color]"
-vertical_alignment = 1
-
-[node name="RemainingContract" type="RichTextLabel" parent="." unique_id=179789233]
-offset_left = 2358.0
-offset_top = 39.0
-offset_right = 3750.0
-offset_bottom = 218.0
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-bbcode_enabled = true
-text = "[color=red]Contratos Restantes: 56[/color]"
 
 [node name="SpawnArea" type="ColorRect" parent="." unique_id=769389484]
 offset_left = 261.0
@@ -85,5 +64,21 @@ visible = false
 
 [node name="Contract" parent="." unique_id=1964947095 instance=ExtResource("8_fidt4")]
 visible = false
+
+[node name="DinheiroDisplay" type="Sprite2D" parent="." unique_id=1073268683]
+position = Vector2(438, 170)
+scale = Vector2(0.52959836, 0.5295983)
+texture = ExtResource("9_ku3ts")
+
+[node name="MoneyLabel" type="RichTextLabel" parent="DinheiroDisplay" unique_id=877837989]
+offset_left = -217.14569
+offset_top = -194.48703
+offset_right = 683.53687
+offset_bottom = 181.26947
+theme_override_font_sizes/bold_font_size = 200
+bbcode_enabled = true
+text = "[color=yellow][b]%.2f[/b][/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]
