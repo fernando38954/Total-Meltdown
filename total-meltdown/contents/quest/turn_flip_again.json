@@ -1,6 +1,6 @@
 {
 	"title": "Vire... desvire... agora repete!",
-	"icon": "res://assets/contract_icons/TurnFlip.png",
+	"icon": "res://assets/sprites/contract_icons/TurnFlip.png",
 	"attribute": {
 		"Functional Suitability": 6,
 		"Performance Efficiency": 3,

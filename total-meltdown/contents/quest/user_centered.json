@@ -1,6 +1,6 @@
 {
 	"title": "User-centered",
-	"icon": "res://assets/contract_icons/User.png",
+	"icon": "res://assets/sprites/contract_icons/User.png",
 	"attribute": {
 		"Functional Suitability": 8,
 		"Performance Efficiency": 3,

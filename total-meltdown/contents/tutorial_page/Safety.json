@@ -1,7 +1,7 @@
 {
 	"order": 9,
 	"title": "Segurança Operacional",
-	"image": "res://assets/attribute_icons/Safety.png",
+	"image": "res://assets/sprites/attribute_icons/Safety.png",
 	"description": "	Relaciona-se à prevenção de danos ao ambiente, usuários ou ao próprio sistema durante sua operação. É crítica em sistemas sensíveis.
 [ul]
 [b]Restrição operacional[/b]: mantém operação em limites seguros.

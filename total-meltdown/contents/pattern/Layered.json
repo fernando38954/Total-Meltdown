@@ -1,6 +1,6 @@
 {
 	"title": "Arquitetura em Camadas",
-	"icon": "res://assets/pattern_icons/Layered.png",
+	"icon": "res://assets/sprites/pattern_icons/Layered.png",
 	"attribute": {
 		"Functional Suitability": 1.1,
 		"Performance Efficiency": 0.8,

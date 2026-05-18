@@ -1,6 +1,6 @@
 {
 	"title": "Total Meltdown",
-	"icon": "res://assets/contract_icons/Meltdown.png",
+	"icon": "res://assets/sprites/contract_icons/Meltdown.png",
 	"attribute": {
 		"Functional Suitability": 8,
 		"Performance Efficiency": 9,

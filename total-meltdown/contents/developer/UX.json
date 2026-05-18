@@ -1,6 +1,6 @@
 {
 	"name": "Carla “UX” Duarte",
-	"portrait": "res://assets/portrait/portrait_3.png",
+	"portrait": "res://assets/sprites/developer_portrait/portrait_3.png",
 	"attribute": {
 		"Functional Suitability": 1.1,
 		"Performance Efficiency": 0.8,

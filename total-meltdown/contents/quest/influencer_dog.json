@@ -1,6 +1,6 @@
 {
 	"title": "Cão Influenciador",
-	"icon": "res://assets/contract_icons/Dog.png",
+	"icon": "res://assets/sprites/contract_icons/Dog.png",
 	"attribute": {
 		"Functional Suitability": 4,
 		"Performance Efficiency": 2,

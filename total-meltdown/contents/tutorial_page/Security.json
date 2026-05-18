@@ -1,7 +1,7 @@
 {
 	"order": 6,
 	"title": "Segurança",
-	"image": "res://assets/attribute_icons/Security.png",
+	"image": "res://assets/sprites/attribute_icons/Security.png",
 	"description": "	Refere-se à proteção das informações e dos recursos do sistema contra acessos indevidos. Um sistema seguro garante confidencialidade, integridade e rastreabilidade.
 [ul]
 [b]Confidencialidade[/b]: acesso restrito a autorizados.

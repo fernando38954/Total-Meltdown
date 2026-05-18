@@ -1,6 +1,6 @@
 {
 	"title": "Cliente-Servidor",
-	"icon": "res://assets/pattern_icons/ClientServer.png",
+	"icon": "res://assets/sprites/pattern_icons/ClientServer.png",
 	"attribute": {
 		"Functional Suitability": 1.1,
 		"Performance Efficiency": 1.1,

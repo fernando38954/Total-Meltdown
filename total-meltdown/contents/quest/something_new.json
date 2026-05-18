@@ -1,6 +1,6 @@
 {
 	"title": "Por que não testar algo novo?",
-	"icon": "res://assets/contract_icons/New.png",
+	"icon": "res://assets/sprites/contract_icons/New.png",
 	"attribute": {
 		"Functional Suitability": 6,
 		"Performance Efficiency": 3,

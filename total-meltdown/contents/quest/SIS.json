@@ -1,6 +1,6 @@
 {
 	"title": "SSI: Sistema Super Importante",
-	"icon": "res://assets/contract_icons/SSI.png",
+	"icon": "res://assets/sprites/contract_icons/SSI.png",
 	"attribute": {
 		"Functional Suitability": 6,
 		"Performance Efficiency": 4,

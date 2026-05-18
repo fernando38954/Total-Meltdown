@@ -1,6 +1,6 @@
 {
 	"title": "Pipe and Filter",
-	"icon": "res://assets/pattern_icons/PipeFilter.png",
+	"icon": "res://assets/sprites/pattern_icons/PipeFilter.png",
 	"attribute": {
 		"Functional Suitability": 1.1,
 		"Performance Efficiency": 1.4,

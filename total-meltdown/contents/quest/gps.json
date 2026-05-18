@@ -1,6 +1,6 @@
 {
 	"title": "GPS",
-	"icon": "res://assets/contract_icons/GPS.png",
+	"icon": "res://assets/sprites/contract_icons/GPS.png",
 	"attribute": {
 		"Functional Suitability": 7,
 		"Performance Efficiency": 4,

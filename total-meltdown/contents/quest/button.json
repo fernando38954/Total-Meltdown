@@ -1,6 +1,6 @@
 {
 	"title": "BOTÃO",
-	"icon": "res://assets/contract_icons/Button.png",
+	"icon": "res://assets/sprites/contract_icons/Button.png",
 	"attribute": {
 		"Functional Suitability": 5,
 		"Performance Efficiency": 3,

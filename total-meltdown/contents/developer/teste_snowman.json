@@ -1,6 +1,6 @@
 {
 	"name": "Snow “Snowman” Man",
-	"portrait": "res://assets/portrait/portrait_6.png",
+	"portrait": "res://assets/sprites/developer_portrait/portrait_6.png",
 	"attribute": {
 		"Functional Suitability": 1.8,
 		"Performance Efficiency": 1.8,

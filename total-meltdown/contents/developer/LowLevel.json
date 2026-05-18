@@ -1,6 +1,6 @@
 {
 	"name": "Bruno “LowLevel” Takeda",
-	"portrait": "res://assets/portrait/portrait_1.png",
+	"portrait": "res://assets/sprites/developer_portrait/portrait_1.png",
 	"attribute": {
 		"Functional Suitability": 1.0,
 		"Performance Efficiency": 2.0,

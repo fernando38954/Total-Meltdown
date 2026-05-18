@@ -1,6 +1,6 @@
 {
 	"title": "Arquitetura Orientada a Eventos",
-	"icon": "res://assets/pattern_icons/EDA.png",
+	"icon": "res://assets/sprites/pattern_icons/EDA.png",
 	"attribute": {
 		"Functional Suitability": 1.0,
 		"Performance Efficiency": 1.8,

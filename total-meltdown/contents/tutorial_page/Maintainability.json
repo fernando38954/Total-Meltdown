@@ -1,7 +1,7 @@
 {
 	"order": 7,
 	"title": "Manutenibilidade",
-	"image": "res://assets/attribute_icons/Maintainability.png",
+	"image": "res://assets/sprites/attribute_icons/Maintainability.png",
 	"description": "	Avalia a facilidade com que o sistema pode ser modificado para corrigir erros, melhorar funcionalidades ou se adaptar a mudanças.
 [ul]
 [b]Modularidade[/b]: componentes independentes.

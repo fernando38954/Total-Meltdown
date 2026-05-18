@@ -1,6 +1,6 @@
 {
 	"title": "Microkernel",
-	"icon": "res://assets/pattern_icons/Microkernel.png",
+	"icon": "res://assets/sprites/pattern_icons/Microkernel.png",
 	"attribute": {
 		"Functional Suitability": 1.1,
 		"Performance Efficiency": 0.8,

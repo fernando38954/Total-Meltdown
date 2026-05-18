@@ -1,6 +1,6 @@
 {
 	"title": "SSI-Turbo",
-	"icon": "res://assets/contract_icons/SSI-Turbo.png",
+	"icon": "res://assets/sprites/contract_icons/SSI-Turbo.png",
 	"attribute": {
 		"Functional Suitability": 6,
 		"Performance Efficiency": 8,

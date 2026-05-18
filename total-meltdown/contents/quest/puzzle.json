@@ -1,6 +1,6 @@
 {
 	"title": "Quebra-cabeça",
-	"icon": "res://assets/contract_icons/Puzzle.png",
+	"icon": "res://assets/sprites/contract_icons/Puzzle.png",
 	"attribute": {
 		"Functional Suitability": 6,
 		"Performance Efficiency": 4,

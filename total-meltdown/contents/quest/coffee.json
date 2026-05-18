@@ -1,6 +1,6 @@
 {
 	"title": "Café?! Eu quero",
-	"icon": "res://assets/contract_icons/Coffee.png",
+	"icon": "res://assets/sprites/contract_icons/Coffee.png",
 	"attribute": {
 		"Functional Suitability": 5,
 		"Performance Efficiency": 10,
