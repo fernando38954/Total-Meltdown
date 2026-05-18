@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doquprocr2u70"
-path="res://.godot/imported/note_1.png-2ed050b280f0a69450aa00a28a290ed1.ctex"
+uid="uid://bn6ugg1dndkur"
+path="res://.godot/imported/Pattern-ClientServer.png-fbaba84e4e00919c96b6b508cb7e19ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/note/note_1.png"
-dest_files=["res://.godot/imported/note_1.png-2ed050b280f0a69450aa00a28a290ed1.ctex"]
+source_file="res://assets/sprites/notebook/marker/Pattern-ClientServer.png"
+dest_files=["res://.godot/imported/Pattern-ClientServer.png-fbaba84e4e00919c96b6b508cb7e19ad.ctex"]
 
 [params]
 

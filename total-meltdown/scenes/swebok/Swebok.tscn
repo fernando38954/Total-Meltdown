@@ -5,47 +5,46 @@
 [ext_resource type="PackedScene" uid="uid://bvqa22rf2ptyj" path="res://scenes/swebok/Catalog.tscn" id="2_x7age"]
 [ext_resource type="AudioStream" uid="uid://w6cvvip8jvoy" path="res://assets/sfx/BookPageTurning_2.mp3" id="3_0h8ia"]
 [ext_resource type="PackedScene" uid="uid://b2bor1i0t51n0" path="res://scenes/swebok/ContentViewer.tscn" id="3_wlni6"]
-[ext_resource type="Texture2D" uid="uid://doquprocr2u70" path="res://assets/note/note_1.png" id="4_0h8ia"]
-[ext_resource type="Texture2D" uid="uid://b2govlso8m3u1" path="res://assets/note/note_2.png" id="5_0h8ia"]
+[ext_resource type="Texture2D" uid="uid://cm2443jlgxmbf" path="res://assets/sprites/notebook/Notebook.png" id="4_k2pky"]
 [ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/sprites/navigation_button/Arrow_Normal.png" id="7_k2pky"]
 [ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/sprites/navigation_button/Arrow_Press.png" id="8_0h8ia"]
 [ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/sprites/navigation_button/Arrow_Hover.png" id="9_gmiyw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h8ia"]
-atlas = ExtResource("4_0h8ia")
-region = Rect2(0, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(0, 0, 1330, 1120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmiyw"]
-atlas = ExtResource("4_0h8ia")
-region = Rect2(2660, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(1330, 0, 1330, 1120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7ya"]
-atlas = ExtResource("4_0h8ia")
-region = Rect2(5320, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(2660, 0, 1330, 1120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hotj"]
-atlas = ExtResource("4_0h8ia")
-region = Rect2(7980, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(3990, 0, 1330, 1120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lt6x6"]
-atlas = ExtResource("4_0h8ia")
-region = Rect2(7980, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(3990, 0, 1330, 1120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cshef"]
-atlas = ExtResource("5_0h8ia")
-region = Rect2(0, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(0, 1120, 1330, 1120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1xhr"]
-atlas = ExtResource("5_0h8ia")
-region = Rect2(2660, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(1330, 1120, 1330, 1120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1d12q"]
-atlas = ExtResource("5_0h8ia")
-region = Rect2(5320, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(2660, 1120, 1330, 1120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oyjut"]
-atlas = ExtResource("4_0h8ia")
-region = Rect2(7980, 0, 2660, 2240)
+atlas = ExtResource("4_k2pky")
+region = Rect2(3990, 0, 1330, 1120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhdxt"]
 animations = [{
@@ -97,9 +96,11 @@ metadata/_edit_vertical_guides_ = [576.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=617863607]
 position = Vector2(2007, 1007)
-scale = Vector2(1.2, 1.2)
+scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_qhdxt")
-animation = &"turn_page"
+animation = &"open_book"
+frame = 3
+frame_progress = 1.0
 
 [node name="Catalog" parent="." unique_id=997869620 node_paths=PackedStringArray("swebok") instance=ExtResource("2_x7age")]
 swebok = NodePath("..")
@@ -125,10 +126,7 @@ offset_top = 190.0
 offset_right = 1960.4504
 offset_bottom = 382.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 60
-theme_override_font_sizes/bold_font_size = 60
 text = "[b]%s[/b]"
-script = null
 
 [node name="Icon" parent="ContentViewer" index="1" unique_id=947132389]
 offset_left = 1317.0
@@ -149,7 +147,6 @@ offset_right = 3013.0
 offset_bottom = 1605.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "ASD"
-script = null
 
 [node name="RadarChart" parent="ContentViewer" index="4" unique_id=1384305498]
 offset_left = 1036.0

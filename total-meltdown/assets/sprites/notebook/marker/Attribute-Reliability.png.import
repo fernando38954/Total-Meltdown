@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2govlso8m3u1"
-path="res://.godot/imported/note_2.png-2660c5aa4cd7edb07e4f8121c49c5436.ctex"
+uid="uid://brlxm82r87so6"
+path="res://.godot/imported/Attribute-Reliability.png-d3ce5f5c03f544a975c88f31b4e48794.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/note/note_2.png"
-dest_files=["res://.godot/imported/note_2.png-2660c5aa4cd7edb07e4f8121c49c5436.ctex"]
+source_file="res://assets/sprites/notebook/marker/Attribute-Reliability.png"
+dest_files=["res://.godot/imported/Attribute-Reliability.png-d3ce5f5c03f544a975c88f31b4e48794.ctex"]
 
 [params]
 
