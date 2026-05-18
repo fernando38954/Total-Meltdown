@@ -37,11 +37,11 @@ func multiply_dicts(dict_a: Dictionary, dict_b: Dictionary):
 		result[key] = dict_a[key] * dict_b.get(key, 0.0)
 	return result
 
-func get_pattern_data() -> Dictionary:
-	return pattern_box.get_box_item_data()
+func get_pattern_key() -> String:
+	return pattern_box.get_box_key()
 
-func get_developer_data_list() -> Array:
-	return developer_boxes.get_developer_data_list()
+func get_developer_key_list() -> Array:
+	return developer_boxes.get_developer_key_list()
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

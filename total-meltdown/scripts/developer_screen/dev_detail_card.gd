@@ -11,7 +11,8 @@ class_name DeveloperDetailCard
 @export var font_size = 30
 @export var value_font_size = 25
 
-func set_content(item_data: Variant):
+func set_content(item_key: Variant):
+	var item_data = DeveloperManager.get_developer_by_key(item_key)
 	developer_name.text = "%s" % [item_data.name]
 	description.text = "%s" % [item_data.description]
 	portrait.texture = item_data.portrait

@@ -1,4 +1,5 @@
 {
+	"key": "PipeFilter",
 	"title": "Pipe and Filter",
 	"icon": "res://assets/sprites/pattern_icons/PipeFilter.png",
 	"attribute": {

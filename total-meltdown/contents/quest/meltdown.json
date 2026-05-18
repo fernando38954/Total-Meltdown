@@ -1,4 +1,5 @@
 {
+	"key": "Meltdown",
 	"title": "Total Meltdown",
 	"icon": "res://assets/sprites/contract_icons/Meltdown.png",
 	"attribute": {

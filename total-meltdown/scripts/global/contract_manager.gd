@@ -2,34 +2,40 @@ extends Node
 
 const REWARD_POPUP_SCENE = preload("res://scenes/component/RewardPopup.tscn")
 
-var active_contract_list: Array[ContractData]
-var claimable_contracts: Array[ContractData]
-var completed_contracts: Array[ContractData]
+var awaked_contracts: Dictionary = {}
+var active_contract_list: Array[String]
+var claimable_contracts: Array[String]
+var completed_contracts: Array[String]
 
 #region Array Operation
-func start_contract(quest_data: Dictionary, pattern_data: Dictionary, developer_data_list: Array, total_attribute: Dictionary):
-	QuestManager.start_quest(quest_data)
+func get_contract_by_key(key: String) -> ContractData:
+	return awaked_contracts.get(key, null)
+
+func start_contract(quest_key: String, pattern_key: String, developer_data_list: Array, total_attribute: Dictionary):
+	QuestManager.start_quest(quest_key)
 	DeveloperManager.assign_work(developer_data_list)
-	var new_contract = ContractData.new(quest_data, pattern_data, developer_data_list, total_attribute)
-	active_contract_list.append(new_contract)
+	var new_contract = ContractData.new(quest_key, pattern_key, developer_data_list, total_attribute)
+	awaked_contracts[quest_key] = new_contract
+	active_contract_list.append(quest_key)
 
-func mark_contract_claimable(target_contrat_data: ContractData):
-	if target_contrat_data in active_contract_list:
-		active_contract_list.erase(target_contrat_data)
-		claimable_contracts.append(target_contrat_data)
+func mark_contract_claimable(target_contract_key: String):
+	if target_contract_key in active_contract_list:
+		active_contract_list.erase(target_contract_key)
+		claimable_contracts.append(target_contract_key)
 	else:
-		push_error("mark_contract_claimable: No contract with quest filename " + target_contrat_data.quest_data.file_name + " found in active_contract_list")
+		push_error("mark_contract_claimable: No contract with quest key " + target_contract_key + " found in active_contract_list")
 
-func claim_contract(target_contrat_data: ContractData) -> void:
-	if target_contrat_data in claimable_contracts:
-		claimable_contracts.erase(target_contrat_data)
-		give_reward(target_contrat_data)
-		completed_contracts.append(target_contrat_data)
-		QuestManager.complete_quest(target_contrat_data.quest_data)
-		DeveloperManager.finish_work(target_contrat_data.developers_data)
+func claim_contract(target_contract_key: String) -> void:
+	if target_contract_key in claimable_contracts:
+		var contract_data = get_contract_by_key(target_contract_key)
+		claimable_contracts.erase(target_contract_key)
+		give_reward(contract_data)
+		completed_contracts.append(target_contract_key)
+		QuestManager.complete_quest(contract_data.quest_data)
+		DeveloperManager.finish_work(contract_data.developers_data)
 		GlobalResource.contract_done()
 	else:
-		push_error("claim_contract: No contract with quest filename " + target_contrat_data.quest_data.file_name + " found in claimable_contracts")
+		push_error("claim_contract: No contract with quest key " + target_contract_key + " found in claimable_contracts")
 #endregion
 
 func _ready() -> void:
@@ -43,7 +49,7 @@ func initialize():
 
 func update_contracts() -> void:
 	for contract in active_contract_list:
-		contract.update_quest()
+		get_contract_by_key(contract).update_quest()
 
 func give_reward(target_contrat_data: ContractData):
 	var profit = target_contrat_data.base_money_reward * target_contrat_data.calculate_compatibility()

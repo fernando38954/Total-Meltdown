@@ -2,11 +2,12 @@ extends BaseOverviewCard
 class_name PatternOptionOverviewCard
 
 @onready var icon = $Icon
-var stored_item_data = null
+var stored_item_key = null
 
-func set_content(item_data: Variant):
+func set_content(item_key: Variant):
+	var item_data = PatternManager.get_pattern_by_key(item_key)
 	icon.texture = item_data.icon
-	stored_item_data = item_data
+	stored_item_key = item_key
 
 #region Drag and Drop
 func _get_drag_data(at_position: Vector2):

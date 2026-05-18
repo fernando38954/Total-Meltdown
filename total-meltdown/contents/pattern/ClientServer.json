@@ -1,4 +1,5 @@
 {
+	"key": "ClientServer",
 	"title": "Cliente-Servidor",
 	"icon": "res://assets/sprites/pattern_icons/ClientServer.png",
 	"attribute": {

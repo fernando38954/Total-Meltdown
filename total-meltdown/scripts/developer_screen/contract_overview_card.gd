@@ -11,7 +11,8 @@ var current_contract_data = null
 func _ready() -> void:
 	GlobalSignal.timer_update.connect(update_progress)
 
-func set_content(item_data: Variant) -> void:
+func set_content(item_key: Variant) -> void:
+	var item_data = ContractManager.get_contract_by_key(item_key)
 	current_contract_data = item_data
 	quest_title.text = item_data.quest_data.title
 	icon.texture = item_data.quest_data.icon

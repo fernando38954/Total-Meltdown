@@ -1,4 +1,5 @@
 {
+	"key": "SIS",
 	"title": "SSI: Sistema Super Importante",
 	"icon": "res://assets/sprites/contract_icons/SSI.png",
 	"attribute": {

@@ -5,7 +5,7 @@ class_name DeveloperPanel
 
 #region Abstract Override Functions
 func get_items() -> Array:
-	return DeveloperManager.all_developers
+	return DeveloperManager.idle_developers
 
 func _ready_prerequisites():
 	while !DeveloperManager.creation_finished:

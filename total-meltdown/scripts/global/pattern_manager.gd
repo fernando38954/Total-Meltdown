@@ -2,7 +2,7 @@ extends Node
 
 const PATTERNS_DIR = "res://contents/pattern/"
 
-var all_patterns: Array = []
+var all_patterns: Dictionary = {}
 var locked_patterns: Array = []
 var studiable_patterns: Array = []
 var owned_patterns: Array = []
@@ -15,7 +15,7 @@ func _ready():
 	GlobalSignal.game_start.connect(initialize)
 
 func temporary_fix():
-	for pattern in all_patterns:
+	for pattern in all_patterns.values():
 		for attribute_idx in pattern["attribute"]:
 			pattern["attribute"][attribute_idx] = pattern["attribute"][attribute_idx] * 2
 
@@ -39,17 +39,18 @@ func load_patterns():
 				var error = json.parse(json_text)
 				if error == OK:
 					var data = json.data
+					var key = data.get("key", "Unknown")
 					var icon = load(data.get("icon", ""))
 					if !icon:
 						push_error("Error: Unable to load image:", data.get("icon", ""))
-					all_patterns.append({
-						"file_name": file_name,
+					all_patterns[key] = {
+						"key": key,
 						"title": data.get("title", "Untitled"),
 						"icon": icon,
 						"attribute": data.get("attribute", ""),
 						"description": data.get("description", ""),
 						"abstract": data.get("abstract", ""),
-					})
+					}
 				else:
 					creation_finished = true
 					push_error("Failed to parse JSON：", file_name)
@@ -57,12 +58,11 @@ func load_patterns():
 				file.close()
 		file_name = dir.get_next()
 	
-	all_patterns.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
 	print_debug("Number of patterns loaded：", all_patterns.size())
 
 func initialize():
-	locked_patterns = all_patterns.duplicate()
+	locked_patterns = all_patterns.keys()
 	studiable_patterns.clear()
 	owned_patterns.clear()
 	var random_pattern = prepare_random_patterns(1)
@@ -70,26 +70,26 @@ func initialize():
 #endregion
 
 #region Array Operation
+func get_pattern_by_key(key: String) -> Dictionary:
+	return all_patterns.get(key, {})
+
 func prepare_random_patterns(count: int = 3) -> Array:
-	var number = min(count, locked_patterns.size())
 	var shuffled = locked_patterns.duplicate()
 	shuffled.shuffle()
-	var selected = shuffled.slice(0, number)
-	
+	var selected = shuffled.slice(0, count)
 	for pattern_entry in selected:
 		locked_patterns.erase(pattern_entry)
 		studiable_patterns.append(pattern_entry)
 	return selected
 
-func study_pattern(studiable_patterns_list: Array, target_pattern_data: Dictionary):
-	GlobalResource.pay_pattern_price()
+func study_pattern(studiable_patterns_list: Array, target_pattern_key: String):
 	for pattern_entry in studiable_patterns_list:
 		if studiable_patterns.has(pattern_entry):
 			studiable_patterns.erase(pattern_entry)
-			if pattern_entry == target_pattern_data:
+			if pattern_entry == target_pattern_key:
 				owned_patterns.append(pattern_entry)
 			else:
 				locked_patterns.append(pattern_entry)
 		else:
-			push_error("study_pattern: No pattern with file_name " + pattern_entry.file_name + " found in studiable_patterns_list")
+			push_error("study_pattern: No pattern with key " + pattern_entry + " found in studiable_patterns_list")
 #endregion

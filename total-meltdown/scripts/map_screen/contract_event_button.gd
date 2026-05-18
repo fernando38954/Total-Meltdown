@@ -1,7 +1,7 @@
 extends BaseEventButton
 class_name ContractEventButton
 
-var actived_quest: Dictionary = {}
+var actived_quest: String
 
 func initialize_data():
 	actived_quest = QuestManager.prepare_random_quest()

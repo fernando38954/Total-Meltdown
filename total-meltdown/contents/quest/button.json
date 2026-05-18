@@ -1,4 +1,5 @@
 {
+	"key": "Button",
 	"title": "BOTÃO",
 	"icon": "res://assets/sprites/contract_icons/Button.png",
 	"attribute": {

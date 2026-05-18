@@ -1,4 +1,5 @@
 {
+	"key": "UserCentered",
 	"title": "User-centered",
 	"icon": "res://assets/sprites/contract_icons/User.png",
 	"attribute": {

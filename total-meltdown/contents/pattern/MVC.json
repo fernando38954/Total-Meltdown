@@ -1,4 +1,5 @@
 {
+	"key": "MVC",
 	"title": "Modelo-Visão-Controlador",
 	"icon": "res://assets/sprites/pattern_icons/MVC.png",
 	"attribute": {

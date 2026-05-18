@@ -1,4 +1,5 @@
 {
+	"key": "TurnFlipAgain",
 	"title": "Vire... desvire... agora repete!",
 	"icon": "res://assets/sprites/contract_icons/TurnFlip.png",
 	"attribute": {

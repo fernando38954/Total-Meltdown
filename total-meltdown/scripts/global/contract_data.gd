@@ -1,18 +1,18 @@
 extends Node
 class_name ContractData
 
-var quest_data: Dictionary
-var pattern_data: Dictionary
-var developers_data: Array
+var quest_key: String
+var pattern_key: String
+var developers_key: Array
 var total_attribute: Dictionary
 var base_money_reward: int = 0
 var progress: float
 var progress_per_update: float = 10
 
-func _init(p_quest_data, p_pattern_data, p_developers_data, p_total_attribute):
-	quest_data = p_quest_data
-	pattern_data = p_pattern_data
-	developers_data = p_developers_data.duplicate()
+func _init(p_quest_key, p_pattern_key, p_developers_key, p_total_attribute):
+	quest_key = p_quest_key
+	quest_key = p_pattern_key
+	developers_key = p_developers_key.duplicate()
 	total_attribute = p_total_attribute
 	base_money_reward = 100
 	progress = 0
@@ -20,10 +20,11 @@ func _init(p_quest_data, p_pattern_data, p_developers_data, p_total_attribute):
 func update_quest():
 	progress = clamp(progress + progress_per_update, 0.0, 100.0)
 	if progress >= 100.0:
-		ContractManager.mark_contract_claimable(self)
+		ContractManager.mark_contract_claimable(quest_key)
 
 func calculate_compatibility() -> float:
 	var total_quest_attribute = 0.0
+	var quest_data = QuestManager.get_quest_by_key(quest_key)
 	for attribute_value in quest_data.attribute.values():
 		total_quest_attribute += attribute_value
 	

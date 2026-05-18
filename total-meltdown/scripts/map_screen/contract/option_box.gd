@@ -8,7 +8,7 @@ class_name OptionBox
 @export var drawing_board: DrawingBoard
 @export var option_type: OptionType
 
-var box_data = null
+var box_key = null
 var box_set: OptionBoxSet = null
 
 enum OptionType{
@@ -25,13 +25,13 @@ func _can_drop_data(at_position: Vector2, data):
 
 func _drop_data(at_position: Vector2, data):
 	if box_set != null:
-		box_set.check_set_duplication(self, data.stored_item_data)
-	box_data = data.stored_item_data
+		box_set.check_set_duplication(self, data.stored_item_key)
+	box_key = data.stored_item_key
 	refresh_box_data()
 #endregion
 
 func reset_box_content():
-	box_data = null
+	box_key = null
 	refresh_box_data()
 
 func assign_box_set(new_box_set: OptionBoxSet):
@@ -40,8 +40,9 @@ func assign_box_set(new_box_set: OptionBoxSet):
 func refresh_box_data():
 	clear_box_display()
 	drawing_board.update_radar_chart()
-	if box_data == null:
+	if box_key == null:
 		return
+	var box_data = get_box_data()
 	if option_type == OptionType.Pattern:
 		icon.texture = box_data.icon
 	elif option_type == OptionType.Developer:
@@ -53,16 +54,26 @@ func clear_box_display():
 	portrait.texture = null
 	developer_name.text = ""
 
-func get_box_item_data() -> Dictionary:
-	return box_data if box_data != null else {}
+func get_box_key() -> String:
+	return box_key if box_key != null else ""
+
+func get_box_data() -> Dictionary:
+	var box_data = {}
+	if box_key != null:
+		if option_type == OptionType.Pattern:
+			box_data = PatternManager.get_pattern_by_key(box_key)
+		elif option_type == OptionType.Developer:
+			box_data = DeveloperManager.get_developer_by_key(box_key)
+	return box_data
 
 func get_attribute_data() -> Dictionary:
-	return box_data.attribute if box_data != null else {}
+	var box_data = get_box_data()
+	return box_data.get("attribute", {}) if box_data != null else {}
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			drawing_board.contract_screen.toggle_selector_panel(option_type)
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
-			box_data = null
+			box_key = null
 			refresh_box_data()

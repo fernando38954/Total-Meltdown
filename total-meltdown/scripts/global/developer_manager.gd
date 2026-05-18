@@ -2,7 +2,7 @@ extends Node
 
 const DEVELOPERS_DIR = "res://contents/developer/"
 
-var all_developers: Array = []
+var all_developers: Dictionary = {}
 var locked_developers: Array = []
 var recruitable_developers: Array = []
 var idle_developers: Array = []
@@ -34,16 +34,17 @@ func load_developers():
 				var error = json.parse(json_text)
 				if error == OK:
 					var data = json.data
+					var key = data.get("key", "Unknown")
 					var portrait = load(data.get("portrait", ""))
 					if !portrait:
 						push_error("Error: Unable to load image:", data.get("portrait", ""))
-					all_developers.append({
-						"file_name": file_name,
+					all_developers[key] = {
+						"key": key,
 						"name": data.get("name", "Unknown"),
 						"portrait": portrait,
 						"attribute": data.get("attribute", {}),
 						"description": data.get("description", ""),
-					})
+					}
 				else:
 					creation_finished = true
 					push_error("Failed to parse JSON：", file_name)
@@ -51,12 +52,11 @@ func load_developers():
 				file.close()
 		file_name = dir.get_next()
 	
-	all_developers.sort_custom(func(a, b): return a.file_name < b.file_name)
 	creation_finished = true
 	print_debug("Number of developers loaded：", all_developers.size())
 
 func initialize():
-	locked_developers = all_developers.duplicate()
+	locked_developers = all_developers.keys()
 	recruitable_developers.clear()
 	idle_developers.clear()
 	working_developers.clear()
@@ -65,19 +65,19 @@ func initialize():
 #endregion
 
 #region Array Operation
+func get_developer_by_key(key: String) -> Dictionary:
+	return all_developers.get(key, {})
+
 func prepare_random_developers(count: int = 3) -> Array:
-	var number = min(count, locked_developers.size())
 	var shuffled = locked_developers.duplicate()
 	shuffled.shuffle()
-	var selected = shuffled.slice(0, number)
-	
+	var selected = shuffled.slice(0, count)
 	for developer_entry in selected:
 		locked_developers.erase(developer_entry)
 		recruitable_developers.append(developer_entry)
 	return selected
 
-func hire_developer(recruitable_developers_list: Array, target_developer_data: Dictionary):
-	GlobalResource.pay_developer_price()
+func hire_developer(recruitable_developers_list: Array, target_developer_data: String):
 	for developer_entry in recruitable_developers_list:
 		if recruitable_developers.has(developer_entry):
 			recruitable_developers.erase(developer_entry)
@@ -86,7 +86,7 @@ func hire_developer(recruitable_developers_list: Array, target_developer_data: D
 			else:
 				locked_developers.append(developer_entry)
 		else:
-			push_error("hire_developer: No developer with file_name " + developer_entry.file_name + " found in recruitable_developers")
+			push_error("hire_developer: No developer with key " + developer_entry + " found in recruitable_developers")
 
 func assign_work(developers_list: Array):
 	for developer_entry in developers_list:
@@ -94,7 +94,7 @@ func assign_work(developers_list: Array):
 			idle_developers.erase(developer_entry)
 			working_developers.append(developer_entry)
 		else:
-			push_error("assign_work: No developer with file_name " + developer_entry.file_name + " found in idle_developers")
+			push_error("assign_work: No developer with key " + developer_entry + " found in idle_developers")
 
 func finish_work(developers_list: Array):
 	for developer_entry in developers_list:
@@ -102,5 +102,5 @@ func finish_work(developers_list: Array):
 			working_developers.erase(developer_entry)
 			idle_developers.append(developer_entry)
 		else:
-			push_error("finish_work: No developer with file_name " + developer_entry.file_name + " found in working_developers")
+			push_error("finish_work: No developer with key " + developer_entry + " found in working_developers")
 #endregion

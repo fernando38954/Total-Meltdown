@@ -1,7 +1,7 @@
 extends BaseScreen
 class_name Contract
 
-var actived_quest: Dictionary = {}
+var actived_quest: String
 
 @export_category("Drawing Board")
 @export var drawing_board: DrawingBoard
@@ -25,8 +25,9 @@ var actived_quest: Dictionary = {}
 @export var selector_panel_hide_position = Vector2(0, 660)
 var is_selector_panel_open: bool
 
-func set_content(quest_data: Dictionary):
-	actived_quest = quest_data
+func set_content(quest_key: String):
+	actived_quest = quest_key
+	var quest_data = QuestManager.get_quest_by_key(quest_key)
 	quest_panel.set_content(quest_data.title, quest_data.icon, quest_data.description)
 	post_it.set_content(quest_data.bullet_point, quest_data.footnote)
 	drawing_board.reset_content()
@@ -95,8 +96,8 @@ func toggle_selector_panel(option_type: OptionBox.OptionType):
 
 
 func _on_submit_button_pressed() -> void:
-	var pattern_data = drawing_board.get_pattern_data()
-	var developer_data_list = drawing_board.get_developer_data_list()
+	var pattern_key = drawing_board.get_pattern_key()
+	var developer_key_list = drawing_board.get_developer_key_list()
 	var total_attribute = drawing_board.final_attribute
-	ContractManager.start_contract(actived_quest, pattern_data, developer_data_list, total_attribute)
+	ContractManager.start_contract(actived_quest, pattern_key, developer_key_list, total_attribute)
 	GlobalSignal.emit_signal("current_map_event_finished")

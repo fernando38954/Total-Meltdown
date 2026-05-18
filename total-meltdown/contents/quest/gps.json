@@ -1,4 +1,5 @@
 {
+	"key": "GPS",
 	"title": "GPS",
 	"icon": "res://assets/sprites/contract_icons/GPS.png",
 	"attribute": {
