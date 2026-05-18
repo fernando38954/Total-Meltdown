@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b2bor1i0t51n0" path="res://scenes/swebok/ContentViewer.tscn" id="3_wlni6"]
 [ext_resource type="Texture2D" uid="uid://doquprocr2u70" path="res://assets/note/note_1.png" id="4_0h8ia"]
 [ext_resource type="Texture2D" uid="uid://b2govlso8m3u1" path="res://assets/note/note_2.png" id="5_0h8ia"]
-[ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/button/Arrow_Normal.png" id="7_k2pky"]
-[ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/button/Arrow_Press.png" id="8_0h8ia"]
-[ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/button/Arrow_Hover.png" id="9_gmiyw"]
+[ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/sprites/navigation_button/Arrow_Normal.png" id="7_k2pky"]
+[ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/sprites/navigation_button/Arrow_Press.png" id="8_0h8ia"]
+[ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/sprites/navigation_button/Arrow_Hover.png" id="9_gmiyw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h8ia"]
 atlas = ExtResource("4_0h8ia")

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkxainvx35n8a" path="res://scenes/map_screen/JobFairEventButton.tscn" id="3_6y1bi"]
 [ext_resource type="PackedScene" uid="uid://8kf0febjrfm6" path="res://scenes/map_screen/ContractEventButton.tscn" id="3_ls7sa"]
 [ext_resource type="PackedScene" uid="uid://te0jm6bnm8wp" path="res://scenes/map_screen/StudySessionEventButton.tscn" id="4_lgmxy"]
-[ext_resource type="Texture2D" uid="uid://tbax5qnrpv8j" path="res://assets/map.png" id="5_fidt4"]
+[ext_resource type="Texture2D" uid="uid://tbax5qnrpv8j" path="res://assets/sprites/map_screen/map.png" id="5_fidt4"]
 [ext_resource type="PackedScene" uid="uid://bq5lgvuwbxpki" path="res://scenes/map_screen/job_fair/JobFairScreen.tscn" id="6_6y1bi"]
 [ext_resource type="PackedScene" uid="uid://d0lcshv562d4e" path="res://scenes/map_screen/study_session/StudySessionScreen.tscn" id="7_lgmxy"]
 [ext_resource type="PackedScene" uid="uid://c1hn7mnqjje01" path="res://scenes/map_screen/contract/Contract.tscn" id="8_fidt4"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://byr0iwoj0htr4" path="res://placeholder/white_square_512.png" id="1_wdfvw"]
 [ext_resource type="Script" uid="uid://bgiv44wfpmgyv" path="res://scripts/map_screen/contract/dev_option_overview_card.gd" id="2_jmn4g"]
-[ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="3_hgjex"]
+[ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/sprites/developer_portrait/portrait_1.png" id="3_hgjex"]
 
 [node name="DevOptionOverviewCard" type="TextureButton" unique_id=1138141655]
 self_modulate = Color(0, 0, 0, 0.23137255)

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://3v2hesn4ey6s"]
 
-[ext_resource type="Texture2D" uid="uid://do5hfkhnd32ge" path="res://assets/developer_panel/DeveloperOverviewNormal.png" id="1_in5jn"]
+[ext_resource type="Texture2D" uid="uid://do5hfkhnd32ge" path="res://assets/sprites/developer_panel/DeveloperOverviewNormal.png" id="1_in5jn"]
 [ext_resource type="Script" uid="uid://cfjluhuafa1gr" path="res://scripts/developer_screen/dev_overview_card.gd" id="1_u3dgd"]
-[ext_resource type="Texture2D" uid="uid://dydr6x21au672" path="res://assets/developer_panel/DeveloperOverviewHover.png" id="2_4b1rf"]
-[ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="2_u3dgd"]
+[ext_resource type="Texture2D" uid="uid://dydr6x21au672" path="res://assets/sprites/developer_panel/DeveloperOverviewHover.png" id="2_4b1rf"]
+[ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/sprites/developer_portrait/portrait_1.png" id="2_u3dgd"]
 
 [node name="DevOverviewCard" type="TextureButton" unique_id=1138141655]
 custom_minimum_size = Vector2(480, 480)

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://jbp51x0i3qgi"]
 
 [ext_resource type="Script" uid="uid://c1egxsan0lidv" path="res://scripts/developer_screen/contract_detail_card.gd" id="1_1mseo"]
-[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/contract_icons/Dog.png" id="3_oevvo"]
+[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/sprites/contract_icons/Dog.png" id="3_oevvo"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="4_f0yuo"]
 [ext_resource type="Texture2D" uid="uid://dojl0r0nbpusc" path="res://placeholder/white_circle_512.png" id="5_1ai8r"]
-[ext_resource type="Texture2D" uid="uid://s3ija5g1sq4f" path="res://assets/pattern_icons/MVC.png" id="6_o6ckt"]
+[ext_resource type="Texture2D" uid="uid://s3ija5g1sq4f" path="res://assets/sprites/pattern_icons/MVC.png" id="6_o6ckt"]
 [ext_resource type="Texture2D" uid="uid://otrus47vg2jc" path="res://placeholder/WhiteX.png" id="7_2edc3"]
 [ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="8_x0m52"]
 [ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="9_wj6ve"]

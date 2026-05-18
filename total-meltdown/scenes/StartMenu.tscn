@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dso7wo6ebgl4r"]
 
 [ext_resource type="Script" uid="uid://bew0lc5x3wvft" path="res://scripts/start_menu.gd" id="1_fgoeh"]
-[ext_resource type="Texture2D" uid="uid://tbax5qnrpv8j" path="res://assets/map.png" id="1_kmax6"]
+[ext_resource type="Texture2D" uid="uid://tbax5qnrpv8j" path="res://assets/sprites/map_screen/map.png" id="1_kmax6"]
 [ext_resource type="Texture2D" uid="uid://dug7typense55" path="res://assets/GameLogo.png" id="2_cp7se"]
 
 [node name="StartMenu" type="Node2D" unique_id=2061493644]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgqtegu1605kk" path="res://scripts/swebok/content_viewer.gd" id="1_6tgrj"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="2_1ym60"]
-[ext_resource type="Texture2D" uid="uid://dcdnocfly16ac" path="res://assets/pattern_icons/ClientServer.png" id="4_yiari"]
+[ext_resource type="Texture2D" uid="uid://dcdnocfly16ac" path="res://assets/sprites/pattern_icons/ClientServer.png" id="4_yiari"]
 
 [node name="ContentViewer" type="Control" unique_id=474821504]
 layout_mode = 3
