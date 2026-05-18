@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjq7gm75x871k"
-path="res://.godot/imported/drawing_board.png-85fff98a7ef050737cb1837defa57452.ctex"
+uid="uid://cdpvvhmxa0toh"
+path="res://.godot/imported/DetailButtonHover.png-1a97aa02fce601472435edd718d9c924.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map_screen/contract/drawing_board.png"
-dest_files=["res://.godot/imported/drawing_board.png-85fff98a7ef050737cb1837defa57452.ctex"]
+source_file="res://assets/sprites/map_screen/event/DetailButtonHover.png"
+dest_files=["res://.godot/imported/DetailButtonHover.png-1a97aa02fce601472435edd718d9c924.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg38eyq2aqff7"
-path="res://.godot/imported/post-it.png-0cf532615a262f8196298180fc17f414.ctex"
+uid="uid://bvdnpxoq22vp6"
+path="res://.godot/imported/ReturnButtonNormal.png-96c4473c1099c942a4f4bbb6437a7ea1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map_screen/contract/post-it.png"
-dest_files=["res://.godot/imported/post-it.png-0cf532615a262f8196298180fc17f414.ctex"]
+source_file="res://assets/sprites/navigation_button/ReturnButtonNormal.png"
+dest_files=["res://.godot/imported/ReturnButtonNormal.png-96c4473c1099c942a4f4bbb6437a7ea1.ctex"]
 
 [params]
 

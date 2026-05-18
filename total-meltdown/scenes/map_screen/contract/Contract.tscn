@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c1hn7mnqjje01"]
 
 [ext_resource type="Script" uid="uid://c7py0sc7jvypc" path="res://scripts/map_screen/contract/contract.gd" id="1_s0427"]
-[ext_resource type="Texture2D" uid="uid://cjq7gm75x871k" path="res://assets/sprites/map_screen/contract/drawing_board.png" id="2_xc3rv"]
-[ext_resource type="Texture2D" uid="uid://cg38eyq2aqff7" path="res://assets/sprites/map_screen/contract/post-it.png" id="3_3e3mo"]
+[ext_resource type="Texture2D" uid="uid://cjq7gm75x871k" path="res://assets/sprites/map_screen/event/DrawingBoard.png" id="2_xc3rv"]
+[ext_resource type="Texture2D" uid="uid://cg38eyq2aqff7" path="res://assets/sprites/map_screen/event/post-it.png" id="3_3e3mo"]
 [ext_resource type="PackedScene" uid="uid://b3bukuv2wbe4u" path="res://scenes/map_screen/contract/PatternOptionBox.tscn" id="3_fvv71"]
 [ext_resource type="Script" uid="uid://d1rlf6jjat3h2" path="res://scripts/map_screen/contract/drawing_board.gd" id="3_ov8hi"]
 [ext_resource type="Texture2D" uid="uid://bo1o2leu06uk0" path="res://placeholder/WhiteSquare.png" id="4_rj8at"]

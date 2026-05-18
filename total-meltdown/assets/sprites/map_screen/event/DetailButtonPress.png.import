@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duw8dbs8bsp05"
-path="res://.godot/imported/ReturnButonHover.png-22e139ca6d710cca45744e950f565aff.ctex"
+uid="uid://cxhh3ixt5ku6o"
+path="res://.godot/imported/DetailButtonPress.png-3458bbc21126d8a9da52b7bb4650fde6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/developer_panel/ReturnButonHover.png"
-dest_files=["res://.godot/imported/ReturnButonHover.png-22e139ca6d710cca45744e950f565aff.ctex"]
+source_file="res://assets/sprites/map_screen/event/DetailButtonPress.png"
+dest_files=["res://.godot/imported/DetailButtonPress.png-3458bbc21126d8a9da52b7bb4650fde6.ctex"]
 
 [params]
 
