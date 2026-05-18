@@ -1,2 +1,0 @@
-extends BaseScreen
-class_name DeveloperScreen

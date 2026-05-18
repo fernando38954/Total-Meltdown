@@ -1,73 +1,65 @@
 [gd_scene format=3 uid="uid://y8oun4wpf01e"]
 
+[ext_resource type="Texture2D" uid="uid://beor5metwpa1p" path="res://assets/developer_panel/DeveloperDetailCard.png" id="1_ekraa"]
 [ext_resource type="Script" uid="uid://c0k3lk06x8x27" path="res://scripts/developer_screen/dev_detail_card.gd" id="1_q7v8o"]
 [ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/portrait/portrait_1.png" id="2_q7v8o"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="3_1dkyr"]
-[ext_resource type="Texture2D" uid="uid://otrus47vg2jc" path="res://placeholder/WhiteX.png" id="4_cjkw6"]
-[ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="5_bdd7n"]
-[ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="6_fopsv"]
+[ext_resource type="Texture2D" uid="uid://bvdnpxoq22vp6" path="res://assets/developer_panel/ReturnButtonNormal.png" id="5_1dkyr"]
+[ext_resource type="Texture2D" uid="uid://duw8dbs8bsp05" path="res://assets/developer_panel/ReturnButonHover.png" id="7_cjkw6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekraa"]
-bg_color = Color(0.4, 0.3882353, 0.3764706, 1)
-
-[node name="DevDetailCard" type="Panel" unique_id=2083043029]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="DevDetailCard" type="TextureRect" unique_id=771572541]
+offset_right = 2415.0
+offset_bottom = 1515.0
 pivot_offset = Vector2(576, 324)
-theme_override_styles/panel = SubResource("StyleBoxFlat_ekraa")
+texture = ExtResource("1_ekraa")
 script = ExtResource("1_q7v8o")
 font_size = 18
 value_font_size = 12
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]
-position = Vector2(495, 488)
+position = Vector2(336, 398.00003)
+scale = Vector2(0.60111123, 0.60111123)
 texture = ExtResource("2_q7v8o")
 
 [node name="DeveloperName" type="RichTextLabel" parent="." unique_id=1824383902]
 layout_mode = 0
-offset_left = 931.0
-offset_top = 141.0
-offset_right = 1794.0
-offset_bottom = 907.0
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
+offset_left = 687.0
+offset_top = 185.0
+offset_right = 1238.0
+offset_bottom = 285.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "Name"
-horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("3_1dkyr")]
 layout_mode = 0
-offset_left = 367.0
-offset_top = 1040.0
-offset_right = 767.0
-offset_bottom = 1440.0
-scale = Vector2(2.5999992, 2.5999992)
+offset_left = 1343.9999
+offset_top = 259.0381
+offset_right = 2346.0
+offset_bottom = 1274.6091
 upper_limit = 2.0
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=626995351]
 layout_mode = 0
-offset_left = 1903.0
-offset_top = 276.0
-offset_right = 3664.0
-offset_bottom = 2009.0
-theme_override_font_sizes/normal_font_size = 80
-theme_override_font_sizes/bold_font_size = 80
+offset_left = 106.0
+offset_top = 787.0
+offset_right = 1248.0
+offset_bottom = 1341.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "test description"
 
 [node name="ReturnButton" type="TextureButton" parent="." unique_id=1238466745]
 layout_mode = 0
-offset_left = 3626.9998
-offset_top = 8.000008
-offset_right = 3882.9998
-offset_bottom = 264.0
-scale = Vector2(0.8, 0.8)
+offset_left = 2216.0
+offset_top = 40.0
+offset_right = 2345.0
+offset_bottom = 169.0
 pivot_offset = Vector2(128, 128)
-texture_normal = ExtResource("4_cjkw6")
-texture_pressed = ExtResource("5_bdd7n")
-texture_hover = ExtResource("6_fopsv")
+texture_normal = ExtResource("5_1dkyr")
+texture_hover = ExtResource("7_cjkw6")
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

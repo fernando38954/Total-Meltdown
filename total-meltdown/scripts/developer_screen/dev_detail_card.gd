@@ -12,7 +12,7 @@ class_name DeveloperDetailCard
 @export var value_font_size = 25
 
 func set_content(item_data: Variant):
-	developer_name.text = "[b]%s[/b]\n\n" % [item_data.name]
+	developer_name.text = "%s" % [item_data.name]
 	description.text = "%s" % [item_data.description]
 	portrait.texture = item_data.portrait
 	radar_chart.set_label(font, font_size, value_font_size)

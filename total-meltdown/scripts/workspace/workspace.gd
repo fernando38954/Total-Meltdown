@@ -10,7 +10,7 @@ var current_region: Region = null
 @export var swebok_region: Region
 
 @export_category("Developer Screen")
-@export var developer_screen: DeveloperScreen
+@export var developer_screen: DeveloperPanel
 @export var developer_screen_region: Region
 
 @export_category("Game Map Screen")
@@ -59,7 +59,7 @@ func switch_region(region: Region):
 	
 	if current_region == developer_screen_region:
 		await workspace_camera.zoom_finished
-		developer_screen.open_panel()
+		developer_screen.disable_event_blocker()
 	
 	if current_region == map_screen_region:
 		await workspace_camera.zoom_finished
@@ -70,7 +70,8 @@ func check_close_screen():
 		swebok.close_book()
 	
 	if current_region == developer_screen_region:
-		developer_screen.close_panel(0.3)
+		developer_screen.close_current_detail_card()
+		developer_screen.enable_event_blocker()
 	
 	if current_region == map_screen_region:
 		map_screen.close_event_screen()

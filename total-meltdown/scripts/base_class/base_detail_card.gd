@@ -1,5 +1,5 @@
 @abstract
-extends Panel
+extends Control
 class_name BaseDetailCard
 
 var panel: BaseItemPanel = null

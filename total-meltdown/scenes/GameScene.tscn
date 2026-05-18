@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://la16ha585b6b"]
 
-[ext_resource type="Texture2D" uid="uid://dfyx368pcw4ef" path="res://assets/workspace.png" id="1_qitmq"]
+[ext_resource type="Texture2D" uid="uid://xfljpp540mjp" path="res://assets/workspace.png" id="1_qitmq"]
 [ext_resource type="Script" uid="uid://bycvyp17uw41" path="res://scripts/workspace/workspace.gd" id="2_kxqg4"]
 [ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="3_21xg8"]
 [ext_resource type="AudioStream" uid="uid://bcgcxhx6i2fpl" path="res://assets/sfx/ButtonPress.mp3" id="4_icif4"]
@@ -11,9 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/button/Arrow_Press.png" id="9_6nmf6"]
 [ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/button/Arrow_Hover.png" id="10_lk0vr"]
 [ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="11_f2kej"]
-[ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperScreen.tscn" id="12_3t3mo"]
-[ext_resource type="Texture2D" uid="uid://bhlngl6hk38ra" path="res://assets/mask.png" id="13_a8ip2"]
+[ext_resource type="Texture2D" uid="uid://dp37sum6qxda4" path="res://assets/DeveloperScreenMask.png" id="12_kxqg4"]
 [ext_resource type="PackedScene" uid="uid://cinak64pyd2kv" path="res://scenes/map_screen/MapScreen.tscn" id="14_03l4r"]
+[ext_resource type="Texture2D" uid="uid://qx2svekawcts" path="res://assets/MapScreenMask.png" id="14_21xg8"]
+[ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperPanel.tscn" id="15_kxqg4"]
 [ext_resource type="PackedScene" uid="uid://cixmygurc8m6" path="res://scenes/component/GameFinishScreen.tscn" id="15_lpvha"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
@@ -28,9 +29,9 @@ workspace_camera = NodePath("../Camera2D")
 finish_screen = NodePath("../CanvasLayer/GameFinishScreen")
 swebok = NodePath("../Swebok")
 swebok_region = NodePath("Swebok")
-developer_screen = NodePath("../DeveloperScreen")
+developer_screen = NodePath("../DeveloperScreenMask/DeveloperPanel")
 developer_screen_region = NodePath("DeveloperScreen")
-map_screen = NodePath("../ScreenMask/MapScreen")
+map_screen = NodePath("../MapScreenMask/MapScreen")
 map_screen_region = NodePath("MapScreen")
 left_button = NodePath("../ScreenButtons/LeftButton")
 right_button = NodePath("../ScreenButtons/RightButton")
@@ -52,7 +53,7 @@ zoom_level = 1.6
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/MapScreen" unique_id=1248977769]
 position = Vector2(-49.742188, -115.64929)
 scale = Vector2(0.9999998, 0.99999976)
-polygon = PackedVector2Array(-283.47043, -122.05678, -295.45648, -102.89659, -295.45648, 247.97433, -285.8676, 268.33206, -92.89197, 285.0972, 193.57495, 285.0972, 370.96875, 269.52957, 387.74927, 249.17184, 387.74927, 33.61975, 313.4356, 13.262054, 294.25793, -122.05678)
+polygon = PackedVector2Array(-283.47043, -122.05678, -295.45648, -102.89659, -295.45648, 247.97433, -285.8676, 268.33206, -92.89197, 285.0972, 193.57495, 285.0972, 367.59613, 268.52197, 385.14, 248.91406, 384.45203, 43.203583, 284.69275, 36.667633, 270.58887, 29.78769, 263.36493, 17.403778, 263.02087, -121.91519)
 
 [node name="Marker2D" type="Marker2D" parent="Workspace/MapScreen" unique_id=1490810461]
 position = Vector2(-1.1696235, -18.713451)
@@ -69,7 +70,7 @@ zoom_level = 3.0
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Workspace/DeveloperScreen" unique_id=1847541070]
 position = Vector2(16.780464, -118.55364)
 scale = Vector2(0.9999998, 0.99999976)
-polygon = PackedVector2Array(238.52264, -170.04668, 231.33105, -155.67654, 251.70734, 3.5925293, 361.97913, 25.147736, 472.25098, 34.727844, 527.38684, 37.122864, 534.5785, 16.765167, 550.1604, -162.8616, 536.9757, -177.23175)
+polygon = PackedVector2Array(222.57324, -177.62802, 210.87732, -166.96411, 210.53333, 10.882599, 227.04523, 26.362488, 540.4269, 27.050476, 550.40283, 6.410614, 551.4348, -165.58812, 542.49084, -177.28403)
 
 [node name="Marker2D" type="Marker2D" parent="Workspace/DeveloperScreen" unique_id=1336651855]
 position = Vector2(399.1359, -195.19438)
@@ -142,36 +143,46 @@ ignore_texture_size = true
 [node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("11_f2kej")]
 visible = false
 
-[node name="DeveloperScreen" parent="." unique_id=933529179 instance=ExtResource("12_3t3mo")]
-visible = false
-
-[node name="ScreenMask" type="Sprite2D" parent="." unique_id=436785057]
+[node name="MapScreenMask" type="Sprite2D" parent="." unique_id=436785057]
 clip_children = 1
-position = Vector2(577.5, 294.5)
-scale = Vector2(0.29492384, 0.29456705)
-texture = ExtResource("13_a8ip2")
+position = Vector2(576.61755, 293.91174)
+scale = Vector2(0.2949238, 0.29456702)
+texture = ExtResource("14_21xg8")
 
-[node name="MapScreen" parent="ScreenMask" unique_id=1876702984 instance=ExtResource("14_03l4r")]
+[node name="MapScreen" parent="MapScreenMask" unique_id=1876702984 instance=ExtResource("14_03l4r")]
 position = Vector2(-1070.5653, -613.3627)
 scale = Vector2(0.545, 0.545)
 
-[node name="MoneyLabel" parent="ScreenMask/MapScreen" index="1" unique_id=877837989]
+[node name="MoneyLabel" parent="MapScreenMask/MapScreen" index="1" unique_id=877837989]
 offset_left = 254.34885
 offset_top = 34.809227
 offset_right = 1056.3489
 offset_bottom = 252.80923
 
-[node name="RemainingContract" parent="ScreenMask/MapScreen" index="2" unique_id=179789233]
+[node name="RemainingContract" parent="MapScreenMask/MapScreen" index="2" unique_id=179789233]
 offset_left = 1209.529
 offset_top = 62.290157
 offset_right = 2601.5288
 offset_bottom = 241.29016
 
-[node name="SpawnArea" parent="ScreenMask/MapScreen" index="3" unique_id=769389484]
+[node name="SpawnArea" parent="MapScreenMask/MapScreen" index="3" unique_id=769389484]
 offset_left = 473.9303
 offset_top = 278.4737
 offset_right = 3436.4531
 offset_bottom = 1993.2854
+
+[node name="DeveloperScreenMask" type="Sprite2D" parent="." unique_id=592042528]
+clip_children = 1
+position = Vector2(917.94147, 159.1177)
+scale = Vector2(0.29411775, 0.29411775)
+texture = ExtResource("12_kxqg4")
+
+[node name="DeveloperPanel" parent="DeveloperScreenMask" unique_id=1221254537 instance=ExtResource("15_kxqg4")]
+offset_left = -498.0
+offset_top = -306.0
+offset_right = 1910.0
+offset_bottom = 1189.0
+scale = Vector2(0.41274443, 0.41274443)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1890244953]
 
@@ -189,4 +200,4 @@ offset_bottom = 7.0
 [connection signal="pressed" from="ScreenButtons/RightButton" to="Workspace" method="_on_right_button_pressed"]
 [connection signal="pressed" from="ScreenButtons/ReturnButton" to="Workspace" method="_on_return_button_pressed"]
 
-[editable path="ScreenMask/MapScreen"]
+[editable path="MapScreenMask/MapScreen"]
