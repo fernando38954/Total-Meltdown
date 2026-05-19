@@ -2,16 +2,12 @@ extends Node
 
 var game_timer: Timer
 var timer_delta_time: float = 1.0
-var current_developer_price = 10.0
-var current_pattern_price = 10.0
 
 # Player Status
 var money: float = 0
 
 func initialize():
 	money = 50
-	current_developer_price = 10.0
-	current_pattern_price = 10.0
 
 func _ready():
 	game_timer = Timer.new()
@@ -36,12 +32,4 @@ func contract_done():
 func change_money(value: float):
 	money += value
 	GlobalSignal.emit_signal("money_value_changed")
-
-func pay_developer_price():
-	change_money(-1 * current_developer_price)
-	current_developer_price += 10
-
-func pay_pattern_price():
-	change_money(-1 * current_pattern_price)
-	current_pattern_price += 10
 #endregion

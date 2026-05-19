@@ -5,6 +5,7 @@ const DEVELOPERS_DIR = "res://contents/developer/"
 var all_developers: Dictionary = {}
 var locked_developers: Array = []
 var recruitable_developers: Array = []
+var owned_developers: Array = []
 var idle_developers: Array = []
 var working_developers: Array = []
 var creation_finished = false
@@ -82,11 +83,13 @@ func hire_developer(recruitable_developers_list: Array, target_developer_data: S
 		if recruitable_developers.has(developer_entry):
 			recruitable_developers.erase(developer_entry)
 			if developer_entry == target_developer_data:
+				owned_developers.append(developer_entry)
 				idle_developers.append(developer_entry)
 			else:
 				locked_developers.append(developer_entry)
 		else:
 			push_error("hire_developer: No developer with key " + developer_entry + " found in recruitable_developers")
+	GlobalSignal.emit_signal("developer_panel_update")
 
 func assign_work(developers_list: Array):
 	for developer_entry in developers_list:
@@ -95,6 +98,7 @@ func assign_work(developers_list: Array):
 			working_developers.append(developer_entry)
 		else:
 			push_error("assign_work: No developer with key " + developer_entry + " found in idle_developers")
+	GlobalSignal.emit_signal("developer_panel_update")
 
 func finish_work(developers_list: Array):
 	for developer_entry in developers_list:
@@ -103,4 +107,5 @@ func finish_work(developers_list: Array):
 			idle_developers.append(developer_entry)
 		else:
 			push_error("finish_work: No developer with key " + developer_entry + " found in working_developers")
+	GlobalSignal.emit_signal("developer_panel_update")
 #endregion

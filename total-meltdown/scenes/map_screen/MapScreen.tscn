@@ -43,7 +43,7 @@ offset_right = 3904.0
 offset_bottom = 2196.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+color = Color(0, 0, 0, 0.4392157)
 
 [node name="EventBlocker" type="ColorRect" parent="." unique_id=1263998012]
 anchors_preset = 15

@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="4_4w2io"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssrtq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="JobFairScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("current_developer_price_label", "panel")]
+[node name="JobFairScreen" type="CanvasLayer" unique_id=933529179 node_paths=PackedStringArray("panel")]
 script = ExtResource("1_34td2")
-current_developer_price_label = NodePath("JobFairPanel/CurrentDeveloperPrice")
 panel = NodePath("JobFairPanel")
 
 [node name="JobFairPanel" type="Panel" parent="." unique_id=242474079 node_paths=PackedStringArray("container", "click_blocker")]
@@ -68,18 +68,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
-
-[node name="CurrentDeveloperPrice" type="RichTextLabel" parent="JobFairPanel" unique_id=1046482468]
-layout_mode = 0
-offset_right = 3868.0
-offset_bottom = 148.0
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 100
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 100
-bbcode_enabled = true
-text = "Preço de Contratação: [color=yellow]%.2f[/color]"
-horizontal_alignment = 1
 
 [connection signal="gui_input" from="JobFairPanel/ClickBlocker" to="JobFairPanel" method="_on_click_blocker_gui_input"]
