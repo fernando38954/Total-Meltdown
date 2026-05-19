@@ -1,54 +1,98 @@
 [gd_scene format=3 uid="uid://im44emtumyuk"]
 
-[ext_resource type="Texture2D" uid="uid://120gu7oj2m34" path="res://assets/selector_background/background1.png" id="1_u6tmt"]
+[ext_resource type="Texture2D" uid="uid://c4qibhnu310kw" path="res://assets/sprites/map_screen/event/job_fair/ResumeOverviewCard.png" id="1_scu28"]
 [ext_resource type="Script" uid="uid://c8iulswg23omd" path="res://scripts/map_screen/job_fair/resume.gd" id="2_u6tmt"]
 [ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/sprites/developer_portrait/portrait_1.png" id="3_vx1ot"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="4_tv364"]
+[ext_resource type="Texture2D" uid="uid://dmesbbvdoyk1w" path="res://assets/sprites/map_screen/event/DetailButtonNormal.png" id="5_7phqa"]
+[ext_resource type="Texture2D" uid="uid://cxhh3ixt5ku6o" path="res://assets/sprites/map_screen/event/DetailButtonPress.png" id="6_nk1qo"]
+[ext_resource type="Texture2D" uid="uid://cdpvvhmxa0toh" path="res://assets/sprites/map_screen/event/DetailButtonHover.png" id="7_m4k6y"]
+[ext_resource type="Texture2D" uid="uid://dmtgg313ysnop" path="res://assets/sprites/map_screen/event/ButtonNormal.png" id="8_h6rwx"]
+[ext_resource type="Texture2D" uid="uid://rw4ldfv7lctd" path="res://assets/sprites/map_screen/event/ButtonPress.png" id="9_hh2gp"]
+[ext_resource type="Texture2D" uid="uid://ctrkjytccyfm7" path="res://assets/sprites/map_screen/event/ButtonHover.png" id="10_u5joo"]
 
-[node name="Resume" type="TextureButton" unique_id=1570528027]
-offset_right = 1200.0
-offset_bottom = 1771.0
-texture_normal = ExtResource("1_u6tmt")
+[node name="Resume" type="TextureRect" unique_id=1003826956]
+offset_right = 1772.0
+offset_bottom = 2180.0
+texture = ExtResource("1_scu28")
+stretch_mode = 2
 script = ExtResource("2_u6tmt")
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1510618176]
-position = Vector2(332.05048, 376.05045)
-scale = Vector2(0.62877685, 0.62877685)
+position = Vector2(1470, 802)
+scale = Vector2(0.79110765, 0.79110765)
 texture = ExtResource("3_vx1ot")
 region_rect = Rect2(2, 0, 725, 725)
 
+[node name="Cost" type="RichTextLabel" parent="." unique_id=995606280]
+layout_mode = 0
+offset_left = 1346.0
+offset_top = 31.0
+offset_right = 1539.0
+offset_bottom = 133.0
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "-150$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="DeveloperName" type="RichTextLabel" parent="." unique_id=1300939726]
 layout_mode = 0
-offset_left = 581.0
-offset_top = 153.0
-offset_right = 1121.0
-offset_bottom = 644.0
-mouse_filter = 2
+offset_left = 374.0
+offset_top = 5.0
+offset_right = 1207.0
+offset_bottom = 157.0
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 80
 theme_override_font_sizes/bold_font_size = 80
 bbcode_enabled = true
-text = "Name"
+text = "[b]Biggest Test Name[/b]"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("4_tv364")]
 layout_mode = 0
-offset_left = 145.0
-offset_top = 663.0
-offset_right = 1088.0
-offset_bottom = 1548.0
+offset_left = 81.0
+offset_top = 461.0
+offset_right = 1159.3232
+offset_bottom = 1473.0
 mouse_filter = 1
 upper_limit = 2.0
 
-[node name="HireButton" type="Button" parent="." unique_id=1700366213]
+[node name="DetailButton" type="TextureButton" parent="." unique_id=2091485285]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 1814.0
-offset_right = 1026.0
-offset_bottom = 2027.0
-theme_override_font_sizes/font_size = 100
-text = "Contratar"
-clip_text = true
+offset_left = 1255.0
+offset_top = 1342.0
+offset_right = 1658.0
+offset_bottom = 1483.0
+texture_normal = ExtResource("5_7phqa")
+texture_pressed = ExtResource("6_nk1qo")
+texture_hover = ExtResource("7_m4k6y")
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[node name="HireButton" type="TextureButton" parent="." unique_id=67509798]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 1907.0001
+offset_right = 1541.0
+offset_bottom = 2244.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("8_h6rwx")
+texture_pressed = ExtResource("9_hh2gp")
+texture_hover = ExtResource("10_u5joo")
+
+[node name="HireLabel" type="RichTextLabel" parent="HireButton" unique_id=850954244]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 40.0
+offset_right = 921.0
+offset_bottom = 289.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 130
+text = "Contratar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="DetailButton" to="." method="_on_pressed"]
 [connection signal="pressed" from="HireButton" to="." method="_on_hire_button_pressed"]

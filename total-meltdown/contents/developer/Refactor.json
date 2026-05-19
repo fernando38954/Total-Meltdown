@@ -2,6 +2,7 @@
 	"key": "Refactor",
 	"name": "Ana “Refactor” Martins",
 	"portrait": "res://assets/sprites/developer_portrait/portrait_2.png",
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 1.2,
 		"Performance Efficiency": 1.0,

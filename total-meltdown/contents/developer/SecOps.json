@@ -2,6 +2,7 @@
 	"key": "SecOps",
 	"name": "Diego “SecOps” Navarro",
 	"portrait": "res://assets/sprites/developer_portrait/portrait_4.png",
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 1.0,
 		"Performance Efficiency": 0.89,

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://q61o5yikp86s"]
 
-[ext_resource type="Texture2D" uid="uid://4pwdwphlvnd8" path="res://assets/sprites/map_screen/event/PatternDetailCard.png" id="1_7p2in"]
+[ext_resource type="Texture2D" uid="uid://4pwdwphlvnd8" path="res://assets/sprites/map_screen/event/study_session/PatternDetailCard.png" id="1_7p2in"]
 [ext_resource type="Script" uid="uid://behglkn5tpfjf" path="res://scripts/map_screen/study_session/pattern_detail_card.gd" id="1_ydam8"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="2_7p2in"]
 [ext_resource type="Texture2D" uid="uid://c4gc3gy62yqq" path="res://assets/sprites/pattern_icons/Layered.png" id="3_7p2in"]

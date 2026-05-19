@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4pwdwphlvnd8"
-path="res://.godot/imported/PatternDetailCard.png-1a4090ae45e44246791052eb8a33c1e0.ctex"
+uid="uid://c4qibhnu310kw"
+path="res://.godot/imported/ResumeOverviewCard.png-c297d54e59ed18bd19731b68a79c5478.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map_screen/event/PatternDetailCard.png"
-dest_files=["res://.godot/imported/PatternDetailCard.png-1a4090ae45e44246791052eb8a33c1e0.ctex"]
+source_file="res://assets/sprites/map_screen/event/job_fair/ResumeOverviewCard.png"
+dest_files=["res://.godot/imported/ResumeOverviewCard.png-c297d54e59ed18bd19731b68a79c5478.ctex"]
 
 [params]
 

@@ -2,6 +2,7 @@
 	"key": "LowLevel",
 	"name": "Bruno “LowLevel” Takeda",
 	"portrait": "res://assets/sprites/developer_portrait/portrait_1.png",
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 1.0,
 		"Performance Efficiency": 2.0,

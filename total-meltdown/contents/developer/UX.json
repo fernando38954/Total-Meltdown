@@ -2,6 +2,7 @@
 	"key": "UX",
 	"name": "Carla “UX” Duarte",
 	"portrait": "res://assets/sprites/developer_portrait/portrait_3.png",
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 1.1,
 		"Performance Efficiency": 0.8,

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://whjllpdpvskl"]
 
-[ext_resource type="Texture2D" uid="uid://dsarhqqde6sxp" path="res://assets/sprites/map_screen/event/CourseOverviewCard.png" id="1_3hcnb"]
+[ext_resource type="Texture2D" uid="uid://dsarhqqde6sxp" path="res://assets/sprites/map_screen/event/study_session/CourseOverviewCard.png" id="1_3hcnb"]
 [ext_resource type="Script" uid="uid://cxsew1wiolk0r" path="res://scripts/map_screen/study_session/course.gd" id="2_il80u"]
 [ext_resource type="Texture2D" uid="uid://dmtgg313ysnop" path="res://assets/sprites/map_screen/event/ButtonNormal.png" id="3_3hcnb"]
 [ext_resource type="Texture2D" uid="uid://dcdnocfly16ac" path="res://assets/sprites/pattern_icons/ClientServer.png" id="3_gq6r2"]

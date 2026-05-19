@@ -2,6 +2,7 @@
 	"key": "FullStack",
 	"name": "Elisa “FullStack” Ferreira",
 	"portrait": "res://assets/sprites/developer_portrait/portrait_5.png",
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 1.3,
 		"Performance Efficiency": 1.1,

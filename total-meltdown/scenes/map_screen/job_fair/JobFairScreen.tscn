@@ -21,7 +21,7 @@ grow_vertical = 2
 pivot_offset = Vector2(1952, 1098)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ssrtq")
 script = ExtResource("2_buk3p")
-container = NodePath("ScrollContainer/MarginContainer/HBoxContainer")
+container = NodePath("ScrollContainer/HBoxContainer")
 click_blocker = NodePath("ClickBlocker")
 overview_card_scene = ExtResource("4_1inak")
 detail_card_scene = ExtResource("4_4w2io")
@@ -36,28 +36,17 @@ grow_vertical = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="JobFairPanel/ScrollContainer" unique_id=1616237988]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 150
-theme_override_constants/margin_right = 80
-theme_override_constants/margin_bottom = 150
-
-[node name="HBoxContainer" type="HBoxContainer" parent="JobFairPanel/ScrollContainer/MarginContainer" unique_id=1027314339]
+[node name="HBoxContainer" type="HBoxContainer" parent="JobFairPanel/ScrollContainer" unique_id=1027314339]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 80
 alignment = 1
 
-[node name="Resume" parent="JobFairPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=886310879 instance=ExtResource("4_1inak")]
+[node name="Resume" parent="JobFairPanel/ScrollContainer/HBoxContainer" unique_id=886310879 instance=ExtResource("4_1inak")]
 layout_mode = 2
 
-[node name="Resume2" parent="JobFairPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=833919344 instance=ExtResource("4_1inak")]
-layout_mode = 2
-
-[node name="Resume3" parent="JobFairPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1425879586 instance=ExtResource("4_1inak")]
+[node name="Resume2" parent="JobFairPanel/ScrollContainer/HBoxContainer" unique_id=833919344 instance=ExtResource("4_1inak")]
 layout_mode = 2
 
 [node name="ClickBlocker" type="ColorRect" parent="JobFairPanel" unique_id=1053072876]

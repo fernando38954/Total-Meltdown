@@ -21,7 +21,7 @@ grow_vertical = 2
 pivot_offset = Vector2(1952, 1098)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ssrtq")
 script = ExtResource("2_3evn0")
-container = NodePath("ScrollContainer/MarginContainer/HBoxContainer")
+container = NodePath("ScrollContainer/HBoxContainer")
 click_blocker = NodePath("ClickBlocker")
 overview_card_scene = ExtResource("3_l1ove")
 detail_card_scene = ExtResource("4_l1ove")
@@ -31,26 +31,25 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -48.0
-offset_bottom = 1013.0
+offset_left = -293.0
+offset_right = 245.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="StudySessionPanel/ScrollContainer" unique_id=1616237988]
+[node name="HBoxContainer" type="HBoxContainer" parent="StudySessionPanel/ScrollContainer" unique_id=1027314339]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_right = 80
-theme_override_constants/margin_bottom = 150
-
-[node name="HBoxContainer" type="HBoxContainer" parent="StudySessionPanel/ScrollContainer/MarginContainer" unique_id=1027314339]
-layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 80
 alignment = 1
 
-[node name="Course" parent="StudySessionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=417449706 instance=ExtResource("3_l1ove")]
+[node name="Course" parent="StudySessionPanel/ScrollContainer/HBoxContainer" unique_id=417449706 instance=ExtResource("3_l1ove")]
+layout_mode = 2
+
+[node name="Course2" parent="StudySessionPanel/ScrollContainer/HBoxContainer" unique_id=823258255 instance=ExtResource("3_l1ove")]
 layout_mode = 2
 
 [node name="ClickBlocker" type="ColorRect" parent="StudySessionPanel" unique_id=1053072876]

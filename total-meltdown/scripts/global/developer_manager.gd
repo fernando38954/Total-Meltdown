@@ -43,6 +43,7 @@ func load_developers():
 						"key": key,
 						"name": data.get("name", "Unknown"),
 						"portrait": portrait,
+						"cost": data.get("cost", 0),
 						"attribute": data.get("attribute", {}),
 						"description": data.get("description", ""),
 					}
@@ -69,7 +70,7 @@ func initialize():
 func get_developer_by_key(key: String) -> Dictionary:
 	return all_developers.get(key, {})
 
-func prepare_random_developers(count: int = 3) -> Array:
+func prepare_random_developers(count: int = 2) -> Array:
 	var shuffled = locked_developers.duplicate()
 	shuffled.shuffle()
 	var selected = shuffled.slice(0, count)
@@ -85,11 +86,16 @@ func hire_developer(recruitable_developers_list: Array, target_developer_data: S
 			if developer_entry == target_developer_data:
 				owned_developers.append(developer_entry)
 				idle_developers.append(developer_entry)
+				pay_developer(developer_entry)
 			else:
 				locked_developers.append(developer_entry)
 		else:
 			push_error("hire_developer: No developer with key " + developer_entry + " found in recruitable_developers")
 	GlobalSignal.emit_signal("developer_panel_update")
+
+func pay_developer(target_developer_key: String):
+	var developer_data = get_developer_by_key(target_developer_key)
+	GlobalResource.change_money(-1 * developer_data.cost)
 
 func assign_work(developers_list: Array):
 	for developer_entry in developers_list:
