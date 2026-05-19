@@ -14,6 +14,9 @@
 		"Flexibility": 1.4,
 		"Safety": 1.1,
 	},
+	"complexity_level": 3,
+	"time_level": 3,
+	"cost_level": 3,
 	"description": "	A arquitetura Microkernel organiza sistemas em torno de um núcleo mínimo responsável por funcionalidades essenciais, enquanto funcionalidades adicionais são implementadas como módulos externos independentes. Essa abordagem é comum em sistemas que demandam extensibilidade e adaptação a diferentes contextos. Sua organização fundamenta-se em três blocos conceituais:
 [ul]
 [b]Núcleo Mínimo (Microkernel)[/b]: Responsável por prover os serviços essenciais do sistema, como gerenciamento básico de recursos e controle de comunicação entre componentes.

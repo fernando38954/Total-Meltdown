@@ -14,6 +14,9 @@
 		"Flexibility": 1.1,
 		"Safety": 1.0,
 	},
+	"complexity_level": 4,
+	"time_level": 3,
+	"cost_level": 3,
 	"description": "	A arquitetura orientada a eventos estrutura sistemas em torno da produção, detecção, consumo e reação a eventos, utilizando comunicação assíncrona e desacoplada entre componentes. Nesse modelo, produtores emitem eventos sem conhecimento direto dos consumidores, permitindo alta independência entre partes do sistema. Sua organização fundamenta-se nos seguintes blocos conceituais:
 [ul]
 [b]Geradores de Eventos[/b]: Componentes responsáveis por emitir eventos quando ocorre uma mudança de estado no sistema. Os eventos geralmente contêm metadados (headers) e dados contextuais (payload).

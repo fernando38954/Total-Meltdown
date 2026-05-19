@@ -14,6 +14,9 @@
 		"Flexibility": 1.1,
 		"Safety": 1.1,
 	},
+	"complexity_level": 2,
+	"time_level": 2,
+	"cost_level": 2,
 	"description": "	A arquitetura Pipe-and-Filter organiza o sistema como uma sequência de etapas de processamento independentes (filtros), conectadas por canais de comunicação (pipes). Cada filtro recebe dados de entrada, realiza uma transformação e produz uma saída que é repassada ao próximo estágio, formando um fluxo contínuo de processamento. Essa abordagem é comum em sistemas de processamento de dados, compiladores e pipelines de transformação. Sua organização fundamenta-se nos seguintes blocos conceituais:
 [ul]
 [b]Filtros (Filters)[/b]: Componentes responsáveis por processar dados de entrada e gerar dados de saída, sem conhecimento direto sobre a origem ou destino final dos dados. Cada filtro executa uma tarefa específica e bem definida.

@@ -11,7 +11,7 @@ var progress_per_update: float = 10
 
 func _init(p_quest_key, p_pattern_key, p_developers_key, p_total_attribute):
 	quest_key = p_quest_key
-	quest_key = p_pattern_key
+	pattern_key = p_pattern_key
 	developers_key = p_developers_key.duplicate()
 	total_attribute = p_total_attribute
 	base_money_reward = 100

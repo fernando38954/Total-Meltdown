@@ -22,6 +22,8 @@ func mark_contract_claimable(target_contract_key: String):
 	if target_contract_key in active_contract_list:
 		active_contract_list.erase(target_contract_key)
 		claimable_contracts.append(target_contract_key)
+		var contract_data = get_contract_by_key(target_contract_key)
+		DeveloperManager.finish_work(contract_data.developers_key)
 	else:
 		push_error("mark_contract_claimable: No contract with quest key " + target_contract_key + " found in active_contract_list")
 
@@ -31,8 +33,8 @@ func claim_contract(target_contract_key: String) -> void:
 		claimable_contracts.erase(target_contract_key)
 		give_reward(contract_data)
 		completed_contracts.append(target_contract_key)
-		QuestManager.complete_quest(contract_data.quest_data)
-		DeveloperManager.finish_work(contract_data.developers_data)
+		QuestManager.complete_quest(contract_data.quest_key)
+		DeveloperManager.return_idle(contract_data.developers_key)
 		GlobalResource.contract_done()
 	else:
 		push_error("claim_contract: No contract with quest key " + target_contract_key + " found in claimable_contracts")

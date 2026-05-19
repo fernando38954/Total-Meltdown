@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cfjluhuafa1gr" path="res://scripts/developer_screen/dev_overview_card.gd" id="1_u3dgd"]
 [ext_resource type="Texture2D" uid="uid://dydr6x21au672" path="res://assets/sprites/developer_panel/DeveloperOverviewHover.png" id="2_4b1rf"]
 [ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/sprites/developer_portrait/portrait_1.png" id="2_u3dgd"]
+[ext_resource type="Texture2D" uid="uid://c7c5m3x2qqt3q" path="res://assets/sprites/developer_panel/JobFinishedMark.png" id="4_vb0hg"]
+[ext_resource type="Texture2D" uid="uid://colnu687ji7rt" path="res://assets/sprites/developer_panel/JobOngoingMark.png" id="5_8fmfj"]
 
 [node name="DevOverviewCard" type="TextureButton" unique_id=1138141655]
 custom_minimum_size = Vector2(480, 480)
@@ -13,24 +15,30 @@ pivot_offset = Vector2(350, 350)
 texture_normal = ExtResource("1_in5jn")
 texture_hover = ExtResource("2_4b1rf")
 script = ExtResource("1_u3dgd")
+job_finished_sprite = ExtResource("4_vb0hg")
+job_ongoing_sprite = ExtResource("5_8fmfj")
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]
-position = Vector2(239.00003, 239.99997)
-scale = Vector2(0.5088889, 0.5088889)
+position = Vector2(239, 203.49995)
+scale = Vector2(0.42777774, 0.42777774)
 texture = ExtResource("2_u3dgd")
 region_rect = Rect2(2, 0, 725, 725)
 
 [node name="DeveloperName" type="RichTextLabel" parent="." unique_id=2100683031]
-visible = false
 layout_mode = 0
-offset_top = 754.0
-offset_right = 900.0
-offset_bottom = 891.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 60
-theme_override_font_sizes/bold_font_size = 60
+offset_left = 10.0
+offset_top = 391.0
+offset_right = 475.0
+offset_bottom = 468.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "Name"
+text = "Biggest name ever"
 horizontal_alignment = 1
+
+[node name="JobMark" type="Sprite2D" parent="." unique_id=1242481964]
+position = Vector2(75, 77)
+texture = ExtResource("4_vb0hg")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

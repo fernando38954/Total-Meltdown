@@ -14,6 +14,9 @@
 		"Flexibility": 1.1,
 		"Safety": 1.1,
 	},
+	"complexity_level": 2,
+	"time_level": 2,
+	"cost_level": 2,
 	"description": "	A arquitetura em camadas organiza o sistema em níveis hierárquicos, onde cada camada possui responsabilidades bem definidas e se comunica, em geral, apenas com as camadas adjacentes. Essa estrutura promove separação de interesses e controle sobre o fluxo de dados e dependências. Sua organização fundamenta-se em blocos conceituais organizados verticalmente:
 [ul]
 [b]Camada de Apresentação[/b]: Responsável pela interface com o usuário, tratando entrada e saída de dados.

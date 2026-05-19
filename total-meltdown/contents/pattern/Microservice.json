@@ -14,6 +14,9 @@
 		"Flexibility": 1.8,
 		"Safety": 1.1,
 	},
+	"complexity_level": 4,
+	"time_level": 4,
+	"cost_level": 4,
 	"description": "	A arquitetura de microserviços estrutura sistemas como um conjunto de serviços pequenos, independentes e fracamente acoplados, onde cada serviço implementa uma capacidade específica do domínio. Esses serviços são desenvolvidos, implantados e escalados de forma autônoma, comunicando-se por meio de mecanismos leves, geralmente baseados em rede. Sua organização fundamenta-se nos seguintes blocos conceituais:
 [ul]
 [b]Serviços Independentes[/b]: Unidades autônomas que encapsulam funcionalidades específicas do sistema, com controle próprio de lógica e, frequentemente, de dados.

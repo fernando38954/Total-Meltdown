@@ -14,6 +14,9 @@
 		"Flexibility": 1.1,
 		"Safety": 1.1,
 	},
+	"complexity_level": 1,
+	"time_level": 2,
+	"cost_level": 2,
 	"description": "	A arquitetura MVC organiza sistemas interativos separando responsabilidades em três componentes principais, com o objetivo de isolar a lógica de negócio da interface com o usuário e do controle de fluxo da aplicação. Essa separação promove uma estrutura modular e facilita a evolução do sistema ao longo do tempo. Sua organização fundamenta-se em três blocos conceituais:
 [ul]
 [b]Model (Modelo)[/b]: Responsável por representar os dados e a lógica de negócio da aplicação. Gerencia o estado do sistema e define regras de domínio, sendo independente da interface do usuário.

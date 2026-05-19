@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://behglkn5tpfjf" path="res://scripts/map_screen/study_session/pattern_detail_card.gd" id="1_ydam8"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="2_7p2in"]
 [ext_resource type="Texture2D" uid="uid://c4gc3gy62yqq" path="res://assets/sprites/pattern_icons/Layered.png" id="3_7p2in"]
+[ext_resource type="Texture2D" uid="uid://b0c872k8wac8b" path="res://assets/sprites/map_screen/event/study_session/LevelIndicatorFull.png" id="3_13mco"]
+[ext_resource type="Texture2D" uid="uid://d1bx7j218lxpf" path="res://assets/sprites/map_screen/event/study_session/LevelIndicatorEmpty.png" id="4_13mco"]
 [ext_resource type="Texture2D" uid="uid://bvdnpxoq22vp6" path="res://assets/sprites/navigation_button/ReturnButtonNormal.png" id="4_jph2o"]
 [ext_resource type="Texture2D" uid="uid://duw8dbs8bsp05" path="res://assets/sprites/navigation_button/ReturnButonHover.png" id="5_13mco"]
 
@@ -14,6 +16,7 @@ pivot_offset = Vector2(576, 324)
 texture = ExtResource("1_7p2in")
 stretch_mode = 2
 script = ExtResource("1_ydam8")
+level_indicator = ExtResource("3_13mco")
 font_size = 18
 value_font_size = 12
 
@@ -37,6 +40,54 @@ theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "Name"
 vertical_alignment = 1
+
+[node name="ComplexityLevel" type="HBoxContainer" parent="." unique_id=682437914]
+layout_mode = 0
+offset_left = 953.0
+offset_top = 526.0
+offset_right = 1459.0
+offset_bottom = 615.0
+theme_override_constants/separation = 50
+
+[node name="Level1" type="TextureRect" parent="ComplexityLevel" unique_id=1226759396]
+layout_mode = 2
+texture = ExtResource("4_13mco")
+
+[node name="Level2" type="TextureRect" parent="ComplexityLevel" unique_id=1627491723]
+layout_mode = 2
+texture = ExtResource("4_13mco")
+
+[node name="Level3" type="TextureRect" parent="ComplexityLevel" unique_id=1069058379]
+layout_mode = 2
+texture = ExtResource("4_13mco")
+
+[node name="Level4" type="TextureRect" parent="ComplexityLevel" unique_id=408362140]
+layout_mode = 2
+texture = ExtResource("4_13mco")
+
+[node name="CostLevel" type="HBoxContainer" parent="." unique_id=1239432342]
+layout_mode = 0
+offset_left = 953.0
+offset_top = 800.0
+offset_right = 1459.0
+offset_bottom = 889.0
+theme_override_constants/separation = 50
+
+[node name="Level1" type="TextureRect" parent="CostLevel" unique_id=998561741]
+layout_mode = 2
+texture = ExtResource("4_13mco")
+
+[node name="Level2" type="TextureRect" parent="CostLevel" unique_id=296557551]
+layout_mode = 2
+texture = ExtResource("4_13mco")
+
+[node name="Level3" type="TextureRect" parent="CostLevel" unique_id=1006398692]
+layout_mode = 2
+texture = ExtResource("4_13mco")
+
+[node name="Level4" type="TextureRect" parent="CostLevel" unique_id=528714236]
+layout_mode = 2
+texture = ExtResource("4_13mco")
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("2_7p2in")]
 layout_mode = 0

@@ -8,6 +8,7 @@ var recruitable_developers: Array = []
 var owned_developers: Array = []
 var idle_developers: Array = []
 var working_developers: Array = []
+var resting_developers: Array = []
 var creation_finished = false
 
 #region Load Data
@@ -110,8 +111,17 @@ func finish_work(developers_list: Array):
 	for developer_entry in developers_list:
 		if working_developers.has(developer_entry):
 			working_developers.erase(developer_entry)
-			idle_developers.append(developer_entry)
+			resting_developers.append(developer_entry)
 		else:
 			push_error("finish_work: No developer with key " + developer_entry + " found in working_developers")
+	GlobalSignal.emit_signal("developer_panel_update")
+
+func return_idle(developers_list: Array):
+	for developer_entry in developers_list:
+		if resting_developers.has(developer_entry):
+			resting_developers.erase(developer_entry)
+			idle_developers.append(developer_entry)
+		else:
+			push_error("return_idle: No developer with key " + developer_entry + " found in resting_developers")
 	GlobalSignal.emit_signal("developer_panel_update")
 #endregion
