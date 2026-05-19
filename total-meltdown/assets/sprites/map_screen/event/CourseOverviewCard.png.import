@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg38eyq2aqff7"
-path="res://.godot/imported/Post-it.png-7f69d538f772e5fab283d4ee10a86334.ctex"
+uid="uid://dsarhqqde6sxp"
+path="res://.godot/imported/CourseOverviewCard.png-ac923f10064609ee50401c5d0530e6c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map_screen/event/Post-it.png"
-dest_files=["res://.godot/imported/Post-it.png-7f69d538f772e5fab283d4ee10a86334.ctex"]
+source_file="res://assets/sprites/map_screen/event/CourseOverviewCard.png"
+dest_files=["res://.godot/imported/CourseOverviewCard.png-ac923f10064609ee50401c5d0530e6c9.ctex"]
 
 [params]
 

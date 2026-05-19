@@ -4,16 +4,11 @@ class_name DeveloperPanel
 @export var event_blocker: ColorRect
 
 #region Abstract Override Functions
-func _ready():
-	await _ready_prerequisites()
-	build_panel()
-	close_click_blocker()
-	GlobalSignal.developer_panel_update.connect(build_panel)
-
 func get_items() -> Array:
 	return DeveloperManager.owned_developers
 
 func _ready_prerequisites():
+	GlobalSignal.developer_panel_update.connect(build_panel)
 	while !DeveloperManager.creation_finished:
 		await get_tree().process_frame
 #endregion

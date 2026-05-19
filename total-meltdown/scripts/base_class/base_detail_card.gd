@@ -5,14 +5,16 @@ class_name BaseDetailCard
 var panel: BaseItemPanel = null
 var initial_center_position: Vector2
 var tween: Tween
+var card_open_scale = Vector2(0.8, 0.8)
 
 func set_panel(p_panel: BaseItemPanel):
 	panel = p_panel
 
-func initialize_card(target_center_position: Vector2) -> void:
+func initialize_card(target_center_position: Vector2, target_open_scale: Vector2 = card_open_scale) -> void:
 	scale = Vector2.ZERO
 	initial_center_position = target_center_position
 	global_position = initial_center_position
+	card_open_scale = target_open_scale
 
 @abstract func set_content(item_data: Variant)
 
@@ -30,7 +32,7 @@ func animate_to_center(target_center_position: Vector2, target_scale: Vector2, d
 
 func open_card(duration: float = 0.2, callback: Callable = Callable()):
 	var center = panel.get_center_position()
-	animate_to_center(center, Vector2(0.8, 0.8), duration, callback)
+	animate_to_center(center, card_open_scale, duration, callback)
 
 func close_card(duration: float = 0.2, callback: Callable = Callable()):
 	animate_to_center(initial_center_position, Vector2.ZERO, duration, callback)

@@ -2,6 +2,7 @@
 	"key": "PipeFilter",
 	"title": "Pipe and Filter",
 	"icon": "res://assets/sprites/pattern_icons/PipeFilter.png",
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 1.1,
 		"Performance Efficiency": 1.4,
@@ -20,7 +21,7 @@
 [b]Fluxo de Dados (Data Flow)[/b]: Define a ordem de execução dos filtros, podendo ser linear ou mais complexo, dependendo da composição do pipeline.[/ul]
 	Essa arquitetura oferece vantagens como: [b]boa manutenibilidade[/b], pois filtros podem ser modificados ou substituídos isoladamente; [b]boa performance[/b], especialmente em cenários de processamento em fluxo ou paralelismo entre filtros; e [b]alta compatibilidade[/b], já que diferentes filtros podem ser desenvolvidos em tecnologias distintas, desde que respeitem o formato de entrada e saída.
 	Como desvantagens, destacam-se a [b]baixa confiabilidade[/b], uma vez que falhas em um filtro podem interromper todo o pipeline; e a [b]baixa usabilidade[/b], já que essa arquitetura não é naturalmente voltada para interação com o usuário final, sendo mais adequada para processamento interno de dados.",
-	"abstract": "[b]Conceito[/b]: Sequência de transformações onde a saída de um filtro é a entrada do próximo através de “canos”.
-[b]Vantagem[/b]: Processamento de Fluxo. Excelente performance para dados em massa e alta modularidade.
-[b]Desvantagem[/b]: Interatividade Limitada. Baixa usabilidade para o usuário final, sendo focada em processamento interno."
+	"concept": "Sequência de transformações onde a saída de um filtro é a entrada do próximo através de “canos”.",
+	"advantage": "Processamento de Fluxo. Excelente performance para dados em massa e alta modularidade.",
+	"disadvantage": "Interatividade Limitada. Baixa usabilidade para o usuário final, sendo focada em processamento interno."
 }

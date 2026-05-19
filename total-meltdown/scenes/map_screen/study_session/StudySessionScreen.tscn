@@ -31,6 +31,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -48.0
+offset_bottom = 1013.0
 grow_horizontal = 2
 grow_vertical = 2
 follow_focus = true
@@ -40,24 +42,15 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 150
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 150
 
 [node name="HBoxContainer" type="HBoxContainer" parent="StudySessionPanel/ScrollContainer/MarginContainer" unique_id=1027314339]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_constants/separation = 80
 alignment = 1
 
-[node name="Course" parent="StudySessionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1570528027 instance=ExtResource("3_l1ove")]
-layout_mode = 2
-
-[node name="Course2" parent="StudySessionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1883378060 instance=ExtResource("3_l1ove")]
-layout_mode = 2
-
-[node name="Course3" parent="StudySessionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=497402908 instance=ExtResource("3_l1ove")]
+[node name="Course" parent="StudySessionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=417449706 instance=ExtResource("3_l1ove")]
 layout_mode = 2
 
 [node name="ClickBlocker" type="ColorRect" parent="StudySessionPanel" unique_id=1053072876]
@@ -67,6 +60,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+color = Color(0, 0, 0, 0)
 
 [connection signal="gui_input" from="StudySessionPanel/ClickBlocker" to="StudySessionPanel" method="_on_click_blocker_gui_input"]

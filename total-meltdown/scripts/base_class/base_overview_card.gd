@@ -1,5 +1,5 @@
 @abstract
-extends TextureButton
+extends Control
 class_name BaseOverviewCard
 
 var panel: BaseItemPanel = null

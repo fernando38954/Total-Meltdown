@@ -1,6 +1,7 @@
 extends BaseDetailCard
 class_name PatternDetailCard
 
+@onready var icon = $Icon
 @onready var pattern_name = $PatternName
 @onready var radar_chart = $RadarChart
 @onready var description = $Description
@@ -12,7 +13,8 @@ class_name PatternDetailCard
 
 func set_content(item_key: Variant):
 	var item_data =  PatternManager.get_pattern_by_key(item_key)
-	pattern_name.text = "[b]%s[/b]" % [item_data.title]
+	icon.texture = item_data.icon
+	pattern_name.text = "%s" % [item_data.title]
 	description.text = "%s" % [item_data.description]
 	radar_chart.set_label(font, font_size, value_font_size)
 	radar_chart.set_attributes(item_data.attribute)

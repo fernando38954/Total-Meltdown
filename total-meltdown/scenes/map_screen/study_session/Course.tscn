@@ -1,50 +1,129 @@
 [gd_scene format=3 uid="uid://whjllpdpvskl"]
 
-[ext_resource type="Texture2D" uid="uid://120gu7oj2m34" path="res://assets/selector_background/background1.png" id="1_qu0mc"]
+[ext_resource type="Texture2D" uid="uid://dsarhqqde6sxp" path="res://assets/sprites/map_screen/event/CourseOverviewCard.png" id="1_3hcnb"]
 [ext_resource type="Script" uid="uid://cxsew1wiolk0r" path="res://scripts/map_screen/study_session/course.gd" id="2_il80u"]
+[ext_resource type="Texture2D" uid="uid://dmtgg313ysnop" path="res://assets/sprites/map_screen/event/ButtonNormal.png" id="3_3hcnb"]
+[ext_resource type="Texture2D" uid="uid://dcdnocfly16ac" path="res://assets/sprites/pattern_icons/ClientServer.png" id="3_gq6r2"]
+[ext_resource type="Texture2D" uid="uid://dmesbbvdoyk1w" path="res://assets/sprites/map_screen/event/DetailButtonNormal.png" id="4_dybt4"]
+[ext_resource type="Texture2D" uid="uid://rw4ldfv7lctd" path="res://assets/sprites/map_screen/event/ButtonPress.png" id="4_gq6r2"]
+[ext_resource type="Texture2D" uid="uid://ctrkjytccyfm7" path="res://assets/sprites/map_screen/event/ButtonHover.png" id="5_ioi3c"]
+[ext_resource type="Texture2D" uid="uid://cxhh3ixt5ku6o" path="res://assets/sprites/map_screen/event/DetailButtonPress.png" id="5_s16yt"]
+[ext_resource type="Texture2D" uid="uid://cdpvvhmxa0toh" path="res://assets/sprites/map_screen/event/DetailButtonHover.png" id="6_8vjcc"]
 
-[node name="Course" type="TextureButton" unique_id=1570528027]
-offset_right = 1200.0
-offset_bottom = 1771.0
-texture_normal = ExtResource("1_qu0mc")
+[node name="Course" type="TextureRect" unique_id=417449706]
+offset_right = 2181.0
+offset_bottom = 2197.0
+texture = ExtResource("1_3hcnb")
+stretch_mode = 2
 script = ExtResource("2_il80u")
 
 [node name="PatternName" type="RichTextLabel" parent="." unique_id=1415404183]
 layout_mode = 0
-offset_left = 89.0
-offset_top = 153.0
-offset_right = 1121.0
-offset_bottom = 309.0
+offset_left = 466.0
+offset_top = 3.0
+offset_right = 1565.0
+offset_bottom = 159.0
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 80
-theme_override_font_sizes/bold_font_size = 80
-bbcode_enabled = true
-text = "[b]Name[/b]"
-horizontal_alignment = 1
-
-[node name="Description" type="RichTextLabel" parent="." unique_id=1693264309]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 341.0
-offset_right = 1120.0
-offset_bottom = 1555.0
-mouse_filter = 1
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 60
 bbcode_enabled = true
-text = "sadasdasdasdasd"
+text = "[b]Arquitetura em Camadas[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="StudyButton" type="Button" parent="." unique_id=1041590031]
+[node name="Cost" type="RichTextLabel" parent="." unique_id=1459932973]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 1814.0
-offset_right = 1026.0
-offset_bottom = 2027.0
-theme_override_font_sizes/font_size = 100
-text = "Estudar"
-clip_text = true
+offset_left = 1657.0
+offset_top = 23.0
+offset_right = 1884.0
+offset_bottom = 136.0
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "-150$"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[node name="Icon" type="TextureRect" parent="." unique_id=1532331852]
+layout_mode = 0
+offset_left = 1400.0
+offset_top = 199.0
+offset_right = 1954.0
+offset_bottom = 753.0
+texture = ExtResource("3_gq6r2")
+
+[node name="Concept" type="RichTextLabel" parent="." unique_id=1693264309]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 336.0
+offset_right = 1235.0
+offset_bottom = 669.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 65
+bbcode_enabled = true
+text = "Concept"
+
+[node name="Advantage" type="RichTextLabel" parent="." unique_id=1917575313]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 805.0
+offset_right = 2027.0
+offset_bottom = 1147.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 65
+bbcode_enabled = true
+text = "Advantage"
+
+[node name="Disadvantage" type="RichTextLabel" parent="." unique_id=1528280870]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 1288.0
+offset_right = 2035.0
+offset_bottom = 1614.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 65
+bbcode_enabled = true
+text = "Disadvantage"
+
+[node name="DetailButton" type="TextureButton" parent="." unique_id=1042342424]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 612.0
+offset_right = 1348.0
+offset_bottom = 753.0
+texture_normal = ExtResource("4_dybt4")
+texture_pressed = ExtResource("5_s16yt")
+texture_hover = ExtResource("6_8vjcc")
+
+[node name="StudyButton" type="TextureButton" parent="." unique_id=396883791]
+layout_mode = 0
+offset_left = 709.0
+offset_top = 1912.0001
+offset_right = 1729.0
+offset_bottom = 2249.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("3_3hcnb")
+texture_pressed = ExtResource("4_gq6r2")
+texture_hover = ExtResource("5_ioi3c")
+
+[node name="StudyLabel" type="RichTextLabel" parent="StudyButton" unique_id=832515776]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 40.0
+offset_right = 921.0
+offset_bottom = 289.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 120
+text = "Aprender"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="DetailButton" to="." method="_on_pressed"]
 [connection signal="pressed" from="StudyButton" to="." method="_on_study_button_pressed"]

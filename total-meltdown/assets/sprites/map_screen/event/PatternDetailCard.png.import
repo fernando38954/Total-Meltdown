@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg38eyq2aqff7"
-path="res://.godot/imported/Post-it.png-7f69d538f772e5fab283d4ee10a86334.ctex"
+uid="uid://4pwdwphlvnd8"
+path="res://.godot/imported/PatternDetailCard.png-1a4090ae45e44246791052eb8a33c1e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map_screen/event/Post-it.png"
-dest_files=["res://.godot/imported/Post-it.png-7f69d538f772e5fab283d4ee10a86334.ctex"]
+source_file="res://assets/sprites/map_screen/event/PatternDetailCard.png"
+dest_files=["res://.godot/imported/PatternDetailCard.png-1a4090ae45e44246791052eb8a33c1e0.ctex"]
 
 [params]
 

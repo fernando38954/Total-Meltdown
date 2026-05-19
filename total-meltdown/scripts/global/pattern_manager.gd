@@ -47,9 +47,12 @@ func load_patterns():
 						"key": key,
 						"title": data.get("title", "Untitled"),
 						"icon": icon,
+						"cost": data.get("cost", 0),
 						"attribute": data.get("attribute", ""),
 						"description": data.get("description", ""),
-						"abstract": data.get("abstract", ""),
+						"concept": data.get("concept", ""),
+						"advantage": data.get("advantage", ""),
+						"disadvantage": data.get("disadvantage", ""),
 					}
 				else:
 					creation_finished = true
@@ -66,14 +69,14 @@ func initialize():
 	studiable_patterns.clear()
 	owned_patterns.clear()
 	var random_pattern = prepare_random_patterns(1)
-	study_pattern(random_pattern, random_pattern[0])
+	study_pattern(random_pattern, random_pattern[0], true)
 #endregion
 
 #region Array Operation
 func get_pattern_by_key(key: String) -> Dictionary:
 	return all_patterns.get(key, {})
 
-func prepare_random_patterns(count: int = 3) -> Array:
+func prepare_random_patterns(count: int = 2) -> Array:
 	var shuffled = locked_patterns.duplicate()
 	shuffled.shuffle()
 	var selected = shuffled.slice(0, count)
@@ -82,14 +85,20 @@ func prepare_random_patterns(count: int = 3) -> Array:
 		studiable_patterns.append(pattern_entry)
 	return selected
 
-func study_pattern(studiable_patterns_list: Array, target_pattern_key: String):
+func study_pattern(studiable_patterns_list: Array, target_pattern_key: String, is_free: bool = false):
 	for pattern_entry in studiable_patterns_list:
 		if studiable_patterns.has(pattern_entry):
 			studiable_patterns.erase(pattern_entry)
 			if pattern_entry == target_pattern_key:
 				owned_patterns.append(pattern_entry)
+				if not is_free:
+					pay_pattern(pattern_entry)
 			else:
 				locked_patterns.append(pattern_entry)
 		else:
 			push_error("study_pattern: No pattern with key " + pattern_entry + " found in studiable_patterns_list")
+
+func pay_pattern(target_pattern_key: String):
+	var pattern_data = get_pattern_by_key(target_pattern_key)
+	GlobalResource.change_money(-1 * pattern_data.cost)
 #endregion

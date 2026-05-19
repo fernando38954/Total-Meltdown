@@ -1,71 +1,75 @@
 [gd_scene format=3 uid="uid://q61o5yikp86s"]
 
+[ext_resource type="Texture2D" uid="uid://4pwdwphlvnd8" path="res://assets/sprites/map_screen/event/PatternDetailCard.png" id="1_7p2in"]
 [ext_resource type="Script" uid="uid://behglkn5tpfjf" path="res://scripts/map_screen/study_session/pattern_detail_card.gd" id="1_ydam8"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="2_7p2in"]
-[ext_resource type="Texture2D" uid="uid://otrus47vg2jc" path="res://placeholder/WhiteX.png" id="3_jph2o"]
-[ext_resource type="Texture2D" uid="uid://pj46xl23vtdx" path="res://placeholder/GrayX.png" id="4_13mco"]
-[ext_resource type="Texture2D" uid="uid://cnydromc3aeaf" path="res://placeholder/LightGrayX.png" id="5_grlnv"]
+[ext_resource type="Texture2D" uid="uid://c4gc3gy62yqq" path="res://assets/sprites/pattern_icons/Layered.png" id="3_7p2in"]
+[ext_resource type="Texture2D" uid="uid://bvdnpxoq22vp6" path="res://assets/sprites/navigation_button/ReturnButtonNormal.png" id="4_jph2o"]
+[ext_resource type="Texture2D" uid="uid://duw8dbs8bsp05" path="res://assets/sprites/navigation_button/ReturnButonHover.png" id="5_13mco"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p2in"]
-bg_color = Color(0.4, 0.3882353, 0.3764706, 1)
-
-[node name="PatternDetailCard" type="Panel" unique_id=2083043029]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PatternDetailCard" type="TextureRect" unique_id=1798729432]
+offset_right = 3326.0
+offset_bottom = 2085.0
 pivot_offset = Vector2(576, 324)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7p2in")
+texture = ExtResource("1_7p2in")
+stretch_mode = 2
 script = ExtResource("1_ydam8")
 font_size = 18
 value_font_size = 12
 
+[node name="Icon" type="TextureRect" parent="." unique_id=1152396858]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 200.0
+offset_right = 790.0
+offset_bottom = 840.0
+texture = ExtResource("3_7p2in")
+
 [node name="PatternName" type="RichTextLabel" parent="." unique_id=1444356054]
 layout_mode = 0
-offset_left = 107.0
-offset_top = 111.0
-offset_right = 1901.0
-offset_bottom = 300.0
+offset_left = 930.0
+offset_top = 231.0
+offset_right = 1717.0
+offset_bottom = 392.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "Name"
-horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("2_7p2in")]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 315.0
-offset_right = 1910.0
-offset_bottom = 2087.0
+offset_left = 1863.0
+offset_top = 433.0
+offset_right = 3185.0
+offset_bottom = 1755.0
 upper_limit = 4.0
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=2038739943]
 layout_mode = 0
-offset_left = 2044.0
-offset_top = 357.0
-offset_right = 3805.0
-offset_bottom = 2090.0
-theme_override_font_sizes/normal_font_size = 71
-theme_override_font_sizes/bold_font_size = 71
-theme_override_font_sizes/bold_italics_font_size = 71
-theme_override_font_sizes/italics_font_size = 71
-theme_override_font_sizes/mono_font_size = 71
+offset_left = 142.0
+offset_top = 1083.0
+offset_right = 1703.0
+offset_bottom = 1921.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 70
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 70
+theme_override_font_sizes/mono_font_size = 70
 bbcode_enabled = true
 text = "Test description"
 
-[node name="ReturnButton" type="TextureButton" parent="." unique_id=1238466745]
+[node name="ReturnButton" type="TextureButton" parent="." unique_id=1435733663]
 layout_mode = 0
-offset_left = 3626.9998
-offset_top = 8.000008
-offset_right = 3882.9998
-offset_bottom = 264.0
-scale = Vector2(0.8, 0.8)
+offset_left = 3120.0
+offset_top = 112.0
+offset_right = 3249.0
+offset_bottom = 241.0
+scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(128, 128)
-texture_normal = ExtResource("3_jph2o")
-texture_pressed = ExtResource("4_13mco")
-texture_hover = ExtResource("5_grlnv")
+texture_normal = ExtResource("4_jph2o")
+texture_hover = ExtResource("5_13mco")
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
