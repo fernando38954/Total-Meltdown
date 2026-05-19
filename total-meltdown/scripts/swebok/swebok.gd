@@ -8,9 +8,12 @@ signal move_animation_finished
 @onready var left_button = $LeftButton
 @onready var right_button = $RightButton
 @onready var audio_player = $AudioStreamPlayer
+@onready var click_blocker = $ClickBlocker
 
 @export var open_position = Vector2(2015.0, 1050.0)
-@export var hide_position = Vector2(5100.0, 1050.0)
+@export var hide_position = Vector2(2015.0, 3315.0)
+@export var initial_minimize_position = Vector2(-1153.0, 3297.0)
+@export var minimize_position = Vector2(-446.0, 2769.0)
 
 @export_category("Catalog")
 @export var catalog: Catalog
@@ -25,7 +28,8 @@ var tutorial_page_qty: int = 0
 
 #region Internal Classes
 var BookPage = {
-	"close": -4,
+	"close": -5,
+	"half_close": -4,
 	"opening": -3,
 	"turning": -2,
 	"catalogPage": -1,
@@ -40,7 +44,8 @@ enum PageDirection {
 
 func _ready():
 	BookPage["tutorialPageLimit"] = TutorialPageManager.all_pages.size()
-	close_book(0)
+	close_book(0, hide_position, false)
+	click_blocker.hide()
 	show()
 
 #region Book Action
@@ -52,19 +57,40 @@ func move_book(target_position: Vector2, duration: float = 1.0):
 	tween.tween_property(book_sprite, "position", target_position, duration)
 	tween.tween_callback(move_animation_finished.emit)
 
-func close_book(duration: float = 1):
-	move_book(hide_position, duration)
+func close_book(duration: float = 0.5, target_position: Vector2 = hide_position, play_animation: bool = true):
+	move_book(target_position, duration)
 	show_page(BookPage.close)
-	book_sprite.play_backwards("open_book")
-	if duration > 0:
-		AudioManager.play_sfx(flip_page_left_SFX)
+	if play_animation:
+		book_sprite.play_backwards("open_book")
+		if duration > 0:
+			AudioManager.play_sfx(flip_page_left_SFX)
+	else:
+		book_sprite.animation = "open_book"
+		book_sprite.frame = 0
 
-func open_book(duration: float = 0.5):
+func minimize_book(duration: float = 0.5, initial_position: Vector2 = book_sprite.position, play_animation: bool = true):
+	book_sprite.position = initial_position
+	move_book(minimize_position, duration)
+	show_page(BookPage.half_close)
+	if play_animation:
+		book_sprite.play_backwards("open_half_book")
+		if duration > 0:
+			AudioManager.play_sfx(flip_page_left_SFX)
+	else:
+		book_sprite.animation = "open_half_book"
+		book_sprite.frame = 0
+
+func open_book(duration: float = 0.5, is_half_book: bool = false):
 	current_page_idx = BookPage.opening
+	book_sprite.position = minimize_position if is_half_book else hide_position
 	move_book(open_position, duration)
 	
 	await move_animation_finished
-	book_sprite.play("open_book")
+	if is_half_book:
+		book_sprite.play("open_half_book")
+		click_blocker.show()
+	else:
+		book_sprite.play("open_book")
 	AudioManager.play_sfx(flip_page_right_SFX)
 	await book_sprite.animation_finished
 	if current_page_idx == BookPage.opening:
@@ -81,6 +107,15 @@ func turn_to_page(target_page_idx: int):
 	await book_sprite.animation_finished
 	if current_page_idx == BookPage.turning:
 		show_page(target_page_idx)
+
+func _on_click_blocker_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		minimize_book()
+		click_blocker.hide()
+
+func _on_minimize_book_region_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and current_page_idx == BookPage.half_close:
+		open_book(0.5, true)
 #endregion
 
 #region Book Content

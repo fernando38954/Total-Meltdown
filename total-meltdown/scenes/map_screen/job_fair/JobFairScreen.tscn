@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1952, 1098)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ssrtq")
 script = ExtResource("2_buk3p")
 container = NodePath("ScrollContainer/HBoxContainer")
@@ -33,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
@@ -40,10 +42,12 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/separation = 80
 alignment = 1
 
 [node name="Resume" parent="JobFairPanel/ScrollContainer/HBoxContainer" unique_id=886310879 instance=ExtResource("4_1inak")]
+visible = false
 layout_mode = 2
 
 [node name="Resume2" parent="JobFairPanel/ScrollContainer/HBoxContainer" unique_id=833919344 instance=ExtResource("4_1inak")]

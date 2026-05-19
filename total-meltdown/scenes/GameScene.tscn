@@ -140,9 +140,6 @@ texture_pressed = ExtResource("9_6nmf6")
 texture_hover = ExtResource("10_lk0vr")
 ignore_texture_size = true
 
-[node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("11_f2kej")]
-visible = false
-
 [node name="MapScreenMask" type="Sprite2D" parent="." unique_id=436785057]
 clip_children = 1
 position = Vector2(576.61755, 293.91174)
@@ -180,6 +177,9 @@ offset_top = -306.0
 offset_right = 1910.0
 offset_bottom = 1189.0
 scale = Vector2(0.41274443, 0.41274443)
+
+[node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("11_f2kej")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1890244953]
 

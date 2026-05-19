@@ -64,6 +64,7 @@ func switch_region(region: Region):
 	if current_region == map_screen_region:
 		await workspace_camera.zoom_finished
 		map_screen.disable_event_blocker()
+		swebok.minimize_book(0.5, swebok.initial_minimize_position, false)
 
 func check_close_screen():
 	if current_region == swebok_region:
@@ -76,6 +77,7 @@ func check_close_screen():
 	if current_region == map_screen_region:
 		map_screen.close_event_screen()
 		map_screen.enable_event_blocker()
+		swebok.close_book(0.5, swebok.initial_minimize_position, false)
 
 
 func _on_return_button_pressed() -> void:

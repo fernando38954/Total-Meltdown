@@ -67,6 +67,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gmiyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hotj")
+}],
+"loop": false,
+"name": &"open_half_book",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_lt6x6")
 }, {
 "duration": 1.0,
@@ -87,19 +101,33 @@ animations = [{
 }]
 
 [node name="Swebok" type="CanvasLayer" unique_id=129603859 node_paths=PackedStringArray("catalog")]
+layer = 2
 script = ExtResource("1_6evcd")
 catalog = NodePath("Catalog")
 flip_page_right_SFX = ExtResource("2_k2pky")
 flip_page_left_SFX = ExtResource("3_0h8ia")
 metadata/_edit_vertical_guides_ = [576.0]
 
+[node name="ClickBlocker" type="ColorRect" parent="." unique_id=803847788]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4392157)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=617863607]
-position = Vector2(2007, 1050)
+position = Vector2(-571, 2769.0002)
 scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_qhdxt")
-animation = &"open_book"
-frame = 3
-frame_progress = 1.0
+animation = &"open_half_book"
+
+[node name="MinimizeBookRegion" type="ColorRect" parent="AnimatedSprite2D" unique_id=1294063460]
+offset_left = 20.833344
+offset_top = -462.91663
+offset_right = 484.16666
+offset_bottom = 359.16675
+color = Color(1, 1, 1, 0)
 
 [node name="Catalog" parent="." unique_id=997869620 node_paths=PackedStringArray("swebok") instance=ExtResource("2_x7age")]
 swebok = NodePath("..")
@@ -243,6 +271,8 @@ ignore_texture_size = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1170580997]
 
+[connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]
+[connection signal="gui_input" from="AnimatedSprite2D/MinimizeBookRegion" to="." method="_on_minimize_book_region_gui_input"]
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
 
