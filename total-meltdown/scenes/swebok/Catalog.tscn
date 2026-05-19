@@ -19,10 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://1iuxbuf7bej1" path="res://assets/sprites/notebook/marker/Pattern-Layered.png" id="17_4ypgv"]
 [ext_resource type="Texture2D" uid="uid://bx0ocgqc88py" path="res://assets/sprites/notebook/marker/Pattern-Microservice.png" id="18_xsfk8"]
 
-[node name="Catalog" type="Control" unique_id=997869620 node_paths=PackedStringArray("pattern_container")]
+[node name="Catalog" type="Control" unique_id=997869620 node_paths=PackedStringArray("home_mark", "attribute_container", "pattern_container")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_p726v")
+home_mark = NodePath("HomeButton")
+attribute_container = NodePath("AttributeContainer")
 pattern_container = NodePath("PatternContainer")
 
 [node name="HomeButton" type="TextureButton" parent="." unique_id=2142291592]
@@ -31,45 +33,71 @@ offset_right = 189.0
 offset_bottom = 154.0
 texture_normal = ExtResource("2_kyxej")
 
-[node name="AttributeContainer" type="HBoxContainer" parent="." unique_id=1583750209]
-layout_mode = 0
-offset_right = 132.0
+[node name="AttributeContainer" type="Control" parent="." unique_id=1003265711]
+anchors_preset = 0
+offset_right = 932.0
 offset_bottom = 182.0
 
 [node name="FunctionalSuitability" type="TextureButton" parent="AttributeContainer" unique_id=89549188]
-layout_mode = 2
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 182.0
 texture_normal = ExtResource("3_rf3hn")
 
 [node name="PerformanceEfficiency" type="TextureButton" parent="AttributeContainer" unique_id=725553758]
-layout_mode = 2
+layout_mode = 0
+offset_left = 104.0
+offset_right = 204.0
+offset_bottom = 182.0
 texture_normal = ExtResource("4_e7ss4")
 
 [node name="Compatibility" type="TextureButton" parent="AttributeContainer" unique_id=1305877596]
-layout_mode = 2
+layout_mode = 0
+offset_left = 208.0
+offset_right = 308.0
+offset_bottom = 182.0
 texture_normal = ExtResource("5_3e2f3")
 
 [node name="InteractionCapability" type="TextureButton" parent="AttributeContainer" unique_id=1882485471]
-layout_mode = 2
+layout_mode = 0
+offset_left = 312.0
+offset_right = 412.0
+offset_bottom = 182.0
 texture_normal = ExtResource("6_ahdd8")
 
 [node name="Reliability" type="TextureButton" parent="AttributeContainer" unique_id=1617968800]
-layout_mode = 2
+layout_mode = 0
+offset_left = 416.0
+offset_right = 516.0
+offset_bottom = 182.0
 texture_normal = ExtResource("7_mfw3i")
 
 [node name="Security" type="TextureButton" parent="AttributeContainer" unique_id=669971119]
-layout_mode = 2
+layout_mode = 0
+offset_left = 520.0
+offset_right = 620.0
+offset_bottom = 182.0
 texture_normal = ExtResource("8_0vs7x")
 
 [node name="Maintainability" type="TextureButton" parent="AttributeContainer" unique_id=790957534]
-layout_mode = 2
+layout_mode = 0
+offset_left = 624.0
+offset_right = 724.0
+offset_bottom = 182.0
 texture_normal = ExtResource("9_6kuat")
 
 [node name="Flexibility" type="TextureButton" parent="AttributeContainer" unique_id=1109382623]
-layout_mode = 2
+layout_mode = 0
+offset_left = 728.0
+offset_right = 828.0
+offset_bottom = 182.0
 texture_normal = ExtResource("10_w3nhb")
 
 [node name="Safety" type="TextureButton" parent="AttributeContainer" unique_id=1600110185]
-layout_mode = 2
+layout_mode = 0
+offset_left = 832.0
+offset_right = 932.0
+offset_bottom = 182.0
 texture_normal = ExtResource("11_02ks2")
 
 [node name="PatternContainer" type="VBoxContainer" parent="." unique_id=1925257790]
@@ -91,7 +119,7 @@ texture_normal = ExtResource("13_ems8u")
 layout_mode = 2
 texture_normal = ExtResource("14_rq3ks")
 
-[node name="Pipefilter" type="TextureButton" parent="PatternContainer" unique_id=629967912]
+[node name="PipeFilter" type="TextureButton" parent="PatternContainer" unique_id=629967912]
 layout_mode = 2
 texture_normal = ExtResource("15_7b8mr")
 

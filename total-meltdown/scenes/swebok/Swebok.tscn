@@ -86,16 +86,15 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Swebok" type="CanvasLayer" unique_id=129603859]
+[node name="Swebok" type="CanvasLayer" unique_id=129603859 node_paths=PackedStringArray("catalog")]
 script = ExtResource("1_6evcd")
-open_position = Vector2(2015, 1007)
-hide_position = Vector2(5100, 1007)
+catalog = NodePath("Catalog")
 flip_page_right_SFX = ExtResource("2_k2pky")
 flip_page_left_SFX = ExtResource("3_0h8ia")
 metadata/_edit_vertical_guides_ = [576.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=617863607]
-position = Vector2(2007, 1007)
+position = Vector2(2007, 1050)
 scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_qhdxt")
 animation = &"open_book"
@@ -105,17 +104,79 @@ frame_progress = 1.0
 [node name="Catalog" parent="." unique_id=997869620 node_paths=PackedStringArray("swebok") instance=ExtResource("2_x7age")]
 swebok = NodePath("..")
 
-[node name="TutorialPage" parent="Catalog" index="0" unique_id=2104121597]
-offset_left = 1006.0
-offset_top = 175.40002
-offset_right = 1920.0
-offset_bottom = 1637.8
+[node name="HomeButton" parent="Catalog" index="0" unique_id=2142291592]
+offset_left = 720.0
+offset_top = 350.0
+offset_right = 909.0
+offset_bottom = 504.0
 
-[node name="PatternPage" parent="Catalog" index="1" unique_id=755935879]
-offset_left = 2065.0
-offset_top = 161.0
-offset_right = 2988.0
-offset_bottom = 1637.8
+[node name="AttributeContainer" parent="Catalog" index="1" unique_id=1003265711]
+offset_left = 1076.0
+offset_top = 18.0
+offset_right = 2008.0
+offset_bottom = 200.0
+
+[node name="FunctionalSuitability" parent="Catalog/AttributeContainer" index="0" unique_id=89549188]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 103.0
+offset_bottom = 184.0
+
+[node name="PerformanceEfficiency" parent="Catalog/AttributeContainer" index="1" unique_id=725553758]
+offset_left = 145.0
+offset_right = 245.0
+
+[node name="Compatibility" parent="Catalog/AttributeContainer" index="2" unique_id=1305877596]
+offset_left = 304.0
+offset_top = 2.0
+offset_right = 404.0
+offset_bottom = 184.0
+
+[node name="InteractionCapability" parent="Catalog/AttributeContainer" index="3" unique_id=1882485471]
+offset_left = 435.0
+offset_top = 4.0
+offset_right = 535.0
+offset_bottom = 186.0
+
+[node name="Reliability" parent="Catalog/AttributeContainer" index="4" unique_id=1617968800]
+offset_left = 577.0
+offset_top = 21.999996
+offset_right = 677.0
+offset_bottom = 204.0
+rotation = -0.12217305
+
+[node name="Security" parent="Catalog/AttributeContainer" index="5" unique_id=669971119]
+offset_left = 730.0
+offset_top = 14.999996
+offset_right = 830.0
+offset_bottom = 197.0
+rotation = 0.08726646
+
+[node name="Maintainability" parent="Catalog/AttributeContainer" index="6" unique_id=790957534]
+offset_left = 1034.0
+offset_top = 25.999987
+offset_right = 1134.0
+offset_bottom = 207.99998
+rotation = -0.12217305
+
+[node name="Flexibility" parent="Catalog/AttributeContainer" index="7" unique_id=1109382623]
+offset_left = 1178.0
+offset_top = 14.0
+offset_right = 1278.0
+offset_bottom = 196.0
+
+[node name="Safety" parent="Catalog/AttributeContainer" index="8" unique_id=1600110185]
+offset_left = 1295.0
+offset_top = 8.0
+offset_right = 1395.0
+offset_bottom = 190.0
+
+[node name="PatternContainer" parent="Catalog" index="2" unique_id=1925257790]
+offset_left = 3103.0
+offset_top = 267.0
+offset_right = 3313.0
+offset_bottom = 1302.0
+theme_override_constants/separation = 30
 
 [node name="ContentViewer" parent="." unique_id=474821504 node_paths=PackedStringArray("swebok") instance=ExtResource("3_wlni6")]
 swebok = NodePath("..")
@@ -180,23 +241,10 @@ texture_pressed = ExtResource("8_0h8ia")
 texture_hover = ExtResource("9_gmiyw")
 ignore_texture_size = true
 
-[node name="ReturnButton" type="TextureButton" parent="." unique_id=1488031083]
-offset_left = 835.0
-offset_top = 46.0
-offset_right = 1091.0001
-offset_bottom = 302.0
-rotation = -0.7853982
-scale = Vector2(0.7, 0.7)
-pivot_offset = Vector2(128, 128)
-texture_normal = ExtResource("7_k2pky")
-texture_pressed = ExtResource("8_0h8ia")
-texture_hover = ExtResource("9_gmiyw")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1170580997]
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
-[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
 
 [editable path="Catalog"]
 [editable path="ContentViewer"]

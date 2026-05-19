@@ -1,4 +1,5 @@
 {
+	"key": "InteractionCapability",
 	"order": 4,
 	"title": "Capacidade de Interação",
 	"image": "res://assets/sprites/attribute_icons/InteractionCapability.png",

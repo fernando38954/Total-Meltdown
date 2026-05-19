@@ -1,4 +1,5 @@
 {
+	"key": "Event",
 	"order": -5,
 	"title": "Eventos do Jogo",
 	"image": "res://assets/tutorial_images/Event.png",

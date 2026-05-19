@@ -2,7 +2,8 @@ extends Node
 
 const TUTORIAL_PAGE_DIR = "res://contents/tutorial_page/"
 
-var all_pages: Array = []
+var all_pages: Dictionary = {}
+var page_sequence: Array = []
 var creation_finished = false
 
 #region Load Data
@@ -29,15 +30,18 @@ func load_pages():
 				var error = json.parse(json_text)
 				if error == OK:
 					var data = json.data
+					var key = data.get("key", "Unknown")
 					var image = load(data.get("image", ""))
 					if !image:
 						push_error("Error: Unable to load image:", data.get("image", ""))
-					all_pages.append({
-						"file_name": file_name,
-						"order": data.get("order", "1024"),
+					all_pages[key] = {
 						"title": data.get("title", "Untitled"),
 						"image": image,
 						"description": data.get("description", ""),
+					}
+					page_sequence.append({
+						"order": data.get("order", "1024"),
+						"key": key
 					})
 				else:
 					creation_finished = true
@@ -46,7 +50,19 @@ func load_pages():
 				file.close()
 		file_name = dir.get_next()
 	
-	all_pages.sort_custom(func(a, b): return a.order < b.order)
+	page_sequence.sort_custom(func(a, b): return a.order < b.order)
 	creation_finished = true
 	print_debug("Number of tutorial pages loaded：", all_pages.size())
+#endregion
+
+#region Array Operation
+func get_page_by_key(key: String) -> Dictionary:
+	return all_pages.get(key, {})
+
+func get_non_attribute_tutorial_page_key() -> Array:
+	var page_keys: Array = []
+	for page in page_sequence:
+		if page.order < 0:
+			page_keys.append(page.key)
+	return page_keys
 #endregion
