@@ -17,6 +17,17 @@ var second_values: Array[float]
 	"Flexibility",
 	"Safety"
 ]
+@export var property_display_names: Array[String] = [
+	"Adequação Funcional",
+	"Eficiência de Desempenho",
+	"Compatibilidade",
+	"Capacidade de Interação",
+	"Confiabilidade",
+	"Segurança",
+	"Manutenibilidade",
+	"Flexibilidade",
+	"Segurança Operacional"
+]
 @export var lower_limit: float = 0.0
 @export var upper_limit: float = 10.0
 
@@ -37,10 +48,18 @@ var value_font_size = 25
 
 @export_category("Icon Settings")
 @export var icon_textures: Array[Texture2D]
+var icon_rects: Array[Rect2] = []
+
+# Tooltip Variables
+@export var tooltip_label: Label
+var current_hovered_icon_idx: int = -1
 
 func _init():
 	property_size = property_names.size()
 	reset_values(property_size)
+
+func _ready() -> void:
+	hide_tooltip()
 
 #region Value Setting
 func reset_values(array_size: int):
@@ -92,6 +111,7 @@ func _draw() -> void:
 	draw_background(center, radius, start_angle, label_size)
 	draw_data(center, radius, start_angle)
 	draw_icons(center, radius, start_angle, label_size)
+	setup_tooltip()
 
 
 func draw_background(center: Vector2, radius: float, start_angle: float, label_size: float) -> void:
@@ -147,30 +167,11 @@ func draw_data(center: Vector2, radius: float, start_angle: float) -> void:
 		for point in second_data_points:
 			draw_circle(point, 1.5, second_outline_color)
 
-
-func draw_labels(center: Vector2, radius: float, start_angle: float) -> void:
-	var step_angle = 2 * PI / property_size
-	var label_offset = 18
-	
-	for i in range(property_size):
-		var angle = start_angle + i * step_angle
-		var dir = Vector2(cos(angle), sin(angle))
-		var label_pos = center + dir * (radius + label_offset)
-		
-		var text = property_names[i]
-		var text_size = font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size)
-		var draw_pos = label_pos - text_size * 0.5
-		draw_string(font, draw_pos, text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, text_color)
-		
-		var value_text = "%.0f" % values[i]
-		var value_size = font.get_string_size(value_text, HORIZONTAL_ALIGNMENT_LEFT, -1, value_font_size)
-		var value_pos = label_pos + Vector2(0, text_size.y) - value_size * 0.5
-		draw_string(font, value_pos, value_text, HORIZONTAL_ALIGNMENT_LEFT, -1, value_font_size, Color.LIGHT_GRAY)
-
 func draw_icons(center: Vector2, radius: float, start_angle: float, icon_size: float) -> void:
 	var step_angle = 2 * PI / property_size
 	var size_vector = Vector2.ONE * icon_size
 	var label_offset = icon_size * 2 / 3
+	icon_rects.resize(property_size)
 	
 	for i in range(property_size):
 		if i >= icon_textures.size() or icon_textures[i] == null:
@@ -179,8 +180,56 @@ func draw_icons(center: Vector2, radius: float, start_angle: float, icon_size: f
 		var angle = start_angle + i * step_angle
 		var dir = Vector2(cos(angle), sin(angle))
 		var icon_center = center + dir * (radius + label_offset)
-		
 		var half_size = size_vector * 0.5
 		var rect = Rect2(icon_center - half_size, size_vector)
 		draw_texture_rect(icon_textures[i], rect, false)
+		icon_rects[i] = rect
+#endregion
+
+#region Mouse Detection & Tooltip
+func setup_tooltip():
+	var tooltip_font_size = clamp(min(size.x, size.y) * 0.05, 16.0, 80.0)
+	tooltip_label.add_theme_font_size_override("font_size", int(tooltip_font_size))
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		var new_hovered_icon_idx = get_hovered_icon_index()
+		
+		if new_hovered_icon_idx != current_hovered_icon_idx:
+			if current_hovered_icon_idx != -1:
+				hide_tooltip()
+			if new_hovered_icon_idx != -1:
+				update_tooltip_content(new_hovered_icon_idx)
+				update_tooltip_position(new_hovered_icon_idx)
+				tooltip_label.visible = true
+			current_hovered_icon_idx = new_hovered_icon_idx
+		elif new_hovered_icon_idx != -1:
+			update_tooltip_position(new_hovered_icon_idx)
+
+func get_hovered_icon_index() -> int:
+	for i in range(icon_rects.size()):
+		if icon_rects[i].has_point(get_local_mouse_position()):
+			return i
+	return -1
+
+func update_tooltip_content(idx: int) -> void:
+	if idx < 0 or idx >= property_display_names.size() or idx >= values.size():
+		return
+	
+	var attr_name = property_display_names[idx]
+	var attr_value = values[idx]
+	tooltip_label.text = "%s\n%.1f" % [attr_name, attr_value]
+	tooltip_label.reset_size()
+
+func update_tooltip_position(idx: int) -> void:
+	var offset = icon_rects[idx].size
+	var new_pos = icon_rects[idx].position + offset
+	var tooltip_size = tooltip_label.get_minimum_size()
+	new_pos.x = clamp(new_pos.x, 0, size.x - tooltip_size.x)
+	new_pos.y = clamp(new_pos.y, 0, size.y - tooltip_size.y)
+	tooltip_label.position = new_pos
+
+func hide_tooltip() -> void:
+	tooltip_label.visible = false
+	current_hovered_icon_idx = -1
 #endregion

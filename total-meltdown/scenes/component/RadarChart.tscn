@@ -11,10 +11,30 @@
 [ext_resource type="Texture2D" uid="uid://b1wea2tuliju" path="res://assets/sprites/attribute_icons/Flexibility.png" id="9_kxq7d"]
 [ext_resource type="Texture2D" uid="uid://kpdfkn4quiwn" path="res://assets/sprites/attribute_icons/Safety.png" id="10_50gfi"]
 
-[node name="RadarChart" type="Control" unique_id=1384305498]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6wgy"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="RadarChart" type="Control" unique_id=1384305498 node_paths=PackedStringArray("tooltip_label")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 400.0
 offset_bottom = 400.0
 script = ExtResource("1_w8ajf")
 icon_textures = Array[Texture2D]([ExtResource("2_vc8ff"), ExtResource("3_rxcum"), ExtResource("4_kvtco"), ExtResource("5_lkqy0"), ExtResource("6_j7v4h"), ExtResource("7_44ybw"), ExtResource("8_8fsnt"), ExtResource("9_kxq7d"), ExtResource("10_50gfi")])
+tooltip_label = NodePath("RadarChartTooltip")
+
+[node name="RadarChartTooltip" type="Label" parent="." unique_id=1366142267]
+z_index = 2
+layout_mode = 0
+offset_right = 157.0
+offset_bottom = 53.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_h6wgy")
+text = "Funtional ABC
+16"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_exited" from="." to="." method="hide_tooltip"]

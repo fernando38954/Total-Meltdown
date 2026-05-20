@@ -4,7 +4,7 @@ class_name JobFairEventButton
 var recruitable_developers_list: Array = []
 
 func initialize_data():
-	recruitable_developers_list = DeveloperManager.prepare_random_developers(1)
+	recruitable_developers_list = DeveloperManager.prepare_random_developers()
 
 func _on_pressed() -> void:
 	map_screen.current_active_event_button = self

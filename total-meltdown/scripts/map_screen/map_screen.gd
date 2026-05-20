@@ -45,7 +45,7 @@ func initialize_parameters():
 	temp_button.queue_free()
 
 func update_money_label():
-	money_label.text = "[color=yellow][b]%.2f[/b][/color]" % GlobalResource.money
+	money_label.text = "[b]%.2f[/b]" % GlobalResource.money
 
 #region Event Button
 func create_event_button():
