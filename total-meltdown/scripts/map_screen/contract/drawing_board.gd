@@ -6,8 +6,6 @@ class_name DrawingBoard
 @export_category("Radar Chart")
 @export var radar_chart: RadarChart
 @export var font = ThemeDB.fallback_font
-@export var font_size = 30
-@export var value_font_size = 25
 var final_attribute: Dictionary = {}
 
 @export_category("Option Box")
@@ -18,6 +16,7 @@ var final_attribute: Dictionary = {}
 @export var submit_button: Button
 
 func reset_content():
+	radar_chart.reset_values()
 	pattern_box.reset_box_content()
 	developer_boxes.reset_boxes_data()
 	submit_button.disabled = true
@@ -26,7 +25,7 @@ func update_radar_chart():
 	var base_attribute = pattern_box.get_attribute_data()
 	var developer_attribute = developer_boxes.get_attribute_data()
 	final_attribute = multiply_dicts(base_attribute, developer_attribute)
-	radar_chart.set_label(font, font_size, value_font_size)
+	radar_chart.set_label_font(font)
 	radar_chart.set_attributes(base_attribute, final_attribute)
 	submit_button.set_disabled(final_attribute.is_empty())
 

@@ -43,8 +43,6 @@ var second_values: Array[float]
 
 # Label Settings
 var font = ThemeDB.fallback_font
-var font_size = 30
-var value_font_size = 25
 
 @export_category("Icon Settings")
 @export var icon_textures: Array[Texture2D]
@@ -54,20 +52,31 @@ var icon_rects: Array[Rect2] = []
 @export var tooltip_label: Label
 var current_hovered_icon_idx: int = -1
 
+@export_category("Animation Settings")
+var tween: Tween
+var start_values: Array[float] = []
+var start_second_values: Array[float] = []
+var target_values: Array[float] = []
+var target_second_values: Array[float] = []
+@export var animation_duration: float = 0.5
+
 func _init():
 	property_size = property_names.size()
-	reset_values(property_size)
+	reset_values()
 
 func _ready() -> void:
 	hide_tooltip()
 
 #region Value Setting
-func reset_values(array_size: int):
+func reset_values(array_size: int = property_size):
 	values.resize(array_size)
+	values.fill(lower_limit)
 	second_values.resize(array_size)
-	for i in range(array_size):
-		values[i] = lower_limit
-		second_values[i] = lower_limit
+	second_values.fill(lower_limit)
+	target_values.resize(array_size)
+	target_values.fill(lower_limit)
+	target_second_values.resize(array_size)
+	target_second_values.fill(lower_limit)
 
 func set_attributes(attr_dict: Dictionary, second_attr_dict: Dictionary = {}) -> void:
 	for idx in range(property_size):
@@ -75,26 +84,54 @@ func set_attributes(attr_dict: Dictionary, second_attr_dict: Dictionary = {}) ->
 		if attr_dict.has(key):
 			var value = attr_dict[key]
 			if typeof(value) in [TYPE_FLOAT, TYPE_INT]:
-				values[idx] = clamp(float(value), lower_limit, upper_limit)
+				target_values[idx] = clamp(float(value), lower_limit, upper_limit)
 			else:
-				values[idx] = lower_limit
+				target_values[idx] = lower_limit
 		else:
-			values[idx] = lower_limit
+			target_values[idx] = lower_limit
 		
 		if second_attr_dict.has(key):
 			var value = second_attr_dict[key]
 			if typeof(value) in [TYPE_FLOAT, TYPE_INT]:
-				second_values[idx] = clamp(float(value), lower_limit, upper_limit)
+				target_second_values[idx] = clamp(float(value), lower_limit, upper_limit)
 			else:
-				second_values[idx] = lower_limit
+				target_second_values[idx] = lower_limit
 		else:
-			second_values[idx] = lower_limit
+			target_second_values[idx] = lower_limit
+	start_animation()
+
+func set_label_font(p_font):
+	self.font = p_font
+#endregion
+
+#region Animation
+func stop_animation() -> void:
+	if tween and tween.is_valid():
+		tween.kill()
+
+func start_animation() -> void:
+	stop_animation()
+	
+	start_values = values.duplicate()
+	start_second_values = second_values.duplicate()
+	
+	tween = create_tween().set_ease(Tween.EASE_IN_OUT)
+	tween.tween_method(update_animation, 0.0, 1.0, animation_duration)
+	tween.finished.connect(on_animation_finished)
+
+func update_animation(progress: float) -> void:
+	for idx in range(property_size):
+		values[idx] = lerp(start_values[idx], target_values[idx], progress)
+		second_values[idx] = lerp(start_second_values[idx], target_second_values[idx], progress)
 	queue_redraw()
 
-func set_label(p_font, p_font_size: int, p_value_font_size: int):
-	self.font = p_font
-	self.font_size = p_font_size
-	self.value_font_size = p_value_font_size
+func on_animation_finished() -> void:
+	values = target_values.duplicate()
+	second_values = target_second_values.duplicate()
+	queue_redraw()
+
+func _exit_tree() -> void:
+	stop_animation()
 #endregion
 
 #region Draw
@@ -217,7 +254,7 @@ func update_tooltip_content(idx: int) -> void:
 		return
 	
 	var attr_name = property_display_names[idx]
-	var attr_value = values[idx]
+	var attr_value = target_values[idx] if target_second_values[idx] == lower_limit else target_second_values[idx]
 	tooltip_label.text = "%s\n%.1f" % [attr_name, attr_value]
 	tooltip_label.reset_size()
 

@@ -13,8 +13,6 @@ class_name ContractDetailCard
 
 @export_category("Label Settings")
 @export var font = ThemeDB.fallback_font
-@export var font_size = 30
-@export var value_font_size = 25
 
 var current_contract_data = null
 
@@ -40,7 +38,7 @@ func set_content(item_key: Variant):
 	
 	footnote.text = item_data.quest_data.footnote
 	
-	radar_chart.set_label(font, font_size, value_font_size)
+	radar_chart.set_label_font(font)
 	radar_chart.set_attributes(item_data.total_attribute)
 	
 	progress_bar.value = item_data.progress

@@ -35,7 +35,7 @@ func set_content(quest_key: String):
 #region Panel Action
 func move_panel_content(target_drawing_board_pos: Vector2, target_post_it_scale: Vector2, target_post_it_alpha: float, target_quest_panel_pos: Vector2, duration: float = 1.0):
 	if tween and tween.is_running():
-		return
+		tween.kill()
 	
 	tween = create_tween().set_parallel(true)
 	tween.tween_property(drawing_board, "position", target_drawing_board_pos, duration)

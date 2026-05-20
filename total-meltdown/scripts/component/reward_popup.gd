@@ -7,8 +7,6 @@ class_name RewardPopup
 
 @export_category("Label Settings")
 @export var font = ThemeDB.fallback_font
-@export var font_size = 30
-@export var value_font_size = 25
 
 var open_scale = Vector2(1, 1)
 var hide_scale = Vector2(0, 0)
@@ -34,7 +32,7 @@ func _ready() -> void:
 	open_panel()
 
 func show_reward(contract_data: ContractData, final_profit: float) -> void:
-	radar_chart.set_label(font, font_size, value_font_size)
+	radar_chart.set_label_font(font)
 	radar_chart.set_attributes(contract_data.quest_data.attribute, contract_data.total_attribute)
 	var reward_text = generate_reward_description(contract_data, final_profit)
 	description.text = reward_text
