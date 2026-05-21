@@ -16,9 +16,9 @@ class_name PatternDetailCard
 func set_content(item_key: Variant):
 	var item_data =  PatternManager.get_pattern_by_key(item_key)
 	icon.texture = item_data.icon
-	pattern_name.text = "%s" % [item_data.title]
+	pattern_name.text = item_data.title
 	complexity_level.get_children()[item_data.complexity_level - 1].texture = level_indicator
 	cost_level.get_children()[item_data.cost_level - 1].texture = level_indicator
-	description.text = "%s" % [item_data.description]
+	description.text = item_data.description
 	radar_chart.set_label_font(font)
 	radar_chart.set_attributes(item_data.attribute)

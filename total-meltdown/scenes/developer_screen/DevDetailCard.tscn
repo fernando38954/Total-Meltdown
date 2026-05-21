@@ -13,15 +13,13 @@ offset_bottom = 1515.0
 pivot_offset = Vector2(576, 324)
 texture = ExtResource("1_ekraa")
 script = ExtResource("1_q7v8o")
-font_size = 18
-value_font_size = 12
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]
 position = Vector2(336, 398.00003)
 scale = Vector2(0.60111123, 0.60111123)
 texture = ExtResource("2_q7v8o")
 
-[node name="DeveloperName" type="RichTextLabel" parent="." unique_id=1824383902]
+[node name="Name" type="RichTextLabel" parent="." unique_id=1824383902]
 layout_mode = 0
 offset_left = 687.0
 offset_top = 185.0
@@ -33,13 +31,24 @@ bbcode_enabled = true
 text = "Name"
 vertical_alignment = 1
 
+[node name="Age" type="RichTextLabel" parent="." unique_id=1335363139]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 424.0
+offset_right = 1248.0
+offset_bottom = 523.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Age"
+
 [node name="RadarChart" parent="." unique_id=1384305498 instance=ExtResource("3_1dkyr")]
 layout_mode = 0
 offset_left = 1343.9999
 offset_top = 259.0381
 offset_right = 2346.0
 offset_bottom = 1274.6091
-upper_limit = 2.0
+upper_limit = 5.0
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=626995351]
 layout_mode = 0

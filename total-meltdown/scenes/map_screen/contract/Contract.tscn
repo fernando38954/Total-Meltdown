@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bo1o2leu06uk0" path="res://placeholder/WhiteSquare.png" id="4_rj8at"]
 [ext_resource type="Script" uid="uid://d03h22mxa4ts1" path="res://scripts/map_screen/contract/option_box_set.gd" id="5_2ney3"]
 [ext_resource type="Script" uid="uid://b4d6dwxqyelhh" path="res://scripts/map_screen/contract/post_it.gd" id="5_hk8vl"]
-[ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/sprites/contract_icons/Dog.png" id="5_jusyd"]
 [ext_resource type="Texture2D" uid="uid://crcl2xfowgefm" path="res://assets/sprites/map_screen/event/contract/FoldLevelIndicatorFull.png" id="5_nj0th"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="6_hk8vl"]
 [ext_resource type="Texture2D" uid="uid://cnjl4aalnlheb" path="res://assets/sprites/map_screen/event/contract/SubmitNormal.png" id="7_w07f0"]
@@ -27,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b8o2vs8mulug" path="res://assets/sprites/map_screen/event/contract/WorkEmptyProgressBar.png" id="15_optlt"]
 [ext_resource type="Texture2D" uid="uid://0klp4nxllwi3" path="res://assets/sprites/map_screen/event/contract/WorkFullInProgressBar.png" id="16_wd47f"]
 [ext_resource type="Script" uid="uid://drr70653jfqhi" path="res://scripts/map_screen/contract/work_progress_bar.gd" id="17_wd47f"]
+[ext_resource type="Texture2D" uid="uid://y53of8b6rawf" path="res://assets/sprites/quest_icons/CityHall.png" id="22_wd47f"]
 [ext_resource type="Texture2D" uid="uid://c3mrx0gn5l20u" path="res://assets/sprites/map_screen/event/contract/OptionPanel.png" id="25_t462h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bskk8"]
@@ -265,7 +265,7 @@ horizontal_alignment = 1
 [node name="Icon" type="Sprite2D" parent="QuestPanel" unique_id=287756834]
 position = Vector2(450, 251)
 scale = Vector2(0.5, 0.384)
-texture = ExtResource("5_jusyd")
+texture = ExtResource("22_wd47f")
 
 [node name="Description" type="RichTextLabel" parent="QuestPanel" unique_id=2041493134]
 layout_mode = 0

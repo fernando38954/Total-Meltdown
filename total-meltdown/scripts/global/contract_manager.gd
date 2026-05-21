@@ -57,7 +57,8 @@ func update_contracts() -> void:
 		get_contract_by_key(contract).update_quest()
 
 func give_reward(target_contrat_data: ContractData):
-	var profit = target_contrat_data.base_money_reward * target_contrat_data.calculate_compatibility()
+	var profit = target_contrat_data.base_reward * target_contrat_data.calculate_reward_multiplier()
+	profit = round(profit)
 	GlobalResource.change_money(profit)
 	var reward_popup = REWARD_POPUP_SCENE.instantiate()
 	get_tree().root.add_child(reward_popup)

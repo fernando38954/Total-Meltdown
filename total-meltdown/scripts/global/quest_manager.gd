@@ -12,7 +12,40 @@ var creation_finished = false
 #region Load Data
 func _ready():
 	load_quests()
+	process_attributes()
 	GlobalSignal.game_start.connect(initialize)
+
+func calculate_base_reward(difficult: String) -> int:
+	match difficult.to_lower():
+		"easy":
+			return 80
+		"medium":
+			return 100
+		"hard":
+			return 120
+		_:
+			push_error("Unknown difficulty: ", difficult)
+			return 0
+
+func translate_attribute_level(level: String):
+	var numeric_value: float = 0.0
+	match level.to_lower():
+		"irrelevant":
+			numeric_value = randf_range(0.0, 1.0)
+		"low":
+			numeric_value = randf_range(2.0, 4.0)
+		"medium":
+			numeric_value = randf_range(5.0, 6.0)
+		"high":
+			numeric_value = randf_range(8.0, 10.0)
+		_:
+			push_error("Unknown attribute level: ", level)
+	return round(numeric_value * 10) / 10.0
+
+func process_attributes():
+	for quest in all_quests.values():
+		for attribute_idx in quest["attribute"]:
+			quest["attribute"][attribute_idx] = translate_attribute_level(quest["attribute"][attribute_idx])
 
 func load_quests():
 	all_quests.clear()
@@ -40,13 +73,17 @@ func load_quests():
 						push_error("Error: Unable to load image:", data.get("icon", ""))
 					all_quests[key] = {
 						"key": key,
+						"quarter": data.get("quarter", -1),
 						"title": data.get("title", "Untitled"),
 						"icon": icon,
+						"difficult": data.get("difficult", "Undefined"),
+						"base_reward": calculate_base_reward(data.get("difficult", "Undefined")),
 						"attribute": data.get("attribute", {}),
 						"description": data.get("description", {}),
 						"bullet_point": data.get("bullet_point", {}),
 						"footnote": data.get("footnote", ""),
 						"requirements": data.get("requirements", {}),
+						"bug": data.get("bug", {}),
 					}
 				else:
 					creation_finished = true

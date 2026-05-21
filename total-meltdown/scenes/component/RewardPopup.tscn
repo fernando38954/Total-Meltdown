@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bsf44ou2kgnl1" path="res://scripts/component/reward_popup.gd" id="1_33lh1"]
 [ext_resource type="Texture2D" uid="uid://dbq48nv4moeed" path="res://assets/sprites/component/reward_popup/Report.png" id="2_s7bql"]
+[ext_resource type="Texture2D" uid="uid://bqkswdwljbl3v" path="res://assets/sprites/component/SuccessMark.png" id="2_utrua"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="3_7mqrl"]
-[ext_resource type="Texture2D" uid="uid://b237coyyg38gg" path="res://assets/sprites/contract_icons/Coffee.png" id="3_samdt"]
+[ext_resource type="Texture2D" uid="uid://qm8tt7f7xkix" path="res://assets/sprites/component/FailMark.png" id="3_dfu46"]
+[ext_resource type="Texture2D" uid="uid://y53of8b6rawf" path="res://assets/sprites/quest_icons/CityHall.png" id="3_s7bql"]
 [ext_resource type="Texture2D" uid="uid://61vw6c6lub2" path="res://assets/sprites/developer_portrait/portrait_3.png" id="5_utrua"]
 [ext_resource type="Texture2D" uid="uid://blrudywch2b2l" path="res://assets/sprites/component/reward_popup/Recipe.png" id="6_dfu46"]
 
 [node name="RewardPopup" type="CanvasLayer" unique_id=1588903239]
 script = ExtResource("1_33lh1")
+success_mark = ExtResource("2_utrua")
+fail_mark = ExtResource("3_dfu46")
 
 [node name="ClickBlocker" type="ColorRect" parent="." unique_id=1029015259]
 anchors_preset = 15
@@ -65,7 +69,7 @@ offset_left = 1045.0
 offset_top = 260.0
 offset_right = 1334.0
 offset_bottom = 549.0
-texture = ExtResource("3_samdt")
+texture = ExtResource("3_s7bql")
 expand_mode = 1
 
 [node name="RadarChart" parent="Report" unique_id=1384305498 instance=ExtResource("3_7mqrl")]
@@ -103,6 +107,27 @@ layout_mode = 2
 texture = ExtResource("5_utrua")
 expand_mode = 1
 
+[node name="BonusMark" type="TextureRect" parent="Report" unique_id=972209859]
+layout_mode = 0
+offset_left = 1208.0
+offset_top = 933.0
+offset_right = 1314.0
+offset_bottom = 1039.0
+texture = ExtResource("2_utrua")
+expand_mode = 1
+
+[node name="PatternDemand" type="RichTextLabel" parent="Report" unique_id=311914054]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 1022.0
+offset_right = 1141.0
+offset_bottom = 1102.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Biggest Pattern Name"
+horizontal_alignment = 1
+
 [node name="Recipe" type="TextureRect" parent="." unique_id=1065103006]
 offset_left = 2464.0
 offset_top = 1415.0
@@ -120,10 +145,12 @@ offset_right = 539.329
 offset_bottom = 502.95013
 rotation = 0.06981317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "Base Profit: 1000
-Multiplier: 0.37
+Attribute compliance: 0.98
+Pattern Bonus: 0.2
+Final Multiplier: 0.37
 Final Profit: 370"
 horizontal_alignment = 1
 vertical_alignment = 1

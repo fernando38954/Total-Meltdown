@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfhbwojr7rusy" path="res://assets/sprites/map_screen/event/contract_panel/ContractEmptyBar.png" id="1_yyvn3"]
 [ext_resource type="Texture2D" uid="uid://dtbatnibdp4rf" path="res://assets/sprites/map_screen/event/contract_panel/ContractFullBar.png" id="2_jq838"]
 [ext_resource type="Script" uid="uid://bws8wnlmntkmb" path="res://scripts/map_screen/contract_panel/contract_progress_bar.gd" id="3_bekig"]
-[ext_resource type="Texture2D" uid="uid://b237coyyg38gg" path="res://assets/sprites/contract_icons/Coffee.png" id="4_tm156"]
+[ext_resource type="Texture2D" uid="uid://y53of8b6rawf" path="res://assets/sprites/quest_icons/CityHall.png" id="4_jq838"]
 [ext_resource type="Texture2D" uid="uid://bqkswdwljbl3v" path="res://assets/sprites/component/SuccessMark.png" id="5_jq838"]
 
 [node name="ContractProgressBar" type="TextureProgressBar" unique_id=226074484]
@@ -22,7 +22,7 @@ offset_right = 512.0
 offset_bottom = 570.0
 scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(256, 256)
-texture = ExtResource("4_tm156")
+texture = ExtResource("4_jq838")
 expand_mode = 1
 
 [node name="ClaimableMark" type="TextureRect" parent="." unique_id=1911754381]

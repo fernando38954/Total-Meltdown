@@ -4,7 +4,7 @@ var game_timer: Timer
 var timer_delta_time: float = 1.0
 
 # Player Status
-var money: float = 0
+var money: int = 0
 
 func initialize():
 	money = 50

@@ -58,7 +58,7 @@ offset_top = 461.0
 offset_right = 1159.3232
 offset_bottom = 1473.0
 mouse_filter = 1
-upper_limit = 2.0
+upper_limit = 5.0
 
 [node name="DetailButton" type="TextureButton" parent="." unique_id=2091485285]
 layout_mode = 0

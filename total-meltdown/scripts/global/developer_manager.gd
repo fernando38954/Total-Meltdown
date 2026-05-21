@@ -43,6 +43,7 @@ func load_developers():
 					all_developers[key] = {
 						"key": key,
 						"name": data.get("name", "Unknown"),
+						"age": int(data.get("age", 128)),
 						"portrait": portrait,
 						"cost": data.get("cost", 0),
 						"attribute": data.get("attribute", {}),
