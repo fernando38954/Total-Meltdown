@@ -7,7 +7,7 @@ var stored_item_key = null
 
 func set_content(item_key: Variant) -> void:
 	var item_data = DeveloperManager.get_developer_by_key(item_key)
-	developer_name.text = "[b]%s[/b]" % [item_data.name]
+	developer_name.text = "%s" % [item_data.name]
 	portrait.texture = item_data.portrait
 	stored_item_key = item_key
 

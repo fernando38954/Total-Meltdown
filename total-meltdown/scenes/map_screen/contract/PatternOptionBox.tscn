@@ -1,36 +1,42 @@
 [gd_scene format=3 uid="uid://b3bukuv2wbe4u"]
 
-[ext_resource type="Texture2D" uid="uid://byr0iwoj0htr4" path="res://placeholder/white_square_512.png" id="1_c5wgc"]
+[ext_resource type="Texture2D" uid="uid://bvqo562mjxv71" path="res://assets/sprites/map_screen/event/contract/BoxNormal.png" id="1_c5wgc"]
+[ext_resource type="Texture2D" uid="uid://docyurtsl7f61" path="res://assets/sprites/map_screen/event/contract/BoxHover.png" id="2_w6d71"]
 [ext_resource type="Script" uid="uid://bvf0xs3mqmcx0" path="res://scripts/map_screen/contract/option_box.gd" id="2_wr6js"]
+[ext_resource type="Texture2D" uid="uid://dcdnocfly16ac" path="res://assets/sprites/pattern_icons/ClientServer.png" id="4_u3m3d"]
+[ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/sprites/developer_portrait/portrait_1.png" id="5_ktb1a"]
 
-[node name="PatternOptionBox" type="TextureRect" unique_id=2142991914]
-self_modulate = Color(0, 0, 0, 0.23137255)
+[node name="PatternOptionBox" type="TextureButton" unique_id=720207258]
 custom_minimum_size = Vector2(512, 512)
 offset_right = 512.0
 offset_bottom = 512.0
-mouse_filter = 0
-texture = ExtResource("1_c5wgc")
+button_mask = 3
+texture_normal = ExtResource("1_c5wgc")
+texture_hover = ExtResource("2_w6d71")
 script = ExtResource("2_wr6js")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1354965367]
 position = Vector2(256, 256)
 scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_u3m3d")
 region_rect = Rect2(2, 0, 725, 725)
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=2125257332]
-position = Vector2(255.00002, 189.00002)
-scale = Vector2(0.4, 0.4)
+position = Vector2(248.50002, 208.50002)
+scale = Vector2(0.44333333, 0.44333333)
+texture = ExtResource("5_ktb1a")
 region_rect = Rect2(2, 0, 725, 725)
 
-[node name="DeveloperName" type="RichTextLabel" parent="." unique_id=1331408966]
+[node name="DeveloperName" type="RichTextLabel" parent="." unique_id=2062677328]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 399.0
-offset_right = 510.0
-offset_bottom = 498.0
+offset_left = 11.0
+offset_top = 420.0
+offset_right = 498.67123
+offset_bottom = 499.0
 mouse_filter = 2
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
 theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
-text = "Name"
+text = "Biggest Name Ever"
 horizontal_alignment = 1
+vertical_alignment = 1

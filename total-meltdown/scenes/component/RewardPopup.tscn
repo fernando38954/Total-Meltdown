@@ -1,70 +1,14 @@
 [gd_scene format=3 uid="uid://pmeorxyc53vn"]
 
 [ext_resource type="Script" uid="uid://bsf44ou2kgnl1" path="res://scripts/component/reward_popup.gd" id="1_33lh1"]
+[ext_resource type="Texture2D" uid="uid://dbq48nv4moeed" path="res://assets/sprites/component/reward_popup/Report.png" id="2_s7bql"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="3_7mqrl"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33lh1"]
+[ext_resource type="Texture2D" uid="uid://b237coyyg38gg" path="res://assets/sprites/contract_icons/Coffee.png" id="3_samdt"]
+[ext_resource type="Texture2D" uid="uid://61vw6c6lub2" path="res://assets/sprites/developer_portrait/portrait_3.png" id="5_utrua"]
+[ext_resource type="Texture2D" uid="uid://blrudywch2b2l" path="res://assets/sprites/component/reward_popup/Recipe.png" id="6_dfu46"]
 
 [node name="RewardPopup" type="CanvasLayer" unique_id=1588903239]
 script = ExtResource("1_33lh1")
-
-[node name="Popup" type="Panel" parent="." unique_id=968011549]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -650.0
-offset_right = 500.0
-offset_bottom = 650.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(500, 650)
-theme_override_styles/panel = SubResource("StyleBoxFlat_33lh1")
-
-[node name="RewardLabel" type="RichTextLabel" parent="Popup" unique_id=1869404710]
-layout_mode = 0
-offset_right = 997.0
-offset_bottom = 165.0
-theme_override_font_sizes/normal_font_size = 120
-theme_override_font_sizes/bold_font_size = 120
-theme_override_font_sizes/bold_italics_font_size = 120
-theme_override_font_sizes/italics_font_size = 120
-theme_override_font_sizes/mono_font_size = 120
-bbcode_enabled = true
-text = "Lucro"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RadarChart" parent="Popup" unique_id=1384305498 instance=ExtResource("3_7mqrl")]
-layout_mode = 0
-offset_left = 139.0
-offset_top = 182.0
-offset_right = 872.0
-offset_bottom = 915.0
-
-[node name="Description" type="RichTextLabel" parent="Popup" unique_id=1856748988]
-layout_mode = 0
-offset_top = 944.0
-offset_right = 988.0
-offset_bottom = 1097.0
-theme_override_font_sizes/normal_font_size = 45
-bbcode_enabled = true
-text = "Base Profit: 1000 | Multiplier: 0.37
-[color=yellow]Final Profit: 370[/color]"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ConfirmButton" type="Button" parent="Popup" unique_id=1758196319]
-layout_mode = 0
-offset_left = 263.0
-offset_top = 1128.0
-offset_right = 760.0
-offset_bottom = 1265.0
-theme_override_font_sizes/font_size = 70
-text = "Confirmar"
-clip_text = true
 
 [node name="ClickBlocker" type="ColorRect" parent="." unique_id=1029015259]
 anchors_preset = 15
@@ -72,7 +16,116 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+color = Color(0, 0, 0, 0.28235295)
 
-[connection signal="pressed" from="Popup/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[node name="Report" type="TextureRect" parent="." unique_id=1313995159]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -714.0
+offset_top = -939.0
+offset_right = 759.0
+offset_bottom = 891.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(736, 915)
+texture = ExtResource("2_s7bql")
+expand_mode = 1
+
+[node name="QuestName" type="RichTextLabel" parent="Report" unique_id=1869404710]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 186.0
+offset_right = 1020.0
+offset_bottom = 305.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Biggest name ever"
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Report" unique_id=1136725796]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 357.0
+offset_right = 990.0
+offset_bottom = 560.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+bbcode_enabled = true
+text = "Description"
+
+[node name="Icon" type="TextureRect" parent="Report" unique_id=1211038875]
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 260.0
+offset_right = 1334.0
+offset_bottom = 549.0
+texture = ExtResource("3_samdt")
+expand_mode = 1
+
+[node name="RadarChart" parent="Report" unique_id=1384305498 instance=ExtResource("3_7mqrl")]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 1155.0
+offset_right = 1018.0
+offset_bottom = 1750.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Report" unique_id=1641546291]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 608.0
+offset_right = 1340.0
+offset_bottom = 908.0
+
+[node name="DeveloperContainer" type="HBoxContainer" parent="Report/AspectRatioContainer" unique_id=584783336]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Report/AspectRatioContainer/DeveloperContainer" unique_id=819355488]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture = ExtResource("5_utrua")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Report/AspectRatioContainer/DeveloperContainer" unique_id=1288939115]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture = ExtResource("5_utrua")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Report/AspectRatioContainer/DeveloperContainer" unique_id=500883055]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture = ExtResource("5_utrua")
+expand_mode = 1
+
+[node name="Recipe" type="TextureRect" parent="." unique_id=1065103006]
+offset_left = 2464.0
+offset_top = 1415.0
+offset_right = 3018.0
+offset_bottom = 2087.0
+pivot_offset = Vector2(277, 336)
+texture = ExtResource("6_dfu46")
+expand_mode = 1
+
+[node name="Description" type="RichTextLabel" parent="Recipe" unique_id=1856748988]
+layout_mode = 0
+offset_left = 57.13975
+offset_top = 148.95012
+offset_right = 539.329
+offset_bottom = 502.95013
+rotation = 0.06981317
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Base Profit: 1000
+Multiplier: 0.37
+Final Profit: 370"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]

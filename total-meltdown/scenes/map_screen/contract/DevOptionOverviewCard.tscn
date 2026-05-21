@@ -1,34 +1,38 @@
 [gd_scene format=3 uid="uid://3vsra0gkbynx"]
 
-[ext_resource type="Texture2D" uid="uid://byr0iwoj0htr4" path="res://placeholder/white_square_512.png" id="1_wdfvw"]
+[ext_resource type="Texture2D" uid="uid://bvqo562mjxv71" path="res://assets/sprites/map_screen/event/contract/BoxNormal.png" id="1_wdfvw"]
+[ext_resource type="Texture2D" uid="uid://docyurtsl7f61" path="res://assets/sprites/map_screen/event/contract/BoxHover.png" id="2_jhe0y"]
 [ext_resource type="Script" uid="uid://bgiv44wfpmgyv" path="res://scripts/map_screen/contract/dev_option_overview_card.gd" id="2_jmn4g"]
 [ext_resource type="Texture2D" uid="uid://dwadpayxxgj3b" path="res://assets/sprites/developer_portrait/portrait_1.png" id="3_hgjex"]
 
 [node name="DevOptionOverviewCard" type="TextureButton" unique_id=1138141655]
-self_modulate = Color(0, 0, 0, 0.23137255)
-offset_right = 512.0
-offset_bottom = 512.0
-pivot_offset = Vector2(256, 256)
+custom_minimum_size = Vector2(384, 384)
+offset_right = 384.0
+offset_bottom = 384.0
 texture_normal = ExtResource("1_wdfvw")
+texture_hover = ExtResource("2_jhe0y")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("2_jmn4g")
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1710040631]
-position = Vector2(255.00002, 189.00002)
-scale = Vector2(0.4, 0.4)
+position = Vector2(193.00002, 155.00002)
+scale = Vector2(0.32666665, 0.32666665)
 texture = ExtResource("3_hgjex")
 region_rect = Rect2(2, 0, 725, 725)
 
 [node name="DeveloperName" type="RichTextLabel" parent="." unique_id=1691064886]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 399.0
-offset_right = 510.0
-offset_bottom = 498.0
+offset_left = 14.0
+offset_top = 302.0
+offset_right = 370.0
+offset_bottom = 375.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "Name"
+text = "Biggest Name Ever"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

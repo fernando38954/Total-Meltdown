@@ -25,9 +25,6 @@ func set_interval(seconds: float):
 	timer_delta_time = seconds
 	game_timer.wait_time = timer_delta_time
 
-func contract_done():
-	GlobalSignal.emit_signal("contract_value_changed")
-
 #region Money System
 func change_money(value: float):
 	money += value

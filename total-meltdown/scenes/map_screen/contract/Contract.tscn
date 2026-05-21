@@ -1,26 +1,36 @@
 [gd_scene format=3 uid="uid://c1hn7mnqjje01"]
 
 [ext_resource type="Script" uid="uid://c7py0sc7jvypc" path="res://scripts/map_screen/contract/contract.gd" id="1_s0427"]
-[ext_resource type="Texture2D" uid="uid://cjq7gm75x871k" path="res://assets/sprites/map_screen/event/DrawingBoard.png" id="2_xc3rv"]
-[ext_resource type="Texture2D" uid="uid://cg38eyq2aqff7" path="res://assets/sprites/map_screen/event/Post-it.png" id="3_3e3mo"]
+[ext_resource type="Texture2D" uid="uid://cjq7gm75x871k" path="res://assets/sprites/map_screen/event/contract/DrawingBoard.png" id="2_xc3rv"]
+[ext_resource type="Texture2D" uid="uid://cg38eyq2aqff7" path="res://assets/sprites/map_screen/event/contract/Post-it.png" id="3_3e3mo"]
 [ext_resource type="PackedScene" uid="uid://b3bukuv2wbe4u" path="res://scenes/map_screen/contract/PatternOptionBox.tscn" id="3_fvv71"]
 [ext_resource type="Script" uid="uid://d1rlf6jjat3h2" path="res://scripts/map_screen/contract/drawing_board.gd" id="3_ov8hi"]
 [ext_resource type="Texture2D" uid="uid://bo1o2leu06uk0" path="res://placeholder/WhiteSquare.png" id="4_rj8at"]
 [ext_resource type="Script" uid="uid://d03h22mxa4ts1" path="res://scripts/map_screen/contract/option_box_set.gd" id="5_2ney3"]
 [ext_resource type="Script" uid="uid://b4d6dwxqyelhh" path="res://scripts/map_screen/contract/post_it.gd" id="5_hk8vl"]
 [ext_resource type="Texture2D" uid="uid://b54ljffatl0v4" path="res://assets/sprites/contract_icons/Dog.png" id="5_jusyd"]
+[ext_resource type="Texture2D" uid="uid://crcl2xfowgefm" path="res://assets/sprites/map_screen/event/contract/FoldLevelIndicatorFull.png" id="5_nj0th"]
 [ext_resource type="PackedScene" uid="uid://dnbluou2l5jpn" path="res://scenes/component/RadarChart.tscn" id="6_hk8vl"]
+[ext_resource type="Texture2D" uid="uid://cnjl4aalnlheb" path="res://assets/sprites/map_screen/event/contract/SubmitNormal.png" id="7_w07f0"]
+[ext_resource type="Texture2D" uid="uid://tjtos3cidden" path="res://assets/sprites/map_screen/event/contract/SubmitPress.png" id="8_gccqv"]
 [ext_resource type="Script" uid="uid://cluwb52on6g7k" path="res://scripts/map_screen/contract/quest_panel.gd" id="8_xc3rv"]
+[ext_resource type="Texture2D" uid="uid://untjwrxervh5" path="res://assets/sprites/map_screen/event/contract/SubmitHover.png" id="9_yoaeu"]
 [ext_resource type="PackedScene" uid="uid://w0kr78thnd8b" path="res://scenes/map_screen/contract/PatternOptionOverviewCard.tscn" id="10_5ppia"]
 [ext_resource type="Script" uid="uid://6fx2nw7gqoaj" path="res://scripts/map_screen/contract/selector_panel.gd" id="10_07g81"]
+[ext_resource type="Texture2D" uid="uid://barwk1ct0xkm1" path="res://assets/sprites/map_screen/event/contract/SubmitDesabled.png" id="10_bgml4"]
+[ext_resource type="Texture2D" uid="uid://dp8cab7e7il7p" path="res://assets/sprites/map_screen/event/contract/TimeLevel.png" id="11_nj0th"]
 [ext_resource type="PackedScene" uid="uid://q61o5yikp86s" path="res://scenes/map_screen/study_session/PatternDetailCard.tscn" id="12_bskk8"]
+[ext_resource type="Texture2D" uid="uid://do7uw8gwk441j" path="res://assets/sprites/map_screen/event/contract/FoldLevelIndicatorEmpty.png" id="12_t462h"]
 [ext_resource type="PackedScene" uid="uid://y8oun4wpf01e" path="res://scenes/developer_screen/DevDetailCard.tscn" id="13_2ney3"]
+[ext_resource type="Texture2D" uid="uid://cleuq1aj2ab3s" path="res://assets/sprites/map_screen/event/contract/ComplexityLevel.png" id="13_iigfs"]
 [ext_resource type="PackedScene" uid="uid://3vsra0gkbynx" path="res://scenes/map_screen/contract/DevOptionOverviewCard.tscn" id="14_2ney3"]
+[ext_resource type="Texture2D" uid="uid://b8o2vs8mulug" path="res://assets/sprites/map_screen/event/contract/WorkEmptyProgressBar.png" id="15_optlt"]
+[ext_resource type="Texture2D" uid="uid://0klp4nxllwi3" path="res://assets/sprites/map_screen/event/contract/WorkFullInProgressBar.png" id="16_wd47f"]
+[ext_resource type="Script" uid="uid://drr70653jfqhi" path="res://scripts/map_screen/contract/work_progress_bar.gd" id="17_wd47f"]
+[ext_resource type="Texture2D" uid="uid://c3mrx0gn5l20u" path="res://assets/sprites/map_screen/event/contract/OptionPanel.png" id="25_t462h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bskk8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oey3q"]
 
 [node name="Contract" type="CanvasLayer" unique_id=1964947095 node_paths=PackedStringArray("drawing_board", "post_it", "quest_panel", "selector_panel")]
 script = ExtResource("1_s0427")
@@ -29,7 +39,7 @@ post_it = NodePath("PostIt")
 quest_panel = NodePath("QuestPanel")
 selector_panel = NodePath("SelectorPanel")
 
-[node name="DrawingBoard" type="TextureRect" parent="." unique_id=1413654943 node_paths=PackedStringArray("contract_screen", "radar_chart", "pattern_box", "developer_boxes", "submit_button")]
+[node name="DrawingBoard" type="TextureRect" parent="." unique_id=1413654943 node_paths=PackedStringArray("contract_screen", "radar_chart", "pattern_box", "developer_boxes", "time_level", "complexity_level", "submit_button", "progress_button")]
 offset_left = 1005.0
 offset_top = -1390.5
 offset_right = 3053.0
@@ -41,14 +51,19 @@ contract_screen = NodePath("..")
 radar_chart = NodePath("RadarChart")
 pattern_box = NodePath("PatternBox")
 developer_boxes = NodePath("DeveloperBoxSet")
+time_level = NodePath("TimeRect/TimeLevel")
+complexity_level = NodePath("ComplexityRect/ComplexityLevel")
+empty_level_indicator = ExtResource("12_t462h")
+full_level_indicator = ExtResource("5_nj0th")
 submit_button = NodePath("SubmitButton")
+progress_button = NodePath("WorkProgressBar")
 
 [node name="PatternBox" parent="DrawingBoard" unique_id=186634182 node_paths=PackedStringArray("drawing_board") instance=ExtResource("3_fvv71")]
 layout_mode = 0
 offset_left = 229.0
-offset_top = 548.5
+offset_top = 547.5
 offset_right = 741.0
-offset_bottom = 1060.5
+offset_bottom = 1059.5
 scale = Vector2(0.5, 0.5)
 drawing_board = NodePath("..")
 
@@ -91,15 +106,95 @@ scale = Vector2(0.5, 0.5)
 drawing_board = NodePath("../..")
 option_type = 1
 
-[node name="SubmitButton" type="Button" parent="DrawingBoard" unique_id=1603576432]
+[node name="SubmitButton" type="TextureButton" parent="DrawingBoard" unique_id=607614496]
 layout_mode = 0
-offset_left = 756.0
-offset_top = 1190.5
-offset_right = 1282.0
-offset_bottom = 1319.5
-theme_override_font_sizes/font_size = 80
-text = "Submeter"
-clip_text = true
+offset_left = 776.0
+offset_top = 1191.5
+offset_right = 1249.7726
+offset_bottom = 1328.5
+texture_normal = ExtResource("7_w07f0")
+texture_pressed = ExtResource("8_gccqv")
+texture_hover = ExtResource("9_yoaeu")
+texture_disabled = ExtResource("10_bgml4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TimeRect" type="TextureRect" parent="DrawingBoard" unique_id=172172679]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 977.50006
+offset_right = 861.0
+offset_bottom = 1201.5001
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_nj0th")
+
+[node name="TimeLevel" type="HBoxContainer" parent="DrawingBoard/TimeRect" unique_id=1891273589]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 128.0
+offset_right = 637.0
+offset_bottom = 219.0
+theme_override_constants/separation = 20
+
+[node name="Level1" type="TextureRect" parent="DrawingBoard/TimeRect/TimeLevel" unique_id=1303101629]
+layout_mode = 2
+texture = ExtResource("12_t462h")
+
+[node name="Level2" type="TextureRect" parent="DrawingBoard/TimeRect/TimeLevel" unique_id=775054516]
+layout_mode = 2
+texture = ExtResource("12_t462h")
+
+[node name="Level3" type="TextureRect" parent="DrawingBoard/TimeRect/TimeLevel" unique_id=1580242183]
+layout_mode = 2
+texture = ExtResource("12_t462h")
+
+[node name="Level4" type="TextureRect" parent="DrawingBoard/TimeRect/TimeLevel" unique_id=1916687271]
+layout_mode = 2
+texture = ExtResource("12_t462h")
+
+[node name="ComplexityRect" type="TextureRect" parent="DrawingBoard" unique_id=567622622]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 1150.5
+offset_right = 780.0
+offset_bottom = 1370.5
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("13_iigfs")
+
+[node name="ComplexityLevel" type="HBoxContainer" parent="DrawingBoard/ComplexityRect" unique_id=1553780991]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 88.0
+offset_right = 641.0
+offset_bottom = 179.0
+theme_override_constants/separation = 20
+
+[node name="Level1" type="TextureRect" parent="DrawingBoard/ComplexityRect/ComplexityLevel" unique_id=1161681990]
+layout_mode = 2
+texture = ExtResource("12_t462h")
+
+[node name="Level2" type="TextureRect" parent="DrawingBoard/ComplexityRect/ComplexityLevel" unique_id=2022561839]
+layout_mode = 2
+texture = ExtResource("12_t462h")
+
+[node name="Level3" type="TextureRect" parent="DrawingBoard/ComplexityRect/ComplexityLevel" unique_id=888446036]
+layout_mode = 2
+texture = ExtResource("12_t462h")
+
+[node name="Level4" type="TextureRect" parent="DrawingBoard/ComplexityRect/ComplexityLevel" unique_id=1649989002]
+layout_mode = 2
+texture = ExtResource("12_t462h")
+
+[node name="WorkProgressBar" type="TextureProgressBar" parent="DrawingBoard" unique_id=74949410]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 1164.5
+offset_right = 3233.0
+offset_bottom = 2001.5
+scale = Vector2(0.2, 0.2)
+texture_under = ExtResource("15_optlt")
+texture_progress = ExtResource("16_wd47f")
+script = ExtResource("17_wd47f")
 
 [node name="PostIt" type="TextureRect" parent="." unique_id=707217834 node_paths=PackedStringArray("contract_screen")]
 offset_left = 2799.0
@@ -204,19 +299,21 @@ click_blocker = NodePath("ClickBlocker")
 overview_card_scene = ExtResource("10_5ppia")
 detail_card_scene = ExtResource("12_bskk8")
 
-[node name="OptionPanel" type="Panel" parent="SelectorPanel" unique_id=1958228938]
+[node name="OptionPanel" type="TextureRect" parent="SelectorPanel" unique_id=690319956]
 layout_mode = 0
-offset_left = 377.0
-offset_top = 1595.0
-offset_right = 3425.0
-offset_bottom = 2173.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_oey3q")
+offset_left = 1029.0
+offset_top = 1562.0
+offset_right = 2998.317
+offset_bottom = 2175.0
+texture = ExtResource("25_t462h")
+expand_mode = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SelectorPanel/OptionPanel" unique_id=1495977691]
 layout_mode = 0
-offset_left = 23.0
-offset_right = 3023.0
-offset_bottom = 559.0
+offset_left = 183.0
+offset_top = 94.0
+offset_right = 1875.0
+offset_bottom = 521.0
 
 [node name="MarginContainer" type="MarginContainer" parent="SelectorPanel/OptionPanel/ScrollContainer" unique_id=1986066976]
 layout_mode = 2
@@ -227,6 +324,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SelectorPanel/OptionPanel/ScrollContainer/MarginContainer" unique_id=279033059]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 60
 
 [node name="PatternOverviewCard" parent="SelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1306637032 instance=ExtResource("10_5ppia")]
@@ -241,10 +339,7 @@ layout_mode = 2
 [node name="PatternOverviewCard4" parent="SelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1236125067 instance=ExtResource("10_5ppia")]
 layout_mode = 2
 
-[node name="PatternOverviewCard5" parent="SelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1748771038 instance=ExtResource("10_5ppia")]
-layout_mode = 2
-
-[node name="PatternOverviewCard6" parent="SelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1865839947 instance=ExtResource("10_5ppia")]
+[node name="DevOptionOverviewCard" parent="SelectorPanel/OptionPanel/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1138141655 instance=ExtResource("14_2ney3")]
 layout_mode = 2
 
 [node name="ClickBlocker" type="ColorRect" parent="SelectorPanel" unique_id=57147646]
@@ -262,6 +357,7 @@ color = Color(1, 1, 1, 0)
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox2" to="DrawingBoard/DeveloperBoxSet/DeveloperBox2" method="_on_gui_input"]
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox3" to="DrawingBoard/DeveloperBoxSet/DeveloperBox3" method="_on_gui_input"]
 [connection signal="pressed" from="DrawingBoard/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="gui_input" from="DrawingBoard/WorkProgressBar" to="DrawingBoard/WorkProgressBar" method="_on_gui_input"]
 [connection signal="gui_input" from="PostIt" to="PostIt" method="_on_gui_input"]
 [connection signal="gui_input" from="QuestPanel" to="QuestPanel" method="_on_gui_input"]
 [connection signal="gui_input" from="SelectorPanel/ClickBlocker" to="SelectorPanel" method="_on_click_blocker_gui_input"]

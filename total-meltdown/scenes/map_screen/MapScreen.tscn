@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d0lcshv562d4e" path="res://scenes/map_screen/study_session/StudySessionScreen.tscn" id="7_lgmxy"]
 [ext_resource type="PackedScene" uid="uid://c1hn7mnqjje01" path="res://scenes/map_screen/contract/Contract.tscn" id="8_fidt4"]
 [ext_resource type="Texture2D" uid="uid://cp6uck75lgybu" path="res://assets/sprites/map_screen/MoneyDisplay.png" id="9_ku3ts"]
+[ext_resource type="Script" uid="uid://yng4c24vtk82" path="res://scripts/map_screen/contract_panel/awaked_contract_panel.gd" id="10_qu5j6"]
+[ext_resource type="PackedScene" uid="uid://d1kebmbv02wwo" path="res://scenes/map_screen/contract_panel/ContractProgressBar.tscn" id="10_yalvq"]
 
 [node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "money_label", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
 script = ExtResource("1_rw3jc")
@@ -26,6 +28,37 @@ contract_screen = NodePath("Contract")
 position = Vector2(1951.9998, 1097.9999)
 scale = Vector2(1.016402, 1.017609)
 texture = ExtResource("5_fidt4")
+
+[node name="AwakedContractPanel" type="AspectRatioContainer" parent="." unique_id=1027327832 node_paths=PackedStringArray("map_screen")]
+offset_left = 1132.0
+offset_top = -7.0
+offset_right = 4492.0
+offset_bottom = 625.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+script = ExtResource("10_qu5j6")
+map_screen = NodePath("..")
+contract_progress_bar_scene = ExtResource("10_yalvq")
+
+[node name="ContractContainer" type="HBoxContainer" parent="AwakedContractPanel" unique_id=1481575289]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 200
+
+[node name="ContractProgressBar" parent="AwakedContractPanel/ContractContainer" unique_id=226074484 instance=ExtResource("10_yalvq")]
+layout_mode = 2
+
+[node name="ContractProgressBar2" parent="AwakedContractPanel/ContractContainer" unique_id=1427854698 instance=ExtResource("10_yalvq")]
+layout_mode = 2
+
+[node name="ContractProgressBar3" parent="AwakedContractPanel/ContractContainer" unique_id=1548702305 instance=ExtResource("10_yalvq")]
+layout_mode = 2
+
+[node name="ContractProgressBar4" parent="AwakedContractPanel/ContractContainer" unique_id=639473931 instance=ExtResource("10_yalvq")]
+layout_mode = 2
+
+[node name="ContractProgressBar5" parent="AwakedContractPanel/ContractContainer" unique_id=1455981451 instance=ExtResource("10_yalvq")]
+layout_mode = 2
 
 [node name="SpawnArea" type="ColorRect" parent="." unique_id=769389484]
 offset_left = 261.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjq7gm75x871k"
-path="res://.godot/imported/DrawingBoard.png-a705ff039ff624d759fdbd3af0eaadf6.ctex"
+uid="uid://dbq48nv4moeed"
+path="res://.godot/imported/Report.png-56dc2b40fabc825b15289f340b6dd48a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map_screen/event/DrawingBoard.png"
-dest_files=["res://.godot/imported/DrawingBoard.png-a705ff039ff624d759fdbd3af0eaadf6.ctex"]
+source_file="res://assets/sprites/component/reward_popup/Report.png"
+dest_files=["res://.godot/imported/Report.png-56dc2b40fabc825b15289f340b6dd48a.ctex"]
 
 [params]
 

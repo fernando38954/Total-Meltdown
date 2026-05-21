@@ -190,6 +190,12 @@ offset_top = -159.12982
 offset_right = 656.8834
 offset_bottom = 166.04865
 
+[node name="AspectRatioContainer" parent="MapScreenMask/MapScreen" index="8" unique_id=1027327832]
+offset_left = 1185.742
+offset_top = 93.435265
+offset_right = 4545.742
+offset_bottom = 725.43524
+
 [node name="DeveloperScreenMask" type="Sprite2D" parent="." unique_id=592042528]
 clip_children = 1
 position = Vector2(917.94147, 159.1177)

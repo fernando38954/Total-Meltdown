@@ -25,12 +25,16 @@ var actived_quest: String
 @export var selector_panel_hide_position = Vector2(0, 660)
 var is_selector_panel_open: bool
 
-func set_content(quest_key: String):
+func set_content(content_key: String, view_only: bool = false):
+	# content_key pode ser key do quest ou do contract, como o contract usa key do quest
+	# podemos assumir aqui direto
+	var quest_key = content_key
 	actived_quest = quest_key
 	var quest_data = QuestManager.get_quest_by_key(quest_key)
 	quest_panel.set_content(quest_data.title, quest_data.icon, quest_data.description)
 	post_it.set_content(quest_data.bullet_point, quest_data.footnote)
 	drawing_board.reset_content()
+	drawing_board.set_content(content_key, view_only)
 
 #region Panel Action
 func move_panel_content(target_drawing_board_pos: Vector2, target_post_it_scale: Vector2, target_post_it_alpha: float, target_quest_panel_pos: Vector2, duration: float = 1.0):

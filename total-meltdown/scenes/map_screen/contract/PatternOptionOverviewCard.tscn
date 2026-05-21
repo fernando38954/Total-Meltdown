@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://w0kr78thnd8b"]
 
-[ext_resource type="Texture2D" uid="uid://byr0iwoj0htr4" path="res://placeholder/white_square_512.png" id="1_xxibn"]
+[ext_resource type="Texture2D" uid="uid://bvqo562mjxv71" path="res://assets/sprites/map_screen/event/contract/BoxNormal.png" id="1_euq41"]
 [ext_resource type="Script" uid="uid://b6wde27bkgw7i" path="res://scripts/map_screen/contract/pattern_option_overview_card.gd" id="2_osv0u"]
+[ext_resource type="Texture2D" uid="uid://docyurtsl7f61" path="res://assets/sprites/map_screen/event/contract/BoxHover.png" id="2_qt45h"]
 [ext_resource type="Texture2D" uid="uid://s3ija5g1sq4f" path="res://assets/sprites/pattern_icons/MVC.png" id="2_xxibn"]
 
 [node name="PatternOptionOverviewCard" type="TextureButton" unique_id=186634182]
-self_modulate = Color(0, 0, 0, 0.23137255)
-custom_minimum_size = Vector2(512, 512)
-offset_right = 512.0
-offset_bottom = 512.0
-texture_normal = ExtResource("1_xxibn")
+custom_minimum_size = Vector2(384, 384)
+offset_right = 256.0
+offset_bottom = 256.0
+texture_normal = ExtResource("1_euq41")
+texture_hover = ExtResource("2_qt45h")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("2_osv0u")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1354965367]
-position = Vector2(256, 256)
-scale = Vector2(0.9, 0.9)
+position = Vector2(192.3, 192.3)
+scale = Vector2(0.65117186, 0.65117186)
 texture = ExtResource("2_xxibn")
 region_rect = Rect2(2, 0, 725, 725)
 

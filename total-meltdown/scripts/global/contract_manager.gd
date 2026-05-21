@@ -17,6 +17,7 @@ func start_contract(quest_key: String, pattern_key: String, developer_data_list:
 	var new_contract = ContractData.new(quest_key, pattern_key, developer_data_list, total_attribute)
 	awaked_contracts[quest_key] = new_contract
 	active_contract_list.append(quest_key)
+	GlobalSignal.emit_signal("contract_list_changed", quest_key)
 
 func mark_contract_claimable(target_contract_key: String):
 	if target_contract_key in active_contract_list:
@@ -24,6 +25,7 @@ func mark_contract_claimable(target_contract_key: String):
 		claimable_contracts.append(target_contract_key)
 		var contract_data = get_contract_by_key(target_contract_key)
 		DeveloperManager.finish_work(contract_data.developers_key)
+		GlobalSignal.emit_signal("contract_list_changed", target_contract_key)
 	else:
 		push_error("mark_contract_claimable: No contract with quest key " + target_contract_key + " found in active_contract_list")
 
@@ -35,7 +37,8 @@ func claim_contract(target_contract_key: String) -> void:
 		completed_contracts.append(target_contract_key)
 		QuestManager.complete_quest(contract_data.quest_key)
 		DeveloperManager.return_idle(contract_data.developers_key)
-		GlobalResource.contract_done()
+		awaked_contracts.erase(target_contract_key)
+		GlobalSignal.emit_signal("contract_list_changed", target_contract_key)
 	else:
 		push_error("claim_contract: No contract with quest key " + target_contract_key + " found in claimable_contracts")
 #endregion

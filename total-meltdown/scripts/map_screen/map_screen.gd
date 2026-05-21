@@ -104,9 +104,10 @@ func check_position_validity(p_position: Vector2) -> bool:
 			return false
 	return true
 
-func close_event_button(event_button: BaseEventButton):
-	current_event_button_list.erase(event_button)
-	event_button.queue_free()
+func close_event_button(event_button: BaseEventButton = current_active_event_button):
+	if event_button != null:
+		current_event_button_list.erase(event_button)
+		event_button.queue_free()
 	current_active_event_button = null
 #endregion
 
@@ -147,9 +148,9 @@ func open_study_session_screen(studiable_patterns_list: Array):
 	study_session_screen.open_panel()
 	current_active_screen = study_session_screen
 
-func open_contract_screen(actived_quest):
+func open_contract_screen(content_key, view_only = false):
 	open_click_blocker()
-	contract_screen.set_content(actived_quest)
+	contract_screen.set_content(content_key, view_only)
 	contract_screen.open_panel()
 	current_active_screen = contract_screen
 
