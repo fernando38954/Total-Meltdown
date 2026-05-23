@@ -31,11 +31,13 @@
 		"pattern1": "MVC",
 	},
 	"bug": {
-		"description": "Qual característica do MVC pode dificultar integração com sistemas legados?",
-		"choices": {
-			"correct": "Separação rígida entre componentes",
-			"wrong1": "Uso de interface gráfica",
-			"wrong2": "Existência de controladores",
+		"bug1": {
+			"description": "Qual característica do MVC pode dificultar integração com sistemas legados?",
+			"choices": {
+				"correct": "Separação rígida entre componentes",
+				"wrong1": "Uso de interface gráfica",
+				"wrong2": "Existência de controladores",
+			}
 		}
 	}
 }

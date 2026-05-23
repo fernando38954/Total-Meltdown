@@ -30,7 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://cf1etc62kju71" path="res://assets/sprites/map_screen/event/contract/ClaimDisabled.png" id="16_actmx"]
 [ext_resource type="Texture2D" uid="uid://0klp4nxllwi3" path="res://assets/sprites/map_screen/event/contract/WorkFullInProgressBar.png" id="16_wd47f"]
 [ext_resource type="Script" uid="uid://drr70653jfqhi" path="res://scripts/map_screen/contract/work_progress_bar.gd" id="17_wd47f"]
+[ext_resource type="Texture2D" uid="uid://bqv6drfs0a816" path="res://assets/sprites/map_screen/event/contract/BugEventNormal.png" id="22_actmx"]
 [ext_resource type="Texture2D" uid="uid://y53of8b6rawf" path="res://assets/sprites/quest_icons/CityHall.png" id="22_wd47f"]
+[ext_resource type="Texture2D" uid="uid://biof2gj1xaqrt" path="res://assets/sprites/map_screen/event/contract/BugEventPressed.png" id="23_63ehd"]
+[ext_resource type="Texture2D" uid="uid://dwvrlmqaf06h5" path="res://assets/sprites/map_screen/event/contract/BugEventHover.png" id="24_8a0oc"]
 [ext_resource type="Texture2D" uid="uid://c3mrx0gn5l20u" path="res://assets/sprites/map_screen/event/contract/OptionPanel.png" id="25_t462h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bskk8"]
@@ -43,7 +46,7 @@ post_it = NodePath("PostIt")
 quest_panel = NodePath("QuestPanel")
 selector_panel = NodePath("SelectorPanel")
 
-[node name="DrawingBoard" type="TextureRect" parent="." unique_id=1413654943 node_paths=PackedStringArray("contract_screen", "radar_chart", "pattern_box", "developer_boxes", "time_level", "complexity_level", "submit_button", "claim_button", "progress_button")]
+[node name="DrawingBoard" type="TextureRect" parent="." unique_id=1413654943 node_paths=PackedStringArray("contract_screen", "radar_chart", "pattern_box", "developer_boxes", "time_level", "complexity_level", "submit_button", "claim_button", "bug_event_button", "progress_button")]
 offset_left = 1005.0
 offset_top = -1390.5
 offset_right = 3053.0
@@ -61,6 +64,7 @@ empty_level_indicator = ExtResource("12_t462h")
 full_level_indicator = ExtResource("5_nj0th")
 submit_button = NodePath("SubmitButton")
 claim_button = NodePath("ClaimButton")
+bug_event_button = NodePath("BugEventButton")
 progress_button = NodePath("WorkProgressBar")
 
 [node name="PatternBox" parent="DrawingBoard" unique_id=186634182 node_paths=PackedStringArray("drawing_board") instance=ExtResource("3_fvv71")]
@@ -215,6 +219,16 @@ pivot_offset = Vector2(1232.5, 418.5)
 texture_under = ExtResource("15_optlt")
 texture_progress = ExtResource("16_wd47f")
 script = ExtResource("17_wd47f")
+
+[node name="BugEventButton" type="TextureButton" parent="DrawingBoard" unique_id=1160731842]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 355.5
+offset_right = 1281.0
+offset_bottom = 987.5
+texture_normal = ExtResource("22_actmx")
+texture_pressed = ExtResource("23_63ehd")
+texture_hover = ExtResource("24_8a0oc")
 
 [node name="PostIt" type="TextureRect" parent="." unique_id=707217834 node_paths=PackedStringArray("contract_screen")]
 offset_left = 2799.0
@@ -378,6 +392,7 @@ color = Color(1, 1, 1, 0)
 [connection signal="gui_input" from="DrawingBoard/DeveloperBoxSet/DeveloperBox3" to="DrawingBoard/DeveloperBoxSet/DeveloperBox3" method="_on_gui_input"]
 [connection signal="pressed" from="DrawingBoard/SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="pressed" from="DrawingBoard/ClaimButton" to="." method="_on_claim_button_pressed"]
+[connection signal="pressed" from="DrawingBoard/BugEventButton" to="." method="_on_bug_event_button_pressed"]
 [connection signal="gui_input" from="PostIt" to="PostIt" method="_on_gui_input"]
 [connection signal="gui_input" from="QuestPanel" to="QuestPanel" method="_on_gui_input"]
 [connection signal="gui_input" from="SelectorPanel/ClickBlocker" to="SelectorPanel" method="_on_click_blocker_gui_input"]

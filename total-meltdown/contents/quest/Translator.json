@@ -33,11 +33,13 @@
 		"pattern1": "ClientServer"
 	},
 	"bug": {
-		"description": "Após uma atualização no servidor do OmniTranslate, torradeiras inteligentes começaram a interpretar cantigas de ninar como receitas culinárias. O problema ocorreu porque muitos clientes antigos não conseguiam entender o novo formato de comunicação enviado pelo servidor. Qual desafio arquitetural isso representa?",
-		"choices": {
-			"correct": "Problemas de compatibilidade entre clientes e servidor",
-			"wrong1": "Falta de separação entre interface e regra de negócio",
-			"wrong2": "Excesso de validações em múltiplas camadas"
+		"bug1": {
+			"description": "Após uma atualização no servidor do OmniTranslate, torradeiras inteligentes começaram a interpretar cantigas de ninar como receitas culinárias. O problema ocorreu porque muitos clientes antigos não conseguiam entender o novo formato de comunicação enviado pelo servidor. Qual desafio arquitetural isso representa?",
+			"choices": {
+				"correct": "Problemas de compatibilidade entre clientes e servidor",
+				"wrong1": "Falta de separação entre interface e regra de negócio",
+				"wrong2": "Excesso de validações em múltiplas camadas"
+			}
 		}
 	}
 }

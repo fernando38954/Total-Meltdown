@@ -31,11 +31,13 @@
 		"pattern1": "Layered",
 	},
 	"bug": {
-		"description": "Para acelerar entregas, uma IA fez os drones acessarem diretamente a camada de estoque sem passar pelas validações médicas intermediárias. Qual foi a principal consequência arquitetural dessa decisão?",
-		"choices": {
-			"correct": "Redução do isolamento e da confiabilidade do sistema",
-			"wrong1": "Melhoria da compatibilidade entre drones",
-			"wrong2": "Diminuição da necessidade de autenticação médica",
+		"bug1": {
+			"description": "Para acelerar entregas, uma IA fez os drones acessarem diretamente a camada de estoque sem passar pelas validações médicas intermediárias. Qual foi a principal consequência arquitetural dessa decisão?",
+			"choices": {
+				"correct": "Redução do isolamento e da confiabilidade do sistema",
+				"wrong1": "Melhoria da compatibilidade entre drones",
+				"wrong2": "Diminuição da necessidade de autenticação médica",
+			}
 		}
 	}
 }

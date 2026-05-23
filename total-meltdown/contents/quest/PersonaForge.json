@@ -35,11 +35,13 @@
 		"pattern1": "Microkernel"
 	},
 	"bug": {
-		"description": "Dois plug-ins sociais começaram a modificar simultaneamente o comportamento do usuário porque ambos assumiam controle sobre as mesmas funções internas de personalidade. O núcleo permaneceu estável, mas os módulos entraram em conflito constante. Qual problema típico da arquitetura Microkernel isso representa?",
-		"choices": {
-			"correct": "Complexidade de coordenação entre plug-ins independentes",
-			"wrong1": "Dependência exclusiva de um banco de dados central",
-			"wrong2": "Forte acoplamento entre interface gráfica e processamento"
+		"bug1": {
+			"description": "Dois plug-ins sociais começaram a modificar simultaneamente o comportamento do usuário porque ambos assumiam controle sobre as mesmas funções internas de personalidade. O núcleo permaneceu estável, mas os módulos entraram em conflito constante. Qual problema típico da arquitetura Microkernel isso representa?",
+			"choices": {
+				"correct": "Complexidade de coordenação entre plug-ins independentes",
+				"wrong1": "Dependência exclusiva de um banco de dados central",
+				"wrong2": "Forte acoplamento entre interface gráfica e processamento"
+			}
 		}
 	}
 }

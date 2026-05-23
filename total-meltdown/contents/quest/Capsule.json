@@ -34,11 +34,13 @@
 		"pattern1": "EDA"
 	},
 	"bug": {
-		"description": "Durante uma falha na rede, alguns eventos de aviso foram processados duas vezes enquanto outros nunca chegaram aos serviços responsáveis. Como consequência, cidadãos receberam cápsulas de transporte para destinos de viagens anteriores. Qual problema típico da arquitetura orientada a eventos isso representa?",
-		"choices": {
-			"correct": "Dificuldade em garantir consistência e confiabilidade dos eventos",
-			"wrong1": "Dependência rígida entre componentes",
-			"wrong2": "Excesso de comunicação síncrona entre módulos"
+		"bug1": {
+			"description": "Durante uma falha na rede, alguns eventos de aviso foram processados duas vezes enquanto outros nunca chegaram aos serviços responsáveis. Como consequência, cidadãos receberam cápsulas de transporte para destinos de viagens anteriores. Qual problema típico da arquitetura orientada a eventos isso representa?",
+			"choices": {
+				"correct": "Dificuldade em garantir consistência e confiabilidade dos eventos",
+				"wrong1": "Dependência rígida entre componentes",
+				"wrong2": "Excesso de comunicação síncrona entre módulos"
+			}
 		}
 	}
 }

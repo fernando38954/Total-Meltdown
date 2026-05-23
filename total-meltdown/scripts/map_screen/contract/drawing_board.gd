@@ -18,9 +18,10 @@ var final_attribute: Dictionary = {}
 @export var empty_level_indicator: Texture
 @export var full_level_indicator: Texture
 
-@export_category("Submit Button")
+@export_category("Game Flow Button")
 @export var submit_button: TextureButton
 @export var claim_button: TextureButton
+@export var bug_event_button: TextureButton
 @export var progress_button: WorkProgressBar
 
 func reset_content():
@@ -29,6 +30,7 @@ func reset_content():
 	developer_boxes.reset_boxes_data()
 	submit_button.disabled = true
 	claim_button.disabled = true
+	bug_event_button.set_visible(false)
 
 func set_content(content_key: String, view_only: bool = false):
 	# Content
@@ -38,8 +40,8 @@ func set_content(content_key: String, view_only: bool = false):
 		for idx in range(0, developer_boxes.box_set.size()):
 			if idx < contract_data.developers_key.size():
 				developer_boxes.box_set[idx].assign_box_key(contract_data.developers_key[idx])
-		progress_button.set_contract(content_key, claim_button)
 		update_content()
+	progress_button.set_contract(content_key, claim_button, bug_event_button)
 	
 	# Visible
 	pattern_box.set_disabled(view_only)

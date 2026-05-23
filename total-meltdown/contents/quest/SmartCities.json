@@ -33,11 +33,13 @@
 		"pattern1": "Microservice"
 	},
 	"bug": {
-		"description": "Após uma atualização do serviço climático, drones antigos de manutenção começaram a interpretar mensagens meteorológicas como comandos operacionais. O problema ocorreu porque diferentes serviços passaram a utilizar versões incompatíveis do protocolo de comunicação. Em arquiteturas de microserviços, qual prática ajuda a reduzir esse tipo de problema?",
-		"choices": {
-			"correct": "Definir contratos e versionamento claro entre serviços",
-			"wrong1": "Concentrar todos os serviços em um único processo",
-			"wrong2": "Eliminar comunicação em rede entre componentes"
+		"bug1": {
+			"description": "Após uma atualização do serviço climático, drones antigos de manutenção começaram a interpretar mensagens meteorológicas como comandos operacionais. O problema ocorreu porque diferentes serviços passaram a utilizar versões incompatíveis do protocolo de comunicação. Em arquiteturas de microserviços, qual prática ajuda a reduzir esse tipo de problema?",
+			"choices": {
+				"correct": "Definir contratos e versionamento claro entre serviços",
+				"wrong1": "Concentrar todos os serviços em um único processo",
+				"wrong2": "Eliminar comunicação em rede entre componentes"
+			}
 		}
 	}
 }

@@ -33,11 +33,13 @@
 		"pattern1": "PipeFilter"
 	},
 	"bug": {
-		"description": "Um filtro de tradução começou a produzir pequenas inconsistências semânticas. Como os filtros seguintes confiaram totalmente na saída recebida, o erro se propagou por toda a cadeia até gerar uma falsa ameaça militar. Qual fraqueza da arquitetura Pipe and Filter isso demonstra?",
-		"choices": {
-			"correct": "Falhas em filtros intermediários podem comprometer todo o pipeline",
-			"wrong1": "O forte acoplamento entre interface gráfica e processamento",
-			"wrong2": "A dependência obrigatória de processamento síncrono centralizado"
+		"bug1": {
+			"description": "Um filtro de tradução começou a produzir pequenas inconsistências semânticas. Como os filtros seguintes confiaram totalmente na saída recebida, o erro se propagou por toda a cadeia até gerar uma falsa ameaça militar. Qual fraqueza da arquitetura Pipe and Filter isso demonstra?",
+			"choices": {
+				"correct": "Falhas em filtros intermediários podem comprometer todo o pipeline",
+				"wrong1": "O forte acoplamento entre interface gráfica e processamento",
+				"wrong2": "A dependência obrigatória de processamento síncrono centralizado"
+			}
 		}
 	}
 }

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfhbwojr7rusy" path="res://assets/sprites/map_screen/event/contract_panel/ContractEmptyBar.png" id="1_yyvn3"]
 [ext_resource type="Texture2D" uid="uid://dtbatnibdp4rf" path="res://assets/sprites/map_screen/event/contract_panel/ContractFullBar.png" id="2_jq838"]
 [ext_resource type="Script" uid="uid://bws8wnlmntkmb" path="res://scripts/map_screen/contract_panel/contract_progress_bar.gd" id="3_bekig"]
+[ext_resource type="Texture2D" uid="uid://hfwij8axrtqx" path="res://assets/sprites/map_screen/event/contract_panel/BugMark.png" id="4_bekig"]
 [ext_resource type="Texture2D" uid="uid://y53of8b6rawf" path="res://assets/sprites/quest_icons/CityHall.png" id="4_jq838"]
 [ext_resource type="Texture2D" uid="uid://bqkswdwljbl3v" path="res://assets/sprites/component/SuccessMark.png" id="5_jq838"]
 
@@ -14,6 +15,12 @@ fill_mode = 4
 texture_under = ExtResource("1_yyvn3")
 texture_progress = ExtResource("2_jq838")
 script = ExtResource("3_bekig")
+
+[node name="BugMark" type="TextureRect" parent="." unique_id=132202705]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 632.0
+texture = ExtResource("4_bekig")
 
 [node name="ContractIcon" type="TextureRect" parent="." unique_id=673024142]
 layout_mode = 0

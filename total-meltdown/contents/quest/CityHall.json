@@ -31,11 +31,13 @@
 		"pattern1": "MVC",
 	},
 	"bug": {
-		"description": "A equipe esqueceu o porquê de terem escolhido o padrão MVC. Qual vantagem principal da separação entre Model, View e Controller?",
-		"choices": {
-			"correct": "Facilitar manutenção e organização",
-			"wrong1": "Melhorar apenas a velocidade",
-			"wrong2": "Eliminar necessidade de banco de dados",
+		"bug1": {
+			"description": "A equipe esqueceu o porquê de terem escolhido o padrão MVC. Qual vantagem principal da separação entre Model, View e Controller?",
+			"choices": {
+				"correct": "Facilitar manutenção e organização",
+				"wrong1": "Melhorar apenas a velocidade",
+				"wrong2": "Eliminar necessidade de banco de dados",
+			}
 		}
 	}
 }

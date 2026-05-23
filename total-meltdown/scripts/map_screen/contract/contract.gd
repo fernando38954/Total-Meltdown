@@ -110,3 +110,7 @@ func _on_submit_button_pressed() -> void:
 func _on_claim_button_pressed() -> void:
 	ContractManager.claim_contract(actived_quest)
 	GlobalSignal.emit_signal("current_map_event_finished")
+
+
+func _on_bug_event_button_pressed() -> void:
+	ContractManager.try_resolve_contract_bug(actived_quest)

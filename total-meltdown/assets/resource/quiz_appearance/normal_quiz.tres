@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuizAppearance" format=3 uid="uid://degjpqbdsmnrh"]
+
+[ext_resource type="Texture2D" uid="uid://b8yx2glg2fbqn" path="res://assets/sprites/component/quiz_panel/NormalOptionHover.png" id="1_3jisq"]
+[ext_resource type="Script" uid="uid://b3ill385u2234" path="res://scripts/component/quiz/quiz_appearance.gd" id="1_bbx4q"]
+[ext_resource type="Texture2D" uid="uid://215pjxgkr8o4" path="res://assets/sprites/component/quiz_panel/NormalOptionNormal.png" id="2_flk02"]
+[ext_resource type="Texture2D" uid="uid://bsxsudrqtlc83" path="res://assets/sprites/component/quiz_panel/NormalPanel.png" id="3_ghaxj"]
+
+[resource]
+script = ExtResource("1_bbx4q")
+panel = ExtResource("3_ghaxj")
+option_normal = ExtResource("2_flk02")
+option_hover = ExtResource("1_3jisq")
+metadata/_custom_type_script = "uid://b3ill385u2234"

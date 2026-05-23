@@ -35,11 +35,13 @@
 		"pattern1": "EDA"
 	},
 	"bug": {
-		"description": "Durante a final, um único evento de eliminação foi processado duas vezes por alguns serviços e ignorado por outros. Isso fez o sistema de apostas registrar vitórias inexistentes enquanto os replays mostravam informações conflitantes. Qual característica da arquitetura orientada a eventos contribuiu diretamente para esse problema?",
-		"choices": {
-			"correct": "A comunicação assíncrona e distribuída entre múltiplos consumidores de eventos",
-			"wrong1": "O forte acoplamento entre interface e lógica",
-			"wrong2": "A dependência de uma única camada centralizada"
+		"bug1": {
+			"description": "Durante a final, um único evento de eliminação foi processado duas vezes por alguns serviços e ignorado por outros. Isso fez o sistema de apostas registrar vitórias inexistentes enquanto os replays mostravam informações conflitantes. Qual característica da arquitetura orientada a eventos contribuiu diretamente para esse problema?",
+			"choices": {
+				"correct": "A comunicação assíncrona e distribuída entre múltiplos consumidores de eventos",
+				"wrong1": "O forte acoplamento entre interface e lógica",
+				"wrong2": "A dependência de uma única camada centralizada"
+			}
 		}
 	}
 }

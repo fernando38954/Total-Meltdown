@@ -31,11 +31,13 @@
 		"pattern1": "Microservice"
 	},
 	"bug": {
-		"description": "Após uma atualização no serviço de pagamentos, o sistema de impressão de hambúrgueres começou a liberar pedidos sem confirmação financeira. A equipe percebeu que os serviços estavam confiando diretamente uns nos outros sem validação adequada. Qual prática seria mais importante nesse cenário distribuído?",
-		"choices": {
-			"correct": "Garantir comunicação segura e validação entre serviços",
-			"wrong1": "Centralizar toda a lógica em um único módulo",
-			"wrong2": "Remover a separação entre serviços para reduzir mensagens"
+		"bug1": {
+			"description": "Após uma atualização no serviço de pagamentos, o sistema de impressão de hambúrgueres começou a liberar pedidos sem confirmação financeira. A equipe percebeu que os serviços estavam confiando diretamente uns nos outros sem validação adequada. Qual prática seria mais importante nesse cenário distribuído?",
+			"choices": {
+				"correct": "Garantir comunicação segura e validação entre serviços",
+				"wrong1": "Centralizar toda a lógica em um único módulo",
+				"wrong2": "Remover a separação entre serviços para reduzir mensagens"
+			}
 		}
 	}
 }

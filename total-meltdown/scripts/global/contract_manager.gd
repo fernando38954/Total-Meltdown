@@ -1,13 +1,14 @@
 extends Node
 
 const REWARD_POPUP_SCENE = preload("res://scenes/component/RewardPopup.tscn")
+const QUIZ_SCENE = preload("res://scenes/component/QuizPanel.tscn")
 
 var awaked_contracts: Dictionary = {}
 var active_contract_list: Array[String]
 var claimable_contracts: Array[String]
 var completed_contracts: Array[String]
 
-#region Array Operation
+#region Contract Operation
 func get_contract_by_key(key: String) -> ContractData:
 	return awaked_contracts.get(key, null)
 
@@ -41,6 +42,23 @@ func claim_contract(target_contract_key: String) -> void:
 		GlobalSignal.emit_signal("contract_list_changed", target_contract_key)
 	else:
 		push_error("claim_contract: No contract with quest key " + target_contract_key + " found in claimable_contracts")
+
+#region Bug Functions
+func try_resolve_contract_bug(target_contract_key: String):
+	var quiz = QUIZ_SCENE.instantiate()
+	var quest_data = QuestManager.get_quest_by_key(target_contract_key)
+	get_tree().root.add_child(quiz)
+	quiz.set_quiz(QuizPanel.QuizType.Bug, quest_data.bug, target_contract_key)
+
+func contract_bug_resolved(target_contract_key: String):
+	get_contract_by_key(target_contract_key).bug_solved()
+
+func contract_bug_tried(target_contract_key: String):
+	get_contract_by_key(target_contract_key).bug_solve_tried = true
+
+func set_contract_bug_trying(target_contract_key: String, is_trying: bool):
+	get_contract_by_key(target_contract_key).bug_solve_trying = is_trying
+#endregion
 #endregion
 
 func _ready() -> void:

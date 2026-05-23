@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://dtjo55vnk5a7p"]
+
+[ext_resource type="Script" uid="uid://bjywrhupbrbj4" path="res://scripts/component/quiz/quiz_panel.gd" id="1_4vlmd"]
+[ext_resource type="Texture2D" uid="uid://bsxsudrqtlc83" path="res://assets/sprites/component/quiz_panel/NormalPanel.png" id="2_admcu"]
+[ext_resource type="Texture2D" uid="uid://215pjxgkr8o4" path="res://assets/sprites/component/quiz_panel/NormalOptionNormal.png" id="3_vkf4s"]
+[ext_resource type="Texture2D" uid="uid://b8yx2glg2fbqn" path="res://assets/sprites/component/quiz_panel/NormalOptionHover.png" id="4_4o461"]
+[ext_resource type="Script" uid="uid://glxem556w468" path="res://scripts/component/quiz/quiz_option.gd" id="5_7kq3x"]
+[ext_resource type="Texture2D" uid="uid://bqkswdwljbl3v" path="res://assets/sprites/component/SuccessMark.png" id="6_admcu"]
+[ext_resource type="Texture2D" uid="uid://qm8tt7f7xkix" path="res://assets/sprites/component/FailMark.png" id="7_vkf4s"]
+[ext_resource type="Texture2D" uid="uid://bvdnpxoq22vp6" path="res://assets/sprites/navigation_button/ReturnButtonNormal.png" id="8_7kq3x"]
+[ext_resource type="Texture2D" uid="uid://duw8dbs8bsp05" path="res://assets/sprites/navigation_button/ReturnButonHover.png" id="9_lucv8"]
+
+[node name="QuizPanel" type="CanvasLayer" unique_id=67637543]
+script = ExtResource("1_4vlmd")
+
+[node name="ClickBlocker" type="ColorRect" parent="." unique_id=2135669493]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.28235295)
+
+[node name="Panel" type="TextureRect" parent="." unique_id=1595635825]
+offset_left = 263.99997
+offset_top = -133.00002
+offset_right = 3590.0
+offset_bottom = 1952.0
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(1663, 1042.5)
+mouse_filter = 0
+texture = ExtResource("2_admcu")
+stretch_mode = 2
+
+[node name="Question" type="RichTextLabel" parent="Panel" unique_id=79067445]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 263.0
+offset_right = 2896.0
+offset_bottom = 909.0
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_font_sizes/normal_font_size = 70
+text = "Durante uma falha na rede, alguns eventos de aviso foram processados duas vezes enquanto outros nunca chegaram aos serviços responsáveis. Como consequência, cidadãos receberam cápsulas de transporte para destinos de viagens anteriores. Qual problema típico da arquitetura orientada a eventos isso representa?"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel" unique_id=65340793]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 1046.0
+offset_right = 2965.0
+offset_bottom = 1711.0
+
+[node name="OptionContainer" type="VBoxContainer" parent="Panel/AspectRatioContainer" unique_id=1849329902]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="QuizOption" type="TextureButton" parent="Panel/AspectRatioContainer/OptionContainer" unique_id=1869732931]
+layout_mode = 2
+texture_normal = ExtResource("3_vkf4s")
+texture_hover = ExtResource("4_4o461")
+script = ExtResource("5_7kq3x")
+correct_mark = ExtResource("6_admcu")
+wrong_mark = ExtResource("7_vkf4s")
+
+[node name="Description" type="RichTextLabel" parent="Panel/AspectRatioContainer/OptionContainer/QuizOption" unique_id=1750510153]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 2733.0
+offset_bottom = 210.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "Dependência de um servidor central"
+vertical_alignment = 1
+
+[node name="AnswerMark" type="TextureRect" parent="Panel/AspectRatioContainer/OptionContainer/QuizOption" unique_id=367616139]
+layout_mode = 0
+offset_left = 2730.25
+offset_top = 12.125004
+offset_right = 2977.6106
+offset_bottom = 203.125
+texture = ExtResource("6_admcu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="QuizOption2" type="TextureButton" parent="Panel/AspectRatioContainer/OptionContainer" unique_id=185660345]
+layout_mode = 2
+texture_normal = ExtResource("3_vkf4s")
+texture_hover = ExtResource("4_4o461")
+script = ExtResource("5_7kq3x")
+correct_mark = ExtResource("6_admcu")
+wrong_mark = ExtResource("7_vkf4s")
+
+[node name="Description" type="RichTextLabel" parent="Panel/AspectRatioContainer/OptionContainer/QuizOption2" unique_id=715379905]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 2733.0
+offset_bottom = 210.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "Dependência de um servidor central"
+vertical_alignment = 1
+
+[node name="AnswerMark" type="TextureRect" parent="Panel/AspectRatioContainer/OptionContainer/QuizOption2" unique_id=1586250891]
+layout_mode = 0
+offset_left = 2730.25
+offset_top = 12.125004
+offset_right = 2977.6106
+offset_bottom = 203.125
+texture = ExtResource("6_admcu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="QuizOption3" type="TextureButton" parent="Panel/AspectRatioContainer/OptionContainer" unique_id=211347274]
+layout_mode = 2
+texture_normal = ExtResource("3_vkf4s")
+texture_hover = ExtResource("4_4o461")
+script = ExtResource("5_7kq3x")
+correct_mark = ExtResource("6_admcu")
+wrong_mark = ExtResource("7_vkf4s")
+
+[node name="Description" type="RichTextLabel" parent="Panel/AspectRatioContainer/OptionContainer/QuizOption3" unique_id=1745357316]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 2733.0
+offset_bottom = 210.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "Dependência de um servidor central"
+vertical_alignment = 1
+
+[node name="AnswerMark" type="TextureRect" parent="Panel/AspectRatioContainer/OptionContainer/QuizOption3" unique_id=1440725150]
+layout_mode = 0
+offset_left = 2730.25
+offset_top = 12.125004
+offset_right = 2977.6106
+offset_bottom = 203.125
+texture = ExtResource("6_admcu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="ReturnButton" type="TextureButton" parent="Panel" unique_id=1732794324]
+layout_mode = 0
+offset_left = 3119.25
+offset_top = 71.875015
+offset_right = 3248.25
+offset_bottom = 200.87502
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("8_7kq3x")
+texture_hover = ExtResource("9_lucv8")
+
+[connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]
+[connection signal="pressed" from="Panel/AspectRatioContainer/OptionContainer/QuizOption" to="Panel/AspectRatioContainer/OptionContainer/QuizOption" method="_on_pressed"]
+[connection signal="pressed" from="Panel/AspectRatioContainer/OptionContainer/QuizOption2" to="Panel/AspectRatioContainer/OptionContainer/QuizOption2" method="_on_pressed"]
+[connection signal="pressed" from="Panel/AspectRatioContainer/OptionContainer/QuizOption3" to="Panel/AspectRatioContainer/OptionContainer/QuizOption3" method="_on_pressed"]
+[connection signal="pressed" from="Panel/ReturnButton" to="." method="_on_return_button_pressed"]

@@ -30,11 +30,13 @@
 		"pattern1": "MVC",
 	},
 	"bug": {
-		"description": "Precisamos mudar as interfaces. Qual parte do sistema deveria ser alterada para trocar apenas a aparência da aplicação?",
-		"choices": {
-			"correct": "View",
-			"wrong1": "Model",
-			"wrong2": "Banco de Dados",
+		"bug1": {
+			"description": "Precisamos mudar as interfaces. Qual parte do sistema deveria ser alterada para trocar apenas a aparência da aplicação?",
+			"choices": {
+				"correct": "View",
+				"wrong1": "Model",
+				"wrong2": "Banco de Dados",
+			}
 		}
 	}
 }

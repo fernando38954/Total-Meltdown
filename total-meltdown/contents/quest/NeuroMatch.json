@@ -31,11 +31,13 @@
 		"pattern1": "ClientServer"
 	},
 	"bug": {
-		"description": "Durante uma atualização, a equipe decidiu desligar o servidor CUP1D0 sem redundância. Imediatamente todos os aplicativos ficaram inutilizáveis e usuários começaram a perder sincronizações emocionais. Qual fraqueza clássica da arquitetura Cliente-Servidor causou isso?",
-		"choices": {
-			"correct": "Dependência de um servidor central",
-			"wrong1": "Separação rígida em camadas",
-			"wrong2": "Excesso de interfaces gráficas"
+		"bug1": {
+			"description": "Durante uma atualização, a equipe decidiu desligar o servidor CUP1D0 sem redundância. Imediatamente todos os aplicativos ficaram inutilizáveis e usuários começaram a perder sincronizações emocionais. Qual fraqueza clássica da arquitetura Cliente-Servidor causou isso?",
+			"choices": {
+				"correct": "Dependência de um servidor central",
+				"wrong1": "Separação rígida em camadas",
+				"wrong2": "Excesso de interfaces gráficas"
+			}
 		}
 	}
 }

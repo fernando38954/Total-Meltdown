@@ -33,11 +33,13 @@
 		"pattern1": "Microkernel"
 	},
 	"bug": {
-		"description": "Um plug-in de “motivação pessoal” começou a travar constantemente após uma atualização. Felizmente, o restante do sistema operacional continuou funcionando normalmente. Qual característica da arquitetura Microkernel explica esse comportamento?",
-		"choices": {
-			"correct": "O isolamento entre núcleo e plug-ins",
-			"wrong1": "O uso de múltiplos servidores independentes",
-			"wrong2": "A separação rígida em camadas"
+		"bug1": {
+			"description": "Um plug-in de “motivação pessoal” começou a travar constantemente após uma atualização. Felizmente, o restante do sistema operacional continuou funcionando normalmente. Qual característica da arquitetura Microkernel explica esse comportamento?",
+			"choices": {
+				"correct": "O isolamento entre núcleo e plug-ins",
+				"wrong1": "O uso de múltiplos servidores independentes",
+				"wrong2": "A separação rígida em camadas"
+			}
 		}
 	}
 }

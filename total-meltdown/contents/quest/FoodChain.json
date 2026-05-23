@@ -35,11 +35,13 @@
 		"pattern1": "PipeFilter"
 	},
 	"bug": {
-		"description": "Após instalar o novo filtro nutricional, os filtros seguintes começaram a interpretar incorretamente os dados recebidos, gerando alimentos inutilizáveis em toda a linha de produção. Qual característica da arquitetura Pipe and Filter ficou mais evidente?",
-		"choices": {
-			"correct": "A dependência de formatos compatíveis entre filtros do pipeline",
-			"wrong1": "O compartilhamento de memória global entre módulos",
-			"wrong2": "A existência de um servidor central responsável pelo processamento"
+		"bug1": {
+			"description": "Após instalar o novo filtro nutricional, os filtros seguintes começaram a interpretar incorretamente os dados recebidos, gerando alimentos inutilizáveis em toda a linha de produção. Qual característica da arquitetura Pipe and Filter ficou mais evidente?",
+			"choices": {
+				"correct": "A dependência de formatos compatíveis entre filtros do pipeline",
+				"wrong1": "O compartilhamento de memória global entre módulos",
+				"wrong2": "A existência de um servidor central responsável pelo processamento"
+			}
 		}
 	}
 }
