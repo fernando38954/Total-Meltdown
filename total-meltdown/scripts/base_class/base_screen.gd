@@ -10,7 +10,11 @@ var open_scale = Vector2(0.65, 0.65)
 var hide_scale = Vector2(0, 0)
 var tween: Tween
 
+func _ready_prerequisites():
+	pass
+
 func _ready():
+	await _ready_prerequisites()
 	close_panel(0)
 	show()
 

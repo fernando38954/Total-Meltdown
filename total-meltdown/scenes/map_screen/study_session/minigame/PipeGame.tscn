@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://cald7r3bald2x"]
+
+[ext_resource type="Script" uid="uid://cnflnuvotpgy7" path="res://scripts/map_screen/study_session/minigame/pipe_game.gd" id="1_w47fl"]
+[ext_resource type="Texture2D" uid="uid://d2wkpbq1wttjc" path="res://assets/sprites/map_screen/event/study_session/minigame/PipeGame.png" id="2_a0xj6"]
+[ext_resource type="Texture2D" uid="uid://ce1mh4ngfvgt8" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkActive.png" id="2_hy3g4"]
+[ext_resource type="PackedScene" uid="uid://cf42mar1u4h2i" path="res://scenes/map_screen/study_session/minigame/PipeCell.tscn" id="3_a0xj6"]
+[ext_resource type="Texture2D" uid="uid://cic2xbgui5gfr" path="res://assets/sprites/map_screen/event/study_session/minigame/Source.png" id="3_b2a68"]
+[ext_resource type="Texture2D" uid="uid://cv1aeg3kdakdj" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkInactive.png" id="5_5pdod"]
+
+[node name="PipeGame" type="Control" unique_id=1725591918]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1952, 1098)
+script = ExtResource("1_w47fl")
+sink_active = ExtResource("2_hy3g4")
+sink_inactive = ExtResource("5_5pdod")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1654689370]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a0xj6")
+expand_mode = 1
+
+[node name="Source" type="TextureRect" parent="." unique_id=1825381184]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 139.0
+offset_right = 441.0
+offset_bottom = 461.0
+texture = ExtResource("3_b2a68")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=449409516]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 59.0
+offset_right = 3467.0
+offset_bottom = 2071.0
+columns = 6
+
+[node name="PipeCell" parent="GridContainer" unique_id=813451777 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell2" parent="GridContainer" unique_id=2066329186 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell3" parent="GridContainer" unique_id=1356021097 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell4" parent="GridContainer" unique_id=555435341 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell5" parent="GridContainer" unique_id=1885680368 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell6" parent="GridContainer" unique_id=320556260 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell7" parent="GridContainer" unique_id=764703864 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell8" parent="GridContainer" unique_id=31553460 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell9" parent="GridContainer" unique_id=714358872 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell10" parent="GridContainer" unique_id=459334829 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell11" parent="GridContainer" unique_id=615651107 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell12" parent="GridContainer" unique_id=501452085 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell13" parent="GridContainer" unique_id=355485394 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell14" parent="GridContainer" unique_id=1257124276 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell15" parent="GridContainer" unique_id=242565318 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell16" parent="GridContainer" unique_id=1908925264 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell17" parent="GridContainer" unique_id=1136070159 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell18" parent="GridContainer" unique_id=1322927392 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell19" parent="GridContainer" unique_id=494123600 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell20" parent="GridContainer" unique_id=1456385767 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell21" parent="GridContainer" unique_id=886837380 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell22" parent="GridContainer" unique_id=605028304 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell23" parent="GridContainer" unique_id=637227564 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="PipeCell24" parent="GridContainer" unique_id=1837483969 instance=ExtResource("3_a0xj6")]
+layout_mode = 2
+
+[node name="Sink" type="TextureRect" parent="." unique_id=127899842]
+layout_mode = 0
+offset_left = 3474.0
+offset_top = 1659.0
+offset_right = 3796.0
+offset_bottom = 1981.0
+texture = ExtResource("5_5pdod")

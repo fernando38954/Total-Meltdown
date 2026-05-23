@@ -27,5 +27,12 @@
 	Como desvantagem, destaca-se o [b]baixo desempenho[/b] em determinados cenários, devido à sobrecarga de comunicação em rede, latência entre serviços e necessidade de sincronização distribuída. Além disso, a natureza distribuída pode aumentar a complexidade operacional e exigir mecanismos adicionais de gerenciamento.",
 	"concept": "Sistema composto por pequenos serviços independentes que se comunicam via rede.",
 	"advantage": "Escalabilidade e Evolução. Cada serviço pode ser atualizado ou substituído sem parar os outros.",
-	"disadvantage": "Complexidade de Rede. A latência da comunicação distribuída pode prejudicar o desempenho."
+	"disadvantage": "Complexidade de Rede. A latência da comunicação distribuída pode prejudicar o desempenho.",
+	"bullet_point": {
+		"bullet1": "Sistema dividido em serviços independentes",
+		"bullet2": "Cada serviço possui responsabilidade própria",
+		"bullet3": "Comunicação baseada em APIs distribuídas",
+		"bullet4": "Serviços implantados de forma autônoma",
+		"bullet5": "Infraestrutura distribuída coordena serviços",
+	}
 }

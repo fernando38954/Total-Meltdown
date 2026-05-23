@@ -31,5 +31,12 @@
 	Como desvantagens, destacam-se a [b]baixa manutenibilidade[/b], devido à dificuldade de rastrear fluxos de execução e depurar sistemas orientados a eventos; e a [b]baixa confiabilidade[/b], uma vez que a natureza assíncrona pode introduzir problemas como perda de eventos, processamento duplicado e dificuldade em garantir consistência.",
 	"concept": "Componentes reagem a eventos disparados de forma assíncrona, sem se conhecerem diretamente.",
 	"advantage": "Agilidade e Paralelismo. Ótimo desempenho em sistemas distribuídos e altamente desacoplados.",
-	"disadvantage": "Rastreabilidade Difícil. É um desafio depurar ou garantir que um evento não seja perdido (Baixa Confiabilidade)."
+	"disadvantage": "Rastreabilidade Difícil. É um desafio depurar ou garantir que um evento não seja perdido (Baixa Confiabilidade).",
+	"bullet_point": {
+		"bullet1": "Componentes comunicam-se através de eventos",
+		"bullet2": "Eventos trafegam por canais assíncronos",
+		"bullet3": "Produtores desconhecem consumidores dos eventos",
+		"bullet4": "Consumidores reagem a mudanças detectadas",
+		"bullet5": "Fluxo baseado em emissão de eventos",
+	}
 }

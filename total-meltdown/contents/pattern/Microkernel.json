@@ -26,5 +26,12 @@
 	Como desvantagem, destaca-se o [b]baixo desempenho[/b], devido à sobrecarga de comunicação entre o núcleo e os módulos externos, o que pode introduzir latência adicional em comparação a arquiteturas mais monolíticas. Além disso, o gerenciamento das interações entre múltiplos plug-ins pode aumentar a complexidade do sistema.",
 	"concept": "Um núcleo mínimo essencial cercado por plug-ins (módulos externos) que estendem o sistema.",
 	"advantage": "Extensibilidade. É muito fácil adicionar ou remover funcionalidades sem tocar no núcleo.",
-	"disadvantage": "Sobrecarga de Comunicação. A troca de mensagens entre o núcleo e os plug-ins gera latência."
+	"disadvantage": "Sobrecarga de Comunicação. A troca de mensagens entre o núcleo e os plug-ins gera latência.",
+	"bullet_point": {
+		"bullet1": "Núcleo mínimo controla funções essenciais",
+		"bullet2": "Plug-ins adicionam funcionalidades externas",
+		"bullet3": "Extensões independentes conectadas ao núcleo",
+		"bullet4": "Comunicação padronizada entre componentes internos",
+		"bullet5": "Funcionalidades separadas em módulos reutilizáveis",
+	}
 }

@@ -50,6 +50,7 @@ func load_patterns():
 						"concept": data.get("concept", ""),
 						"advantage": data.get("advantage", ""),
 						"disadvantage": data.get("disadvantage", ""),
+						"bullet_point": data.get("bullet_point", {}),
 					}
 				else:
 					creation_finished = true

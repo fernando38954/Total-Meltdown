@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonAppearance" format=3 uid="uid://dt32b1woflcht"]
+
+[ext_resource type="Texture2D" uid="uid://dteib6vqoa2yf" path="res://assets/sprites/map_screen/event/study_session/minigame/button_appearance/L_active_hover.png" id="1_k73mi"]
+[ext_resource type="Texture2D" uid="uid://f7nen5p5m47s" path="res://assets/sprites/map_screen/event/study_session/minigame/button_appearance/L_active_normal.png" id="2_cawg0"]
+[ext_resource type="Texture2D" uid="uid://4rregu1e2d8o" path="res://assets/sprites/map_screen/event/study_session/minigame/button_appearance/L_active_pressed.png" id="3_fyujq"]
+[ext_resource type="Script" uid="uid://dpe86hlasa4ja" path="res://scripts/map_screen/study_session/minigame/button_appearance.gd" id="4_2itnj"]
+
+[resource]
+script = ExtResource("4_2itnj")
+normal = ExtResource("2_cawg0")
+hover = ExtResource("1_k73mi")
+pressed = ExtResource("3_fyujq")
+metadata/_custom_type_script = "uid://dpe86hlasa4ja"

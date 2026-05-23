@@ -9,7 +9,10 @@ class_name JobFairResume
 @export_category("Label Settings")
 @export var font = ThemeDB.fallback_font
 
+var developer_key = ""
+
 func set_content(item_key: Variant):
+	developer_key = item_key
 	var item_data = DeveloperManager.get_developer_by_key(item_key)
 	developer_name.text = "[b]%s[/b]" % [item_data.name]
 	cost_label.text = "-%d$" % [item_data.cost]
@@ -18,4 +21,4 @@ func set_content(item_key: Variant):
 	radar_chart.set_attributes(item_data.attribute)
 
 func _on_hire_button_pressed() -> void:
-	GlobalSignal.emit_signal("hire_developer", item_index)
+	GlobalSignal.emit_signal("hire_developer", developer_key)

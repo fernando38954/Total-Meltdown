@@ -27,6 +27,6 @@ func _ready_prerequisites():
 	while !DeveloperManager.creation_finished:
 		await get_tree().process_frame
 
-func _on_receive_hire_developer(dev_index):
-	DeveloperManager.hire_developer(recruitable_developers_list, recruitable_developers_list[dev_index])
+func _on_receive_hire_developer(developer_key):
+	DeveloperManager.hire_developer(recruitable_developers_list, developer_key)
 	GlobalSignal.emit_signal("current_map_event_finished")

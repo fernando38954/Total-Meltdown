@@ -26,5 +26,12 @@
 	Como desvantagens, destacam-se a [b]baixa manutenibilidade[/b], devido à dependência do servidor central e à possível dificuldade de evoluir o sistema sem impactar clientes; e a [b]baixa confiabilidade[/b], já que o servidor representa um ponto único de falha, problemas nele podem comprometer todo o sistema.",
 	"concept": "Divisão entre quem solicita serviços (Cliente) e quem os provê centralizadamente (Servidor).",
 	"advantage": "Flexibilidade. Clientes podem rodar em qualquer plataforma, e a interface evolui sozinha.",
-	"disadvantage": "Ponto Único de Falha. Se o servidor cair, todo o sistema fica indisponível (Baixa Confiabilidade)."
+	"disadvantage": "Ponto Único de Falha. Se o servidor cair, todo o sistema fica indisponível (Baixa Confiabilidade).",
+	"bullet_point": {
+		"bullet1": "Clientes consomem serviços do servidor",
+		"bullet2": "Servidor centraliza processamento e dados",
+		"bullet3": "Comunicação ocorre através da rede",
+		"bullet4": "Múltiplos clientes acessam mesmo servidor",
+		"bullet5": "Interface separada do processamento principal",
+	}
 }

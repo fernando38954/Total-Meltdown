@@ -26,5 +26,12 @@
 	Como desvantagens, destacam-se a [b]baixa confiabilidade[/b], uma vez que falhas em um filtro podem interromper todo o pipeline; e a [b]baixa usabilidade[/b], já que essa arquitetura não é naturalmente voltada para interação com o usuário final, sendo mais adequada para processamento interno de dados.",
 	"concept": "Sequência de transformações onde a saída de um filtro é a entrada do próximo através de “canos”.",
 	"advantage": "Processamento de Fluxo. Excelente performance para dados em massa e alta modularidade.",
-	"disadvantage": "Interatividade Limitada. Baixa usabilidade para o usuário final, sendo focada em processamento interno."
+	"disadvantage": "Interatividade Limitada. Baixa usabilidade para o usuário final, sendo focada em processamento interno.",
+	"bullet_point": {
+		"bullet1": "Processamento dividido em filtros independentes",
+		"bullet2": "Pipes conectam etapas do processamento",
+		"bullet3": "Dados percorrem fluxo sequencial contínuo",
+		"bullet4": "Cada filtro transforma dados recebidos",
+		"bullet5": "Pipeline organiza processamento em etapas",
+	}
 }

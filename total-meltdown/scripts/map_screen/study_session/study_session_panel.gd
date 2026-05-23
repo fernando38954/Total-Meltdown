@@ -27,6 +27,6 @@ func _ready_prerequisites():
 	while !PatternManager.creation_finished:
 		await get_tree().process_frame
 
-func _on_receive_study_pattern(pattern_index):
-	PatternManager.study_pattern(studiable_patterns_list, studiable_patterns_list[pattern_index])
+func _on_receive_study_pattern(pattern_key):
+	PatternManager.study_pattern(studiable_patterns_list, pattern_key)
 	GlobalSignal.emit_signal("current_map_event_finished")

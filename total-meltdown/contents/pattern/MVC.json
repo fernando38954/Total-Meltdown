@@ -26,5 +26,12 @@
 	Como desvantagem, destaca-se a [b]baixa compatibilidade[/b], uma vez que a separação rígida entre componentes pode dificultar a integração com sistemas legados ou arquiteturas que não seguem o mesmo padrão estrutural.",
 	"concept": "Separação entre dados (Model), interface (View) e lógica de entrada (Controller).",
 	"advantage": "Alta Usabilidade. Permite criar múltiplas interfaces para os mesmos dados com facilidade.",
-	"disadvantage": "Baixa Compatibilidade. Difícil de integrar com sistemas que não seguem esse padrão rígido."
+	"disadvantage": "Baixa Compatibilidade. Difícil de integrar com sistemas que não seguem esse padrão rígido.",
+	"bullet_point": {
+		"bullet1": "Divide sistema em Model, View, Controller",
+		"bullet2": "Controller intermedia usuário e aplicação",
+		"bullet3": "Views exibem dados do modelo",
+		"bullet4": "Model centraliza regras de negócio",
+		"bullet5": "Interface separada da lógica principal",
+	}
 }

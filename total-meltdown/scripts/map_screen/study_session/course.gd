@@ -8,7 +8,10 @@ class_name StudySessionCourse
 @onready var advantage_label = $Advantage
 @onready var disadvantage_label = $Disadvantage
 
+var pattern_key = ""
+
 func set_content(item_key: Variant):
+	pattern_key = item_key
 	var item_data = PatternManager.get_pattern_by_key(item_key)
 	pattern_title.text = "[b]%s[/b]" % [item_data.title]
 	cost_label.text = "-%d$" % [item_data.cost]
@@ -18,4 +21,4 @@ func set_content(item_key: Variant):
 	disadvantage_label.text = "%s" % [item_data.disadvantage]
 
 func _on_study_button_pressed() -> void:
-	GlobalSignal.emit_signal("study_pattern", item_index)
+	GlobalSignal.emit_signal("study_pattern", pattern_key)

@@ -27,5 +27,12 @@
 	Como desvantagens, destacam-se o [b]baixo desempenho[/b], já que requisições frequentemente precisam atravessar múltiplas camadas, aumentando a sobrecarga; e a [b]baixa compatibilidade[/b], pois a rigidez estrutural pode dificultar a integração com sistemas externos ou arquiteturas que não seguem a mesma organização em camadas.",
 	"concept": "Organização hierárquica (Apresentação, Aplicação, Domínio e Infraestrutura).",
 	"advantage": "Segurança e Confiabilidade. Controle rigoroso de acesso e isolamento de falhas entre os níveis.",
-	"disadvantage": "Baixo Desempenho. O dado precisa atravessar todas as camadas, gerando sobrecarga."
+	"disadvantage": "Baixo Desempenho. O dado precisa atravessar todas as camadas, gerando sobrecarga.",
+	"bullet_point": {
+		"bullet1": "Sistema organizado em camadas hierárquicas",
+		"bullet2": "Cada camada possui responsabilidade específica",
+		"bullet3": "Comunicação ocorre entre camadas adjacentes",
+		"bullet4": "Domínio separado da infraestrutura externa",
+		"bullet5": "Fluxo controlado entre diferentes níveis",
+	}
 }
