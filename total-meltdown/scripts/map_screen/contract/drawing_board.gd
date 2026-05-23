@@ -20,6 +20,7 @@ var final_attribute: Dictionary = {}
 
 @export_category("Submit Button")
 @export var submit_button: TextureButton
+@export var claim_button: TextureButton
 @export var progress_button: WorkProgressBar
 
 func reset_content():
@@ -27,6 +28,7 @@ func reset_content():
 	pattern_box.reset_box_content()
 	developer_boxes.reset_boxes_data()
 	submit_button.disabled = true
+	claim_button.disabled = true
 
 func set_content(content_key: String, view_only: bool = false):
 	# Content
@@ -36,7 +38,7 @@ func set_content(content_key: String, view_only: bool = false):
 		for idx in range(0, developer_boxes.box_set.size()):
 			if idx < contract_data.developers_key.size():
 				developer_boxes.box_set[idx].assign_box_key(contract_data.developers_key[idx])
-		progress_button.set_contract(content_key)
+		progress_button.set_contract(content_key, claim_button)
 		update_content()
 	
 	# Visible
@@ -44,6 +46,7 @@ func set_content(content_key: String, view_only: bool = false):
 	for idx in range(0, developer_boxes.box_set.size()):
 		developer_boxes.box_set[idx].set_disabled(view_only)
 	submit_button.set_visible(not view_only)
+	claim_button.set_visible(view_only)
 	progress_button.set_visible(view_only)
 
 func update_content():
@@ -55,7 +58,7 @@ func update_radar_chart():
 	var developer_attribute = developer_boxes.get_attribute_data()
 	final_attribute = multiply_dicts(base_attribute, developer_attribute)
 	radar_chart.set_label_font(font)
-	radar_chart.set_attributes(base_attribute, final_attribute)
+	radar_chart.set_attributes(final_attribute, base_attribute)
 	submit_button.set_disabled(final_attribute.is_empty())
 
 func update_level_indicator():

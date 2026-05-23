@@ -105,3 +105,8 @@ func _on_submit_button_pressed() -> void:
 	var total_attribute = drawing_board.final_attribute
 	ContractManager.start_contract(actived_quest, pattern_key, developer_key_list, total_attribute)
 	GlobalSignal.emit_signal("current_map_event_finished")
+
+
+func _on_claim_button_pressed() -> void:
+	ContractManager.claim_contract(actived_quest)
+	GlobalSignal.emit_signal("current_map_event_finished")

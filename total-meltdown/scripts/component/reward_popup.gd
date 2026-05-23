@@ -52,7 +52,7 @@ func show_reward(contract_data: ContractData, final_profit: int) -> void:
 	quest_description.text =  "\n".join(quest_data.description.values())
 	quest_icon.texture = quest_data.icon
 	radar_chart.set_label_font(font)
-	radar_chart.set_attributes(quest_data.attribute, contract_data.total_attribute)
+	radar_chart.set_attributes(contract_data.total_attribute, quest_data.attribute)
 	bonus_mark.texture = success_mark if contract_data.pattern_satisfied else fail_mark
 	pattern_demand.text =  ", ".join(quest_data.requirements.values())
 	reward_description.text = generate_reward_description(contract_data, final_profit)

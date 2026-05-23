@@ -254,8 +254,10 @@ func update_tooltip_content(idx: int) -> void:
 		return
 	
 	var attr_name = property_display_names[idx]
-	var attr_value = target_values[idx] if target_second_values[idx] == lower_limit else target_second_values[idx]
+	var attr_value = target_values[idx]
 	tooltip_label.text = "%s\n%.1f" % [attr_name, attr_value]
+	if target_second_values[idx] != lower_limit:
+		tooltip_label.text += " / %.1f" % target_second_values[idx]
 	tooltip_label.reset_size()
 
 func update_tooltip_position(idx: int) -> void:
