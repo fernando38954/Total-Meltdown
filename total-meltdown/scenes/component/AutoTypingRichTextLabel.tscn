@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://cnoyn5mwldeu8" path="res://scripts/component/auto_typing_rich_text_label.gd" id="1_rk6p2"]
 
 [node name="AutoTypingRichTextLabel" type="RichTextLabel" unique_id=2010605356]
-offset_right = 425.0
-offset_bottom = 207.0
+offset_right = 1248.0
+offset_bottom = 963.0
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "asdasdasdasd"
 script = ExtResource("1_rk6p2")
-label_size = 80
+auto_typing_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+auto_start = true
 
 [node name="TypingTimer" type="Timer" parent="." unique_id=1337545994]
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

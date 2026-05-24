@@ -1,38 +1,48 @@
 extends RichTextLabel
+class_name AutoTypingRichTextLabel
+
+signal typing_finished()
 
 @onready var text_label: RichTextLabel = self
 @onready var typing_timer: Timer = $TypingTimer
-@export var label_size: int
+
+@export_category("Auto Typing Settings")
+@export_multiline  var auto_typing_text: String = ""
+@export var typing_speed: float = 0.05
+@export var auto_start: bool = false
+
+var is_typing: bool = false
+var stop_requested: bool = false
 
 func _ready() -> void:
-	text_label.add_theme_font_size_override("normal_font_size", label_size)
+	if auto_start and not auto_typing_text.is_empty():
+		start_typing()
 
-func play_text_typing(json_file_path: String) -> void:
-	var json_data = get_json_data(json_file_path)
-	for part in json_data.values():
-		text_label.text = ""
-		for paragraph in part.values():
-			for letter in paragraph:
-				text_label.text += letter
-				await wait_timer(0.05)
-			text_label.text += "\n"
-			await wait_timer(1)
-		await wait_timer(2)
-
-func get_json_data(json_file_path: String):
-	var file = FileAccess.open(json_file_path, FileAccess.READ)
-	var file_data = null
-	if file:
-		var json_text = file.get_as_text()
-		var json = JSON.new()
-		var error = json.parse(json_text)
-		if error == OK:
-			file_data = json.data
-	else:
-		push_error("Failed to parse JSON：", json_file_path)
-	file.close()
-	return file_data
+func start_typing(target_text: String = auto_typing_text) -> void:
+	auto_typing_text = target_text	
+	is_typing = true
+	stop_requested = false
+	text_label.text = ""
+	
+	for letter in auto_typing_text:
+		if stop_requested:
+			return
+		text_label.text += letter
+		await wait_timer(typing_speed)
+	
+	is_typing = false
+	typing_finished.emit()
 
 func wait_timer(second: float):
 	typing_timer.start(second)
 	await typing_timer.timeout
+
+func skip_typing() -> void:
+	is_typing = false
+	stop_requested = true
+	text = auto_typing_text
+	typing_finished.emit()
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		skip_typing()

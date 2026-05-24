@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bgt7sl4k0lrgt"]
+
+[ext_resource type="Texture2D" uid="uid://57enddf14c48" path="res://assets/sprites/intro_cutscene/1-BackgroundCity.png" id="1_0f8n4"]
+[ext_resource type="Script" uid="uid://dvpb5loqyvca6" path="res://scripts/intro_cutscene.gd" id="1_p6ax6"]
+[ext_resource type="Texture2D" uid="uid://bjx0jeb1uick3" path="res://assets/sprites/intro_cutscene/2-CPUs.png" id="2_p6ax6"]
+[ext_resource type="Texture2D" uid="uid://csqce7y6rdqdn" path="res://assets/sprites/intro_cutscene/3-CodeRunning.png" id="3_erdjy"]
+[ext_resource type="Texture2D" uid="uid://b0qdvsdc8815i" path="res://assets/sprites/intro_cutscene/4-ComputerError.png" id="4_cdel8"]
+[ext_resource type="Texture2D" uid="uid://bga357llo7ey2" path="res://assets/sprites/intro_cutscene/5-BuildingFire.png" id="5_2kd0m"]
+[ext_resource type="Texture2D" uid="uid://cj6bmyr1v1osi" path="res://assets/sprites/intro_cutscene/6-RetroCODE.png" id="6_w7o7x"]
+[ext_resource type="Texture2D" uid="uid://v4oritvw6hn2" path="res://assets/sprites/intro_cutscene/7-ComputerCalls.png" id="7_iebpy"]
+[ext_resource type="Texture2D" uid="uid://bnukatevj0kku" path="res://assets/sprites/intro_cutscene/8-Agent.png" id="8_8ns5g"]
+[ext_resource type="PackedScene" uid="uid://be21uwfnqhiru" path="res://scenes/component/AutoTypingRichTextLabel.tscn" id="9_do84u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6ax6"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="IntroCutscene" type="Node2D" unique_id=2141615468]
+script = ExtResource("1_p6ax6")
+
+[node name="Panel" type="Panel" parent="." unique_id=917742841]
+offset_right = 3930.0
+offset_bottom = 2218.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p6ax6")
+
+[node name="FirstSet" type="Node2D" parent="." unique_id=445806822]
+
+[node name="BackgroundCity" type="Sprite2D" parent="FirstSet" unique_id=1096193469]
+position = Vector2(728.75, 1028.8501)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_0f8n4")
+
+[node name="CPUs" type="Sprite2D" parent="FirstSet" unique_id=911877314]
+position = Vector2(1948.75, 358.85004)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_p6ax6")
+
+[node name="CodeRunning" type="Sprite2D" parent="FirstSet" unique_id=486410705]
+position = Vector2(1942.75, 1024.8501)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_erdjy")
+
+[node name="ComputerError" type="Sprite2D" parent="FirstSet" unique_id=640904878]
+position = Vector2(1948.75, 1694.8501)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_cdel8")
+
+[node name="BuildingFire" type="Sprite2D" parent="FirstSet" unique_id=1375685333]
+position = Vector2(3176.7502, 1030.8501)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_2kd0m")
+
+[node name="SecondSet" type="Node2D" parent="." unique_id=1320044476]
+
+[node name="RetroCode" type="Sprite2D" parent="SecondSet" unique_id=1956767680]
+position = Vector2(802.10004, 508)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_w7o7x")
+
+[node name="ComputerCalls" type="Sprite2D" parent="SecondSet" unique_id=730088509]
+position = Vector2(803, 1513)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_iebpy")
+
+[node name="Agent" type="Sprite2D" parent="SecondSet" unique_id=1553375278]
+position = Vector2(2599, 1014)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_8ns5g")
+
+[node name="AutoTypingRichTextLabel" parent="." unique_id=2010605356 instance=ExtResource("9_do84u")]
+offset_left = 208.0
+offset_top = 1996.0
+offset_right = 3704.0
+offset_bottom = 2177.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false

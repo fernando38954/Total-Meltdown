@@ -10,5 +10,5 @@ signal developer_panel_update
 signal game_start
 signal game_finished
 
-# Minigmae
+# Minigame
 signal minigame_finished
