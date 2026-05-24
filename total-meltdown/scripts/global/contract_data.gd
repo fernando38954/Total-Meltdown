@@ -25,7 +25,7 @@ var attribute_compatibility: float = 0.0
 var progress: float = 0
 var progress_per_update: float = 10
 
-# Bug mechanics
+# Bug Mechanics
 var has_bug: bool = false
 var bug_active: bool = false
 var bug_solve_trying: bool = false

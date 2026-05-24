@@ -1,6 +1,6 @@
 {
 	"key": "Fridge",
-	"quarter": 1,
+	"quarter": 0,
 	"title": "Geladeira Social",
 	"icon": "res://assets/sprites/quest_icons/Fridge.png",
 	"difficult": "Easy",

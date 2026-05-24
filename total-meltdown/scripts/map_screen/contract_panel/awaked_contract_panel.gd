@@ -26,3 +26,6 @@ func update_contract_panel(contract_key):
 			if progress_bar.contract_key == contract_key:
 				progress_bar.queue_free()
 				return
+
+func size():
+	return contract_panel.get_children().size()

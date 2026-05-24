@@ -64,8 +64,6 @@ func initialize():
 	recruitable_developers.clear()
 	idle_developers.clear()
 	working_developers.clear()
-	var random_developer = prepare_random_developers(1)
-	hire_developer(random_developer, random_developer[0])
 #endregion
 
 #region Array Operation
@@ -81,14 +79,15 @@ func prepare_random_developers(count: int = 2) -> Array:
 		recruitable_developers.append(developer_entry)
 	return selected
 
-func hire_developer(recruitable_developers_list: Array, target_developer_data: String):
+func hire_developer(recruitable_developers_list: Array, target_developer_data: String, is_free: bool = false):
 	for developer_entry in recruitable_developers_list:
 		if recruitable_developers.has(developer_entry):
 			recruitable_developers.erase(developer_entry)
 			if developer_entry == target_developer_data:
 				owned_developers.append(developer_entry)
 				idle_developers.append(developer_entry)
-				pay_developer(developer_entry)
+				if not is_free:
+					pay_developer(developer_entry)
 			else:
 				locked_developers.append(developer_entry)
 		else:

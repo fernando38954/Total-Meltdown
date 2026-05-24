@@ -1,5 +1,6 @@
 {
 	"key": "MVC",
+	"quarter": 0,
 	"title": "Modelo-Visão-Controlador",
 	"icon": "res://assets/sprites/pattern_icons/MVC.png",
 	"cost": 50,

@@ -2,11 +2,11 @@ extends CanvasLayer
 class_name QuizPanel
 
 enum QuizType {
-	Normal, Bug
+	Exam, Bug
 }
 
 const appearance_list: Dictionary[String, QuizAppearance] = {
-	"Normal": preload("res://assets/resource/quiz_appearance/normal_quiz.tres"),
+	"Exam": preload("res://assets/resource/quiz_appearance/exam_quiz.tres"),
 	"Bug": preload("res://assets/resource/quiz_appearance/bug_quiz.tres"),
 }
 
@@ -14,6 +14,7 @@ const appearance_list: Dictionary[String, QuizAppearance] = {
 @onready var question = $Panel/Question
 @onready var option_container = $Panel/AspectRatioContainer/OptionContainer
 @onready var return_button = $Panel/ReturnButton
+@onready var next_question_button = $Panel/NextQuestionButton
 var appearance: QuizAppearance
 var question_list: Array[Dictionary] = []
 var current_question_idx: int = 0
@@ -27,12 +28,13 @@ func _ready() -> void:
 	panel.scale = Vector2.ZERO
 	correct_counter = 0
 	return_button.hide()
+	next_question_button.hide()
 	open_panel()
 
 func set_quiz(_quiz_type: QuizType, _question_list: Dictionary, _response_key: String):
 	quiz_type = _quiz_type
 	response_key = _response_key
-	appearance = appearance_list["Normal"] if quiz_type == QuizType.Normal else appearance_list["Bug"]
+	appearance = appearance_list["Exam"] if quiz_type == QuizType.Exam else appearance_list["Bug"]
 	for question_entry in _question_list.values():
 		question_list.append(question_entry)
 	current_question_idx = 0
@@ -77,7 +79,7 @@ func choice_answer(answer_is_correct: bool):
 	
 	# Check if quiz continues
 	if current_question_idx + 1 < question_list.size():
-		set_content(current_question_idx + 1)
+		next_question_button.show()
 	else:
 		return_button.show()
 		disable_all_options()
@@ -113,3 +115,9 @@ func _on_click_blocker_gui_input(event: InputEvent):
 
 func _on_return_button_pressed() -> void:
 	close_panel()
+	if quiz_type == QuizType.Exam:
+		ExamManager.finish_exam(response_key, correct_counter)
+
+func _on_next_question_button_pressed() -> void:
+	set_content(current_question_idx + 1)
+	next_question_button.hide()

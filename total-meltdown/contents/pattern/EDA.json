@@ -1,5 +1,6 @@
 {
 	"key": "EDA",
+	"quarter": 3,
 	"title": "Arquitetura Orientada a Eventos",
 	"icon": "res://assets/sprites/pattern_icons/EDA.png",
 	"cost": 50,

@@ -1,5 +1,6 @@
 {
 	"key": "Layered",
+	"quarter": 1,
 	"title": "Arquitetura em Camadas",
 	"icon": "res://assets/sprites/pattern_icons/Layered.png",
 	"cost": 50,

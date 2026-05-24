@@ -29,6 +29,7 @@ ContractManager="*uid://b8hdc7nftcxdo"
 GlobalResource="*uid://kst3ngt6b8cd"
 AudioManager="*uid://b08aaruvsaysr"
 TutorialPageManager="*uid://d0kjkfoa2j7wp"
+ExamManager="*uid://1hqqeh6vgjve"
 
 [display]
 

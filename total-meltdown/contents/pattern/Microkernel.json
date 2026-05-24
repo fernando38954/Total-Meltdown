@@ -1,5 +1,6 @@
 {
 	"key": "Microkernel",
+	"quarter": 3,
 	"title": "Microkernel",
 	"icon": "res://assets/sprites/pattern_icons/Microkernel.png",
 	"cost": 50,

@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://qm8tt7f7xkix" path="res://assets/sprites/component/FailMark.png" id="7_vkf4s"]
 [ext_resource type="Texture2D" uid="uid://bvdnpxoq22vp6" path="res://assets/sprites/navigation_button/ReturnButtonNormal.png" id="8_7kq3x"]
 [ext_resource type="Texture2D" uid="uid://duw8dbs8bsp05" path="res://assets/sprites/navigation_button/ReturnButonHover.png" id="9_lucv8"]
+[ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/sprites/navigation_button/Arrow_Normal.png" id="10_cp0sv"]
+[ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/sprites/navigation_button/Arrow_Press.png" id="11_g0son"]
+[ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/sprites/navigation_button/Arrow_Hover.png" id="12_0lysf"]
 
 [node name="QuizPanel" type="CanvasLayer" unique_id=67637543]
 script = ExtResource("1_4vlmd")
@@ -150,8 +153,20 @@ pivot_offset = Vector2(128, 128)
 texture_normal = ExtResource("8_7kq3x")
 texture_hover = ExtResource("9_lucv8")
 
+[node name="NextQuestionButton" type="TextureButton" parent="Panel" unique_id=1943839551]
+layout_mode = 0
+offset_left = 3265.5
+offset_top = 455.625
+offset_right = 3521.5
+offset_bottom = 711.625
+rotation = 1.5707964
+texture_normal = ExtResource("10_cp0sv")
+texture_pressed = ExtResource("11_g0son")
+texture_hover = ExtResource("12_0lysf")
+
 [connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]
 [connection signal="pressed" from="Panel/AspectRatioContainer/OptionContainer/QuizOption" to="Panel/AspectRatioContainer/OptionContainer/QuizOption" method="_on_pressed"]
 [connection signal="pressed" from="Panel/AspectRatioContainer/OptionContainer/QuizOption2" to="Panel/AspectRatioContainer/OptionContainer/QuizOption2" method="_on_pressed"]
 [connection signal="pressed" from="Panel/AspectRatioContainer/OptionContainer/QuizOption3" to="Panel/AspectRatioContainer/OptionContainer/QuizOption3" method="_on_pressed"]
 [connection signal="pressed" from="Panel/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="Panel/NextQuestionButton" to="." method="_on_next_question_button_pressed"]

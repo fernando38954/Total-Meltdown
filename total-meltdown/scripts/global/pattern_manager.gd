@@ -39,6 +39,7 @@ func load_patterns():
 						push_error("Error: Unable to load image:", data.get("icon", ""))
 					all_patterns[key] = {
 						"key": key,
+						"quarter": data.get("quarter", -1),
 						"title": data.get("title", "Untitled"),
 						"icon": icon,
 						"cost": data.get("cost", 0),
@@ -63,11 +64,15 @@ func load_patterns():
 	print_debug("Number of patterns loaded：", all_patterns.size())
 
 func initialize():
-	locked_patterns = all_patterns.keys()
+	locked_patterns.clear()
+	for i in range(GlobalResource.TOTAL_QUARTER):
+		locked_patterns.append([])
+	for pattern_key in all_patterns.keys():
+		var pattern_data = get_pattern_by_key(pattern_key)
+		locked_patterns[pattern_data.quarter].append(pattern_key)
+	
 	studiable_patterns.clear()
 	owned_patterns.clear()
-	var random_pattern = prepare_random_patterns(1)
-	study_pattern(random_pattern, random_pattern[0], true)
 #endregion
 
 #region Array Operation
@@ -75,11 +80,11 @@ func get_pattern_by_key(key: String) -> Dictionary:
 	return all_patterns.get(key, {})
 
 func prepare_random_patterns(count: int = 2) -> Array:
-	var shuffled = locked_patterns.duplicate()
-	shuffled.shuffle()
-	var selected = shuffled.slice(0, count)
+	var pattern_stock = locked_patterns[GlobalResource.current_quarter].duplicate()
+	pattern_stock.shuffle()
+	var selected = pattern_stock.slice(0, count)
 	for pattern_entry in selected:
-		locked_patterns.erase(pattern_entry)
+		locked_patterns[GlobalResource.current_quarter].erase(pattern_entry)
 		studiable_patterns.append(pattern_entry)
 	return selected
 
@@ -92,7 +97,7 @@ func study_pattern(studiable_patterns_list: Array, target_pattern_key: String, i
 				if not is_free:
 					pay_pattern(pattern_entry)
 			else:
-				locked_patterns.append(pattern_entry)
+				locked_patterns[GlobalResource.current_quarter].append(pattern_entry)
 		else:
 			push_error("study_pattern: No pattern with key " + pattern_entry + " found in studiable_patterns_list")
 

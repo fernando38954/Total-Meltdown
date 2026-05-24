@@ -1,5 +1,6 @@
 {
 	"key": "ClientServer",
+	"quarter": 1,
 	"title": "Cliente-Servidor",
 	"icon": "res://assets/sprites/pattern_icons/ClientServer.png",
 	"cost": 50,

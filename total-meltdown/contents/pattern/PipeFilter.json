@@ -1,5 +1,6 @@
 {
 	"key": "PipeFilter",
+	"quarter": 2,
 	"title": "Pipe and Filter",
 	"icon": "res://assets/sprites/pattern_icons/PipeFilter.png",
 	"cost": 50,

@@ -8,6 +8,7 @@ class_name MapScreen
 @export var spawn_interval: float = 1.0
 @export var max_spawn_attempts: int = 50
 @export var money_label: RichTextLabel
+@export var awaked_contract_container: AwakedContractPanel
 
 @export_category("Event Screen")
 @export var click_blocker: ColorRect
@@ -52,11 +53,17 @@ func create_event_button():
 	var rand_type = get_rand_type()
 	if rand_type == -1:
 		return
+	if rand_type == 3:
+		var awaked_event = current_event_button_list.size()
+		var awaked_contract = awaked_contract_container.size()
+		if awaked_event > 0 or awaked_contract > 0:
+			return
 	var rand_scale = randf_range(0.5, 1.0)
 	var rand_position = get_rand_position(rand_scale * Vector2.ONE)
 	if rand_position == -1 * Vector2.ONE:
 		return
 	
+	decrease_event_button_stock(rand_type)
 	var button_instance = event_button_list[rand_type].instantiate()
 	current_event_button_list.append(button_instance)
 	button_instance.initialize(rand_position, rand_scale, self)
@@ -64,16 +71,18 @@ func create_event_button():
 	button_instance.appear()
 
 func get_rand_type() -> int:
-	var rand_type = randi_range(0, event_button_list.size() - 1)
+	var rand_type = randi_range(0, 2)
 	for i in range(3):
 		var idx = (rand_type + i) % 3
 		var button_type = event_button_list[idx].get_state().get_node_name(0)
-		if button_type == "JobFairEventButton" and not DeveloperManager.locked_developers.is_empty():
+		if button_type == "JobFairEventButton" and GlobalResource.remaining_developer() > 0:
 			return idx
-		elif button_type == "StudySessionEventButton" and not PatternManager.locked_patterns.is_empty():
+		elif button_type == "StudySessionEventButton" and GlobalResource.remaining_pattern() > 0:
 			return idx
-		elif button_type == "ContractEventButton" and not QuestManager.pending_quests.is_empty():
+		elif button_type == "ContractEventButton" and GlobalResource.remaining_quest() > 0:
 			return idx
+	if GlobalResource.remaining_exams() > 0:
+		return 3
 	return -1
 
 func get_rand_position(button_scale: Vector2) -> Vector2:
@@ -103,6 +112,17 @@ func check_position_validity(p_position: Vector2) -> bool:
 		if p_position.distance_to(button.position) < min_distance:
 			return false
 	return true
+
+func decrease_event_button_stock(event_type: int):
+	var button_type = event_button_list[event_type].get_state().get_node_name(0)
+	if button_type == "JobFairEventButton":
+		GlobalResource.decrease_developer_event_stock()
+	elif button_type == "StudySessionEventButton":
+		GlobalResource.decrease_pattern_event_stock()
+	elif button_type == "ContractEventButton":
+		GlobalResource.decrease_quest_event_stock()
+	elif button_type == "ExamEventButton":
+		GlobalResource.decrease_exams_event_stock()
 
 func close_event_button(event_button: BaseEventButton = current_active_event_button):
 	if event_button != null:
@@ -153,6 +173,9 @@ func open_contract_screen(content_key, view_only = false):
 	contract_screen.set_content(content_key, view_only)
 	contract_screen.open_panel()
 	current_active_screen = contract_screen
+
+func open_exam_screen(content_key):
+	ExamManager.start_exam(content_key)
 
 func finish_current_event():
 	close_event_button(current_active_event_button)

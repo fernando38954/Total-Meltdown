@@ -96,7 +96,13 @@ func load_quests():
 	print_debug("Number of quests loaded：", all_quests.size())
 
 func initialize():
-	pending_quests = all_quests.keys()
+	pending_quests.clear()
+	for i in range(GlobalResource.TOTAL_QUARTER):
+		pending_quests.append([])
+	for quest_key in all_quests.keys():
+		var quest_data = get_quest_by_key(quest_key)
+		pending_quests[quest_data.quarter].append(quest_key)
+	
 	actived_quests.clear()
 	accepted_quests.clear()
 	completed_quests.clear()
@@ -107,10 +113,11 @@ func get_quest_by_key(key: String) -> Dictionary:
 	return all_quests.get(key, {})
 
 func prepare_random_quest() -> String:
-	if pending_quests.is_empty():
+	var quest_stock = pending_quests[GlobalResource.current_quarter]
+	if quest_stock.is_empty():
 		return ""
-	var quest_entry = pending_quests.pick_random()
-	pending_quests.erase(quest_entry)
+	var quest_entry = quest_stock.pick_random()
+	quest_stock.erase(quest_entry)
 	actived_quests.append(quest_entry)
 	return quest_entry
 

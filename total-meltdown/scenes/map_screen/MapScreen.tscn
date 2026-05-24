@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkxainvx35n8a" path="res://scenes/map_screen/JobFairEventButton.tscn" id="3_6y1bi"]
 [ext_resource type="PackedScene" uid="uid://8kf0febjrfm6" path="res://scenes/map_screen/ContractEventButton.tscn" id="3_ls7sa"]
 [ext_resource type="PackedScene" uid="uid://te0jm6bnm8wp" path="res://scenes/map_screen/StudySessionEventButton.tscn" id="4_lgmxy"]
+[ext_resource type="PackedScene" uid="uid://cyf67b1pxlf5l" path="res://scenes/map_screen/ExamEventButton.tscn" id="5_0ec4u"]
 [ext_resource type="Texture2D" uid="uid://tbax5qnrpv8j" path="res://assets/sprites/map_screen/map.png" id="5_fidt4"]
 [ext_resource type="PackedScene" uid="uid://bq5lgvuwbxpki" path="res://scenes/map_screen/job_fair/JobFairScreen.tscn" id="6_6y1bi"]
 [ext_resource type="PackedScene" uid="uid://d0lcshv562d4e" path="res://scenes/map_screen/study_session/StudySessionScreen.tscn" id="7_lgmxy"]
@@ -12,12 +13,13 @@
 [ext_resource type="Script" uid="uid://yng4c24vtk82" path="res://scripts/map_screen/contract_panel/awaked_contract_panel.gd" id="10_qu5j6"]
 [ext_resource type="PackedScene" uid="uid://d1kebmbv02wwo" path="res://scenes/map_screen/contract_panel/ContractProgressBar.tscn" id="10_yalvq"]
 
-[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "money_label", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
+[node name="MapScreen" type="Node2D" unique_id=1876702984 node_paths=PackedStringArray("game_map", "spawn_area", "money_label", "awaked_contract_container", "click_blocker", "event_blocker", "job_fair_screen", "study_session_screen", "contract_screen")]
 script = ExtResource("1_rw3jc")
 game_map = NodePath("Map")
 spawn_area = NodePath("SpawnArea")
-event_button_list = Array[PackedScene]([ExtResource("3_ls7sa"), ExtResource("3_6y1bi"), ExtResource("4_lgmxy")])
+event_button_list = Array[PackedScene]([ExtResource("3_ls7sa"), ExtResource("3_6y1bi"), ExtResource("4_lgmxy"), ExtResource("5_0ec4u")])
 money_label = NodePath("DinheiroDisplay/MoneyLabel")
+awaked_contract_container = NodePath("AwakedContractContainer")
 click_blocker = NodePath("ClickBlocker")
 event_blocker = NodePath("EventBlocker")
 job_fair_screen = NodePath("JobFairScreen")
@@ -29,7 +31,7 @@ position = Vector2(1951.9998, 1097.9999)
 scale = Vector2(1.016402, 1.017609)
 texture = ExtResource("5_fidt4")
 
-[node name="AwakedContractPanel" type="AspectRatioContainer" parent="." unique_id=1027327832 node_paths=PackedStringArray("map_screen")]
+[node name="AwakedContractContainer" type="AspectRatioContainer" parent="." unique_id=1027327832 node_paths=PackedStringArray("map_screen")]
 offset_left = 1132.0
 offset_top = -7.0
 offset_right = 4492.0
@@ -40,24 +42,24 @@ script = ExtResource("10_qu5j6")
 map_screen = NodePath("..")
 contract_progress_bar_scene = ExtResource("10_yalvq")
 
-[node name="ContractContainer" type="HBoxContainer" parent="AwakedContractPanel" unique_id=1481575289]
+[node name="ContractContainer" type="HBoxContainer" parent="AwakedContractContainer" unique_id=1481575289]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 200
 
-[node name="ContractProgressBar" parent="AwakedContractPanel/ContractContainer" unique_id=226074484 instance=ExtResource("10_yalvq")]
+[node name="ContractProgressBar" parent="AwakedContractContainer/ContractContainer" unique_id=226074484 instance=ExtResource("10_yalvq")]
 layout_mode = 2
 
-[node name="ContractProgressBar2" parent="AwakedContractPanel/ContractContainer" unique_id=1427854698 instance=ExtResource("10_yalvq")]
+[node name="ContractProgressBar2" parent="AwakedContractContainer/ContractContainer" unique_id=1427854698 instance=ExtResource("10_yalvq")]
 layout_mode = 2
 
-[node name="ContractProgressBar3" parent="AwakedContractPanel/ContractContainer" unique_id=1548702305 instance=ExtResource("10_yalvq")]
+[node name="ContractProgressBar3" parent="AwakedContractContainer/ContractContainer" unique_id=1548702305 instance=ExtResource("10_yalvq")]
 layout_mode = 2
 
-[node name="ContractProgressBar4" parent="AwakedContractPanel/ContractContainer" unique_id=639473931 instance=ExtResource("10_yalvq")]
+[node name="ContractProgressBar4" parent="AwakedContractContainer/ContractContainer" unique_id=639473931 instance=ExtResource("10_yalvq")]
 layout_mode = 2
 
-[node name="ContractProgressBar5" parent="AwakedContractPanel/ContractContainer" unique_id=1455981451 instance=ExtResource("10_yalvq")]
+[node name="ContractProgressBar5" parent="AwakedContractContainer/ContractContainer" unique_id=1455981451 instance=ExtResource("10_yalvq")]
 layout_mode = 2
 
 [node name="SpawnArea" type="ColorRect" parent="." unique_id=769389484]
