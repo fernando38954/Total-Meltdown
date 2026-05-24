@@ -12,3 +12,6 @@ signal game_finished
 
 # Minigame
 signal minigame_finished
+
+# Tutorial
+signal start_tutorial(tutorial_key)

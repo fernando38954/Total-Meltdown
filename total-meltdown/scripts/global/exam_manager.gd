@@ -88,7 +88,7 @@ func finish_exam(target_exam_key: String, correct_counter: int):
 		give_reward(correct_counter)
 		GlobalResource.proceed_next_quarter()
 	else:
-		push_error("finish_exam: No exam with quest key " + target_exam_key + " found in actived_exams")
+		push_error("finish_exam: No exam with key " + target_exam_key + " found in actived_exams")
 #endregion
 
 func give_reward(correct_counter: int):

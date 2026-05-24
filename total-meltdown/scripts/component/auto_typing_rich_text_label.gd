@@ -19,7 +19,7 @@ func _ready() -> void:
 		start_typing()
 
 func start_typing(target_text: String = auto_typing_text) -> void:
-	auto_typing_text = target_text	
+	auto_typing_text = target_text
 	is_typing = true
 	stop_requested = false
 	text_label.text = ""

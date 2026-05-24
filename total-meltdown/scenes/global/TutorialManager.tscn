@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bx078ueg7miyr"]
+
+[ext_resource type="Script" uid="uid://be4mhfqkgjf4v" path="res://scripts/global/tutorial_manager.gd" id="1_np4tx"]
+[ext_resource type="Texture2D" uid="uid://huk7x88aei84" path="res://assets/sprites/tutorial/DialogueBox.png" id="2_uwjow"]
+[ext_resource type="Texture2D" uid="uid://dctw310hq72ub" path="res://assets/sprites/tutorial/Clipper_surprised.png" id="3_n765d"]
+[ext_resource type="PackedScene" uid="uid://be21uwfnqhiru" path="res://scenes/component/AutoTypingRichTextLabel.tscn" id="3_w12tf"]
+
+[node name="TutorialManager" type="CanvasLayer" unique_id=758379560]
+script = ExtResource("1_np4tx")
+
+[node name="DialogueBox" type="TextureRect" parent="." unique_id=1321580471]
+offset_left = 484.0
+offset_top = 1625.0
+offset_right = 3221.0
+offset_bottom = 2144.0
+texture = ExtResource("2_uwjow")
+
+[node name="Portrait" type="TextureRect" parent="DialogueBox" unique_id=1607446963]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 62.00003
+offset_right = 113.0
+offset_bottom = 62.00003
+texture = ExtResource("3_n765d")
+
+[node name="Dialogue" parent="DialogueBox" unique_id=2010605356 instance=ExtResource("3_w12tf")]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 133.0
+offset_right = 2694.0
+offset_bottom = 457.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+auto_typing_text = ""
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=803018510]
+offset_right = 40.0
+offset_bottom = 40.0
