@@ -93,6 +93,7 @@ func study_pattern(studiable_patterns_list: Array, target_pattern_key: String, i
 		if studiable_patterns.has(pattern_entry):
 			studiable_patterns.erase(pattern_entry)
 			if pattern_entry == target_pattern_key:
+				GlobalResource.record_pattern_learning()
 				owned_patterns.append(pattern_entry)
 				if not is_free:
 					pay_pattern(pattern_entry)

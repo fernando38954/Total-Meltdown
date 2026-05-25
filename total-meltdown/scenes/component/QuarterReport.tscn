@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://dkm312walgwbx"]
+
+[ext_resource type="Texture2D" uid="uid://dhjpesyj2ytxu" path="res://assets/sprites/component/quarter_report/QuarterReport.png" id="1_25mfd"]
+[ext_resource type="Script" uid="uid://cl0px0sabwhpj" path="res://scripts/component/quarter_report.gd" id="1_w4e8m"]
+[ext_resource type="Texture2D" uid="uid://ckhjqb152v3sy" path="res://assets/sprites/component/quarter_report/NegativeGain.png" id="2_bo0o5"]
+[ext_resource type="Texture2D" uid="uid://b60hyepdv1h65" path="res://assets/sprites/component/quarter_report/PositiveGain.png" id="2_lm0s0"]
+
+[node name="QuarterReport" type="CanvasLayer" unique_id=1192664604]
+script = ExtResource("1_w4e8m")
+positive_gain_mark = ExtResource("2_lm0s0")
+negative_gain_mark = ExtResource("2_bo0o5")
+
+[node name="ClickBlocker" type="ColorRect" parent="." unique_id=478043720]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.28235295)
+
+[node name="Report" type="TextureRect" parent="." unique_id=1215404639]
+offset_left = 717.0
+offset_top = 22.0
+offset_right = 3153.0
+offset_bottom = 1984.0
+pivot_offset = Vector2(1218, 981)
+texture = ExtResource("1_25mfd")
+
+[node name="GainIcon" type="TextureRect" parent="Report" unique_id=462407616]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 339.0
+offset_right = 705.0
+offset_bottom = 799.0
+texture = ExtResource("2_bo0o5")
+
+[node name="StartMoney" type="RichTextLabel" parent="Report" unique_id=1201480770]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 836.0
+offset_right = 346.0
+offset_bottom = 939.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "$ 250"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentMoney" type="RichTextLabel" parent="Report" unique_id=261238472]
+layout_mode = 0
+offset_left = 595.0
+offset_top = 837.0
+offset_right = 748.0
+offset_bottom = 940.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "$ 150"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalGain" type="RichTextLabel" parent="Report" unique_id=1020152784]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 1061.0
+offset_right = 758.0
+offset_bottom = 1238.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 120
+text = "$ -100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeveloperHired" type="RichTextLabel" parent="Report" unique_id=1044567212]
+layout_mode = 0
+offset_left = 2061.0
+offset_top = 356.0
+offset_right = 2167.0
+offset_bottom = 459.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PatternLearned" type="RichTextLabel" parent="Report" unique_id=450356551]
+layout_mode = 0
+offset_left = 1789.0
+offset_top = 493.0
+offset_right = 1895.0
+offset_bottom = 596.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExamBonus" type="RichTextLabel" parent="Report" unique_id=1628721472]
+layout_mode = 0
+offset_left = 1833.0
+offset_top = 625.0
+offset_right = 1986.0
+offset_bottom = 728.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "$ 90"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeveloperSalary" type="RichTextLabel" parent="Report" unique_id=1708626458]
+layout_mode = 0
+offset_left = 1791.0
+offset_top = 1064.0
+offset_right = 1944.0
+offset_bottom = 1167.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "$ 30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalMoney" type="RichTextLabel" parent="Report" unique_id=1646151511]
+layout_mode = 0
+offset_left = 1105.0
+offset_top = 1458.0
+offset_right = 2239.0
+offset_bottom = 1635.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 120
+text = "$ 210"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]

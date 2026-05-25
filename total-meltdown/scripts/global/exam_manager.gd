@@ -85,12 +85,7 @@ func finish_exam(target_exam_key: String, correct_counter: int):
 		actived_exams.erase(target_exam_key)
 		completed_exams.append(target_exam_key)
 		GlobalSignal.emit_signal("current_map_event_finished")
-		give_reward(correct_counter)
-		GlobalResource.proceed_next_quarter()
+		GlobalResource.show_quarter_report(correct_counter)
 	else:
 		push_error("finish_exam: No exam with key " + target_exam_key + " found in actived_exams")
 #endregion
-
-func give_reward(correct_counter: int):
-	var profit = correct_counter * GlobalResource.base_question_reward
-	GlobalResource.change_money(profit)

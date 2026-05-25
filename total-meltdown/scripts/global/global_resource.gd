@@ -1,8 +1,10 @@
 extends Node
 
+const QUARTER_REPORT_SCENE = preload("res://scenes/component/QuarterReport.tscn")
 var game_timer: Timer
 var timer_delta_time: float = 1.0
 var base_question_reward: int = 30
+var base_developer_salary: int = 10
 
 # Quarter Mechanic
 const TOTAL_QUARTER = 4
@@ -14,6 +16,9 @@ var exam_quarter_distribution: Array
 
 # Player Status
 var money: int = 0
+var developer_hired: Array
+var pattern_learned: Array
+var quarter_start_value: Array = []
 
 func initialize():
 	money = 50
@@ -22,6 +27,12 @@ func initialize():
 	pattern_quarter_distribution = [1, 2, 2, 2]
 	quest_quarter_distribution = [1, 3, 5, 6]
 	exam_quarter_distribution = [1, 1, 1, 1]
+	quarter_start_value.clear()
+	developer_hired.resize(TOTAL_QUARTER)
+	developer_hired.fill(0)
+	pattern_learned.resize(TOTAL_QUARTER)
+	pattern_learned.fill(0)
+	quarter_start_value.append(money)
 
 func _ready():
 	game_timer = Timer.new()
@@ -43,6 +54,10 @@ func set_interval(seconds: float):
 func change_money(value: float):
 	money += value
 	GlobalSignal.emit_signal("money_value_changed")
+
+func end_quarter_money_update(correct_counter: int):
+	change_money(correct_counter * base_question_reward)
+	change_money(-1 * DeveloperManager.owned_developers.size() * base_developer_salary)
 #endregion
 
 #region Quarter System
@@ -84,8 +99,35 @@ func decrease_exams_event_stock():
 	exam_quarter_distribution[current_quarter] -= 1
 #endregion
 
+func record_developer_hiring():
+	developer_hired[current_quarter] += 1
+
+func record_pattern_learning():
+	pattern_learned[current_quarter] += 1
+
+func show_quarter_report(correct_counter: int):
+	var report = QUARTER_REPORT_SCENE.instantiate()
+	var report_data = write_report_data(correct_counter)
+	end_quarter_money_update(correct_counter)
+	report_data.final_money = money
+	get_tree().root.add_child(report)
+	report.set_content(report_data)
+
+func write_report_data(correct_counter: int) -> Dictionary:
+	var content: Dictionary
+	content.quarter_start_money = quarter_start_value[current_quarter]
+	content.current_money = money
+	content.total_gain = content.current_money - content.quarter_start_money
+	content.gain_is_positive = (content.total_gain >= 0)
+	content.developer_hired = developer_hired[current_quarter]
+	content.pattern_learned = pattern_learned[current_quarter]
+	content.exam_bonus = correct_counter * base_question_reward
+	content.developer_salary = DeveloperManager.owned_developers.size() * base_developer_salary
+	return content
+
 func proceed_next_quarter():
 	await Fade.fade_out().finished
 	await Fade.fade_in().finished
 	current_quarter += 1
+	quarter_start_value.append(money)
 #endregion

@@ -84,6 +84,7 @@ func hire_developer(recruitable_developers_list: Array, target_developer_data: S
 		if recruitable_developers.has(developer_entry):
 			recruitable_developers.erase(developer_entry)
 			if developer_entry == target_developer_data:
+				GlobalResource.record_developer_hiring()
 				owned_developers.append(developer_entry)
 				idle_developers.append(developer_entry)
 				if not is_free:

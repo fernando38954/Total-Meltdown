@@ -17,6 +17,8 @@ func _ready():
 
 func calculate_base_reward(difficult: String) -> int:
 	match difficult.to_lower():
+		"tutorial":
+			return 50
 		"easy":
 			return 80
 		"medium":

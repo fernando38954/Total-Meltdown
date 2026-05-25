@@ -3,7 +3,7 @@
 	"quarter": 1,
 	"title": "Melhor remediar",
 	"icon": "res://assets/sprites/quest_icons/Remedy.png",
-	"difficult": "Easy",
+	"difficult": "Tutorial",
 	"attribute": {
 		"Functional Suitability": "High",
 		"Performance Efficiency": "High",

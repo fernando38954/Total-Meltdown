@@ -3,12 +3,14 @@ class_name ContractData
 
 #region Constants
 const time_per_difficult = {
+	"tutorial": 5,
 	"easy": 10,
 	"medium": 15,
 	"hard": 20
 }
 
 const bug_probability_per_difficulty = {
+	"tutorial": 0,
 	"easy": 0.2,
 	"medium": 0.5,
 	"hard": 0.8
