@@ -3,7 +3,7 @@
 	"name": "Marcos Diniz",
 	"age": 35,
 	"portrait": "res://assets/sprites/developer_portrait/portrait_3.png",
-	"cost": 100,
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 3.0,
 		"Performance Efficiency": 2.0,

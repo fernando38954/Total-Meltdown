@@ -3,7 +3,7 @@
 	"name": "Bruno Lima",
 	"age": 24,
 	"portrait": "res://assets/sprites/developer_portrait/portrait_1.png",
-	"cost": 100,
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 4.0,
 		"Performance Efficiency": 5.0,

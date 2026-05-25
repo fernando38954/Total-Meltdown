@@ -3,7 +3,7 @@
 	"name": "Diego Rocha",
 	"age": 31,
 	"portrait": "res://assets/sprites/developer_portrait/portrait_2.png",
-	"cost": 100,
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 3.5,
 		"Performance Efficiency": 1.5,

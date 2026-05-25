@@ -3,7 +3,7 @@
 	"name": "Carla Souza",
 	"age": 29,
 	"portrait": "res://assets/sprites/developer_portrait/portrait_5.png",
-	"cost": 100,
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 5.0,
 		"Performance Efficiency": 3.5,

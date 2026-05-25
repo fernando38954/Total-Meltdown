@@ -3,7 +3,7 @@
 	"name": "Renata Cruz",
 	"age": 26,
 	"portrait": "res://assets/sprites/developer_portrait/portrait_7.png",
-	"cost": 100,
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 3.0,
 		"Performance Efficiency": 2.0,

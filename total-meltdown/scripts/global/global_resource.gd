@@ -21,11 +21,11 @@ var pattern_learned: Array
 var quarter_start_value: Array = []
 
 func initialize():
-	money = 50
+	money = 200
 	current_quarter = 0
-	developer_quarter_distribution = [1, 3, 2, -1, 0]
+	developer_quarter_distribution = [2, 2, 2, -1, 0]
 	pattern_quarter_distribution = [1, 2, 2, 2, 0]
-	quest_quarter_distribution = [1, 3, 5, 6, 0]
+	quest_quarter_distribution = [1, 3, 3, 3, 0]
 	exam_quarter_distribution = [1, 1, 1, 1, 0]
 	quarter_start_value.clear()
 	developer_hired.resize(TOTAL_QUARTER)

@@ -3,7 +3,7 @@
 	"name": "Vanessa Melo",
 	"age": 30,
 	"portrait": "res://assets/sprites/developer_portrait/portrait_8.png",
-	"cost": 100,
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 3.0,
 		"Performance Efficiency": 2.0,

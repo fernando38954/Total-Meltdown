@@ -3,7 +3,7 @@
 	"name": "Júlia Alves",
 	"age": 27,
 	"portrait": "res://assets/sprites/developer_portrait/portrait_6.png",
-	"cost": 100,
+	"cost": 50,
 	"attribute": {
 		"Functional Suitability": 3.0,
 		"Performance Efficiency": 2.5,
