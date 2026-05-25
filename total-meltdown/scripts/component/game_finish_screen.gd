@@ -17,7 +17,7 @@ func show_screen():
 	tween.tween_property(self, "scale", Vector2.ONE, 0.5)
 
 func set_content():
-	var total_developer = DeveloperManager.idle_developers.size() + DeveloperManager.working_developers.size()
+	var total_developer = DeveloperManager.owned_developers.size()
 	var total_pattern = PatternManager.owned_patterns.size()
 	var total_contract = ContractManager.completed_contracts.size()
 	var total_money = GlobalResource.money
@@ -27,7 +27,7 @@ func set_content():
 	pattern_label.text = "Número de Padrões Aprendidos: %d" % total_pattern
 	contract_label.text = "Número de Contratos Resolvidos: %d" % total_contract
 	money_label.text = "Quantidade de Dinheiro Adquirido: %.2f" % total_money
-	score_label.text = "[color=yellow]Pontuação Final: %.2f[/color]" % total_score
+	score_label.text = "Pontuação Final: %.2f" % total_score
 
 
 func _on_menu_button_pressed() -> void:

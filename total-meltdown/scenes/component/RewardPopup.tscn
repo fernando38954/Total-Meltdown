@@ -145,7 +145,7 @@ offset_right = 539.329
 offset_bottom = 502.95013
 rotation = 0.06981317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Base Profit: 1000
 Attribute compliance: 0.98
