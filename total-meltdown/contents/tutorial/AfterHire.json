@@ -1,0 +1,37 @@
+{
+	"key": "AfterHire",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "admiring",
+			"phrase": "Excelente escolha!"
+		},
+		"dialogue2": {
+			"portrait": "sweating",
+			"phrase": "Espero que ele saiba centralizar uma div. Poucos sobrevivem a isso."
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "Na Tela Secundária, você pode visualizar toda a sua equipe de desenvolvedores."
+		},
+		"dialogue4": {
+			"portrait": "normal",
+			"phrase": "Lá você consegue acompanhar seus profissionais, analisar atributos e conhecer melhor seu time."
+		},
+		"dialogue5": {
+			"portrait": "confused",
+			"phrase": "Além de saber um pouco da história de cada um. Espero que sejam mais legais do que feijoada misturado com iogurte."
+		},
+		"dialogue6": {
+			"portrait": "admiring",
+			"phrase": "E assim começa sua grande jornada na RetroCODE!"
+		},
+		"dialogue7": {
+			"portrait": "surprised",
+			"phrase": "Sem pressão… o futuro dos sistemas mundiais depende de você."
+		},
+		"dialogue8": {
+			"portrait": "normal",
+			"phrase": "E vou continuar aqui pra te ajudar."
+		}
+	}
+}

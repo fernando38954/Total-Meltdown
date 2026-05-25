@@ -1,0 +1,65 @@
+{
+	"key": "Contract",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "Hora de encarar um Contrato real!"
+		},
+		"dialogue2": {
+			"portrait": "normal",
+			"phrase": "Os contratos possuem três áreas principais. Vou te mostrar rapidinho antes que alguém peça um prazo impossível."
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "Essa área da esquerda contém a descrição completa do contrato. Aqui você encontra o contexto do projeto, informações do cliente e detalhes importantes sobre o sistema necessário."
+		},
+		"dialogue4": {
+			"portrait": "sweating",
+			"phrase": "Às vezes o cliente explica tudo direitinho. Às vezes escreve três páginas sem dizer absolutamente nada."
+		},
+		"dialogue5": {
+			"portrait": "confused",
+			"phrase": "Pela minha experiência, eles têm algo em comum: não gostam de fazer um sistema do zero. Preferem que você modifique a base da arquitetura já existente do sistema deles."
+		},
+		"dialogue6": {
+			"portrait": "sweating",
+			"phrase": "...Mesmo que a escolha deles seja horrível para o propósito que querem. Devemos respeitá-la, são eles que pagam, afinal..."
+		},
+		"dialogue7": {
+			"portrait": "admiring",
+			"phrase": "Esse post-it da direita é a descrição resumida que eu fiz para você. Ela destaca os objetivos principais e os atributos de qualidade mais importantes para o contrato."
+		},
+		"dialogue8": {
+			"portrait": "sweating",
+			"phrase": "Eu gerei ele com um LLM. Se estiver errado, é culpa da alucinação do modelo, não a minha."
+		},
+		"dialogue9": {
+			"portrait": "normal",
+			"phrase": "E a região central é a Área de Projeto! É nela que você monta sua solução escolhendo um padrão de arquitetura de software e os desenvolvedores da equipe."
+		},
+		"dialogue10": {
+			"portrait": "normal",
+			"phrase": "Basta arrastar a opção escolhida no painel que abre ao clicar nos respectivos caixas. Para remover a escolha também é fácil: basta usar o botão direito do mouse neles."
+		},
+		"dialogue11": {
+			"portrait": "normal",
+			"phrase": "Cada arquitetura fortalece determinados atributos de qualidade.\nEnquanto isso, seus desenvolvedores contribuem com atributos próprios, que serão aplicados ao padrão arquitetural escolhido."
+		},
+		"dialogue12": {
+			"portrait": "admiring",
+			"phrase": "Uma boa equipe pode compensar fraquezas…\nMas nem mil desenvolvedores salvam uma decisão arquitetural horrível."
+		},
+		"dialogue13": {
+			"portrait": "sweating",
+			"phrase": "Bom… talvez mil salvem. Mas o RH não deixaria."
+		},
+		"dialogue14": {
+			"portrait": "normal",
+			"phrase": "Seu objetivo é combinar tudo corretamente para satisfazer as exigências do contrato."
+		},
+		"dialogue15": {
+			"portrait": "sweating",
+			"phrase": "Se não conseguir… bom, pelo menos teremos um ótimo relatório pós-falha."
+		}
+	}
+}

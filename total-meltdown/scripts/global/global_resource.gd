@@ -52,7 +52,7 @@ func set_interval(seconds: float):
 
 #region Money System
 func change_money(value: float):
-	money += value
+	money += int(value)
 	GlobalSignal.emit_signal("money_value_changed")
 
 func end_quarter_money_update(correct_counter: int):
@@ -130,4 +130,5 @@ func proceed_next_quarter():
 	await Fade.fade_in().finished
 	current_quarter += 1
 	quarter_start_value.append(money)
+	GlobalSignal.emit_signal("start_tutorial", "NewQuarter")
 #endregion

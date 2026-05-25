@@ -1,0 +1,49 @@
+{
+	"key": "JobFair",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "Opa! Você entrou numa Feira de Recrutamento!"
+		},
+		"dialogue2": {
+			"portrait": "normal",
+			"phrase": "Agora é sua chance de contratar um novo desenvolvedor."
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "Cada desenvolvedor possui habilidades diferentes, mostradas por um gráfico aqui do lado deles!"
+		},
+		"dialogue4": {
+			"portrait": "admiring",
+			"phrase": "Essas habilidades são representadas pelos atributos de qualidade da ISO/IEC 25010 — a versão mais moderna, de 2023."
+		},
+		"dialogue5": {
+			"portrait": "sweating",
+			"phrase": "Precisamos nos adequar rapidamente às mudanças para permanecer no mercado."
+		},
+		"dialogue6": {
+			"portrait": "normal",
+			"phrase": "Voltando ao assunto: alguns são ótimos em segurança. Outros escrevem código tão flexível que até dobra no vento."
+		},
+		"dialogue7": {
+			"portrait": "confused",
+			"phrase": "...O que provavelmente é um problema estrutural no sistema."
+		},
+		"dialogue8": {
+			"portrait": "normal",
+			"phrase": "Resumindo: você pode contratar desenvolvedores conforme sua necessidade. Se não gostar dos candidatos, pode ignorar a feira atual clicando com o botão direito no ícone do evento."
+		},
+		"dialogue9": {
+			"portrait": "surprised",
+			"phrase": "...Mas não dessa vez. Você precisa de algum desenvolvedor para trabalhar por você."
+		},
+		"dialogue10": {
+			"portrait": "sweating",
+			"phrase": "Ufa! Eu sei que parece muita informação no começo."
+		},
+		"dialogue11": {
+			"portrait": "admiring",
+			"phrase": "Por isso, você pode acessar detalhes importantes no Notebook Guia. Bem aqui, no livro no canto inferior esquerdo da tela!"
+		}
+	}
+}

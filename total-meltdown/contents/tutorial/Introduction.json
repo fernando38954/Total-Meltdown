@@ -1,26 +1,65 @@
 {
 	"key": "Introduction",
-	"disappear_when_finished": true,
 	"dialogue": {
 		"dialogue1": {
 			"portrait": "surprised",
-			"phrase": "Olá! Eu sou o Clipper, assistente virtual oficial da RetroCODE!",
+			"phrase": "Olá! Eu sou o Clipper, assistente virtual oficial da RetroCODE!"
 		},
 		"dialogue2": {
 			"portrait": "sweating",
-			"phrase": " ...Tá, “oficial” talvez seja uma palavra forte. Digamos que eu apareço sem ser chamado.",
+			"phrase": " ...Tá, “oficial” talvez seja uma palavra forte. Digamos que eu apareço sem ser chamado."
 		},
 		"dialogue3": {
 			"portrait": "normal",
-			"phrase": "As pessoas costumam me ignorar. Algumas fecham minha janela antes mesmo do “olá”.",
+			"phrase": "As pessoas costumam me ignorar. Algumas fecham minha janela antes mesmo do “olá”."
 		},
 		"dialogue4": {
 			"portrait": "admiring",
-			"phrase": "Mas eu juro que sou útil! E moderadamente engraçado!",
+			"phrase": "Mas eu juro que sou útil! E moderadamente engraçado!"
 		},
 		"dialogue5": {
 			"portrait": "normal",
-			"phrase": "Vou te ajudar a sobreviver ao seu primeiro dia aqui.\nOu pelo menos evitar que você derrube os servidores logo no tutorial.",
+			"phrase": "Vou te ajudar a sobreviver ao seu primeiro dia aqui.\nOu pelo menos evitar que você derrube os servidores logo no tutorial."
 		},
+		"dialogue6": {
+			"portrait": "normal",
+			"phrase": "Você agora faz parte da RetroCODE!\nUma empresa que acredita em revisão de código, qualidade… e em seres humanos escrevendo software."
+		},
+		"dialogue7": {
+			"portrait": "confused",
+			"phrase": "Sim, humanos. Estranho, eu sei. Mas eles... vocês, enfim... parecem a solução."
+		},
+		"dialogue8": {
+			"portrait": "surprised",
+			"phrase": "O mundo está passando pela crise do TotalMeltdown.\nSistemas falhando, aplicações quebrando, bancos de dados virando sopa digital…"
+		},
+		"dialogue9": {
+			"portrait": "admiring",
+			"phrase": "E é aí que você entra!\nSeu trabalho é gerenciar projetos, contratar desenvolvedores e entregar soluções antes que tudo exploda."
+		},
+		"dialogue10": {
+			"portrait": "sweating",
+			"phrase": "Metaforicamente. Eu espero."
+		},
+		"dialogue11": {
+			"portrait": "normal",
+			"phrase": "Vamos começar pelo básico!\nEssa tela grande no centro é onde aparecem suas tarefas pendentes."
+		},
+		"dialogue12": {
+			"portrait": "normal",
+			"phrase": "Também compramos a tela do superior direito para gerenciar melhor nossos desenvolvedores, além de um bloco de notas na sua mesa para anotar coisas importantes."
+		},
+		"dialogue13": {
+			"portrait": "normal",
+			"phrase": "Você vai lidar principalmente com três tipos de tarefas:\nFeira de Recrutamento, Sessão de Estudo e Solução de Contratos."
+		},
+		"dialogue14": {
+			"portrait": "sweating",
+			"phrase": "Agora… vamos resolver as demandas que aparecerem.\nOs problemas aparecem rapidinho por aqui!"
+		},
+		"dialogue15": {
+			"portrait": "sweating",
+			"phrase": "Não se preocupe, o mundo não vai explodir se não o resolvermos rápido.\nPelo menos espero que não..."
+		}
 	}
 }

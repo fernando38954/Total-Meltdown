@@ -43,6 +43,7 @@ func update_status():
 
 func update_bug_mark_visual(active: bool):
 	if active:
+		GlobalSignal.emit_signal("start_tutorial", "Bug")
 		if bug_tween and bug_tween.is_running():
 			bug_tween.kill()
 		bug_tween = create_tween().set_loops()

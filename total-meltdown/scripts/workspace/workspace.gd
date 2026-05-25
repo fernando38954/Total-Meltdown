@@ -35,6 +35,7 @@ func _ready() -> void:
 	return_button.hide()
 	AudioManager.play_bgm(main_BGM)
 	GlobalSignal.game_finished.connect(game_finish)
+	GlobalSignal.emit_signal("start_tutorial", "Introduction")
 
 func game_finish():
 	finish_screen.show_screen()

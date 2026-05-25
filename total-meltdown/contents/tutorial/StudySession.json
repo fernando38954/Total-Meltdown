@@ -1,0 +1,57 @@
+{
+	"key": "StudySession",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "Parece que agora temos uma Sessão de Estudos!"
+		},
+		"dialogue2": {
+			"portrait": "normal",
+			"phrase": "Aqui na RetroCODE, estudar arquitetura de software é importante."
+		},
+		"dialogue3": {
+			"portrait": "sweating",
+			"phrase": "Principalmente porque “funciona na minha máquina” não é uma metodologia oficial."
+		},
+		"dialogue4": {
+			"portrait": "normal",
+			"phrase": "Nessa atividade, você vai resolver um minigame de direcionamento de energia."
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "Seu objetivo é alterar a direção dos blocos para criar um caminho válido entre a fonte e o destino. Acho que vai ficar mais claro quando começar..."
+		},
+		"dialogue6": {
+			"portrait": "confused",
+			"phrase": "Alguns blocos possuem uma descrição, característica ou conceito relacionado ao padrão arquitetural que você está aprendendo."
+		},
+		"dialogue7": {
+			"portrait": "sweating",
+			"phrase": "Mas nem todos os blocos pertencem ao padrão selecionado. Alguns estão aqui por confusão do banco de dados do sistema deles."
+		},
+		"dialogue8": {
+			"portrait": "admiring",
+			"phrase": "Além de conectar a energia corretamente do início ao fim, você também precisa prestar atenção nas informações escritas em cada peça e conectar as corretas."
+		},
+		"dialogue9": {
+			"portrait": "admiring",
+			"phrase": "Escolha os blocos certos, alinhe as conexões e faça a energia chegar até o destino final. É como uma ligação de neurônios com conhecimentos!"
+		},
+		"dialogue10": {
+			"portrait": "normal",
+			"phrase": "Antes de começar, você poderá escolher qual padrão arquitetural gostaria de aprender entre os disponíveis. Cada um possui vantagens, desvantagens e características próprias."
+		},
+		"dialogue11": {
+			"portrait": "normal",
+			"phrase": "Você verá um pequeno resumo aqui na tela… Mas as informações detalhadas também estão disponíveis, basta clicar naquele botãozinho deles."
+		},
+		"dialogue12": {
+			"portrait": "surprised",
+			"phrase": "Parece que hoje só temos uma escolha. Acho que está difícil a recuperação do sistema deles."
+		},
+		"dialogue13": {
+			"portrait": "sweating",
+			"phrase": "Aquela deleção da pasta /System e /bin realizada por IA sem confirmação é um caos mesmo. Espero que isso não aconteça no nosso sistema."
+		}
+	}
+}

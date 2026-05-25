@@ -29,4 +29,5 @@ func _ready_prerequisites():
 
 func _on_receive_hire_developer(developer_key):
 	DeveloperManager.hire_developer(recruitable_developers_list, developer_key)
+	GlobalSignal.emit_signal("start_tutorial", "AfterHire")
 	GlobalSignal.emit_signal("current_map_event_finished")

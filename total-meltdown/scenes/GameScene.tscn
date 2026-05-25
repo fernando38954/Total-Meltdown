@@ -175,13 +175,19 @@ texture = ExtResource("14_21xg8")
 position = Vector2(-1070.5653, -613.3627)
 scale = Vector2(0.545, 0.545)
 
-[node name="SpawnArea" parent="MapScreenMask/MapScreen" index="1" unique_id=769389484]
+[node name="AwakedContractContainer" parent="MapScreenMask/MapScreen" index="1" unique_id=1027327832]
+offset_left = 1185.742
+offset_top = 93.435265
+offset_right = 4545.742
+offset_bottom = 725.43524
+
+[node name="SpawnArea" parent="MapScreenMask/MapScreen" index="2" unique_id=769389484]
 offset_left = 422.69543
 offset_top = 443.3595
 offset_right = 3185.7651
 offset_bottom = 1993.2855
 
-[node name="DinheiroDisplay" parent="MapScreenMask/MapScreen" index="7" unique_id=1073268683]
+[node name="DinheiroDisplay" parent="MapScreenMask/MapScreen" index="8" unique_id=1073268683]
 position = Vector2(618.489, 230.84003)
 
 [node name="MoneyLabel" parent="MapScreenMask/MapScreen/DinheiroDisplay" index="0" unique_id=877837989]
@@ -189,12 +195,6 @@ offset_left = -176.21301
 offset_top = -159.12982
 offset_right = 656.8834
 offset_bottom = 166.04865
-
-[node name="AspectRatioContainer" parent="MapScreenMask/MapScreen" index="8" unique_id=1027327832]
-offset_left = 1185.742
-offset_top = 93.435265
-offset_right = 4545.742
-offset_bottom = 725.43524
 
 [node name="DeveloperScreenMask" type="Sprite2D" parent="." unique_id=592042528]
 clip_children = 1

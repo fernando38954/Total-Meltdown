@@ -13,10 +13,8 @@ func _ready():
 	load_tutorials()
 	initialize()
 	GlobalSignal.game_start.connect(initialize)
-	GlobalSignal.start_tutorial.connect(start_tutorial)
+	GlobalSignal.start_tutorial.connect(call_tutorial)
 	close_dialgue_box(0)
-	await get_tree().create_timer(2).timeout
-	GlobalSignal.emit_signal("start_tutorial", "Introduction")
 
 #region Load Data
 func load_tutorials():
@@ -42,7 +40,6 @@ func load_tutorials():
 					var key = data.get("key", "Unknown")
 					all_tutorials[key] = {
 						"key": key,
-						"disappear_when_finished": data.get("disappear_when_finished", true),
 						"dialogue": data.get("dialogue", {}),
 					}
 				else:
@@ -101,21 +98,17 @@ func finish_tutorial(target_tutorial_key: String):
 @export var close_position: Vector2 = Vector2(484.0, 2259.0)
 
 var tutorial_active: bool = false
-var dialogue_active: bool = false
 var current_tutorial_key: String = ""
 var dialogue_list: Array
 var current_dialogue_idx: int
-var allowed_rect: Rect2 = Rect2()
 
 var tween: Tween
 
-func enable_tutorial(rect: Rect2):
-	allowed_rect = rect
-
-func disable_tutorial():
-	allowed_rect = Rect2()
-
 #region Dialogue
+func call_tutorial(target_tutorial_key: String):
+	if target_tutorial_key in unstarted_tutorials:
+		start_tutorial(target_tutorial_key)
+
 func move_dialgue_box(target_position: Vector2, duration: float = 1.0):
 	if tween and tween.is_running():
 		tween.kill()
@@ -131,7 +124,6 @@ func open_dialgue_box(duration: float = 0.5):
 
 func dialogue_start(_dialogue_list: Array):
 	tutorial_active = true
-	dialogue_active = true
 	dialogue_list = _dialogue_list
 	current_dialogue_idx = -1
 	open_dialgue_box()
@@ -150,25 +142,16 @@ func advance_to_next() -> void:
 		portrait.texture = portraits[current_dialogue.portrait]
 		dialogue.start_typing(current_dialogue.phrase)
 	else:
-		dialogue_active = false
-		var current_tutorial = get_tutorial_by_key(current_tutorial_key)
-		print("Finished")
-		if current_tutorial.disappear_when_finished:
-			close_dialgue_box()
+		dialogue_finish()
 #endregion
 
 func _input(event: InputEvent):
 	if tutorial_active:
 		if event is InputEventMouseButton or event is InputEventMouseMotion:
-			if dialogue_active:
-				# If dialogue not finished yet, proceed dialogue
-				if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-					if dialogue.is_typing:
-						dialogue.skip_typing()
-					else:
-						advance_to_next()
-			else:
-				print(545)
-				var mouse_global_pos = get_viewport().get_mouse_position()
-				if not allowed_rect.has_point(mouse_global_pos):
-					get_viewport().set_input_as_handled()
+			get_viewport().set_input_as_handled()
+			# If dialogue not finished yet, proceed dialogue
+			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+				if dialogue.is_typing:
+					dialogue.skip_typing()
+				else:
+					advance_to_next()

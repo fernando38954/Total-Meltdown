@@ -175,5 +175,6 @@ func game_win_check():
 	if sink_connected and all_required_connected and all_prohibited_unconnected:
 		game_finished = true
 		close_game()
+		GlobalSignal.emit_signal("start_tutorial", "AfterStudy")
 		GlobalSignal.emit_signal("minigame_finished")
 #endregion

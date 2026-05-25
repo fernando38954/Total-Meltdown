@@ -1,0 +1,37 @@
+{
+	"key": "AfterStudy",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "admiring",
+			"phrase": "Uau! Você conseguiu conectar os blocos certos. A energia fluiu perfeitamente!"
+		},
+		"dialogue2": {
+			"portrait": "normal",
+			"phrase": "Isso significa que você aprendeu os fundamentos desse padrão arquitetural. Parabéns!"
+		},
+		"dialogue3": {
+			"portrait": "sweating",
+			"phrase": "Confesso que eu já tentei fazer esse minigame uma vez... travei a interface inteira por três horas."
+		},
+		"dialogue4": {
+			"portrait": "admiring",
+			"phrase": "Mas você foi direto ao ponto. Seu cérebro parece entender melhor de caminhos lógicos do que o meu."
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "Agora esse conhecimento está registrado no seu Notebook. Você poderá usá-lo em soluções de contratos futuros."
+		},
+		"dialogue6": {
+			"portrait": "confused",
+			"phrase": "Aliás, sabia que existe um padrão chamado “Big Ball of Mud”? Não recomendo. Parece lama mesmo."
+		},
+		"dialogue7": {
+			"portrait": "surprised",
+			"phrase": "Continue estudando! Quanto mais arquiteturas você dominar, mais fácil será salvar o mundo da sopa digital."
+		},
+		"dialogue8": {
+			"portrait": "normal",
+			"phrase": "E lembre-se: todo padrão tem seu lugar. Inclusive o MVC, mesmo que todo mundo finja que odeia ele."
+		}
+	}
+}

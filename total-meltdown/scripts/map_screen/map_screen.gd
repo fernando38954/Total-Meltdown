@@ -56,6 +56,8 @@ func create_event_button():
 	if rand_type == 3:
 		var awaked_event = current_event_button_list.size()
 		var awaked_contract = awaked_contract_container.size()
+		if awaked_event <= 0:
+			GlobalSignal.emit_signal("start_tutorial", "QuarterEnd")
 		if awaked_event > 0 or awaked_contract > 0:
 			return
 	var rand_scale = randf_range(0.5, 1.0)

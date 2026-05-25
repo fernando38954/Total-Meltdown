@@ -1,0 +1,57 @@
+{
+	"key": "QuarterEnd",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "Acabou todas as tarefas? Parece que chegamos ao fim do trimestre!"
+		},
+		"dialogue2": {
+			"portrait": "confused",
+			"phrase": "E sabe o que isso significa? Documentação acumulada? Reuniões intermináveis? Crise existencial profissional?"
+		},
+		"dialogue3": {
+			"portrait": "sweating",
+			"phrase": "Também."
+		},
+		"dialogue4": {
+			"portrait": "admiring",
+			"phrase": "Mas principalmente: prova de qualificação!"
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "Ao final de cada trimestre, você realizará uma avaliação baseada no conteúdo aprendido durante os projetos e sessões de estudo."
+		},
+		"dialogue6": {
+			"portrait": "sweating",
+			"phrase": "Então… sim. Prestar atenção no tutorial realmente era importante."
+		},
+		"dialogue7": {
+			"portrait": "admiring",
+			"phrase": "Mas relaxe! Não existe perigo em falhar aqui."
+		},
+		"dialogue8": {
+			"portrait": "surprised",
+			"phrase": "Se você for bem, seus superiores ficarão impressionados com suas habilidades. E isso significa bônus financeiros para a RetroCODE!"
+		},
+		"dialogue9": {
+			"portrait": "normal",
+			"phrase": "Mais dinheiro… mais possibilidades de contratar desenvolvedores melhores."
+		},
+		"dialogue10": {
+			"portrait": "normal",
+			"phrase": "Ah, um detalhe importante: você só pode realizar a qualificação quando todos os contratos em andamento finalizarem."
+		},
+		"dialogue11": {
+			"portrait": "normal",
+			"phrase": "Para ver o progresso deles, basta clicar no ícone na parte superior da tela principal."
+		},
+		"dialogue12": {
+			"portrait": "admiring",
+			"phrase": "É lá também que você recebe o valor pago pelo cliente."
+		},
+		"dialogue13": {
+			"portrait": "surprised",
+			"phrase": "Enquanto os contratos não acabarem, você pode aproveitar para fazer uma revisão do conteúdo salvo no Notebook. Nunca é tarde estudar!"
+		}
+	}
+}
