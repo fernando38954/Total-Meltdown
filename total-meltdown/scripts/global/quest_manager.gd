@@ -17,14 +17,10 @@ func _ready():
 
 func calculate_base_reward(difficult: String) -> int:
 	match difficult.to_lower():
-		"tutorial":
-			return 50
-		"easy":
-			return 80
-		"medium":
-			return 100
-		"hard":
-			return 120
+		"tutorial": return 50
+		"easy": return 80
+		"medium": return 100
+		"hard": return 120
 		_:
 			push_error("Unknown difficulty: ", difficult)
 			return 0
@@ -32,16 +28,11 @@ func calculate_base_reward(difficult: String) -> int:
 func translate_attribute_level(level: String):
 	var numeric_value: float = 0.0
 	match level.to_lower():
-		"irrelevant":
-			numeric_value = randf_range(0.0, 1.0)
-		"low":
-			numeric_value = randf_range(2.0, 4.0)
-		"medium":
-			numeric_value = randf_range(5.0, 6.0)
-		"high":
-			numeric_value = randf_range(8.0, 10.0)
-		_:
-			push_error("Unknown attribute level: ", level)
+		"irrelevant": numeric_value = randf_range(0.0, 1.0)
+		"low": numeric_value = randf_range(2.0, 4.0)
+		"medium": numeric_value = randf_range(5.0, 6.0)
+		"high": numeric_value = randf_range(8.0, 10.0)
+		_: push_error("Unknown attribute level: ", level)
 	return round(numeric_value * 10) / 10.0
 
 func process_attributes():

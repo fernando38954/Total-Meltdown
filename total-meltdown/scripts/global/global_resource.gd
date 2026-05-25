@@ -7,7 +7,7 @@ var base_question_reward: int = 30
 var base_developer_salary: int = 10
 
 # Quarter Mechanic
-const TOTAL_QUARTER = 4
+const TOTAL_QUARTER = 5
 var current_quarter: int = 0
 var developer_quarter_distribution: Array
 var pattern_quarter_distribution: Array
@@ -23,10 +23,10 @@ var quarter_start_value: Array = []
 func initialize():
 	money = 50
 	current_quarter = 0
-	developer_quarter_distribution = [1, 3, 2, -1]
-	pattern_quarter_distribution = [1, 2, 2, 2]
-	quest_quarter_distribution = [1, 3, 5, 6]
-	exam_quarter_distribution = [1, 1, 1, 1]
+	developer_quarter_distribution = [1, 3, 2, -1, 0]
+	pattern_quarter_distribution = [1, 2, 2, 2, 0]
+	quest_quarter_distribution = [1, 3, 5, 6, 0]
+	exam_quarter_distribution = [1, 1, 1, 1, 0]
 	quarter_start_value.clear()
 	developer_hired.resize(TOTAL_QUARTER)
 	developer_hired.fill(0)
@@ -63,10 +63,11 @@ func end_quarter_money_update(correct_counter: int):
 #region Quarter System
 #region Stock Operation
 func remaining_developer() -> int:
+	var developer_quantity = DeveloperManager.locked_developers.size()
 	if developer_quarter_distribution[current_quarter] < 0:
-		return DeveloperManager.locked_developers.size()
+		return developer_quantity
 	else:
-		return developer_quarter_distribution[current_quarter]
+		return min(developer_quarter_distribution[current_quarter], developer_quantity)
 
 func decrease_developer_event_stock():
 	developer_quarter_distribution[current_quarter] -= 1
@@ -133,7 +134,9 @@ func proceed_next_quarter():
 	await Fade.fade_in().finished
 	current_quarter += 1
 	quarter_start_value.append(money)
-	GlobalSignal.emit_signal("start_tutorial", "NewQuarter")
-	if current_quarter >= TOTAL_QUARTER:
-		GlobalSignal.emit_signal("game_finished")
+	match current_quarter:
+		1: GlobalSignal.emit_signal("start_tutorial", "NewQuarter")
+		2: GlobalSignal.emit_signal("start_tutorial", "ContractTimeLimit")
+		3: pass
+		_: GlobalSignal.emit_signal("game_finished")
 #endregion

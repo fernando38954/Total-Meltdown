@@ -20,7 +20,6 @@ func show_mark(is_correct_mark: bool):
 		answer_mark.texture = correct_mark
 	else:
 		answer_mark.texture = wrong_mark
-		print("wrong answer")
 
 func _on_pressed() -> void:
 	panel.choice_answer(is_correct)

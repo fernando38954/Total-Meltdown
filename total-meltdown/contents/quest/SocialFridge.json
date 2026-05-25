@@ -3,7 +3,7 @@
 	"quarter": 0,
 	"title": "Geladeira Social",
 	"icon": "res://assets/sprites/quest_icons/Fridge.png",
-	"difficult": "Easy",
+	"difficult": "Tutorial",
 	"attribute": {
 		"Functional Suitability": "Medium",
 		"Performance Efficiency": "Low",

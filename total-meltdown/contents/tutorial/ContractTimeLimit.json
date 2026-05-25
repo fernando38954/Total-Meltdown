@@ -1,0 +1,33 @@
+{
+	"key": "ContractTimeLimit",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "sweating",
+			"phrase": "…Okay. Tenho uma notícia boa e outra ruim…"
+		},
+		"dialogue2": {
+			"portrait": "admiring",
+			"phrase": "A boa é que você está realmente indo muito bem."
+		},
+		"dialogue3": {
+			"portrait": "confused",
+			"phrase": "A ruim é que a RetroCODE começou a receber muitos contratos ao mesmo tempo. Ou bom também... depende da perspectiva."
+		},
+		"dialogue4": {
+			"portrait": "normal",
+			"phrase": "Isso significa que você precisará analisar, planejar e resolver projetos mais rapidamente."
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "Você vai ver um contador em volta do contrato. Agora, todo contrato possui um tempo limite de espera."
+		},
+		"dialogue6": {
+			"portrait": "sweating",
+			"phrase": "Se você demorar demais para resolver uma demanda… o cliente perde a paciência e vai embora."
+		},
+		"dialogue7": {
+			"portrait": "surprised",
+			"phrase": "E clientes irritados geralmente levam duas coisas com eles: o contrato… e o dinheiro."
+		}
+	}
+}
