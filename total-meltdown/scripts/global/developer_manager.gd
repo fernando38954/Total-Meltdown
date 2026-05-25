@@ -62,8 +62,10 @@ func load_developers():
 func initialize():
 	locked_developers = all_developers.keys()
 	recruitable_developers.clear()
+	owned_developers.clear()
 	idle_developers.clear()
 	working_developers.clear()
+	resting_developers.clear()
 #endregion
 
 #region Array Operation

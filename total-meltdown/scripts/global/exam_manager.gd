@@ -57,7 +57,7 @@ func initialize():
 	for exam_key in all_exams.keys():
 		var exam_data = get_exam_by_key(exam_key)
 		unfinished_exams[exam_data.quarter].append(exam_key)
-	
+	actived_exams.clear()
 	completed_exams.clear()
 #endregion
 

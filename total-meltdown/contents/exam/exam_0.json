@@ -3,11 +3,11 @@
 	"quarter": 0,
 	"exam": {
 		"question1": {
-			"description": "Qual é o meu nome?",
+			"description": "Qual é o nome da empresa?",
 			"choices": {
-				"correct": "Clipper",
-				"wrong1": "Peppa",
-				"wrong2": "ISO/IECer"
+				"correct": "RetroCODE",
+				"wrong1": "TotalMeltdown",
+				"wrong2": "Clipper"
 			}
 		},
 		"question2": {

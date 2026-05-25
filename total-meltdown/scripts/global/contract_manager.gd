@@ -66,6 +66,7 @@ func _ready() -> void:
 	GlobalSignal.game_start.connect(initialize)
 
 func initialize():
+	awaked_contracts.clear()
 	active_contract_list.clear()
 	claimable_contracts.clear()
 	completed_contracts.clear()

@@ -72,28 +72,31 @@ func decrease_developer_event_stock():
 	developer_quarter_distribution[current_quarter] -= 1
 
 func remaining_pattern() -> int:
+	var pattern_quantity = PatternManager.locked_patterns[current_quarter].size()
 	if pattern_quarter_distribution[current_quarter] < 0:
-		return PatternManager.locked_patterns[current_quarter].size()
+		return pattern_quantity
 	else:
-		return pattern_quarter_distribution[current_quarter]
+		return min(pattern_quarter_distribution[current_quarter], pattern_quantity)
 
 func decrease_pattern_event_stock():
 	pattern_quarter_distribution[current_quarter] -= 1
 
 func remaining_quest() -> int:
+	var quest_quantity = QuestManager.pending_quests[current_quarter].size()
 	if quest_quarter_distribution[current_quarter] < 0:
-		return QuestManager.pending_quests[current_quarter].size()
+		return quest_quantity
 	else:
-		return quest_quarter_distribution[current_quarter]
+		return min(quest_quarter_distribution[current_quarter], quest_quantity)
 
 func decrease_quest_event_stock():
 	quest_quarter_distribution[current_quarter] -= 1
 
 func remaining_exams() -> int:
+	var exam_quantity = ExamManager.unfinished_exams[current_quarter].size()
 	if exam_quarter_distribution[current_quarter] < 0:
-		return ExamManager.unfinished_exams[current_quarter].size()
+		return exam_quantity
 	else:
-		return exam_quarter_distribution[current_quarter]
+		return min(exam_quarter_distribution[current_quarter], exam_quantity)
 
 func decrease_exams_event_stock():
 	exam_quarter_distribution[current_quarter] -= 1
@@ -131,4 +134,6 @@ func proceed_next_quarter():
 	current_quarter += 1
 	quarter_start_value.append(money)
 	GlobalSignal.emit_signal("start_tutorial", "NewQuarter")
+	if current_quarter >= TOTAL_QUARTER:
+		GlobalSignal.emit_signal("game_finished")
 #endregion
