@@ -19,6 +19,9 @@ class_name RewardPopup
 @export var success_mark: Texture
 @export var fail_mark: Texture
 
+@export_category("SFX")
+@export var report_close_SFX : AudioStream
+
 var tween: Tween
 
 #region Animation
@@ -32,6 +35,7 @@ func rescale_panel(target_report_scale: Vector2, target_recipe_scale: Vector2, t
 	tween.tween_property(recipe, "modulate", target_recipe_modulate, duration/2).set_delay(duration/2)
 
 func close_panel(duration: float = 0.5):
+	AudioManager.play_sfx(report_close_SFX)
 	rescale_panel(Vector2.ZERO, Vector2.ONE * 2, Color.TRANSPARENT, duration)
 
 func open_panel(duration: float = 0.5):

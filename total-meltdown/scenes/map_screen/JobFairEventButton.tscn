@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dt4l3m8fnngf1" path="res://assets/sprites/event_icons/Job_Fair_Press.png" id="2_e3610"]
 [ext_resource type="Texture2D" uid="uid://ba3p517bym7eo" path="res://assets/sprites/event_icons/Job_Fair_Hover.png" id="3_ry0e3"]
 [ext_resource type="Script" uid="uid://b8xivl22ht8id" path="res://scripts/map_screen/job_fair_event_button.gd" id="4_e3610"]
+[ext_resource type="AudioStream" uid="uid://bl6jvhtc2wne7" path="res://assets/sfx/ClickEvent.mp3" id="5_ry0e3"]
 
 [node name="JobFairEventButton" type="TextureButton" unique_id=851406222]
 pivot_offset = Vector2(256, 632)
@@ -11,5 +12,6 @@ texture_normal = ExtResource("1_yc5wr")
 texture_pressed = ExtResource("2_e3610")
 texture_hover = ExtResource("3_ry0e3")
 script = ExtResource("4_e3610")
+click_event_SFX = ExtResource("5_ry0e3")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

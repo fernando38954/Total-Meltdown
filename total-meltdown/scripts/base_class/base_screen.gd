@@ -6,6 +6,9 @@ signal rescale_animation_finished
 @onready var screen_sprite = null #$Sprite2D
 @export var panel: BaseItemPanel
 
+@export_category("SFX")
+@export var panel_close_SFX : AudioStream
+
 var open_scale = Vector2(0.65, 0.65)
 var hide_scale = Vector2(0, 0)
 var tween: Tween
@@ -28,6 +31,7 @@ func rescale_panel(target_scale: Vector2, duration: float = 1.0):
 	tween.tween_callback(rescale_animation_finished.emit)
 
 func close_panel(duration: float = 0.5):
+	AudioManager.play_sfx(panel_close_SFX)
 	rescale_panel(hide_scale, duration)
 
 func open_panel(duration: float = 0.5):

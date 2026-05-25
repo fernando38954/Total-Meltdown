@@ -4,11 +4,13 @@
 [ext_resource type="Script" uid="uid://cl0px0sabwhpj" path="res://scripts/component/quarter_report.gd" id="1_w4e8m"]
 [ext_resource type="Texture2D" uid="uid://ckhjqb152v3sy" path="res://assets/sprites/component/quarter_report/NegativeGain.png" id="2_bo0o5"]
 [ext_resource type="Texture2D" uid="uid://b60hyepdv1h65" path="res://assets/sprites/component/quarter_report/PositiveGain.png" id="2_lm0s0"]
+[ext_resource type="AudioStream" uid="uid://bnlx4vly6ghfv" path="res://assets/sfx/PanelClose.mp3" id="4_k5snb"]
 
 [node name="QuarterReport" type="CanvasLayer" unique_id=1192664604]
 script = ExtResource("1_w4e8m")
 positive_gain_mark = ExtResource("2_lm0s0")
 negative_gain_mark = ExtResource("2_bo0o5")
+report_close_SFX = ExtResource("4_k5snb")
 
 [node name="ClickBlocker" type="ColorRect" parent="." unique_id=478043720]
 anchors_preset = 15

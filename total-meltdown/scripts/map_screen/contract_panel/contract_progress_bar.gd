@@ -9,6 +9,10 @@ var contract_data: ContractData = null
 @onready var bug_mark = $BugMark
 @onready var claimable_mark = $ClaimableMark
 
+@export_category("SFX")
+@export var bug_appear_SFX : AudioStream
+@export var contract_claimable_SFX : AudioStream
+
 var last_bug_active: bool = false
 var bug_tween: Tween = null
 
@@ -33,6 +37,7 @@ func set_contract(_contract_key):
 #region Game Flow
 func mark_claimable():
 	claimable_mark.show()
+	AudioManager.play_sfx(contract_claimable_SFX)
 
 func update_status():
 	if contract_data != null:
@@ -44,6 +49,7 @@ func update_status():
 func update_bug_mark_visual(active: bool):
 	if active:
 		GlobalSignal.emit_signal("start_tutorial", "Bug")
+		AudioManager.play_sfx(bug_appear_SFX)
 		if bug_tween and bug_tween.is_running():
 			bug_tween.kill()
 		bug_tween = create_tween().set_loops()

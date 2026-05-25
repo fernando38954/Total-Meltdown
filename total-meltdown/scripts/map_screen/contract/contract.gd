@@ -49,6 +49,7 @@ func move_panel_content(target_drawing_board_pos: Vector2, target_post_it_scale:
 
 func close_panel(duration: float = 0.5):
 	is_selector_panel_open = false
+	AudioManager.play_sfx(panel_close_SFX)
 	var temporaty_tween = create_tween()
 	temporaty_tween.tween_property(selector_panel, "position", selector_panel_hide_position, duration)
 	post_it.mouse_filter = Control.MOUSE_FILTER_IGNORE

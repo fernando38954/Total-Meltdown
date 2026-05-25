@@ -19,6 +19,9 @@ var appearance: QuizAppearance
 var question_list: Array[Dictionary] = []
 var current_question_idx: int = 0
 
+@export_category("SFX")
+@export var quiz_close_SFX : AudioStream
+
 var quiz_type: QuizType
 var response_key: String = ""
 var correct_counter: int = 0
@@ -99,6 +102,7 @@ func rescale_panel(target_panel_scale: Vector2, duration: float = 1.0):
 	tween.tween_property(panel, "scale", target_panel_scale, duration)
 
 func close_panel(duration: float = 0.5):
+	AudioManager.play_sfx(quiz_close_SFX)
 	rescale_panel(Vector2.ZERO, duration)
 	await tween.finished
 	queue_free()

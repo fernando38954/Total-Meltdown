@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://34d8f2i61rvq" path="res://assets/sprites/event_icons/Contract_Press.png" id="2_b02q8"]
 [ext_resource type="Texture2D" uid="uid://dktxjtegkq0gu" path="res://assets/sprites/event_icons/Contract_Hover.png" id="3_ovrbl"]
 [ext_resource type="Script" uid="uid://cl718s7i1kl4n" path="res://scripts/map_screen/contract_event_button.gd" id="4_b02q8"]
+[ext_resource type="AudioStream" uid="uid://bl6jvhtc2wne7" path="res://assets/sfx/ClickEvent.mp3" id="5_1vna3"]
 [ext_resource type="Texture2D" uid="uid://ehbnum7cy1bg" path="res://assets/sprites/event_icons/Contract_Countdown.png" id="5_ovrbl"]
 
 [node name="ContractEventButton" type="TextureButton" unique_id=1268619658]
@@ -14,6 +15,7 @@ texture_normal = ExtResource("1_fefku")
 texture_pressed = ExtResource("2_b02q8")
 texture_hover = ExtResource("3_ovrbl")
 script = ExtResource("4_b02q8")
+click_event_SFX = ExtResource("5_1vna3")
 
 [node name="CountdownProgress" type="TextureProgressBar" parent="." unique_id=1699453300]
 layout_mode = 0

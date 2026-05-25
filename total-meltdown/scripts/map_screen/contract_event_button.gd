@@ -18,6 +18,7 @@ func update_countdown():
 			map_screen.close_event_button(self)
 
 func _on_pressed() -> void:
+	AudioManager.play_sfx(click_event_SFX)
 	GlobalSignal.emit_signal("start_tutorial", "Contract")
 	map_screen.current_active_event_button = self
 	map_screen.open_contract_screen(actived_quest)

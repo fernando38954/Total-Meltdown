@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjywrhupbrbj4" path="res://scripts/component/quiz/quiz_panel.gd" id="1_4vlmd"]
 [ext_resource type="Texture2D" uid="uid://bsxsudrqtlc83" path="res://assets/sprites/component/quiz_panel/NormalPanel.png" id="2_admcu"]
+[ext_resource type="AudioStream" uid="uid://bnlx4vly6ghfv" path="res://assets/sfx/PanelClose.mp3" id="2_g0son"]
 [ext_resource type="Texture2D" uid="uid://215pjxgkr8o4" path="res://assets/sprites/component/quiz_panel/NormalOptionNormal.png" id="3_vkf4s"]
 [ext_resource type="Texture2D" uid="uid://b8yx2glg2fbqn" path="res://assets/sprites/component/quiz_panel/NormalOptionHover.png" id="4_4o461"]
 [ext_resource type="Script" uid="uid://glxem556w468" path="res://scripts/component/quiz/quiz_option.gd" id="5_7kq3x"]
@@ -15,6 +16,7 @@
 
 [node name="QuizPanel" type="CanvasLayer" unique_id=67637543]
 script = ExtResource("1_4vlmd")
+quiz_close_SFX = ExtResource("2_g0son")
 
 [node name="ClickBlocker" type="ColorRect" parent="." unique_id=2135669493]
 anchors_preset = 15

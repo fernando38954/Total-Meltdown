@@ -5,6 +5,9 @@ class_name BaseEventButton
 var map_screen: MapScreen
 var target_scale
 
+@export_category("SFX")
+@export var click_event_SFX : AudioStream
+
 @abstract func initialize_data()
 
 func initialize(p_position: Vector2, p_scale: float, p_map: MapScreen):

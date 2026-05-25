@@ -7,7 +7,6 @@ signal move_animation_finished
 @onready var content_view = $ContentViewer
 @onready var left_button = $LeftButton
 @onready var right_button = $RightButton
-@onready var audio_player = $AudioStreamPlayer
 @onready var click_blocker = $ClickBlocker
 
 @export var open_position = Vector2(2015.0, 1050.0)

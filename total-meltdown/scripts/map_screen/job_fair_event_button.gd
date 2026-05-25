@@ -9,6 +9,7 @@ func initialize_data():
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			AudioManager.play_sfx(click_event_SFX)
 			GlobalSignal.emit_signal("start_tutorial", "JobFair")
 			map_screen.current_active_event_button = self
 			map_screen.open_job_fair_screen(recruitable_developers_list)

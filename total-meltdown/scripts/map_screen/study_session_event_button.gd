@@ -7,6 +7,7 @@ func initialize_data():
 	studiable_patterns_list = PatternManager.prepare_random_patterns()
 
 func _on_pressed() -> void:
+	AudioManager.play_sfx(click_event_SFX)
 	GlobalSignal.emit_signal("start_tutorial", "StudySession")
 	map_screen.current_active_event_button = self
 	map_screen.open_study_session_screen(studiable_patterns_list)

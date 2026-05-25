@@ -7,5 +7,6 @@ func initialize_data():
 	actived_exam = ExamManager.prepare_random_exam()
 
 func _on_pressed() -> void:
+	AudioManager.play_sfx(click_event_SFX)
 	map_screen.current_active_event_button = self
 	map_screen.open_exam_screen(actived_exam)

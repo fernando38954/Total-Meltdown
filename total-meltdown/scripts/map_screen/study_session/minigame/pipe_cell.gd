@@ -48,6 +48,9 @@ var is_actived: bool
 @export var inactive_text_color: Color = Color(0.05, 0.16, 1)
 var text_rotation_degree: int
 
+@export_category("SFX")
+@export var cell_rotate_SFX : AudioStream
+
 # External
 var pipe_game: PipeGame
 var tween: Tween
@@ -161,3 +164,4 @@ func rotate(rotation_number: int):
 
 func _on_pressed() -> void:
 	rotate(1)
+	AudioManager.play_sfx(cell_rotate_SFX)

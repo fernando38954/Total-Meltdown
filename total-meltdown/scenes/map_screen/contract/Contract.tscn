@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1hn7mnqjje01"]
 
 [ext_resource type="Script" uid="uid://c7py0sc7jvypc" path="res://scripts/map_screen/contract/contract.gd" id="1_s0427"]
+[ext_resource type="AudioStream" uid="uid://bnlx4vly6ghfv" path="res://assets/sfx/PanelClose.mp3" id="2_63ehd"]
 [ext_resource type="Texture2D" uid="uid://cjq7gm75x871k" path="res://assets/sprites/map_screen/event/contract/DrawingBoard.png" id="2_xc3rv"]
 [ext_resource type="Texture2D" uid="uid://cg38eyq2aqff7" path="res://assets/sprites/map_screen/event/contract/Post-it.png" id="3_3e3mo"]
 [ext_resource type="PackedScene" uid="uid://b3bukuv2wbe4u" path="res://scenes/map_screen/contract/PatternOptionBox.tscn" id="3_fvv71"]
@@ -45,6 +46,7 @@ drawing_board = NodePath("DrawingBoard")
 post_it = NodePath("PostIt")
 quest_panel = NodePath("QuestPanel")
 selector_panel = NodePath("SelectorPanel")
+panel_close_SFX = ExtResource("2_63ehd")
 
 [node name="DrawingBoard" type="TextureRect" parent="." unique_id=1413654943 node_paths=PackedStringArray("contract_screen", "radar_chart", "pattern_box", "developer_boxes", "time_level", "complexity_level", "submit_button", "claim_button", "bug_event_button", "progress_button")]
 offset_left = 1005.0

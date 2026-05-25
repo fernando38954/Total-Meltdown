@@ -16,6 +16,9 @@ class_name QuarterReport
 @export var positive_gain_mark: Texture
 @export var negative_gain_mark: Texture
 
+@export_category("SFX")
+@export var report_close_SFX : AudioStream
+
 var tween: Tween
 
 #region Animation
@@ -27,6 +30,7 @@ func rescale_panel(target_report_scale: Vector2, duration: float = 1.0):
 	tween.tween_property(report, "scale", target_report_scale, duration)
 
 func close_panel(duration: float = 0.5):
+	AudioManager.play_sfx(report_close_SFX)
 	rescale_panel(Vector2.ZERO, duration)
 
 func open_panel(duration: float = 0.5):
