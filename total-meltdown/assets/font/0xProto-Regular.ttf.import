@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bg123s4qhqdjj"
-path="res://.godot/imported/Kode-Bold.ttf-19d9342cd29626eddf355755743fd5d1.fontdata"
+uid="uid://dt0ievaf623x5"
+path="res://.godot/imported/0xProto-Regular.ttf-b0f38e5fea053d8d96f6fde81ecccd77.fontdata"
 
 [deps]
 
-source_file="res://assets/font/Kode-Bold.ttf"
-dest_files=["res://.godot/imported/Kode-Bold.ttf-19d9342cd29626eddf355755743fd5d1.fontdata"]
+source_file="res://assets/font/0xProto-Regular.ttf"
+dest_files=["res://.godot/imported/0xProto-Regular.ttf-b0f38e5fea053d8d96f6fde81ecccd77.fontdata"]
 
 [params]
 
