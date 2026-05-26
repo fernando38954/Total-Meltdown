@@ -22,6 +22,8 @@ var correct_bullets: Array
 var wrong_bullets: Array
 
 @export_category("Visual Component")
+@onready var icon = $Icon
+@onready var pattern_name = $PatternName
 @onready var grid_container = $GridContainer
 @onready var sink = $Sink
 @export var sink_active: Texture2D
@@ -96,7 +98,13 @@ func get_random_bullet_points(target_pattern_key: String):
 	other_bullets.shuffle()
 	wrong_bullets = other_bullets.slice(0, must_not_connect.size())
 
+func set_minigame_visual(target_pattern_key: String):
+	var target_pattern_data = PatternManager.get_pattern_by_key(target_pattern_key)
+	icon.texture = target_pattern_data.icon
+	pattern_name.text = target_pattern_data.title
+
 func generate_and_build_grid(target_pattern_key: String):
+	set_minigame_visual(target_pattern_key)
 	while true: # Repeat until get a valid map
 		generate_random_constraints()
 		get_random_bullet_points(target_pattern_key)

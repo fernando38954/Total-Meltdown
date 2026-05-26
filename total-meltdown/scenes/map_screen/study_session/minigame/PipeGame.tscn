@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ce1mh4ngfvgt8" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkActive.png" id="2_hy3g4"]
 [ext_resource type="PackedScene" uid="uid://cf42mar1u4h2i" path="res://scenes/map_screen/study_session/minigame/PipeCell.tscn" id="3_a0xj6"]
 [ext_resource type="Texture2D" uid="uid://cic2xbgui5gfr" path="res://assets/sprites/map_screen/event/study_session/minigame/Source.png" id="3_b2a68"]
+[ext_resource type="Texture2D" uid="uid://cxydtmhymg5nh" path="res://assets/sprites/pattern_icons/EDA.png" id="5_2tb38"]
 [ext_resource type="Texture2D" uid="uid://cv1aeg3kdakdj" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkInactive.png" id="5_5pdod"]
 
 [node name="PipeGame" type="Control" unique_id=1725591918]
@@ -28,6 +29,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_a0xj6")
 expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1410461325]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 506.0
+offset_right = 667.0
+offset_bottom = 1018.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_2tb38")
+
+[node name="PatternName" type="RichTextLabel" parent="." unique_id=1355449493]
+layout_mode = 0
+offset_left = 3741.0
+offset_top = 79.0
+offset_right = 5248.6836
+offset_bottom = 302.71924
+rotation = 1.5707964
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+text = "Arquitetura Orientada a Eventos"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Source" type="TextureRect" parent="." unique_id=1825381184]
 layout_mode = 0
