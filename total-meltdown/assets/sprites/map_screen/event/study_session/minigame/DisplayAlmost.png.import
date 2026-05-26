@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce1mh4ngfvgt8"
-path="res://.godot/imported/SinkActive.png-ae064845f7699f78f2fad14dac015347.ctex"
+uid="uid://debljd57px2py"
+path="res://.godot/imported/DisplayAlmost.png-9baf4079eafdc4bccfb5706239a2ad0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map_screen/event/study_session/minigame/SinkActive.png"
-dest_files=["res://.godot/imported/SinkActive.png-ae064845f7699f78f2fad14dac015347.ctex"]
+source_file="res://assets/sprites/map_screen/event/study_session/minigame/DisplayAlmost.png"
+dest_files=["res://.godot/imported/DisplayAlmost.png-9baf4079eafdc4bccfb5706239a2ad0d.ctex"]
 
 [params]
 

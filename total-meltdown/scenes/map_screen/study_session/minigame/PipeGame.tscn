@@ -2,11 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cnflnuvotpgy7" path="res://scripts/map_screen/study_session/minigame/pipe_game.gd" id="1_w47fl"]
 [ext_resource type="Texture2D" uid="uid://d2wkpbq1wttjc" path="res://assets/sprites/map_screen/event/study_session/minigame/PipeGame.png" id="2_a0xj6"]
-[ext_resource type="Texture2D" uid="uid://ce1mh4ngfvgt8" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkActive.png" id="2_hy3g4"]
+[ext_resource type="Texture2D" uid="uid://ce1mh4ngfvgt8" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkCorrect.png" id="2_hy3g4"]
+[ext_resource type="AudioStream" uid="uid://dwpm78p2a3eul" path="res://assets/sfx/MinigameFinish.mp3" id="2_ka4c0"]
 [ext_resource type="PackedScene" uid="uid://cf42mar1u4h2i" path="res://scenes/map_screen/study_session/minigame/PipeCell.tscn" id="3_a0xj6"]
 [ext_resource type="Texture2D" uid="uid://cic2xbgui5gfr" path="res://assets/sprites/map_screen/event/study_session/minigame/Source.png" id="3_b2a68"]
+[ext_resource type="Texture2D" uid="uid://b4xo0imopvg7h" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkAlmost.png" id="4_1thxr"]
+[ext_resource type="Texture2D" uid="uid://brh0aiuha8ftm" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkError.png" id="4_xgqqr"]
 [ext_resource type="Texture2D" uid="uid://cxydtmhymg5nh" path="res://assets/sprites/pattern_icons/EDA.png" id="5_2tb38"]
 [ext_resource type="Texture2D" uid="uid://cv1aeg3kdakdj" path="res://assets/sprites/map_screen/event/study_session/minigame/SinkInactive.png" id="5_5pdod"]
+[ext_resource type="Texture2D" uid="uid://cgi08n4qhfa75" path="res://assets/sprites/map_screen/event/study_session/minigame/DisplayInactive.png" id="6_suamn"]
+[ext_resource type="Texture2D" uid="uid://wjmi2km3rklt" path="res://assets/sprites/map_screen/event/study_session/minigame/DisplayCorrect.png" id="7_ka4c0"]
+[ext_resource type="Texture2D" uid="uid://debljd57px2py" path="res://assets/sprites/map_screen/event/study_session/minigame/DisplayAlmost.png" id="8_8k1ym"]
+[ext_resource type="Texture2D" uid="uid://14hjdgi5tek2" path="res://assets/sprites/map_screen/event/study_session/minigame/DisplayError.png" id="9_cfa1w"]
 
 [node name="PipeGame" type="Control" unique_id=1725591918]
 layout_mode = 3
@@ -17,8 +24,15 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1952, 1098)
 script = ExtResource("1_w47fl")
-sink_active = ExtResource("2_hy3g4")
+minigame_finish_SFX = ExtResource("2_ka4c0")
 sink_inactive = ExtResource("5_5pdod")
+sink_correct = ExtResource("2_hy3g4")
+sink_almost = ExtResource("4_1thxr")
+sink_error = ExtResource("4_xgqqr")
+display_inactive = ExtResource("6_suamn")
+display_correct = ExtResource("7_ka4c0")
+display_almost = ExtResource("8_8k1ym")
+display_error = ExtResource("9_cfa1w")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1654689370]
 layout_mode = 1
@@ -147,3 +161,12 @@ offset_top = 1659.0
 offset_right = 3796.0
 offset_bottom = 1981.0
 texture = ExtResource("5_5pdod")
+
+[node name="Display" type="TextureRect" parent="." unique_id=913781489]
+layout_mode = 0
+offset_left = 986.0
+offset_top = 2040.0
+offset_right = 3549.0
+offset_bottom = 2377.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_8k1ym")

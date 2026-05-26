@@ -17,6 +17,8 @@ var generator: PipeMapGenerator
 var cells_grid: Array[Array]
 var game_finished: bool
 
+@export var minigame_finish_SFX : AudioStream
+
 @export_category("Bullet Points")
 var correct_bullets: Array
 var wrong_bullets: Array
@@ -25,9 +27,21 @@ var wrong_bullets: Array
 @onready var icon = $Icon
 @onready var pattern_name = $PatternName
 @onready var grid_container = $GridContainer
+
+@export_category("Sink Visual")
 @onready var sink = $Sink
-@export var sink_active: Texture2D
 @export var sink_inactive: Texture2D
+@export var sink_correct: Texture2D
+@export var sink_almost: Texture2D
+@export var sink_error: Texture2D
+
+@export_category("Display Visual")
+@onready var display = $Display
+@export var display_inactive: Texture2D
+@export var display_correct: Texture2D
+@export var display_almost: Texture2D
+@export var display_error: Texture2D
+
 var open_scale = Vector2(0.8, 0.8)
 var tween: Tween
 
@@ -166,7 +180,6 @@ func game_win_check():
 	var sink_connected = false
 	if cells_grid[rows-1][cols-1].connection[DIR_RIGHT] and cells_grid[rows-1][cols-1].is_actived:
 		sink_connected = true
-	sink.texture = sink_active if sink_connected else sink_inactive
 	
 	var all_required_connected = true
 	for coordinate in must_connect:
@@ -180,8 +193,23 @@ func game_win_check():
 			all_prohibited_unconnected = false
 			break
 	
+	if not sink_connected:
+		sink.texture = sink_inactive
+		display.texture = display_inactive
+	elif not all_prohibited_unconnected:
+		sink.texture = sink_error
+		display.texture = display_error
+	elif not all_required_connected:
+		sink.texture = sink_almost
+		display.texture = display_almost
+	else:
+		sink.texture = sink_correct
+		display.texture = display_correct
+	
 	if sink_connected and all_required_connected and all_prohibited_unconnected:
 		game_finished = true
+		AudioManager.play_sfx(minigame_finish_SFX)
+		await get_tree().create_timer(3).timeout
 		close_game()
 		GlobalSignal.emit_signal("start_tutorial", "AfterStudy")
 		GlobalSignal.emit_signal("minigame_finished")
