@@ -33,6 +33,5 @@
 		"bullet2": "Servidor centraliza processamento e dados",
 		"bullet3": "Comunicação ocorre através da rede",
 		"bullet4": "Múltiplos clientes acessam mesmo servidor",
-		"bullet5": "Interface separada do processamento principal",
 	}
 }
