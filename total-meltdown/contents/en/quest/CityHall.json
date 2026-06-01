@@ -1,0 +1,43 @@
+{
+	"key": "CityHall",
+	"quarter": 1,
+	"title": "Metaverse City Hall",
+	"icon": "res://assets/sprites/quest_icons/CityHall.png",
+	"difficult": "Easy",
+	"attribute": {
+		"Functional Suitability": "Medium",
+		"Performance Efficiency": "Low",
+		"Compatibility": "Low",
+		"Interaction Capability": "High",
+		"Reliability": "High",
+		"Security": "Medium",
+		"Maintainability": "Medium",
+		"Flexibility": "Medium",
+		"Safety": "Irrelevant"
+	},
+	"description": {
+		"paragraph1": "The city hall launched a holographic portal for issuing documents.",
+		"paragraph2": "The problem is that the elderly use a physical terminal, young people use a neural app, and employees use an old computer with Ubuntu 24.04.",
+		"paragraph3": "Each update breaks half of the screens, but curiously, the tax system continues to work perfectly."
+	},
+	"bullet_point": {
+		"bullet1": "It would not be cool to issue government documents incorrectly. The system [b]cannot fail[/b].",
+		"bullet2": "Interface changes happen constantly. The system must work on all of them.",
+		"bullet3": "The document issuance logic must remain separate.",
+		"bullet4": "Everyone using the system needs to understand how the interface works. [b]Learnability[/b] is essential."
+	},
+	"footnote": "[i]~ The tax is the only thing that never breaks. Coincidence? I think not.[/i]",
+	"requirements": {
+		"pattern1": "MVC"
+	},
+	"bug": {
+		"bug1": {
+			"description": "The team forgot why they chose the MVC pattern. What is the main advantage of separating Model, View, and Controller?",
+			"choices": {
+				"correct": "Facilitates maintenance and organization",
+				"wrong1": "Only improves speed",
+				"wrong2": "Eliminates the need for a database"
+			}
+		}
+	}
+}

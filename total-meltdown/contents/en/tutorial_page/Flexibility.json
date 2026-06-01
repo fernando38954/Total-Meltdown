@@ -1,0 +1,7 @@
+{
+	"key": "Flexibility",
+	"order": 8,
+	"title": "Flexibility",
+	"image": "res://assets/sprites/attribute_icons/Flexibility.png",
+	"description": "	Refers to the system's ability to be adapted or transferred to different environments. A flexible system easily adjusts to new contexts.\n[ul]\n[b]Adaptability[/b]: adjusts to different environments.\n[b]Scalability[/b]: handles load variation.\n[b]Installability[/b]: easy to install/remove.\n[b]Replaceability[/b]: can replace other systems.[/ul]"
+}

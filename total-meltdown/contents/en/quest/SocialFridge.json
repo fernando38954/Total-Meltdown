@@ -1,0 +1,42 @@
+{
+	"key": "Fridge",
+	"quarter": 0,
+	"title": "Social Fridge",
+	"icon": "res://assets/sprites/quest_icons/Fridge.png",
+	"difficult": "Tutorial",
+	"attribute": {
+		"Functional Suitability": "Medium",
+		"Performance Efficiency": "Low",
+		"Compatibility": "Low",
+		"Interaction Capability": "High",
+		"Reliability": "Medium",
+		"Security": "Low",
+		"Maintainability": "High",
+		"Flexibility": "Medium",
+		"Safety": "Irrelevant"
+	},
+	"description": {
+		"paragraph1": "My fridge started automatically posting recipes using what's inside it. Now it has followers. Many followers.",
+		"paragraph2": "The fridge door screen, the mobile app, refrigerator displays, and smart glasses need to show the same recipes… but each in a different way.",
+		"paragraph3": "After the last update, the fridge screen started showing hamster food ads on every cake recipe."
+	},
+	"bullet_point": {
+		"bullet1": "Recipes need to appear on several different devices that share the same structural pattern.",
+		"bullet2": "The system's code is [b]difficult to analyze[/b]. I want to change the appearance without rewriting the logic.",
+		"bullet3": "The AI that programmed this mixed recipe buttons with temperature control. Must improve [b]usability[/b]."
+	},
+	"footnote": "[i]~ My fridge has more followers than me. And I post food photos too.[/i]",
+	"requirements": {
+		"pattern1": "MVC"
+	},
+	"bug": {
+		"bug1": {
+			"description": "We need to change the interfaces. Which part of the system should be modified to change only the application's appearance?",
+			"choices": {
+				"correct": "View",
+				"wrong1": "Model",
+				"wrong2": "Database"
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"key": "Remedy",
+	"quarter": 1,
+	"title": "Better Remedy",
+	"icon": "res://assets/sprites/quest_icons/Remedy.png",
+	"difficult": "Tutorial",
+	"attribute": {
+		"Functional Suitability": "High",
+		"Performance Efficiency": "High",
+		"Compatibility": "Low",
+		"Interaction Capability": "Medium",
+		"Reliability": "High",
+		"Security": "Low",
+		"Maintainability": "Low",
+		"Flexibility": "Medium",
+		"Safety": "High"
+	},
+	"description": {
+		"paragraph1": "A hospital network uses autonomous drones to deliver medicine and provide first aid in congested megacities.",
+		"paragraph2": "The system has separate layers for medical authentication, risk analysis, inventory control, air routing, and hospital communication.",
+		"paragraph3": "After an AI tried to 'optimize' the system by removing intermediate checks, a drone delivered laxative instead of antihistamine.",
+		"paragraph4": "Now no one trusts the 'Urgent Delivery' button anymore."
+	},
+	"bullet_point": {
+		"bullet1": "The system [b]cannot make mistakes[/b] in orders.",
+		"bullet2": "Even with failures, [b]it must keep operating[/b] – lives depend on it!",
+		"bullet3": "Routing problems cannot delay orders. The response must be almost instantaneous."
+	},
+	"footnote": "[i]~ At least my constipation was resolved.[/i]",
+	"requirements": {
+		"pattern1": "Layered"
+	},
+	"bug": {
+		"bug1": {
+			"description": "To speed up deliveries, an AI made drones directly access the inventory layer without going through intermediate medical validations. What was the main architectural consequence of this decision?",
+			"choices": {
+				"correct": "Reduction of system isolation and reliability",
+				"wrong1": "Improved compatibility between drones",
+				"wrong2": "Decreased need for medical authentication"
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"key": "PipeFilter",
+	"quarter": 2,
+	"title": "Pipe and Filter",
+	"icon": "res://assets/sprites/pattern_icons/PipeFilter.png",
+	"cost": 25,
+	"attribute": {
+		"Functional Suitability": 1.1,
+		"Performance Efficiency": 1.4,
+		"Compatibility": 1.8,
+		"Interaction Capability": 0.8,
+		"Reliability": 0.8,
+		"Security": 1.1,
+		"Maintainability": 1.4,
+		"Flexibility": 1.1,
+		"Safety": 1.1
+	},
+	"complexity_level": 2,
+	"time_level": 2,
+	"cost_level": 2,
+	"description": "Pipe-and-Filter architecture organizes the system as a sequence of independent processing steps (filters), connected by communication channels (pipes). Each filter receives input data, performs a transformation, and produces output that is passed to the next stage, forming a continuous processing flow. This approach is common in data processing systems, compilers, and transformation pipelines. Its organization is based on the following conceptual blocks:\n[ul]\n[b]Filters[/b]: Components responsible for processing input data and generating output data, without direct knowledge of the data's origin or final destination. Each filter performs a specific, well-defined task.\n[b]Pipes[/b]: Structures responsible for transporting data between filters, ensuring sequential or streaming information flow.\n[b]Data Flow[/b]: Defines the execution order of filters, which can be linear or more complex depending on pipeline composition.[/ul]\nThis architecture offers advantages such as: [b]good maintainability[/b], as filters can be modified or replaced in isolation; [b]good performance[/b], especially in streaming or parallel processing scenarios; and [b]high compatibility[/b], because different filters can be developed in different technologies as long as they respect the input and output format.\nDisadvantages include [b]low reliability[/b], as a failure in one filter can stop the entire pipeline; and [b]low usability[/b], since this architecture is not naturally geared toward end-user interaction, being more suitable for internal data processing.",
+	"concept": "Sequence of transformations where the output of one filter is the input of the next through 'pipes'.",
+	"advantage": "Stream Processing. Excellent performance for bulk data and high modularity.",
+	"disadvantage": "Limited Interactivity. Low usability for the end user, focused on internal processing.",
+	"bullet_point": {
+		"bullet1": "Processing divided into independent filters",
+		"bullet2": "Pipes connect processing stages",
+		"bullet3": "Data flows through a continuous sequential stream",
+		"bullet4": "Each filter transforms received data",
+		"bullet5": "Pipeline organizes processing in stages"
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"key": "Signals",
+	"quarter": 2,
+	"title": "Interpreting Space Signals",
+	"icon": "res://assets/sprites/quest_icons/Signals.png",
+	"difficult": "Hard",
+	"attribute": {
+		"Functional Suitability": "High",
+		"Performance Efficiency": "Low",
+		"Compatibility": "Low",
+		"Interaction Capability": "Low",
+		"Reliability": "Low",
+		"Security": "High",
+		"Maintainability": "High",
+		"Flexibility": "Medium",
+		"Safety": "Low"
+	},
+	"description": {
+		"paragraph1": "An international agency created a system capable of intercepting, translating, and analyzing transmissions from deep space.",
+		"paragraph2": "Billions of signals continuously pass through a processing chain.",
+		"paragraph3": "One filter removes noise. Another detects patterns. Another translates unknown languages. Another classifies potential threats.",
+		"paragraph4": "The problem started when an experimental semantic interpretation filter began generating small inconsistencies in the signals.",
+		"paragraph5": "As a consequence, the system classified an alien soup recipe as a formal declaration of war.",
+		"paragraph6": "The incident nearly started an interstellar conflict over space onions."
+	},
+	"bullet_point": {
+		"bullet1": "Analysis modules must evolve independently.",
+		"bullet2": "Messages must be protected – after all, aliens value discretion highly.",
+		"bullet3": "Failures in intermediate stages are contaminating the rest of the analysis. But translation must be correct."
+	},
+	"footnote": "[i]~ The first universal soup war.[/i]",
+	"requirements": {
+		"pattern1": "PipeFilter"
+	},
+	"bug": {
+		"bug1": {
+			"description": "A translation filter started producing small semantic inconsistencies. Because subsequent filters fully trusted the received output, the error propagated through the entire chain, generating a false military threat. Which weakness of Pipe and Filter architecture does this demonstrate?",
+			"choices": {
+				"correct": "Failures in intermediate filters can compromise the entire pipeline",
+				"wrong1": "Strong coupling between graphical interface and processing",
+				"wrong2": "Mandatory dependence on centralized synchronous processing"
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"key": "Microservice",
+	"quarter": 2,
+	"title": "Microservices",
+	"icon": "res://assets/sprites/pattern_icons/Microservice.png",
+	"cost": 25,
+	"attribute": {
+		"Functional Suitability": 1.1,
+		"Performance Efficiency": 0.8,
+		"Compatibility": 1.1,
+		"Interaction Capability": 1.1,
+		"Reliability": 1.1,
+		"Security": 1.1,
+		"Maintainability": 1.4,
+		"Flexibility": 1.8,
+		"Safety": 1.1
+	},
+	"complexity_level": 4,
+	"time_level": 4,
+	"cost_level": 4,
+	"description": "Microservices architecture structures systems as a set of small, independent, loosely coupled services, where each service implements a specific domain capability. These services are developed, deployed, and scaled autonomously, communicating through lightweight mechanisms, typically network-based. Its organization is based on the following conceptual blocks:\n[ul]\n[b]Independent Services[/b]: Autonomous units that encapsulate specific system functionalities, with their own logic control and often their own data.\n[b]Service Communication[/b]: Carried out via APIs (e.g., HTTP/REST, messaging), allowing integration between distributed services.\n[b]Management and Orchestration[/b]: Responsible for service discovery, load balancing, monitoring, and coordination (e.g., API Gateway, service registry).\n[b]Distributed Infrastructure[/b]: Environment that supports service execution, including containers, orchestrators, and continuous deployment mechanisms.[/ul]\nThis architecture offers advantages such as: [b]good maintainability[/b], as smaller, isolated services facilitate understanding, testing, and independent evolution; and [b]high flexibility[/b], since each service can be deployed in different environments independently, favoring adaptation and scalability.\nA disadvantage is [b]low performance[/b] in certain scenarios, due to network communication overhead, latency between services, and the need for distributed synchronization. Moreover, the distributed nature can increase operational complexity and require additional management mechanisms.",
+	"concept": "System composed of small independent services that communicate over the network.",
+	"advantage": "Scalability and Evolution. Each service can be updated or replaced without stopping the others.",
+	"disadvantage": "Network Complexity. Latency from distributed communication can harm performance.",
+	"bullet_point": {
+		"bullet1": "System divided into independent services",
+		"bullet2": "Each service has its own responsibility",
+		"bullet3": "Communication based on distributed APIs",
+		"bullet4": "Services deployed autonomously",
+		"bullet5": "Distributed infrastructure coordinates services"
+	}
+}

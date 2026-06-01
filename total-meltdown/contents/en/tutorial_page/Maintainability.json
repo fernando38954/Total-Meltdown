@@ -1,0 +1,7 @@
+{
+	"key": "Maintainability",
+	"order": 7,
+	"title": "Maintainability",
+	"image": "res://assets/sprites/attribute_icons/Maintainability.png",
+	"description": "	Evaluates how easily the system can be modified to correct errors, improve functionalities, or adapt to changes.\n[ul]\n[b]Modularity[/b]: independent components.\n[b]Reusability[/b]: parts can be reused.\n[b]Analyzability[/b]: easy to diagnose and assess impacts.\n[b]Modifiability[/b]: easy to change without causing problems.\n[b]Testability[/b]: easy to test.[/ul]"
+}

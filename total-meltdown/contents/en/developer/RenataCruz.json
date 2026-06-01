@@ -1,0 +1,19 @@
+{
+	"key": "Renata",
+	"name": "Renata Cruz",
+	"age": 26,
+	"portrait": "res://assets/sprites/developer_portrait/portrait_7.png",
+	"cost": 50,
+	"attribute": {
+		"Functional Suitability": 3.0,
+		"Performance Efficiency": 2.0,
+		"Compatibility": 4.5,
+		"Interaction Capability": 4.0,
+		"Reliability": 2.5,
+		"Security": 1.5,
+		"Maintainability": 2.0,
+		"Flexibility": 5.0,
+		"Safety": 1.5
+	},
+	"description": "Mobile dev who blames Android, iPhone, and the Moon for any mysterious bug."
+}

@@ -1,0 +1,37 @@
+{
+	"key": "AfterHire",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "admiring",
+			"phrase": "Excellent choice!"
+		},
+		"dialogue2": {
+			"portrait": "sweating",
+			"phrase": "I hope he knows how to center a div. Few survive that."
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "On the Secondary Screen, you can view your entire team of developers."
+		},
+		"dialogue4": {
+			"portrait": "normal",
+			"phrase": "There you can keep track of your professionals, analyze attributes, and get to know your team better."
+		},
+		"dialogue5": {
+			"portrait": "confused",
+			"phrase": "Plus a bit of each one's story. I hope they're nicer than feijoada mixed with yogurt."
+		},
+		"dialogue6": {
+			"portrait": "admiring",
+			"phrase": "And so begins your great journey at RetroCODE!"
+		},
+		"dialogue7": {
+			"portrait": "surprised",
+			"phrase": "No pressure… the future of world systems depends on you."
+		},
+		"dialogue8": {
+			"portrait": "normal",
+			"phrase": "And I'll stay here to help you."
+		}
+	}
+}

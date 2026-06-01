@@ -1,0 +1,65 @@
+{
+	"key": "Contract",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "Time to face a real Contract!"
+		},
+		"dialogue2": {
+			"portrait": "normal",
+			"phrase": "Contracts have three main areas. I'll show you quickly before someone asks for an impossible deadline."
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "This left area contains the full contract description. Here you'll find the project context, client information, and important details about the required system."
+		},
+		"dialogue4": {
+			"portrait": "sweating",
+			"phrase": "Sometimes the client explains everything perfectly. Sometimes they write three pages without saying absolutely anything."
+		},
+		"dialogue5": {
+			"portrait": "confused",
+			"phrase": "From my experience, they have one thing in common: they don't like building a system from scratch. They prefer you modify the existing architecture base of their system."
+		},
+		"dialogue6": {
+			"portrait": "sweating",
+			"phrase": "...Even if their choice is horrible for the purpose they want. We must respect it, they are the ones paying, after all…"
+		},
+		"dialogue7": {
+			"portrait": "admiring",
+			"phrase": "This sticky note on the right is the summary description I made for you. It highlights the main objectives and the most important quality attributes for the contract."
+		},
+		"dialogue8": {
+			"portrait": "sweating",
+			"phrase": "I generated it with an LLM. If it's wrong, it's the model's hallucination, not mine."
+		},
+		"dialogue9": {
+			"portrait": "normal",
+			"phrase": "And the central region is the Project Area! That's where you assemble your solution by choosing a software architecture pattern and team developers."
+		},
+		"dialogue10": {
+			"portrait": "normal",
+			"phrase": "Just drag the chosen option from the panel that opens when you click on the respective boxes. To remove the choice, simply right‑click on them."
+		},
+		"dialogue11": {
+			"portrait": "normal",
+			"phrase": "Each architecture strengthens certain quality attributes.\nMeanwhile, your developers contribute their own attributes, which will be applied to the chosen architectural pattern."
+		},
+		"dialogue12": {
+			"portrait": "admiring",
+			"phrase": "A good team can compensate for weaknesses…\nBut not even a thousand developers can save a horrible architectural decision."
+		},
+		"dialogue13": {
+			"portrait": "sweating",
+			"phrase": "Well… maybe a thousand could. But HR wouldn't allow it."
+		},
+		"dialogue14": {
+			"portrait": "normal",
+			"phrase": "Your goal is to combine everything correctly to satisfy the contract's requirements."
+		},
+		"dialogue15": {
+			"portrait": "sweating",
+			"phrase": "If you can't… well, at least we'll have a great post‑mortem report."
+		}
+	}
+}

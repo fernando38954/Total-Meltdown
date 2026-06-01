@@ -1,0 +1,49 @@
+{
+	"key": "JobFair",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "Oops! You've entered a Recruitment Fair!"
+		},
+		"dialogue2": {
+			"portrait": "normal",
+			"phrase": "Now's your chance to hire a new developer."
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "Each developer has different skills, shown in a chart next to them!"
+		},
+		"dialogue4": {
+			"portrait": "admiring",
+			"phrase": "These skills are represented by the quality attributes of ISO/IEC 25010 — the most modern version, from 2023."
+		},
+		"dialogue5": {
+			"portrait": "sweating",
+			"phrase": "We need to adapt quickly to changes to stay in the market."
+		},
+		"dialogue6": {
+			"portrait": "normal",
+			"phrase": "Back to the subject: some are great at security. Others write code so flexible it bends in the wind."
+		},
+		"dialogue7": {
+			"portrait": "confused",
+			"phrase": "...Which is probably a structural problem in the system."
+		},
+		"dialogue8": {
+			"portrait": "normal",
+			"phrase": "In short: you can hire developers according to your needs. If you don't like the candidates, you can skip the current fair by right‑clicking the event icon."
+		},
+		"dialogue9": {
+			"portrait": "surprised",
+			"phrase": "...But not this time. You need a developer to work for you."
+		},
+		"dialogue10": {
+			"portrait": "sweating",
+			"phrase": "Phew! I know it seems like a lot of information at first."
+		},
+		"dialogue11": {
+			"portrait": "admiring",
+			"phrase": "That's why you can access important details in the Guide Notebook. Right here, the book in the bottom left corner of the screen!"
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"key": "Marcos",
+	"name": "Marcos Diniz",
+	"age": 35,
+	"portrait": "res://assets/sprites/developer_portrait/portrait_3.png",
+	"cost": 50,
+	"attribute": {
+		"Functional Suitability": 3.0,
+		"Performance Efficiency": 2.0,
+		"Compatibility": 4.0,
+		"Interaction Capability": 1.8,
+		"Reliability": 4.0,
+		"Security": 2.0,
+		"Maintainability": 5.0,
+		"Flexibility": 3.0,
+		"Safety": 1.5
+	},
+	"description": "Legacy veteran. Can debug old systems by staring sideways at the monitor and sighing deeply."
+}

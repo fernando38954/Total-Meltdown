@@ -1,0 +1,32 @@
+{
+	"key": "MVC",
+	"quarter": 0,
+	"title": "Model-View-Controller",
+	"icon": "res://assets/sprites/pattern_icons/MVC.png",
+	"cost": 25,
+	"attribute": {
+		"Functional Suitability": 1.1,
+		"Performance Efficiency": 1.1,
+		"Compatibility": 0.8,
+		"Interaction Capability": 1.7,
+		"Reliability": 1.1,
+		"Security": 1.1,
+		"Maintainability": 1.4,
+		"Flexibility": 1.1,
+		"Safety": 1.1
+	},
+	"complexity_level": 1,
+	"time_level": 2,
+	"cost_level": 2,
+	"description": "MVC architecture organizes interactive systems by separating responsibilities into three main components, aiming to isolate business logic from the user interface and application control flow. This separation promotes a modular structure and facilitates system evolution over time. Its organization is based on three conceptual blocks:\n[ul]\n[b]Model[/b]: Responsible for representing the application's data and business logic. Manages system state and defines domain rules, being independent of the user interface.\n[b]View[/b]: Presentation layer responsible for displaying data to the user. Obtains information from the model and renders it appropriately, and multiple views can exist for the same model.\n[b]Controller[/b]: Acts as an intermediary between Model and View. Receives user input, interprets those actions, and coordinates updates in the model and the view.[/ul]\nThis architecture offers advantages such as: [b]high usability[/b], as the separation allows multiple interfaces and facilitates adaptation of the presentation to the user; and [b]good maintainability[/b], since changes in one layer (especially the interface) can be made with reduced impact on the others.\nA disadvantage is [b]low compatibility[/b], because the rigid separation between components can hinder integration with legacy systems or architectures that do not follow the same structural pattern.",
+	"concept": "Separation between data (Model), interface (View), and input logic (Controller).",
+	"advantage": "High Usability. Allows creating multiple interfaces for the same data with ease.",
+	"disadvantage": "Low Compatibility. Difficult to integrate with systems that do not follow this rigid pattern.",
+	"bullet_point": {
+		"bullet1": "Divides system into Model, View, Controller",
+		"bullet2": "Controller mediates between user and application",
+		"bullet3": "Views display data from the model",
+		"bullet4": "Model centralizes business rules",
+		"bullet5": "Interface separated from main logic"
+	}
+}

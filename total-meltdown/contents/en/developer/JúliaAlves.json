@@ -1,0 +1,19 @@
+{
+	"key": "Julia",
+	"name": "Júlia Alves",
+	"age": 27,
+	"portrait": "res://assets/sprites/developer_portrait/portrait_6.png",
+	"cost": 50,
+	"attribute": {
+		"Functional Suitability": 3.0,
+		"Performance Efficiency": 2.5,
+		"Compatibility": 3.5,
+		"Interaction Capability": 1.5,
+		"Reliability": 3.0,
+		"Security": 2.5,
+		"Maintainability": 5.0,
+		"Flexibility": 4.5,
+		"Safety": 4.0
+	},
+	"description": "Architect obsessed with microservices. Would turn tic-tac-toe into a distributed system if allowed."
+}

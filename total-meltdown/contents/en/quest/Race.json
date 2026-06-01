@@ -1,0 +1,47 @@
+{
+	"key": "Race",
+	"quarter": 3,
+	"title": "Race Among the Stars",
+	"icon": "res://assets/sprites/quest_icons/Race.png",
+	"difficult": "Hard",
+	"attribute": {
+		"Functional Suitability": "High",
+		"Performance Efficiency": "High",
+		"Compatibility": "High",
+		"Interaction Capability": "Low",
+		"Reliability": "Low",
+		"Security": "Medium",
+		"Maintainability": "Low",
+		"Flexibility": "High",
+		"Safety": "Low"
+	},
+	"description": {
+		"paragraph1": "The galaxy's biggest eSports championship decided to fully automate its broadcasts.",
+		"paragraph2": "Millions of spectators follow matches in real time through holograms, VR, traditional TVs, immersive cinemas, and even urban panels.",
+		"paragraph3": "Everything in the system works through events.",
+		"paragraph4": "When one player eliminates another, dozens of services react simultaneously: scoreboard, automatic replay, betting, narration, and even instant generation of sponsored memes.",
+		"paragraph5": "The problem started during the world finals.",
+		"paragraph6": "Some elimination events arrived duplicated. Others arrived late. The betting system paid out millions incorrectly, the announcer announced wrong winners, and the big screens showed a replay of a player being eliminated… before the play even happened.",
+		"paragraph7": "Technically it was described as 'eventual latency'. Fans described it as 'the worst day in sports history'."
+	},
+	"bullet_point": {
+		"bullet1": "Various systems need to react instantly to match events.",
+		"bullet2": "New broadcast modules must be added without interrupting the championship.",
+		"bullet3": "Duplicated events are causing inconsistencies between services.",
+		"bullet4": "All devices must react well to broadcast events."
+	},
+	"footnote": "[i]~ The event replay arrived before the event… someone call the quantum physicist?[/i]",
+	"requirements": {
+		"pattern1": "EDA"
+	},
+	"bug": {
+		"bug1": {
+			"description": "During the finals, a single elimination event was processed twice by some services and ignored by others. This made the betting system register non‑existent wins while replays showed conflicting information. Which characteristic of event‑driven architecture directly contributed to this problem?",
+			"choices": {
+				"correct": "Asynchronous and distributed communication among multiple event consumers",
+				"wrong1": "Strong coupling between interface and logic",
+				"wrong2": "Dependence on a single centralized layer"
+			}
+		}
+	}
+}

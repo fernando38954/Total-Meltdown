@@ -1,0 +1,37 @@
+{
+	"key": "AfterStudy",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "admiring",
+			"phrase": "Wow! You managed to connect the right blocks. The energy flowed perfectly!"
+		},
+		"dialogue2": {
+			"portrait": "normal",
+			"phrase": "That means you've learned the fundamentals of this architectural pattern. Congratulations!"
+		},
+		"dialogue3": {
+			"portrait": "sweating",
+			"phrase": "I admit I tried this minigame once… I froze the entire interface for three hours."
+		},
+		"dialogue4": {
+			"portrait": "admiring",
+			"phrase": "But you got straight to the point. Your brain seems to understand logical paths better than mine."
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "Now this knowledge is recorded in your Notebook. You can use it in future contract solutions."
+		},
+		"dialogue6": {
+			"portrait": "confused",
+			"phrase": "By the way, did you know there's a pattern called 'Big Ball of Mud'? I don't recommend it. It sounds like actual mud."
+		},
+		"dialogue7": {
+			"portrait": "surprised",
+			"phrase": "Keep studying! The more architectures you master, the easier it will be to save the world from the digital soup."
+		},
+		"dialogue8": {
+			"portrait": "normal",
+			"phrase": "And remember: every pattern has its place. Including MVC, even though everyone pretends to hate it."
+		}
+	}
+}

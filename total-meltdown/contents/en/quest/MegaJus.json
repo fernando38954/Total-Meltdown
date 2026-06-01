@@ -1,0 +1,43 @@
+{
+	"key": "MegaJus",
+	"quarter": 3,
+	"title": "MegaJus: Automated Court",
+	"icon": "res://assets/sprites/quest_icons/MegaJus.png",
+	"difficult": "Medium",
+	"attribute": {
+		"Functional Suitability": "High",
+		"Performance Efficiency": "Low",
+		"Compatibility": "Low",
+		"Interaction Capability": "Medium",
+		"Reliability": "High",
+		"Security": "High",
+		"Maintainability": "Low",
+		"Flexibility": "Medium",
+		"Safety": "Medium"
+	},
+	"description": {
+		"paragraph1": "The government replaced practically the entire judicial system with an automated platform.",
+		"paragraph2": "Each complaint goes through analysis, validation, authentication, legal verification, ethical auditing, and only then reaches the virtual judge.",
+		"paragraph3": "The system is absurdly secure… but also absurdly slow.",
+		"paragraph4": "Last week a citizen received a response to a case filed in 2049. It's 2058, and worst of all, it convicted an innocent person."
+	},
+	"bullet_point": {
+		"bullet1": "Honestly, it may take time, but it [b]cannot make mistakes[/b] in judgment.",
+		"bullet2": "Each level of the system must validate information before passing it on.",
+		"bullet3": "Audits need to [b]trace[/b] exactly where an error occurred. But it would be better if errors didn't happen at all."
+	},
+	"footnote": "[i]~ A reply before the world ends, at least.[/i]",
+	"requirements": {
+		"pattern1": "Layered"
+	},
+	"bug": {
+		"bug1": {
+			"description": "A developer decided to make the MegaJus interface directly access the database layer to 'speed up judgments'. A few days later, cases started appearing without legal validation or official authentication. Which architectural principle was broken?",
+			"choices": {
+				"correct": "Isolation between layers",
+				"wrong1": "Use of multiple interfaces",
+				"wrong2": "Distributed rendering"
+			}
+		}
+	}
+}

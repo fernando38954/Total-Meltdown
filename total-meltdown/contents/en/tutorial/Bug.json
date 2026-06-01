@@ -1,0 +1,41 @@
+{
+	"key": "Bug",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "sweating",
+			"phrase": "Oops… ehhh. That doesn't look good."
+		},
+		"dialogue2": {
+			"portrait": "surprised",
+			"phrase": "A bug has appeared in the project!"
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "Now you need to solve the problem so that development can continue quickly."
+		},
+		"dialogue4": {
+			"portrait": "confused",
+			"phrase": "Or trust your team to solve the problem on their own…"
+		},
+		"dialogue5": {
+			"portrait": "admiring",
+			"phrase": "No pressure. The system is only partially on fire."
+		},
+		"dialogue6": {
+			"portrait": "normal",
+			"phrase": "Bugs appear when your team tries to adapt or modify the system that already existed in the project."
+		},
+		"dialogue7": {
+			"portrait": "sweating",
+			"phrase": "And we know that understanding an unknown system, especially when there's no documentation, is harder than a humanoid robot walking."
+		},
+		"dialogue8": {
+			"portrait": "normal",
+			"phrase": "To fix the bug, you'll need to answer a question related to the project's system by pressing the bug button on the contract page."
+		},
+		"dialogue9": {
+			"portrait": "admiring",
+			"phrase": "Think carefully! In programming, doing things too fast usually creates… another bug."
+		}
+	}
+}

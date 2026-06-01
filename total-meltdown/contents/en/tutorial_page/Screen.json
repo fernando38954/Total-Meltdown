@@ -1,0 +1,7 @@
+{
+	"key": "Screen",
+	"order": -6,
+	"title": "Game Screens",
+	"image": "res://assets/tutorial_images/Screens.png",
+	"description": "	The game is divided into 3 regions:\n[ul]\n1 - Map: Screen containing the game map, where the main interactions with the game take place.\n2 - Developer Panel: Screen used to check the status of developers you currently have and the progress of accepted contracts.\n3 - Note: Screen used to check basic game knowledge and information about architectures that have been learned so far.[/ul]"
+}

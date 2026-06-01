@@ -1,6 +1,6 @@
 extends Node
 
-const DEVELOPERS_DIR = "res://contents/developer/"
+const DEVELOPERS_DIR = "developer/"
 
 var all_developers: Dictionary = {}
 var locked_developers: Array = []
@@ -18,17 +18,18 @@ func _ready():
 
 func load_developers():
 	all_developers.clear()
-	var dir = DirAccess.open(DEVELOPERS_DIR)
+	var dir_path = GlobalResource.get_current_content_path() + DEVELOPERS_DIR
+	var dir = DirAccess.open(dir_path)
 	if not dir:
 		creation_finished = true
-		push_error("Error on opening the directory:", DEVELOPERS_DIR)
+		push_error("Error on opening the directory:", dir_path)
 		return
 	
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
 		if not dir.current_is_dir() and file_name.ends_with(".json"):
-			var path = DEVELOPERS_DIR + file_name
+			var path = dir_path + file_name
 			var file = FileAccess.open(path, FileAccess.READ)
 			if file:
 				var json_text = file.get_as_text()

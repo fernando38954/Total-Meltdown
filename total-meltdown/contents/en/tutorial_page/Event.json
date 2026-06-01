@@ -1,0 +1,7 @@
+{
+	"key": "Event",
+	"order": -5,
+	"title": "Game Events",
+	"image": "res://assets/tutorial_images/Event.png",
+	"description": "	The game has 3 distinct event types:\n[ul]\n1 - Recruitment Fair: where the player can hire one of the offered developers.\n2 - Study Session: where the player can study one of the offered architectural patterns.\n3 - Contract: where the player can sign a system development contract.[/ul]"
+}

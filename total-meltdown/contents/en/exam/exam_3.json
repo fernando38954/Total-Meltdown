@@ -1,0 +1,30 @@
+{
+	"key": "Exam3",
+	"quarter": 3,
+	"exam": {
+		"question1": {
+			"description": "An event-driven application processes thousands of actions simultaneously. However, developers are finding it difficult to trace the origin of errors and understand the complete flow of operations.\nWhich quality attribute is being most compromised?",
+			"choices": {
+				"correct": "Maintainability",
+				"wrong1": "Interaction Capability",
+				"wrong2": "Functional Suitability"
+			}
+		},
+		"question2": {
+			"description": "Educational software uses a Microkernel architecture. New features can be added as plug-ins without changing the main core of the system.\nWhich alternative best explains the main advantage of this model?",
+			"choices": {
+				"correct": "Ease of extension and system adaptation",
+				"wrong1": "Reduced synchronous communication between clients",
+				"wrong2": "Linear multi-stage processing"
+			}
+		},
+		"question3": {
+			"description": "A company developed a hybrid system: the main core uses Microkernel; notifications use an event-driven architecture; and extra modules are installed as plug-ins.\nDuring testing, it was noticed that failures in a plug-in did not bring down the core, but lost events caused temporary inconsistencies.\nWhich alternative presents the MOST appropriate analysis?",
+			"choices": {
+				"correct": "The Microkernel improves fault isolation, but asynchronous events can reduce reliability",
+				"wrong1": "The system has high reliability in all components",
+				"wrong2": "Event-driven architectures eliminate consistency problems"
+			}
+		}
+	}
+}

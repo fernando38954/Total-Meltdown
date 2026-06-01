@@ -1,0 +1,31 @@
+{
+	"key": "ClientServer",
+	"quarter": 1,
+	"title": "Client-Server",
+	"icon": "res://assets/sprites/pattern_icons/ClientServer.png",
+	"cost": 25,
+	"attribute": {
+		"Functional Suitability": 1.1,
+		"Performance Efficiency": 1.1,
+		"Compatibility": 1.1,
+		"Interaction Capability": 1.4,
+		"Reliability": 0.8,
+		"Security": 1.4,
+		"Maintainability": 0.8,
+		"Flexibility": 1.7,
+		"Safety": 1.1
+	},
+	"complexity_level": 3,
+	"time_level": 3,
+	"cost_level": 2,
+	"description": "The Client-Server architecture organizes distributed systems by separating entities that consume services (clients) from those that provide them (servers). This structure is widely used in network applications, where multiple clients interact with one or more centralized servers. Its organization is based on two main blocks:\n[ul]\n[b]Client[/b]: Responsible for the user interface and for requesting services from the server. Manages interaction, collects inputs, and presents processed results.\n[b]Server[/b]: Responsible for processing requests, executing business rules, accessing data, and returning responses to clients. Can serve multiple clients simultaneously.\n[b]Communication Mechanism[/b]: Defines the message exchange protocol between client and server (e.g., HTTP, sockets), essential for ensuring interoperability and distributed operation.[/ul]\nThis architecture offers advantages such as: [b]high flexibility[/b], as clients can run on different platforms as long as they can communicate with the server; [b]good usability[/b], since the interface can evolve independently of processing; and [b]good security[/b], as data control and protection can be centralized on the server.\nDisadvantages include [b]low maintainability[/b], due to dependence on the central server and the potential difficulty of evolving the system without impacting clients; and [b]low reliability[/b], because the server represents a single point of failure – problems there can compromise the entire system.",
+	"concept": "Division between those who request services (Client) and those who centrally provide them (Server).",
+	"advantage": "Flexibility. Clients can run on any platform, and the interface evolves on its own.",
+	"disadvantage": "Single Point of Failure. If the server goes down, the entire system becomes unavailable (Low Reliability).",
+	"bullet_point": {
+		"bullet1": "Clients consume services from the server",
+		"bullet2": "Server centralizes processing and data",
+		"bullet3": "Communication occurs over the network",
+		"bullet4": "Multiple clients access the same server"
+	}
+}

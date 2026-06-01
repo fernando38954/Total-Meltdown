@@ -1,0 +1,30 @@
+{
+	"key": "Exam1",
+	"quarter": 1,
+	"exam": {
+		"question1": {
+			"description": "A team is developing a web system using MVC. During a meeting, the developer states that the interface can be changed without modifying the core business rules.\nThis characteristic is mainly related to which quality attribute?",
+			"choices": {
+				"correct": "Maintainability",
+				"wrong1": "Performance Efficiency",
+				"wrong2": "Reliability"
+			}
+		},
+		"question2": {
+			"description": "A banking system was organized into layers. Financial rules were isolated from the interface and the database, making testing and responsibility control easier.\nWhich characteristic of layered architecture is being applied?",
+			"choices": {
+				"correct": "Hierarchical separation of responsibilities",
+				"wrong1": "Continuous pipeline processing",
+				"wrong2": "Use of independent plug-ins"
+			}
+		},
+		"question3": {
+			"description": "A company uses a Client-Server architecture in its sales system. One day, the main server failed and all clients were unable to access the system.\nThis scenario mainly represents a problem related to:",
+			"choices": {
+				"correct": "Reliability",
+				"wrong1": "Compatibility",
+				"wrong2": "Usability"
+			}
+		}
+	}
+}

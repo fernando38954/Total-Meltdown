@@ -1,0 +1,32 @@
+{
+	"key": "Microkernel",
+	"quarter": 3,
+	"title": "Microkernel",
+	"icon": "res://assets/sprites/pattern_icons/Microkernel.png",
+	"cost": 25,
+	"attribute": {
+		"Functional Suitability": 1.1,
+		"Performance Efficiency": 0.8,
+		"Compatibility": 1.1,
+		"Interaction Capability": 1.1,
+		"Reliability": 1.4,
+		"Security": 1.1,
+		"Maintainability": 1.8,
+		"Flexibility": 1.4,
+		"Safety": 1.1
+	},
+	"complexity_level": 3,
+	"time_level": 3,
+	"cost_level": 3,
+	"description": "Microkernel architecture organizes systems around a minimal core responsible for essential functionalities, while additional features are implemented as independent external modules. This approach is common in systems that demand extensibility and adaptation to different contexts. Its organization is based on three conceptual blocks:\n[ul]\n[b]Minimal Core (Microkernel)[/b]: Responsible for providing essential system services, such as basic resource management and control of communication between components.\n[b]Plug-ins (Servers/Extensions)[/b]: External components that implement additional functionalities, which can be added, removed, or modified without directly impacting the core.\n[b]Communication Mechanism[/b]: Standardized interface that allows interaction between the core and plug-ins, ensuring decoupling and internal interoperability.[/ul]\nThis architecture offers advantages such as: [b]high maintainability[/b], as changes to specific functionalities can be made by modifying or replacing plug-ins without affecting the core; [b]good flexibility[/b], because the minimal core can be adapted to different environments while plug-ins remain reusable; and [b]good reliability[/b], since failures in plug-ins tend to be isolated, reducing impact on the overall system.\nA disadvantage is [b]low performance[/b], due to the communication overhead between the core and external modules, which can introduce additional latency compared to more monolithic architectures. Additionally, managing interactions between multiple plug-ins can increase system complexity.",
+	"concept": "A minimal essential core surrounded by plug-ins (external modules) that extend the system.",
+	"advantage": "Extensibility. Very easy to add or remove functionalities without touching the core.",
+	"disadvantage": "Communication Overhead. Message exchange between core and plug-ins generates latency.",
+	"bullet_point": {
+		"bullet1": "Minimal core controls essential functions",
+		"bullet2": "Plug-ins add external functionalities",
+		"bullet3": "Independent extensions connected to the core",
+		"bullet4": "Standardized communication between internal components",
+		"bullet5": "Functionalities separated into reusable modules"
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"key": "SmartCities",
+	"quarter": 3,
+	"title": "Smart Cities",
+	"icon": "res://assets/sprites/quest_icons/SmartCities.png",
+	"difficult": "Hard",
+	"attribute": {
+		"Functional Suitability": "Medium",
+		"Performance Efficiency": "Low",
+		"Compatibility": "High",
+		"Interaction Capability": "Medium",
+		"Reliability": "Medium",
+		"Security": "Medium",
+		"Maintainability": "High",
+		"Flexibility": "High",
+		"Safety": "High"
+	},
+	"description": {
+		"paragraph1": "Orbital megacities started using a distributed system to control housing, energy, transport, artificial weather, urban drones, and civil services.",
+		"paragraph2": "Each city sector evolves independently because different suppliers develop specific parts of the infrastructure.",
+		"paragraph3": "Some modules run on modern quantum servers. Others still run on absurdly old machines because no one wants to risk shutting down the reactor that powers district 12.",
+		"paragraph4": "In recent months, independent updates have started generating bizarre incompatibilities: elevators are trying to make app deliveries, cleaning drones try to charge taxes, and the climate system occasionally interprets traffic notifications as hurricane requests.",
+		"paragraph5": "The city hall insists that the distributed architecture is necessary because the city cannot stop entirely during updates."
+	},
+	"bullet_point": {
+		"bullet1": "Different parts of the city need to evolve independently.",
+		"bullet2": "Old and modern services must continue communicating.",
+		"bullet3": "Isolated updates should not disrupt urban functioning. Systems must adapt to context.",
+		"bullet4": "Communication between distributed modules is increasingly complex; we need to ensure it is easy to understand."
+	},
+	"footnote": "[i]~ I almost got a tax fine, good reminder.[/i]",
+	"requirements": {
+		"pattern1": "Microservice"
+	},
+	"bug": {
+		"bug1": {
+			"description": "After an update to the weather service, old maintenance drones started interpreting weather messages as operational commands. The problem occurred because different services started using incompatible versions of the communication protocol. In microservices architectures, which practice helps reduce this type of problem?",
+			"choices": {
+				"correct": "Define clear contracts and versioning between services",
+				"wrong1": "Concentrate all services into a single process",
+				"wrong2": "Eliminate network communication between components"
+			}
+		}
+	}
+}

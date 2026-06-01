@@ -1,0 +1,47 @@
+{
+	"key": "PersonaForge",
+	"quarter": 3,
+	"title": "PersonaForge",
+	"icon": "res://assets/sprites/quest_icons/PersonaForge.png",
+	"difficult": "Hard",
+	"attribute": {
+		"Functional Suitability": "Medium",
+		"Performance Efficiency": "Low",
+		"Compatibility": "High",
+		"Interaction Capability": "Medium",
+		"Reliability": "High",
+		"Security": "Medium",
+		"Maintainability": "High",
+		"Flexibility": "High",
+		"Safety": "Medium"
+	},
+	"description": {
+		"paragraph1": "After the collapse of traditional social networks, PersonaForge emerged: a system capable of dynamically altering users' digital personality depending on the environment.",
+		"paragraph2": "At work, you appear professional. In games, competitive. On dates, mysterious. At family gatherings… minimally tolerable.",
+		"paragraph3": "The system's core is small and stable, responsible only for identity, authentication, and neural synchronization.",
+		"paragraph4": "There are plug-ins for mood, accent, emotional filters, cultural adaptation, automatic sarcasm, and even 'aggressive entrepreneur mode'.",
+		"paragraph5": "The problem started when different plug-ins began competing with each other.",
+		"paragraph6": "Last week a user tried to activate 'Diplomatic Mode' during a corporate meeting, but the 'Brutal Honesty Gamer Edition' plug-in took priority.",
+		"paragraph7": "Lawsuits have already surpassed 14 countries."
+	},
+	"bullet_point": {
+		"bullet1": "New behaviors must be added without changing the main core.",
+		"bullet2": "Plug-ins from different companies must coexist correctly.",
+		"bullet3": "Failures in social modules must not compromise identity and authentication.",
+		"bullet4": "Communication between extensions is becoming unpredictable as the system grows."
+	},
+	"footnote": "[i]~ Multiple Personality test card activated.[/i]",
+	"requirements": {
+		"pattern1": "Microkernel"
+	},
+	"bug": {
+		"bug1": {
+			"description": "Two social plug-ins started simultaneously modifying user behavior because both assumed control over the same internal personality functions. The core remained stable, but the modules entered constant conflict. Which typical problem of Microkernel architecture does this represent?",
+			"choices": {
+				"correct": "Coordination complexity between independent plug-ins",
+				"wrong1": "Exclusive dependence on a central database",
+				"wrong2": "Strong coupling between graphical interface and processing"
+			}
+		}
+	}
+}

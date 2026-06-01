@@ -1,0 +1,19 @@
+{
+	"key": "Diego",
+	"name": "Diego Rocha",
+	"age": 31,
+	"portrait": "res://assets/sprites/developer_portrait/portrait_2.png",
+	"cost": 50,
+	"attribute": {
+		"Functional Suitability": 3.5,
+		"Performance Efficiency": 1.5,
+		"Compatibility": 2.0,
+		"Interaction Capability": 2.0,
+		"Reliability": 5.0,
+		"Security": 5.0,
+		"Maintainability": 2.5,
+		"Flexibility": 2.0,
+		"Safety": 2.5
+	},
+	"description": "Paranoid security specialist. Uses authentication on everything, even the office coffee maker."
+}

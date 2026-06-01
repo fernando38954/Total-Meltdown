@@ -1,0 +1,43 @@
+{
+	"key": "Connection",
+	"quarter": 2,
+	"title": "Mental Connection",
+	"icon": "res://assets/sprites/quest_icons/Connection.png",
+	"difficult": "Medium",
+	"attribute": {
+		"Functional Suitability": "Medium",
+		"Performance Efficiency": "High",
+		"Compatibility": "Low",
+		"Interaction Capability": "Medium",
+		"Reliability": "Medium",
+		"Security": "Medium",
+		"Maintainability": "High",
+		"Flexibility": "Medium",
+		"Safety": "Low"
+	},
+	"description": {
+		"paragraph1": "We created a streaming platform directly connected to the cerebral cortex.",
+		"paragraph2": "The user can watch series using a phone, watch, wall projector, or directly through neural implants.",
+		"paragraph3": "The problem is that the original system was built by an AI trained exclusively on 2012 tutorials.",
+		"paragraph4": "Now each interface behaves differently, no one understands the code, and every update breaks some device."
+	},
+	"bullet_point": {
+		"bullet1": "Users access the system through extremely different interfaces.",
+		"bullet2": "Streams [b]cannot lag[/b], even with visual changes.",
+		"bullet3": "New forms of visualization emerge constantly. But all need to be [b]recognizable[/b] to the user – they glance and understand what to do."
+	},
+	"footnote": "[i]~ Streaming directly to the brain? Now I can watch series while I sleep.[/i]",
+	"requirements": {
+		"pattern1": "MVC"
+	},
+	"bug": {
+		"bug1": {
+			"description": "Which characteristic of MVC can hinder integration with legacy systems?",
+			"choices": {
+				"correct": "Rigid separation between components",
+				"wrong1": "Use of a graphical interface",
+				"wrong2": "Existence of controllers"
+			}
+		}
+	}
+}

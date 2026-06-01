@@ -1,0 +1,32 @@
+{
+	"key": "Layered",
+	"quarter": 1,
+	"title": "Layered Architecture",
+	"icon": "res://assets/sprites/pattern_icons/Layered.png",
+	"cost": 25,
+	"attribute": {
+		"Functional Suitability": 1.1,
+		"Performance Efficiency": 0.8,
+		"Compatibility": 0.8,
+		"Interaction Capability": 1.1,
+		"Reliability": 1.4,
+		"Security": 1.8,
+		"Maintainability": 1.4,
+		"Flexibility": 1.1,
+		"Safety": 1.1
+	},
+	"complexity_level": 2,
+	"time_level": 2,
+	"cost_level": 2,
+	"description": "Layered architecture organizes the system into hierarchical levels, where each layer has well-defined responsibilities and communicates, in general, only with adjacent layers. This structure promotes separation of concerns and control over data flow and dependencies. Its organization is based on vertically arranged conceptual blocks:\n[ul]\n[b]Presentation Layer[/b]: Responsible for the user interface, handling input and output of data.\n[b]Application Layer[/b]: Coordinates system usage flows, orchestrating operations and business rules without implementing them directly.\n[b]Domain Layer[/b]: Contains the core business logic, rules, and policies that govern system operation.\n[b]Infrastructure Layer[/b]: Responsible for data access, persistence, and communication with external systems (databases, APIs, etc.).[/ul]\nThis architecture offers advantages such as: [b]high security[/b], as access control can be centralized and restricted between layers; [b]good maintainability[/b], due to low coupling between levels and modular organization; and [b]good reliability[/b], since separation facilitates testing, fault isolation, and system behavior predictability.\nDisadvantages include [b]low performance[/b], as requests often need to traverse multiple layers, increasing overhead; and [b]low compatibility[/b], because structural rigidity can hinder integration with external systems or architectures that do not follow the same layered organization.",
+	"concept": "Hierarchical organization (Presentation, Application, Domain, and Infrastructure).",
+	"advantage": "Security and Reliability. Rigorous access control and fault isolation between levels.",
+	"disadvantage": "Low Performance. Data must pass through all layers, generating overhead.",
+	"bullet_point": {
+		"bullet1": "System organized into hierarchical layers",
+		"bullet2": "Each layer has specific responsibilities",
+		"bullet3": "Communication occurs between adjacent layers",
+		"bullet4": "Domain separated from external infrastructure",
+		"bullet5": "Controlled flow between different levels"
+	}
+}

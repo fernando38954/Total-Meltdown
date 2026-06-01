@@ -1,0 +1,19 @@
+{
+	"key": "Vanessa",
+	"name": "Vanessa Melo",
+	"age": 30,
+	"portrait": "res://assets/sprites/developer_portrait/portrait_8.png",
+	"cost": 50,
+	"attribute": {
+		"Functional Suitability": 3.0,
+		"Performance Efficiency": 2.0,
+		"Compatibility": 4.0,
+		"Interaction Capability": 3.5,
+		"Reliability": 5.0,
+		"Security": 3.5,
+		"Maintainability": 3.0,
+		"Flexibility": 2.0,
+		"Safety": 2.0
+	},
+	"description": "Chaotic QA who finds impossible bugs. No one knows how she breaks systems so quickly."
+}

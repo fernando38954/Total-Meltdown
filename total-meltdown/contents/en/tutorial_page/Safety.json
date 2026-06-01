@@ -1,0 +1,7 @@
+{
+	"key": "Safety",
+	"order": 9,
+	"title": "Safety",
+	"image": "res://assets/sprites/attribute_icons/Safety.png",
+	"description": "	Relates to the prevention of harm to the environment, users, or the system itself during operation. It is critical in sensitive systems.\n[ul]\n[b]Operational constraint[/b]: keeps operation within safe limits.\n[b]Risk identification[/b]: detects dangerous situations.\n[b]Fail safe[/b]: enters safe state upon failure.\n[b]Hazard warning[/b]: alerts about risks.\n[b]Safe integration[/b]: maintains safety when integrating systems.[/ul]"
+}

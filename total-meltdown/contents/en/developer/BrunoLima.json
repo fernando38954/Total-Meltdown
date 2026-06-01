@@ -1,0 +1,19 @@
+{
+	"key": "Bruno",
+	"name": "Bruno Lima",
+	"age": 24,
+	"portrait": "res://assets/sprites/developer_portrait/portrait_1.png",
+	"cost": 50,
+	"attribute": {
+		"Functional Suitability": 4.0,
+		"Performance Efficiency": 5.0,
+		"Compatibility": 2.0,
+		"Interaction Capability": 1.0,
+		"Reliability": 3.0,
+		"Security": 2.0,
+		"Maintainability": 2.0,
+		"Flexibility": 1.5,
+		"Safety": 5.0
+	},
+	"description": "Backend purist who hates UI. Says 'a beautiful API is a bug-free API' while ignoring any request from the designer."
+}

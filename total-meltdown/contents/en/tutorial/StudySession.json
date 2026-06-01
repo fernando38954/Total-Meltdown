@@ -1,0 +1,57 @@
+{
+	"key": "StudySession",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "Looks like we have a Study Session now!"
+		},
+		"dialogue2": {
+			"portrait": "normal",
+			"phrase": "Here at RetroCODE, studying software architecture is important."
+		},
+		"dialogue3": {
+			"portrait": "sweating",
+			"phrase": "Especially because 'it works on my machine' is not an official methodology."
+		},
+		"dialogue4": {
+			"portrait": "normal",
+			"phrase": "In this activity, you'll solve an energy‑directing minigame."
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "Your goal is to change the direction of the blocks to create a valid path from source to destination. I think it will become clearer when you start…"
+		},
+		"dialogue6": {
+			"portrait": "confused",
+			"phrase": "Some blocks have a description, characteristic, or concept related to the architectural pattern you're learning."
+		},
+		"dialogue7": {
+			"portrait": "sweating",
+			"phrase": "But not all blocks belong to the selected pattern. Some are here by confusion of their system's database."
+		},
+		"dialogue8": {
+			"portrait": "admiring",
+			"phrase": "Besides correctly connecting the energy from start to finish, you also need to pay attention to the information written on each piece and connect the correct ones."
+		},
+		"dialogue9": {
+			"portrait": "admiring",
+			"phrase": "Choose the right blocks, align the connections, and make the energy reach the final destination. It's like a neuron connection with knowledge!"
+		},
+		"dialogue10": {
+			"portrait": "normal",
+			"phrase": "Before you start, you can choose which architectural pattern you'd like to learn among the available ones. Each has its own advantages, disadvantages, and characteristics."
+		},
+		"dialogue11": {
+			"portrait": "normal",
+			"phrase": "You'll see a small summary on the screen… But detailed information is also available, just click that little button."
+		},
+		"dialogue12": {
+			"portrait": "surprised",
+			"phrase": "Looks like today we only have one choice. I guess their system recovery is still difficult."
+		},
+		"dialogue13": {
+			"portrait": "sweating",
+			"phrase": "That AI‑performed deletion of the /System and /bin folders without confirmation is truly chaotic. I hope that doesn't happen to our system."
+		}
+	}
+}

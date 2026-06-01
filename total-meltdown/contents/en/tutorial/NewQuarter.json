@@ -1,0 +1,29 @@
+{
+	"key": "NewQuarter",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "admiring",
+			"phrase": "Congratulations! You survived the first quarter at RetroCODE."
+		},
+		"dialogue2": {
+			"portrait": "sweating",
+			"phrase": "Now things get a little more complicated. And by 'a little', I mean 'considerably'."
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "From now on, architectures don't just affect quality attributes. They also impact other important project aspects."
+		},
+		"dialogue4": {
+			"portrait": "surprised",
+			"phrase": "For example: development time! This aspect represents the time needed to implement the system."
+		},
+		"dialogue5": {
+			"portrait": "confused",
+			"phrase": "And there's more! The higher the implementation complexity… the harder it will be to fix bugs that appear during the project."
+		},
+		"dialogue6": {
+			"portrait": "admiring",
+			"phrase": "But everything will be fine! In the worst case, the world will end along with us."
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"key": "Reward",
+	"order": -3,
+	"title": "Profit",
+	"image": "res://assets/tutorial_images/Reward.png",
+	"description": "	After signing the contract, you must wait a period for the system to be developed.\n\tContract details can be viewed in the Developer Panel.\n\tAfter the project finishes, the profit can be received through the Panel.\n\tThe result is calculated based on the difference between the achieved attribute (orange) and the attribute required by the client (blue). The larger the difference, the smaller the profit acquired."
+}

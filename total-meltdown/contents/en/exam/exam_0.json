@@ -1,0 +1,30 @@
+{
+	"key": "Exam0",
+	"quarter": 0,
+	"exam": {
+		"question1": {
+			"description": "What is the name of the company?",
+			"choices": {
+				"correct": "RetroCODE",
+				"wrong1": "TotalMeltdown",
+				"wrong2": "Clipper"
+			}
+		},
+		"question2": {
+			"description": "What is the name of the international standard for the quality model of software products and systems?",
+			"choices": {
+				"correct": "ISO/IEC 25010",
+				"wrong1": "UNS 9820",
+				"wrong2": "MCS 57030"
+			}
+		},
+		"question3": {
+			"description": "In the latest ISO/IEC 25010 standard, which of the following quality attributes does NOT exist?",
+			"choices": {
+				"correct": "Usability",
+				"wrong1": "Maintainability",
+				"wrong2": "Interaction Capability"
+			}
+		}
+	}
+}

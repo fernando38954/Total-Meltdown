@@ -1,0 +1,47 @@
+{
+	"key": "FoodChain",
+	"quarter": 2,
+	"title": "Food Chain",
+	"icon": "res://assets/sprites/quest_icons/FoodChain.png",
+	"difficult": "Hard",
+	"attribute": {
+		"Functional Suitability": "High",
+		"Performance Efficiency": "High",
+		"Compatibility": "Low",
+		"Interaction Capability": "Low",
+		"Reliability": "Low",
+		"Security": "Medium",
+		"Maintainability": "High",
+		"Flexibility": "High",
+		"Safety": "Medium"
+	},
+	"description": {
+		"paragraph1": "A megafactory produces synthetic meals for half of Earth's population.",
+		"paragraph2": "The entire process works as a giant automated line of data and matter transformation.",
+		"paragraph3": "Each production stage is handled by an independent filter: nutritional analysis, chemical balancing, sterilization, flavor customization, packaging, and distribution.",
+		"paragraph4": "Everything works… as long as each stage delivers exactly the format expected by the next one.",
+		"paragraph5": "The problem started when a new 'AI-powered calorie optimization' filter was installed in the middle of the chain.",
+		"paragraph6": "The update increased performance by 23%.",
+		"paragraph7": "It also turned 14 tons of pasta into foam that tastes like battery."
+	},
+	"bullet_point": {
+		"bullet1": "Each production stage must be changeable independently.",
+		"bullet2": "Modules use different technologies but must exchange data correctly.",
+		"bullet3": "The factory's continuous processing cannot lose speed.",
+		"bullet4": "A failure in a single stage can compromise the entire production chain."
+	},
+	"footnote": "[i]~ The new filter optimized even the decomposition process.[/i]",
+	"requirements": {
+		"pattern1": "PipeFilter"
+	},
+	"bug": {
+		"bug1": {
+			"description": "After installing the new nutritional filter, the subsequent filters began to misinterpret the received data, generating unusable food across the entire production line. Which characteristic of Pipe and Filter architecture became most evident?",
+			"choices": {
+				"correct": "The dependency on compatible formats between pipeline filters",
+				"wrong1": "Global memory sharing between modules",
+				"wrong2": "The existence of a central server responsible for processing"
+			}
+		}
+	}
+}

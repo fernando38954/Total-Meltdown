@@ -1,0 +1,43 @@
+{
+	"key": "Hamburger",
+	"quarter": 2,
+	"title": "Hamburger Factory",
+	"icon": "res://assets/sprites/quest_icons/Hamburger.png",
+	"difficult": "Medium",
+	"attribute": {
+		"Functional Suitability": "High",
+		"Performance Efficiency": "Medium",
+		"Compatibility": "Medium",
+		"Interaction Capability": "Medium",
+		"Reliability": "Medium",
+		"Security": "High",
+		"Maintainability": "High",
+		"Flexibility": "Medium",
+		"Safety": "Medium"
+	},
+	"description": {
+		"paragraph1": "A fast-food chain uses bioprinters to create customized hamburgers in seconds.",
+		"paragraph2": "Each part of the system works separately: payment, food printing, genetic validation, nutritional control, deliveries, and food recommendation.",
+		"paragraph3": "The old system was gigantic and impossible to update. So an AI suggested dividing everything into small independent services.",
+		"paragraph4": "It worked… until the 'premium sauces' service stopped responding and turned half the orders into hot water with lettuce."
+	},
+	"bullet_point": {
+		"bullet1": "Each functionality must evolve [b]without affecting[/b] the rest of the system. Updating the menu must be easy.",
+		"bullet2": "Services must cooperate correctly to assemble [b]complete and correct orders[/b].",
+		"bullet3": "Genetic data, used in food recommendation, [b]must be protected[/b]."
+	},
+	"footnote": "[i]~ Looks like Hell's Kitchen.[/i]",
+	"requirements": {
+		"pattern1": "Microservice"
+	},
+	"bug": {
+		"bug1": {
+			"description": "After an update to the payment service, the hamburger printing system started releasing orders without financial confirmation. The team realized that services were trusting each other directly without proper validation. Which practice is most important in this distributed scenario?",
+			"choices": {
+				"correct": "Ensure secure communication and validation between services",
+				"wrong1": "Centralize all logic in a single module",
+				"wrong2": "Remove the separation between services to reduce messages"
+			}
+		}
+	}
+}

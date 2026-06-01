@@ -1,0 +1,7 @@
+{
+	"key": "InteractionCapability",
+	"order": 4,
+	"title": "Interaction Capability",
+	"image": "res://assets/sprites/attribute_icons/InteractionCapability.png",
+	"description": "	Refers to ease of use and user experience when interacting with the system. A good system is intuitive, accessible, and easy to learn.\n[ul]\n[b]Recognizable appropriateness[/b]: user understands if the system meets their needs.\n[b]Learnability[/b]: ease of learning to use.\n[b]Operability[/b]: ease of operation and control.\n[b]User error protection[/b]: prevents or reduces errors.\n[b]User engagement[/b]: attractive and motivating interface.\n[b]Inclusiveness[/b]: accessible to different user profiles.\n[b]User assistance[/b]: provides support and help.\n[b]Self‑descriptiveness[/b]: intuitive use without external instructions.[/ul]"
+}

@@ -1,0 +1,7 @@
+{
+	"key": "PerformanceEfficiency",
+	"order": 2,
+	"title": "Performance Efficiency",
+	"image": "res://assets/sprites/attribute_icons/PerformanceEfficiency.png",
+	"description": "	Evaluates system performance in relation to resource usage. An efficient system responds quickly and uses CPU, memory, and network well.\n[ul]\n[b]Time behavior[/b]: appropriate response and processing times.\n[b]Resource utilization[/b]: efficient use of CPU, memory, etc.\n[b]Capacity[/b]: supports expected volumes and limits.[/ul]"
+}

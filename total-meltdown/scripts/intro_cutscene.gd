@@ -1,6 +1,6 @@
 extends Node2D
 
-const PHRASES_JSON_PATH := "res://contents/cutscene/intro.json"
+const PHRASES_JSON_PATH := "cutscene/intro.json"
 @onready var sprites: Array[Sprite2D] = [
 	$FirstSet/BackgroundCity,
 	$FirstSet/CPUs,
@@ -28,7 +28,8 @@ func _ready() -> void:
 	advance_to_next()
 
 func load_phrases() -> void:
-	var file = FileAccess.open(PHRASES_JSON_PATH, FileAccess.READ)
+	var file_path = GlobalResource.get_current_content_path() + PHRASES_JSON_PATH
+	var file = FileAccess.open(file_path, FileAccess.READ)
 	var json_string = file.get_as_text()
 	var json = JSON.new()
 	var error = json.parse(json_string)

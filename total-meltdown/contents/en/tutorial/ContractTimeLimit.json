@@ -1,0 +1,33 @@
+{
+	"key": "ContractTimeLimit",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "sweating",
+			"phrase": "…Okay. I have good news and bad news…"
+		},
+		"dialogue2": {
+			"portrait": "admiring",
+			"phrase": "The good news is that you're really doing very well."
+		},
+		"dialogue3": {
+			"portrait": "confused",
+			"phrase": "The bad news is that RetroCODE started receiving many contracts at once. Or maybe that's also good… depends on perspective."
+		},
+		"dialogue4": {
+			"portrait": "normal",
+			"phrase": "This means you'll need to analyze, plan, and solve projects more quickly."
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "You'll see a counter around the contract. Now, every contract has a waiting time limit."
+		},
+		"dialogue6": {
+			"portrait": "sweating",
+			"phrase": "If you take too long to handle a demand… the client loses patience and leaves."
+		},
+		"dialogue7": {
+			"portrait": "surprised",
+			"phrase": "And angry clients usually take two things with them: the contract… and the money."
+		}
+	}
+}

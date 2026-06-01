@@ -1,6 +1,6 @@
 extends Node
 
-const PATTERNS_DIR = "res://contents/pattern/"
+const PATTERNS_DIR = "pattern/"
 
 var all_patterns: Dictionary = {}
 var locked_patterns: Array = []
@@ -15,17 +15,18 @@ func _ready():
 
 func load_patterns():
 	all_patterns.clear()
-	var dir = DirAccess.open(PATTERNS_DIR)
+	var dir_path = GlobalResource.get_current_content_path() + PATTERNS_DIR
+	var dir = DirAccess.open(dir_path)
 	if not dir:
 		creation_finished = true
-		push_error("Error on opening the directory:", PATTERNS_DIR)
+		push_error("Error on opening the directory:", dir_path)
 		return
 	
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
 		if not dir.current_is_dir() and file_name.ends_with(".json"):
-			var path = PATTERNS_DIR + file_name
+			var path = dir_path + file_name
 			var file = FileAccess.open(path, FileAccess.READ)
 			if file:
 				var json_text = file.get_as_text()

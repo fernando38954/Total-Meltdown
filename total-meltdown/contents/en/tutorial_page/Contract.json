@@ -1,0 +1,7 @@
+{
+	"key": "Contract",
+	"order": -4,
+	"title": "Contract",
+	"image": "res://assets/tutorial_images/Contract.png",
+	"description": "	The contract screen reveals the client's requests and key points, where the player must choose appropriate patterns and developers to build the requested system.\n\tTo select a pattern or developer, left‑click the dark squares to open the choice panel, where the player can click the icon to see detailed information and drag the icon to the square to make a choice. To deselect, use right‑click.\n\tThe attribute achieved by the player is calculated with the formula: (pattern attribute) x (total sum of developer attributes).\n\tTo sign the contract, at least one pattern and one developer must be chosen."
+}

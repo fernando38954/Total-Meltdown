@@ -1,0 +1,43 @@
+{
+	"key": "NeuroMatch",
+	"quarter": 1,
+	"title": "NeuroMatch",
+	"icon": "res://assets/sprites/quest_icons/NeuroMatch.png",
+	"difficult": "Medium",
+	"attribute": {
+		"Functional Suitability": "Medium",
+		"Performance Efficiency": "Medium",
+		"Compatibility": "Medium",
+		"Interaction Capability": "Low",
+		"Reliability": "High",
+		"Security": "High",
+		"Maintainability": "Low",
+		"Flexibility": "High",
+		"Safety": "Medium"
+	},
+	"description": {
+		"paragraph1": "A company created a dating app that uses brain scanning to find 'perfect emotional compatibility'.",
+		"paragraph2": "Users access the system through various devices: phones, neural glasses, holographic consoles, and even smart mirrors.",
+		"paragraph3": "All heavy processing happens on a giant central server called CUP1D0.",
+		"paragraph4": "The problem is that when the server went down for 11 minutes, thousands of couples had their memories synchronized with random people."
+	},
+	"bullet_point": {
+		"bullet1": "The system needs to work on [b]extremely different devices[/b].",
+		"bullet2": "If the main server fails, practically everything stops working.",
+		"bullet3": "Must [b]prevent intruders[/b] from accessing other users' personal information."
+	},
+	"footnote": "[i]~ The divorce rate increased by 3000% this month, I wonder why?[/i]",
+	"requirements": {
+		"pattern1": "ClientServer"
+	},
+	"bug": {
+		"bug1": {
+			"description": "During an update, the team decided to shut down the CUP1D0 server without redundancy. Immediately all applications became unusable and users started losing emotional synchronizations. Which classic weakness of Client-Server architecture caused this?",
+			"choices": {
+				"correct": "Dependence on a central server",
+				"wrong1": "Rigid layer separation",
+				"wrong2": "Excessive graphical interfaces"
+			}
+		}
+	}
+}

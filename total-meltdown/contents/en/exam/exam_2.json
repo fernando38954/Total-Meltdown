@@ -1,0 +1,30 @@
+{
+	"key": "Exam2",
+	"quarter": 2,
+	"exam": {
+		"question1": {
+			"description": "A streaming platform decided to migrate part of its system to microservices. Now authentication, catalog, and recommendations work as independent services.\nWhich quality attribute is most favored by this decision?",
+			"choices": {
+				"correct": "Flexibility",
+				"wrong1": "Physical Security",
+				"wrong2": "Low Latency"
+			}
+		},
+		"question2": {
+			"description": "An image processing system uses Pipe and Filter. Each filter applies a different transformation before sending the result to the next stage.\nWhich advantage of this architecture is most evident?",
+			"choices": {
+				"correct": "Ease of modifying filters in isolation",
+				"wrong1": "Highly interactive graphical interface",
+				"wrong2": "Complete centralization of processing"
+			}
+		},
+		"question3": {
+			"description": "A company realized that its microservices system started experiencing delays due to excessive network communication between services.\nThis situation represents a disadvantage mainly related to:",
+			"choices": {
+				"correct": "Performance Efficiency",
+				"wrong1": "Security",
+				"wrong2": "Functional Suitability"
+			}
+		}
+	}
+}

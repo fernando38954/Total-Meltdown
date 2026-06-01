@@ -1,0 +1,7 @@
+{
+	"key": "Reliability",
+	"order": 5,
+	"title": "Reliability",
+	"image": "res://assets/sprites/attribute_icons/Reliability.png",
+	"description": "	Indicates the system's ability to operate consistently and without failures over time. A reliable system maintains its functioning even under adverse conditions.\n[ul]\n[b]Failure freedom[/b]: works without frequent failures.\n[b]Availability[/b]: accessible when needed.\n[b]Fault tolerance[/b]: continues operating despite errors.\n[b]Recoverability[/b]: recovers data and state after failures.[/ul]"
+}

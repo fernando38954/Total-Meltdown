@@ -1,0 +1,65 @@
+{
+	"key": "Introduction",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "Hello! I'm Clipper, the official virtual assistant of RetroCODE!"
+		},
+		"dialogue2": {
+			"portrait": "sweating",
+			"phrase": "...Okay, 'official' might be a strong word. Let's just say I show up uninvited."
+		},
+		"dialogue3": {
+			"portrait": "normal",
+			"phrase": "People usually ignore me. Some close my window before I even say 'hello'."
+		},
+		"dialogue4": {
+			"portrait": "admiring",
+			"phrase": "But I swear I'm useful! And moderately funny!"
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "I'll help you survive your first day here.\nOr at least keep you from crashing the servers during the tutorial."
+		},
+		"dialogue6": {
+			"portrait": "normal",
+			"phrase": "You are now part of RetroCODE!\nA company that believes in code review, quality… and human beings writing software."
+		},
+		"dialogue7": {
+			"portrait": "confused",
+			"phrase": "Yes, humans. Strange, I know. But they… you, anyway… seem to be the solution."
+		},
+		"dialogue8": {
+			"portrait": "surprised",
+			"phrase": "The world is going through the TotalMeltdown crisis.\nSystems failing, applications breaking, databases turning into digital soup…"
+		},
+		"dialogue9": {
+			"portrait": "admiring",
+			"phrase": "And that's where you come in!\nYour job is to manage projects, hire developers, and deliver solutions before everything explodes."
+		},
+		"dialogue10": {
+			"portrait": "sweating",
+			"phrase": "Metaphorically. I hope."
+		},
+		"dialogue11": {
+			"portrait": "normal",
+			"phrase": "Let's start with the basics!\nThis large central screen is where your pending tasks appear."
+		},
+		"dialogue12": {
+			"portrait": "normal",
+			"phrase": "We also bought the screen at the top right to better manage our developers, plus a notepad on your desk for important notes."
+		},
+		"dialogue13": {
+			"portrait": "normal",
+			"phrase": "You'll mainly deal with three types of tasks:\nRecruitment Fair, Study Session, and Contract Solution."
+		},
+		"dialogue14": {
+			"portrait": "sweating",
+			"phrase": "Now… let's solve the demands that appear.\nProblems show up very quickly around here!"
+		},
+		"dialogue15": {
+			"portrait": "sweating",
+			"phrase": "Don't worry, the world won't explode if we don't solve it fast.\nAt least I hope it won't..."
+		}
+	}
+}

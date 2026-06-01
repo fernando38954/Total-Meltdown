@@ -1,7 +1,7 @@
 extends Node
 
 #region Tutorial Manager
-const TUTORIAL_DIR = "res://contents/tutorial/"
+const TUTORIAL_DIR = "tutorial/"
 
 var all_tutorials: Dictionary = {}
 var unstarted_tutorials: Array = []
@@ -19,17 +19,18 @@ func _ready():
 #region Load Data
 func load_tutorials():
 	all_tutorials.clear()
-	var dir = DirAccess.open(TUTORIAL_DIR)
+	var dir_path = GlobalResource.get_current_content_path() + TUTORIAL_DIR
+	var dir = DirAccess.open(dir_path)
 	if not dir:
 		creation_finished = true
-		push_error("Error on opening the directory:", TUTORIAL_DIR)
+		push_error("Error on opening the directory:", dir_path)
 		return
 	
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
 		if not dir.current_is_dir() and file_name.ends_with(".json"):
-			var path = TUTORIAL_DIR + file_name
+			var path = dir_path + file_name
 			var file = FileAccess.open(path, FileAccess.READ)
 			if file:
 				var json_text = file.get_as_text()

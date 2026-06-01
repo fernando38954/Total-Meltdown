@@ -1,0 +1,7 @@
+{
+	"key": "FunctionalSuitability",
+	"order": 1,
+	"title": "Functional Suitability",
+	"image": "res://assets/sprites/attribute_icons/FunctionalSuitability.png",
+	"description": "	Refers to the system's ability to provide functions that correctly meet user needs. Suitable software solves the proposed problem with completeness and accuracy.\n[ul]\n[b]Functional completeness[/b]: covers all expected tasks and objectives.\n[b]Functional correctness[/b]: produces correct results.\n[b]Functional appropriateness[/b]: facilitates task execution.[/ul]"
+}

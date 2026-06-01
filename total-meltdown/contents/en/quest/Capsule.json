@@ -1,0 +1,46 @@
+{
+	"key": "Capsule",
+	"quarter": 3,
+	"title": "Transport Capsule",
+	"icon": "res://assets/sprites/quest_icons/Capsule.png",
+	"difficult": "Hard",
+	"attribute": {
+		"Functional Suitability": "High",
+		"Performance Efficiency": "High",
+		"Compatibility": "Medium",
+		"Interaction Capability": "Medium",
+		"Reliability": "Low",
+		"Security": "Medium",
+		"Maintainability": "Low",
+		"Flexibility": "Medium",
+		"Safety": "High"
+	},
+	"description": {
+		"paragraph1": "A futuristic city replaced all means of transport with an intelligent mesh of autonomous capsules.",
+		"paragraph2": "Each vehicle, traffic light, station, and urban drone constantly publishes events: traffic, weather, accidents, maintenance, population flow, and passenger behavior.",
+		"paragraph3": "The systems do not communicate directly. Everything happens through distributed events.",
+		"paragraph4": "New urban services can be added quickly without altering existing systems.",
+		"paragraph5": "The problem is that no one fully understands the system's flow anymore.",
+		"paragraph6": "After a seemingly simple update to the weather forecasting service, capsules started avoiding entire neighborhoods because a weather event was interpreted as a biological threat."
+	},
+	"bullet_point": {
+		"bullet1": "New urban modules need to be added without interrupting the rest of the system.",
+		"bullet2": "Modules must reach the correct locations.",
+		"bullet3": "Communication flows between systems and route calculation must be fast.",
+		"bullet4": "Capsules must identify possible risks to user integrity."
+	},
+	"footnote": "[i]~ Today the capsule is taking longer than ever, 3 hours have passed and no one has answered.[/i]",
+	"requirements": {
+		"pattern1": "EDA"
+	},
+	"bug": {
+		"bug1": {
+			"description": "During a network failure, some warning events were processed twice while others never reached the responsible services. As a result, citizens received transport capsules to destinations from previous trips. Which typical problem of event-driven architecture does this represent?",
+			"choices": {
+				"correct": "Difficulty in ensuring consistency and reliability of events",
+				"wrong1": "Rigid dependency between components",
+				"wrong2": "Excessive synchronous communication between modules"
+			}
+		}
+	}
+}

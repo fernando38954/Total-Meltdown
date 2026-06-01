@@ -1,0 +1,45 @@
+{
+	"key": "Translator",
+	"quarter": 2,
+	"title": "Universal Translator",
+	"icon": "res://assets/sprites/quest_icons/Translator.png",
+	"difficult": "Hard",
+	"attribute": {
+		"Functional Suitability": "Medium",
+		"Performance Efficiency": "Medium",
+		"Compatibility": "High",
+		"Interaction Capability": "High",
+		"Reliability": "Medium",
+		"Security": "Medium",
+		"Maintainability": "Low",
+		"Flexibility": "High",
+		"Safety": "Irrelevant"
+	},
+	"description": {
+		"paragraph1": "A corporation launched a real‑time universal translator capable of converting voice, gestures, facial expressions, and even slang between different species.",
+		"paragraph2": "Humans, domestic robots, animals, smart cars, and even conscious toasters use the system daily.",
+		"paragraph3": "The central server processes language, cultural context, and device authentication.",
+		"paragraph4": "The problem started when independent manufacturers began creating unofficial alternative clients.",
+		"paragraph5": "Now some devices translate 'good morning' as a diplomatic threat, others simply explode trying to interpret emotional emojis from the younger generation.",
+		"paragraph6": "The company wants to continue allowing new client types in the system… but every server update seems to break half of the old devices."
+	},
+	"bullet_point": {
+		"bullet1": "New devices must be able to constantly connect to the system.",
+		"bullet2": "Clients have extremely different interfaces and capabilities.",
+		"bullet3": "Interactions must adapt to the context of each platform. Users cannot get lost."
+	},
+	"footnote": "[i]~ My cat said it hates me, the machine must be broken.[/i]",
+	"requirements": {
+		"pattern1": "ClientServer"
+	},
+	"bug": {
+		"bug1": {
+			"description": "After an update to the OmniTranslate server, smart toasters started interpreting lullabies as cooking recipes. The problem occurred because many old clients could not understand the new communication format sent by the server. Which architectural challenge does this represent?",
+			"choices": {
+				"correct": "Compatibility problems between clients and server",
+				"wrong1": "Lack of separation between interface and business rule",
+				"wrong2": "Excessive validations in multiple layers"
+			}
+		}
+	}
+}

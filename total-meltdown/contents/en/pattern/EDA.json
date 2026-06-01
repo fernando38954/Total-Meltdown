@@ -1,0 +1,32 @@
+{
+	"key": "EDA",
+	"quarter": 3,
+	"title": "Event-Driven Architecture",
+	"icon": "res://assets/sprites/pattern_icons/EDA.png",
+	"cost": 25,
+	"attribute": {
+		"Functional Suitability": 1.0,
+		"Performance Efficiency": 1.8,
+		"Compatibility": 1.1,
+		"Interaction Capability": 1.1,
+		"Reliability": 0.7,
+		"Security": 1.0,
+		"Maintainability": 1.4,
+		"Flexibility": 1.1,
+		"Safety": 1.0
+	},
+	"complexity_level": 4,
+	"time_level": 3,
+	"cost_level": 3,
+	"description": "Event-driven architecture structures systems around the production, detection, consumption, and reaction to events, using asynchronous and decoupled communication between components. In this model, producers emit events without direct knowledge of the consumers, allowing high independence between parts of the system. Its organization is based on the following conceptual blocks:\n[ul]\n[b]Event Generators[/b]: Components responsible for emitting events when a state change occurs in the system. Events typically contain metadata (headers) and contextual data (payload).\n[b]Event Channels[/b]: Responsible for transporting events between producers and consumers, ensuring asynchronous delivery and decoupling (e.g., queues, topics).\n[b]Event Processing[/b]: Layer that interprets and reacts to events, which can operate in different ways:\n[ul]\n[b]Simple[/b]: Direct reaction to individual events.\n[b]Stream[/b]: Continuous processing of event streams.\n[b]Complex Event Processing (CEP)[/b]: Correlation between multiple events to infer more elaborate situations.[/ul]\n[b]Consumers[/b]: Components that react to events, executing actions such as state updates, service calls, or triggering new events.[/ul]\nThis architecture offers advantages such as: [b]high flexibility[/b], due to strong decoupling between components; and [b]good performance[/b] in distributed scenarios, as asynchronous communication allows parallelism and better resource usage.\nDisadvantages include [b]low maintainability[/b], due to the difficulty of tracing execution flows and debugging event-driven systems; and [b]low reliability[/b], as the asynchronous nature can introduce problems like lost events, duplicate processing, and difficulty in ensuring consistency.",
+	"concept": "Components react to events triggered asynchronously, without directly knowing each other.",
+	"advantage": "Agility and Parallelism. Great performance in highly decoupled distributed systems.",
+	"disadvantage": "Difficult Traceability. Debugging or ensuring no event is lost is challenging (Low Reliability).",
+	"bullet_point": {
+		"bullet1": "Components communicate through events",
+		"bullet2": "Events travel through asynchronous channels",
+		"bullet3": "Producers are unaware of event consumers",
+		"bullet4": "Consumers react to detected changes",
+		"bullet5": "Flow based on event emission"
+	}
+}

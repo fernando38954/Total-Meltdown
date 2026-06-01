@@ -6,6 +6,10 @@ var timer_delta_time: float = 1.0
 var base_question_reward: int = 30
 var base_developer_salary: int = 10
 
+# Language Settings
+const GAME_CONTENT_PATH = "res://contents/"
+var current_language = "en"
+
 # Quarter Mechanic
 const TOTAL_QUARTER = 5
 var current_quarter: int = 0
@@ -58,6 +62,11 @@ func change_money(value: float):
 func end_quarter_money_update(correct_counter: int):
 	change_money(correct_counter * base_question_reward)
 	change_money(-1 * DeveloperManager.owned_developers.size() * base_developer_salary)
+#endregion
+
+#region Language System
+func get_current_content_path():
+	return GAME_CONTENT_PATH + current_language + "/"
 #endregion
 
 #region Quarter System

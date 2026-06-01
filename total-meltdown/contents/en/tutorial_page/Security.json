@@ -1,0 +1,7 @@
+{
+	"key": "Security",
+	"order": 6,
+	"title": "Security",
+	"image": "res://assets/sprites/attribute_icons/Security.png",
+	"description": "	Refers to the protection of system information and resources against unauthorized access. A secure system ensures confidentiality, integrity, and traceability.\n[ul]\n[b]Confidentiality[/b]: access restricted to authorized parties.\n[b]Integrity[/b]: data protected against improper changes.\n[b]Non‑repudiation[/b]: actions cannot be denied later.\n[b]Usage traceability[/b]: actions traceable to users.\n[b]Authenticity[/b]: identity verified.\n[b]Resistance[/b]: maintains operation under attack.[/ul]"
+}

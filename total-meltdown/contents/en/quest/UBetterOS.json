@@ -1,0 +1,45 @@
+{
+	"key": "UBetterOS",
+	"quarter": 3,
+	"title": "UBetterOS Marketplace",
+	"icon": "res://assets/sprites/quest_icons/UBetterOS.png",
+	"difficult": "Medium",
+	"attribute": {
+		"Functional Suitability": "High",
+		"Performance Efficiency": "Low",
+		"Compatibility": "Medium",
+		"Interaction Capability": "Medium",
+		"Reliability": "High",
+		"Security": "Medium",
+		"Maintainability": "High",
+		"Flexibility": "Medium",
+		"Safety": "Medium"
+	},
+	"description": {
+		"paragraph1": "A company developed a modular operating system for neural implants.",
+		"paragraph2": "The system core is extremely small: it only manages brain memory, authentication, and basic communication.",
+		"paragraph3": "Everything else works through plug‑ins: night vision, mental ad filtering, instant translation, cringe‑thought blocker, and even courage simulators for meetings.",
+		"paragraph4": "The problem started when users installed hundreds of plug‑ins created by AI without any quality standard.",
+		"paragraph5": "Now the system continues to work… but some people hear energy drink ads every time they blink."
+	},
+	"bullet_point": {
+		"bullet1": "New functionalities must be added [b]without changing the core[/b].",
+		"bullet2": "Failures in one plug‑in must not bring down the entire system.",
+		"bullet3": "Modules must be [b]easily replaceable[/b].",
+		"bullet4": "No more random intrusive thoughts."
+	},
+	"footnote": "[i]~ Where is the premium option to get rid of the ad?[/i]",
+	"requirements": {
+		"pattern1": "Microkernel"
+	},
+	"bug": {
+		"bug1": {
+			"description": "A 'personal motivation' plug‑in started crashing constantly after an update. Fortunately, the rest of the operating system continued functioning normally. Which characteristic of Microkernel architecture explains this behavior?",
+			"choices": {
+				"correct": "Isolation between core and plug‑ins",
+				"wrong1": "Use of multiple independent servers",
+				"wrong2": "Rigid layer separation"
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"key": "Thiago",
+	"name": "Thiago Nunes",
+	"age": 28,
+	"portrait": "res://assets/sprites/developer_portrait/portrait_4.png",
+	"cost": 50,
+	"attribute": {
+		"Functional Suitability": 2.5,
+		"Performance Efficiency": 5.0,
+		"Compatibility": 3.5,
+		"Interaction Capability": 1.0,
+		"Reliability": 4.5,
+		"Security": 2.5,
+		"Maintainability": 3.0,
+		"Flexibility": 4.0,
+		"Safety": 5.0
+	},
+	"description": "Hyperactive DevOps who automates everything. Once created a pipeline to open their own IDE."
+}

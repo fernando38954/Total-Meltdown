@@ -1,0 +1,57 @@
+{
+	"key": "QuarterEnd",
+	"dialogue": {
+		"dialogue1": {
+			"portrait": "surprised",
+			"phrase": "All tasks finished? Looks like we've reached the end of the quarter!"
+		},
+		"dialogue2": {
+			"portrait": "confused",
+			"phrase": "And you know what that means? Accumulated documentation? Endless meetings? Professional existential crisis?"
+		},
+		"dialogue3": {
+			"portrait": "sweating",
+			"phrase": "That too."
+		},
+		"dialogue4": {
+			"portrait": "admiring",
+			"phrase": "But mainly: qualification test!"
+		},
+		"dialogue5": {
+			"portrait": "normal",
+			"phrase": "At the end of each quarter, you will take an assessment based on the content learned during projects and study sessions."
+		},
+		"dialogue6": {
+			"portrait": "sweating",
+			"phrase": "So… yes. Paying attention to the tutorial really was important."
+		},
+		"dialogue7": {
+			"portrait": "admiring",
+			"phrase": "But relax! There's no danger in failing here."
+		},
+		"dialogue8": {
+			"portrait": "surprised",
+			"phrase": "If you do well, your superiors will be impressed with your skills. And that means financial bonuses for RetroCODE!"
+		},
+		"dialogue9": {
+			"portrait": "normal",
+			"phrase": "More money… more possibilities to hire better developers."
+		},
+		"dialogue10": {
+			"portrait": "normal",
+			"phrase": "Oh, an important detail: you can only take the qualification when all ongoing contracts are finished."
+		},
+		"dialogue11": {
+			"portrait": "normal",
+			"phrase": "To see their progress, just click the icon at the top of the main screen."
+		},
+		"dialogue12": {
+			"portrait": "admiring",
+			"phrase": "That's also where you receive the amount paid by the client."
+		},
+		"dialogue13": {
+			"portrait": "surprised",
+			"phrase": "While contracts haven't finished, you can take the opportunity to review the content saved in the Notebook. It's never too late to study!"
+		}
+	}
+}
