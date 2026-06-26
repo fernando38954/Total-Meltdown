@@ -8,7 +8,7 @@ var base_developer_salary: int = 10
 
 # Language Settings
 const GAME_CONTENT_PATH = "res://contents/"
-var current_language = "en"
+var current_language = "pt-br"
 
 # Quarter Mechanic
 const TOTAL_QUARTER = 5
