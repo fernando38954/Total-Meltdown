@@ -1,10 +1,33 @@
 {
-	"phrase1": "Tudo parecia funcionar",
-	"phrase2": "As máquinas assumiram o controle",
-	"phrase3": "Código era gerado em segundos",
-	"phrase4": "Até os primeiros erros aparecerem",
-	"phrase5": "E pequenos erros viraram colapsos",
-	"phrase6": "Mas uma empresa resistiu",
-	"phrase7": "Agora, o mundo precisa de ajuda",
-	"phrase8": "E essa responsabilidade… é sua",
+	"frame1": {
+		"phrase1": "Tudo começou com uma promessa simples... deixar as máquinas programarem",
+		"phrase2": "Era rápido... muito rápido",
+		"phrase3": "Revisar código?? Para quê?",
+	},
+	"frame2": {
+		"phrase1": "Se funciona... está perfeito, né?",
+	},
+	"frame3": {
+		"phrase1": "Funcionava... até deixar de funcionar...",
+	},
+	"frame4": {
+		"phrase1": "Os primeiros erros apareceram e depois deles...",
+	},
+	"frame5": {
+		"phrase1": "Pequenos erros viraram desastres",
+		"phrase2": "Sistemas começaram a quebrar, um após o outro",
+		"phrase3": "Ninguém sabia como consertar",
+		"phrase4": "Afinal... ninguém havia realmente escrito aquilo",
+	},
+	"frame6": {
+		"phrase1": "Mas nem todos seguiram esse caminho",
+		"phrase2": "Uma empresa foi teimosa",
+	},
+	"frame7": {
+		"phrase1": "Agora, com tudo em Total Meltdown",
+		"phrase2": "o mundo precisa de ajuda",
+	},
+	"frame8": {
+		"phrase1": "Eles precisam de você!",
+	},
 }

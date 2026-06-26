@@ -14,8 +14,9 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6ax6"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="IntroCutscene" type="Node2D" unique_id=2141615468]
+[node name="IntroCutscene" type="Node2D" unique_id=2141615468 node_paths=PackedStringArray("node_sets")]
 script = ExtResource("1_p6ax6")
+node_sets = [NodePath("FirstSet"), NodePath("SecondSet")]
 
 [node name="Panel" type="Panel" parent="." unique_id=917742841]
 offset_right = 3930.0
@@ -23,42 +24,219 @@ offset_bottom = 2218.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_p6ax6")
 
 [node name="FirstSet" type="Node2D" parent="." unique_id=445806822]
+position = Vector2(-100, 28)
+scale = Vector2(1.05, 1.05)
 
 [node name="BackgroundCity" type="Sprite2D" parent="FirstSet" unique_id=1096193469]
 position = Vector2(728.75, 1028.8501)
 texture = ExtResource("1_0f8n4")
 
+[node name="BackgroundCityPhrase1" parent="FirstSet" unique_id=2010605356 instance=ExtResource("9_do84u")]
+offset_left = 258.09525
+offset_top = 90.476204
+offset_right = 1216.1906
+offset_bottom = 350.47632
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
+[node name="BackgroundCityPhrase2" parent="FirstSet" unique_id=820631661 instance=ExtResource("9_do84u")]
+offset_left = 223.81
+offset_top = 900.0
+offset_right = 1188.572
+offset_bottom = 1103.0
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
+[node name="BackgroundCityPhrase3" parent="FirstSet" unique_id=1558678530 instance=ExtResource("9_do84u")]
+offset_left = 218.095
+offset_top = 1550.0
+offset_right = 1236.1903
+offset_bottom = 1753.0
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+horizontal_alignment = 2
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
 [node name="CPUs" type="Sprite2D" parent="FirstSet" unique_id=911877314]
 position = Vector2(1948.75, 358.85004)
 texture = ExtResource("2_p6ax6")
+
+[node name="CPUsPhrase" parent="FirstSet" unique_id=269518045 instance=ExtResource("9_do84u")]
+offset_left = 1295.238
+offset_top = 30.0
+offset_right = 2596.1904
+offset_bottom = 233.0
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
 
 [node name="CodeRunning" type="Sprite2D" parent="FirstSet" unique_id=486410705]
 position = Vector2(1942.75, 1024.8501)
 texture = ExtResource("3_erdjy")
 
+[node name="CodeRunningPhrase" parent="FirstSet" unique_id=1544210815 instance=ExtResource("9_do84u")]
+offset_left = 1270.476
+offset_top = 1200.0
+offset_right = 2617.1426
+offset_bottom = 1403.0
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
 [node name="ComputerError" type="Sprite2D" parent="FirstSet" unique_id=640904878]
 position = Vector2(1948.75, 1694.8501)
 texture = ExtResource("4_cdel8")
+
+[node name="ComputeErrorPhrase" parent="FirstSet" unique_id=477308055 instance=ExtResource("9_do84u")]
+offset_left = 1296.1904
+offset_top = 1805.7144
+offset_right = 2601.905
+offset_bottom = 2008.7144
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
 
 [node name="BuildingFire" type="Sprite2D" parent="FirstSet" unique_id=1375685333]
 position = Vector2(3176.7502, 1030.8501)
 texture = ExtResource("5_2kd0m")
 
+[node name="BuildingFirePhrase1" parent="FirstSet" unique_id=2890806 instance=ExtResource("9_do84u")]
+offset_left = 2664.7622
+offset_top = 87.61905
+offset_right = 3681.905
+offset_bottom = 290.61905
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
+[node name="BuildingFirePhrase2" parent="FirstSet" unique_id=1540128868 instance=ExtResource("9_do84u")]
+offset_left = 2663.8096
+offset_top = 630.4762
+offset_right = 3686.6667
+offset_bottom = 833.4762
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+horizontal_alignment = 2
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
+[node name="BuildingFirePhrase3" parent="FirstSet" unique_id=437116000 instance=ExtResource("9_do84u")]
+offset_left = 2663.8098
+offset_top = 1177.143
+offset_right = 3695.2383
+offset_bottom = 1380.143
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
+[node name="BuildingFirePhrase4" parent="FirstSet" unique_id=466090742 instance=ExtResource("9_do84u")]
+offset_left = 2658.0957
+offset_top = 1697.1431
+offset_right = 3698.0957
+offset_bottom = 1900.1431
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+horizontal_alignment = 2
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
 [node name="SecondSet" type="Node2D" parent="." unique_id=1320044476]
+position = Vector2(-100, 28)
+scale = Vector2(1.05, 1.05)
 
 [node name="RetroCode" type="Sprite2D" parent="SecondSet" unique_id=1956767680]
 position = Vector2(802.10004, 508)
 texture = ExtResource("6_w7o7x")
 
+[node name="RetroCodePhrase1" parent="SecondSet" unique_id=1841060172 instance=ExtResource("9_do84u")]
+offset_left = 250.0
+offset_top = 41.905
+offset_right = 1420.4763
+offset_bottom = 244.905
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
+[node name="RetroCodePhrase2" parent="SecondSet" unique_id=1923059531 instance=ExtResource("9_do84u")]
+offset_left = 207.619
+offset_top = 800.0
+offset_right = 1397.143
+offset_bottom = 1003.0
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+horizontal_alignment = 2
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
 [node name="ComputerCalls" type="Sprite2D" parent="SecondSet" unique_id=730088509]
 position = Vector2(803, 1513)
 texture = ExtResource("7_iebpy")
+
+[node name="ComputerCallsPhrase1" parent="SecondSet" unique_id=1499441538 instance=ExtResource("9_do84u")]
+offset_left = 220.9524
+offset_top = 1066.6667
+offset_right = 1391.4287
+offset_bottom = 1269.6667
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
+[node name="ComputerCallsPhrase2" parent="SecondSet" unique_id=939047537 instance=ExtResource("9_do84u")]
+offset_left = 214.28572
+offset_top = 1752.3811
+offset_right = 1384.7621
+offset_bottom = 1955.3811
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+horizontal_alignment = 2
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
 
 [node name="Agent" type="Sprite2D" parent="SecondSet" unique_id=1553375278]
 position = Vector2(2599, 1014)
 texture = ExtResource("8_8ns5g")
 
-[node name="AutoTypingRichTextLabel" parent="." unique_id=2010605356 instance=ExtResource("9_do84u")]
+[node name="AgentPhrase" parent="SecondSet" unique_id=1157826942 instance=ExtResource("9_do84u")]
+offset_left = 1540.9524
+offset_top = 119.04755
+offset_right = 3698.0955
+offset_bottom = 322.04755
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 150
+horizontal_alignment = 1
+vertical_alignment = 1
+auto_typing_text = ""
+auto_start = false
+
+[node name="AutoTypingRichTextLabel" parent="." unique_id=1517750201 instance=ExtResource("9_do84u")]
+visible = false
 offset_left = 208.0
 offset_top = 1996.0
 offset_right = 3704.0
