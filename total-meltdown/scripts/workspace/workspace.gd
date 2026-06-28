@@ -1,6 +1,10 @@
 extends Sprite2D
 class_name Workspace
 
+const CONFIG_POPUP_SCENE = preload("res://scenes/component/ConfigPopup.tscn")
+const CREDIT_POPUP_SCENE = preload("res://scenes/component/CreditPopup.tscn")
+const EXIT_POPUP_SCENE = preload("res://scenes/component/ExitPopup.tscn")
+
 @export var workspace_camera: WorkspaceCamera
 var current_region: Region = null
 @export var finish_screen: FinishScreen
@@ -101,3 +105,18 @@ func _on_right_button_pressed() -> void:
 	AudioManager.play_sfx(screen_button_SFX)
 	await check_close_screen()
 	switch_region(current_region.right_region)
+
+
+func _on_config_button_pressed() -> void:
+	var config_popup = CONFIG_POPUP_SCENE.instantiate()
+	get_tree().root.add_child(config_popup)
+
+
+func _on_credit_button_pressed() -> void:
+	var credit_popup = CREDIT_POPUP_SCENE.instantiate()
+	get_tree().root.add_child(credit_popup)
+
+
+func _on_exit_button_pressed() -> void:
+	var exit_popup = EXIT_POPUP_SCENE.instantiate()
+	get_tree().root.add_child(exit_popup)

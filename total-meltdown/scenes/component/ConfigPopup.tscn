@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://dospvvvwgckee"]
+
+[ext_resource type="Texture2D" uid="uid://bnmmc5eda0h6w" path="res://assets/sprites/component/config_popup/ConfigPage.png" id="1_gbsgy"]
+[ext_resource type="Script" uid="uid://cat51j8p43ibn" path="res://scripts/component/config_popup.gd" id="1_yi1i1"]
+[ext_resource type="AudioStream" uid="uid://bnlx4vly6ghfv" path="res://assets/sfx/PanelClose.mp3" id="2_cf1vt"]
+[ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="2_f6xkv"]
+[ext_resource type="Texture2D" uid="uid://127ernycl3lf" path="res://assets/sprites/component/config_popup/Grabber.png" id="2_gbsgy"]
+[ext_resource type="AudioStream" uid="uid://bfpog7j4ngx85" path="res://assets/sfx/BugAppear.mp3" id="3_f2jxi"]
+[ext_resource type="PackedScene" uid="uid://be21uwfnqhiru" path="res://scenes/component/AutoTypingRichTextLabel.tscn" id="6_f2jxi"]
+[ext_resource type="Texture2D" uid="uid://bvdnpxoq22vp6" path="res://assets/sprites/navigation_button/ReturnButtonNormal.png" id="7_n13pt"]
+[ext_resource type="Texture2D" uid="uid://duw8dbs8bsp05" path="res://assets/sprites/navigation_button/ReturnButonHover.png" id="8_f6xkv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4shib"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.65012825, 0.6501283, 0.65012825, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2jxi"]
+bg_color = Color(0.25565878, 0.2556588, 0.2556587, 0.5019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgvv8"]
+bg_color = Color(0, 0, 0, 0.5019608)
+
+[node name="ConfigPopup" type="CanvasLayer" unique_id=679863771 node_paths=PackedStringArray("volume_slider", "typing_speed_slider", "text_tester")]
+layer = 2
+script = ExtResource("1_yi1i1")
+volume_slider = NodePath("ConfigPage/Volume/VolumeSlider")
+typing_speed_slider = NodePath("ConfigPage/TypingSpeed/TypingSpeedSlider")
+config_open_SFX = ExtResource("2_f6xkv")
+config_close_SFX = ExtResource("2_cf1vt")
+SFX_tester = ExtResource("3_f2jxi")
+text_tester = NodePath("ConfigPage/TextTester")
+
+[node name="ClickBlocker" type="ColorRect" parent="." unique_id=1789498546]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.28235295)
+
+[node name="ConfigPage" type="TextureRect" parent="." unique_id=1086161797]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1603.5
+offset_top = -978.0
+offset_right = 1603.5
+offset_bottom = 978.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1603.5, 978)
+mouse_filter = 0
+texture = ExtResource("1_gbsgy")
+
+[node name="Volume" type="Control" parent="ConfigPage" unique_id=1591875558]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VolumeSlider" type="HSlider" parent="ConfigPage/Volume" unique_id=989889091]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 573.0
+offset_right = 2630.0
+offset_bottom = 718.0
+theme_override_icons/grabber = ExtResource("2_gbsgy")
+theme_override_icons/grabber_highlight = ExtResource("2_gbsgy")
+theme_override_icons/grabber_disabled = ExtResource("2_gbsgy")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4shib")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_f2jxi")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_kgvv8")
+max_value = 1.0
+step = 0.1
+value = 0.8
+tick_count = 11
+ticks_position = 3
+
+[node name="MinLabel" type="RichTextLabel" parent="ConfigPage/Volume" unique_id=407937066]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 658.0
+offset_right = 738.0
+offset_bottom = 792.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxLabel" type="RichTextLabel" parent="ConfigPage/Volume" unique_id=262841461]
+layout_mode = 0
+offset_left = 2507.0
+offset_top = 658.0
+offset_right = 2737.0
+offset_bottom = 792.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TypingSpeed" type="Control" parent="ConfigPage" unique_id=2003533594]
+anchors_preset = 0
+offset_top = 525.0
+offset_right = 40.0
+offset_bottom = 565.0
+
+[node name="TypingSpeedSlider" type="HSlider" parent="ConfigPage/TypingSpeed" unique_id=823362727]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 573.0
+offset_right = 2630.0
+offset_bottom = 718.0
+theme_override_icons/grabber = ExtResource("2_gbsgy")
+theme_override_icons/grabber_highlight = ExtResource("2_gbsgy")
+theme_override_icons/grabber_disabled = ExtResource("2_gbsgy")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4shib")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_f2jxi")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_kgvv8")
+max_value = 0.9
+step = 0.09
+value = 0.72
+tick_count = 11
+ticks_position = 3
+
+[node name="MinLabel" type="RichTextLabel" parent="ConfigPage/TypingSpeed" unique_id=865933772]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 658.0
+offset_right = 738.0
+offset_bottom = 792.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "10%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxLabel" type="RichTextLabel" parent="ConfigPage/TypingSpeed" unique_id=2020197078]
+layout_mode = 0
+offset_left = 2507.0
+offset_top = 658.0
+offset_right = 2737.0
+offset_bottom = 792.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextTester" parent="ConfigPage" unique_id=2010605356 instance=ExtResource("6_f2jxi")]
+layout_mode = 0
+offset_left = 405.5
+offset_top = 1387.0
+offset_right = 2870.5
+offset_bottom = 1506.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+horizontal_alignment = 1
+vertical_alignment = 1
+auto_typing_text = "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+auto_start = false
+
+[node name="ReturnButton" type="TextureButton" parent="ConfigPage" unique_id=566284448]
+layout_mode = 0
+offset_left = 2843.5
+offset_top = 170.0
+offset_right = 2972.5
+offset_bottom = 299.0
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("7_n13pt")
+texture_hover = ExtResource("8_f6xkv")
+
+[connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]
+[connection signal="drag_ended" from="ConfigPage/Volume/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="drag_ended" from="ConfigPage/TypingSpeed/TypingSpeedSlider" to="." method="_on_typing_speed_slider_drag_ended"]
+[connection signal="pressed" from="ConfigPage/ReturnButton" to="." method="_on_return_button_pressed"]

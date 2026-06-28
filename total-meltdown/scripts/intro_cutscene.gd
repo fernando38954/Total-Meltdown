@@ -17,10 +17,14 @@ var first_set_hiding: bool = false
 var switching_scene: bool = false
 var tween: Tween
 
+@export_category("BGM")
+@export var main_BGM: AudioStream
+
 func _ready() -> void:
 	load_nodes()
 	load_phrases()
 	hide_all_sprites()
+	AudioManager.play_bgm(main_BGM)
 	await get_tree().create_timer(1).timeout
 	advance_to_next()
 
@@ -91,7 +95,8 @@ func advance_to_next() -> void:
 			labels[current_label_idx].start_typing(frames_data[current_frame_idx][current_phrase_idx])
 		else:
 			switching_scene = true
-			await Fade.fade_out().finished  
+			AudioManager.stop_bgm()
+			await Fade.fade_out().finished
 			get_tree().change_scene_to_file("res://scenes/GameScene.tscn")
 			GlobalSignal.emit_signal("game_start")
 			Fade.fade_in()

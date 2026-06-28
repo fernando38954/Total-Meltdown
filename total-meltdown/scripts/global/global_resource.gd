@@ -18,6 +18,11 @@ var pattern_quarter_distribution: Array
 var quest_quarter_distribution: Array
 var exam_quarter_distribution: Array
 
+# Player Settings
+var volume_level: float = 0.8
+var base_typing_speed: float = 0.1
+var typing_speed_level: float = 0.45
+
 # Player Status
 var money: int = 0
 var developer_hired: Array
@@ -148,4 +153,16 @@ func proceed_next_quarter():
 		2: GlobalSignal.emit_signal("start_tutorial", "ContractTimeLimit")
 		3: pass
 		_: GlobalSignal.emit_signal("game_finished")
+#endregion
+
+#region Player Setting
+func update_volume_level(new_level: float):
+	volume_level = new_level
+	GlobalSignal.emit_signal("volume_level_changed")
+
+func update_typing_speed_level(new_level: float):
+	typing_speed_level = new_level
+
+func get_typing_speed():
+	return base_typing_speed * (1 - typing_speed_level)
 #endregion

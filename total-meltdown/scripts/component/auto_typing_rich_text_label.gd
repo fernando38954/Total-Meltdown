@@ -8,7 +8,6 @@ signal typing_finished()
 
 @export_category("Auto Typing Settings")
 @export_multiline  var auto_typing_text: String = ""
-@export var typing_speed: float = 0.05
 @export var auto_start: bool = false
 
 @export_category("SFX")
@@ -23,6 +22,7 @@ func _ready() -> void:
 
 func start_typing(target_text: String = auto_typing_text) -> void:
 	auto_typing_text = target_text
+	var typing_speed = GlobalResource.get_typing_speed()
 	is_typing = true
 	stop_requested = false
 	text_label.text = ""
@@ -42,10 +42,13 @@ func wait_timer(second: float):
 	typing_timer.start(second)
 	await typing_timer.timeout
 
-func skip_typing() -> void:
+func skip_typing(complete_text: bool = true) -> void:
 	is_typing = false
 	stop_requested = true
-	text = auto_typing_text
+	typing_timer.stop()
+	typing_timer.timeout.emit()
+	if complete_text:
+		text = auto_typing_text
 	typing_finished.emit()
 	AudioManager.stop_sfx()
 

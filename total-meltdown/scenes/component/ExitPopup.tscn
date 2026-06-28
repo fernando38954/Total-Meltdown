@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://hkhtn3mjkbgm"]
+
+[ext_resource type="Script" uid="uid://2irolfjne6n5" path="res://scripts/component/exit_popup.gd" id="1_pjb1k"]
+[ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="2_wjcrw"]
+[ext_resource type="AudioStream" uid="uid://bnlx4vly6ghfv" path="res://assets/sfx/PanelClose.mp3" id="3_pjb1k"]
+[ext_resource type="Texture2D" uid="uid://457tcoqlgrbr" path="res://assets/sprites/component/exit_popup/ExitPage.png" id="4_dxbpe"]
+[ext_resource type="Texture2D" uid="uid://dsv4sa14ufxex" path="res://assets/sprites/component/exit_popup/YesButtonNormal.png" id="5_5gbtv"]
+[ext_resource type="Texture2D" uid="uid://cfy5c4qk7rsmi" path="res://assets/sprites/component/exit_popup/YesButtonPressed.png" id="6_3kmqv"]
+[ext_resource type="Texture2D" uid="uid://car8xenqgnsdj" path="res://assets/sprites/component/exit_popup/YesButtonHover.png" id="7_dxr42"]
+[ext_resource type="Texture2D" uid="uid://d1rxk4mkwbqs4" path="res://assets/sprites/component/exit_popup/NoButtonNormal.png" id="8_ltqby"]
+[ext_resource type="Texture2D" uid="uid://bylgor5md42mx" path="res://assets/sprites/component/exit_popup/NoButtonPressed.png" id="9_ci4hm"]
+[ext_resource type="Texture2D" uid="uid://bcfqxxwfq0s6s" path="res://assets/sprites/component/exit_popup/NoButtonHover.png" id="10_ckk1f"]
+
+[node name="ExitPopup" type="CanvasLayer" unique_id=679863771]
+script = ExtResource("1_pjb1k")
+exit_open_SFX = ExtResource("2_wjcrw")
+exit_close_SFX = ExtResource("3_pjb1k")
+
+[node name="ClickBlocker" type="ColorRect" parent="." unique_id=1789498546]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.28235295)
+
+[node name="ExitPage" type="TextureRect" parent="." unique_id=1086161797]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1187.0
+offset_top = -882.0
+offset_right = 1187.0
+offset_bottom = 882.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1187, 882)
+mouse_filter = 0
+texture = ExtResource("4_dxbpe")
+stretch_mode = 2
+
+[node name="YesButton" type="TextureButton" parent="ExitPage" unique_id=798173106]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 711.0
+offset_right = 1996.0
+offset_bottom = 888.0
+texture_normal = ExtResource("5_5gbtv")
+texture_pressed = ExtResource("6_3kmqv")
+texture_hover = ExtResource("7_dxr42")
+
+[node name="NoButton" type="TextureButton" parent="ExitPage" unique_id=1961340804]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 1095.0
+offset_right = 1996.0
+offset_bottom = 1272.0
+texture_normal = ExtResource("8_ltqby")
+texture_pressed = ExtResource("9_ci4hm")
+texture_hover = ExtResource("10_ckk1f")
+
+[connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]
+[connection signal="pressed" from="ExitPage/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="ExitPage/NoButton" to="." method="_on_no_button_pressed"]

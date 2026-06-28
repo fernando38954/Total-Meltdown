@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://boi0f2w86dqse"]
+
+[ext_resource type="Texture2D" uid="uid://ofnma7d2ny4p" path="res://assets/sprites/component/credit_popup/CreditPage.png" id="1_m81bl"]
+[ext_resource type="Script" uid="uid://cp4rxq6rlofqo" path="res://scripts/component/credit_popup.gd" id="1_vran4"]
+[ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="2_gtuhr"]
+[ext_resource type="AudioStream" uid="uid://bnlx4vly6ghfv" path="res://assets/sfx/PanelClose.mp3" id="2_qu7tw"]
+[ext_resource type="Texture2D" uid="uid://bvdnpxoq22vp6" path="res://assets/sprites/navigation_button/ReturnButtonNormal.png" id="3_b1t55"]
+[ext_resource type="Texture2D" uid="uid://duw8dbs8bsp05" path="res://assets/sprites/navigation_button/ReturnButonHover.png" id="4_gtuhr"]
+
+[node name="CreditPopup" type="CanvasLayer" unique_id=679863771]
+script = ExtResource("1_vran4")
+credit_open_SFX = ExtResource("2_gtuhr")
+credit_close_SFX = ExtResource("2_qu7tw")
+
+[node name="ClickBlocker" type="ColorRect" parent="." unique_id=1789498546]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.28235295)
+
+[node name="CreditPage" type="TextureRect" parent="." unique_id=1086161797]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1603.5
+offset_top = -978.0
+offset_right = 1603.5
+offset_bottom = 978.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1603.5, 978)
+mouse_filter = 0
+texture = ExtResource("1_m81bl")
+
+[node name="CreditLabel" type="RichTextLabel" parent="CreditPage" unique_id=1097887665]
+layout_mode = 0
+offset_left = 343.5
+offset_top = 430.0
+offset_right = 2913.5
+offset_bottom = 1704.0
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_constants/paragraph_separation = 50
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "Game Design: Enzo Rigazzo e Fernando Yang
+Programmer: Fernando Yang
+Art / Visual Design: Bruno Rigazzo e Enzo Rigazzo
+Sound Effects: Pixabay
+Background Music: ChillMindscapes
+
+
+© 2026 Enzo Rigazzo e Fernando Yang. All rights reserved."
+
+[node name="ReturnButton" type="TextureButton" parent="CreditPage" unique_id=1961340804]
+layout_mode = 0
+offset_left = 2843.5
+offset_top = 170.0
+offset_right = 2972.5
+offset_bottom = 299.0
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("3_b1t55")
+texture_hover = ExtResource("4_gtuhr")
+
+[connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]
+[connection signal="pressed" from="CreditPage/ReturnButton" to="." method="_on_return_button_pressed"]

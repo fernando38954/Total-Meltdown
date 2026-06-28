@@ -8,4 +8,3 @@ script = ExtResource("1_7aist")
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1534723163]
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=1773526462]
-volume_db = -5.0

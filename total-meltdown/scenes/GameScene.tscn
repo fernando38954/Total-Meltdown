@@ -4,19 +4,28 @@
 [ext_resource type="Script" uid="uid://bycvyp17uw41" path="res://scripts/workspace/workspace.gd" id="2_kxqg4"]
 [ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="3_21xg8"]
 [ext_resource type="AudioStream" uid="uid://bcgcxhx6i2fpl" path="res://assets/sfx/ButtonPress.mp3" id="4_icif4"]
-[ext_resource type="AudioStream" uid="uid://cv1y556ftyvhv" path="res://assets/bgm/MainBGM.ogg" id="5_iaegw"]
+[ext_resource type="AudioStream" uid="uid://cv1y556ftyvhv" path="res://assets/bgm/MainGameBGM.ogg" id="5_iaegw"]
 [ext_resource type="Script" uid="uid://c02p4763tkn5d" path="res://scripts/workspace/workspace_region.gd" id="6_2gh7q"]
 [ext_resource type="Script" uid="uid://bfymxkjtitow5" path="res://scripts/workspace/workspace_camera.gd" id="7_a5tct"]
 [ext_resource type="Texture2D" uid="uid://dl2ot5toij8nr" path="res://assets/sprites/navigation_button/Arrow_Normal.png" id="8_1npfk"]
 [ext_resource type="Texture2D" uid="uid://bsuy7dvawetm0" path="res://assets/sprites/navigation_button/Arrow_Press.png" id="9_6nmf6"]
 [ext_resource type="Texture2D" uid="uid://bybgdulrinne0" path="res://assets/sprites/workspace/NotebookMask.png" id="9_21xg8"]
+[ext_resource type="Texture2D" uid="uid://1cijk24qqipj" path="res://assets/sprites/workspace/button/ConfigButtonNormal.png" id="10_6nmf6"]
 [ext_resource type="Texture2D" uid="uid://oby8gd4ak4o0" path="res://assets/sprites/navigation_button/Arrow_Hover.png" id="10_lk0vr"]
 [ext_resource type="PackedScene" uid="uid://bd5f23dl8nicx" path="res://scenes/swebok/Swebok.tscn" id="11_f2kej"]
+[ext_resource type="Texture2D" uid="uid://xdowqps1u6k8" path="res://assets/sprites/workspace/button/ConfigButtonPressed.png" id="11_lk0vr"]
+[ext_resource type="Texture2D" uid="uid://jbosyhpk5k4l" path="res://assets/sprites/workspace/button/ConfigButtonHover.png" id="12_f2kej"]
 [ext_resource type="Texture2D" uid="uid://dp37sum6qxda4" path="res://assets/sprites/workspace/DeveloperScreenMask.png" id="12_kxqg4"]
+[ext_resource type="Texture2D" uid="uid://dlfqix525xgvg" path="res://assets/sprites/workspace/button/CreditButtonNormal.png" id="13_3t3mo"]
 [ext_resource type="PackedScene" uid="uid://cinak64pyd2kv" path="res://scenes/map_screen/MapScreen.tscn" id="14_03l4r"]
 [ext_resource type="Texture2D" uid="uid://qx2svekawcts" path="res://assets/sprites/workspace/MapScreenMask.png" id="14_21xg8"]
+[ext_resource type="Texture2D" uid="uid://lwi4dqbg1cxi" path="res://assets/sprites/workspace/button/CreditButtonPressed.png" id="14_a8ip2"]
+[ext_resource type="Texture2D" uid="uid://jyywwrsax4r5" path="res://assets/sprites/workspace/button/CreditButtonHover.png" id="15_03l4r"]
 [ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperPanel.tscn" id="15_kxqg4"]
 [ext_resource type="PackedScene" uid="uid://cixmygurc8m6" path="res://scenes/component/GameFinishScreen.tscn" id="15_lpvha"]
+[ext_resource type="Texture2D" uid="uid://pud5nus8sw6n" path="res://assets/sprites/workspace/button/ExitButtonNormal.png" id="16_3t3mo"]
+[ext_resource type="Texture2D" uid="uid://d2to08gb2bokc" path="res://assets/sprites/workspace/button/ExitButtonPressed.png" id="17_a8ip2"]
+[ext_resource type="Texture2D" uid="uid://nppcp048gb0r" path="res://assets/sprites/workspace/button/ExitButtonHover.png" id="18_03l4r"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 scale = Vector2(3.3999987, 3.3999987)
@@ -115,6 +124,33 @@ texture = ExtResource("9_21xg8")
 
 [node name="Marker2D" type="Marker2D" parent="Workspace/Swebok" unique_id=1526716402]
 position = Vector2(-462.12097, 240.48026)
+
+[node name="ConfigButton" type="TextureButton" parent="Workspace" unique_id=198500726]
+offset_left = -1260.6179
+offset_top = -30.508102
+offset_right = -1141.6179
+offset_bottom = 81.4919
+texture_normal = ExtResource("10_6nmf6")
+texture_pressed = ExtResource("11_lk0vr")
+texture_hover = ExtResource("12_f2kej")
+
+[node name="CreditButton" type="TextureButton" parent="Workspace" unique_id=302345792]
+offset_left = -1260.6178
+offset_top = 98.10617
+offset_right = -1141.6178
+offset_bottom = 210.10617
+texture_normal = ExtResource("13_3t3mo")
+texture_pressed = ExtResource("14_a8ip2")
+texture_hover = ExtResource("15_03l4r")
+
+[node name="ExitButton" type="TextureButton" parent="Workspace" unique_id=965374047]
+offset_left = 1102.2944
+offset_top = -22.532093
+offset_right = 1244.2944
+offset_bottom = 116.46791
+texture_normal = ExtResource("16_3t3mo")
+texture_pressed = ExtResource("17_a8ip2")
+texture_hover = ExtResource("18_03l4r")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=661555636]
 position = Vector2(576, 324)
@@ -230,6 +266,9 @@ offset_bottom = 7.0
 [connection signal="input_event" from="Workspace/Swebok" to="Workspace/Swebok" method="_on_input_event"]
 [connection signal="mouse_entered" from="Workspace/Swebok" to="Workspace/Swebok" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Workspace/Swebok" to="Workspace/Swebok" method="_on_mouse_exited"]
+[connection signal="pressed" from="Workspace/ConfigButton" to="Workspace" method="_on_config_button_pressed"]
+[connection signal="pressed" from="Workspace/CreditButton" to="Workspace" method="_on_credit_button_pressed"]
+[connection signal="pressed" from="Workspace/ExitButton" to="Workspace" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="ScreenButtons/LeftButton" to="Workspace" method="_on_left_button_pressed"]
 [connection signal="pressed" from="ScreenButtons/RightButton" to="Workspace" method="_on_right_button_pressed"]
 [connection signal="pressed" from="ScreenButtons/ReturnButton" to="Workspace" method="_on_return_button_pressed"]

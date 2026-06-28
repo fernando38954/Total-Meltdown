@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b80la3x0ru3dl" path="res://assets/sprites/intro_cutscene/1-BackgroundCity.png" id="1_0f8n4"]
 [ext_resource type="Script" uid="uid://dvpb5loqyvca6" path="res://scripts/intro_cutscene.gd" id="1_p6ax6"]
+[ext_resource type="AudioStream" uid="uid://0jhyaqe0tsbn" path="res://assets/bgm/IntroCutsceneBGM.mp3" id="2_erdjy"]
 [ext_resource type="Texture2D" uid="uid://dbhaopktffjdw" path="res://assets/sprites/intro_cutscene/2-CPUs.png" id="2_p6ax6"]
 [ext_resource type="Texture2D" uid="uid://cynu422ohy1qv" path="res://assets/sprites/intro_cutscene/3-CodeRunning.png" id="3_erdjy"]
 [ext_resource type="Texture2D" uid="uid://odmskebo2lut" path="res://assets/sprites/intro_cutscene/4-ComputerError.png" id="4_cdel8"]
@@ -17,6 +18,7 @@ bg_color = Color(0, 0, 0, 1)
 [node name="IntroCutscene" type="Node2D" unique_id=2141615468 node_paths=PackedStringArray("node_sets")]
 script = ExtResource("1_p6ax6")
 node_sets = [NodePath("FirstSet"), NodePath("SecondSet")]
+main_BGM = ExtResource("2_erdjy")
 
 [node name="Panel" type="Panel" parent="." unique_id=917742841]
 offset_right = 3930.0
