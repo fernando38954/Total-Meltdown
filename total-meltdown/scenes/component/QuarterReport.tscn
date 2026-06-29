@@ -40,7 +40,7 @@ texture = ExtResource("2_bo0o5")
 layout_mode = 0
 offset_left = 193.0
 offset_top = 836.0
-offset_right = 346.0
+offset_right = 365.0
 offset_bottom = 939.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
@@ -50,7 +50,7 @@ vertical_alignment = 1
 
 [node name="CurrentMoney" type="RichTextLabel" parent="Report" unique_id=261238472]
 layout_mode = 0
-offset_left = 595.0
+offset_left = 571.0
 offset_top = 837.0
 offset_right = 748.0
 offset_bottom = 940.0

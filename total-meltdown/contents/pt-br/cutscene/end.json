@@ -1,0 +1,44 @@
+{
+	"set1": {
+		"frame1": {
+			"phrase1": "Tudo começou com uma promessa simples... deixar as máquinas programarem",
+			"phrase2": "Era rápido... muito rápido",
+			"phrase3": "Revisar código?? Para quê?",
+		},
+		"frame2": {
+			"phrase1": "Se funciona... está perfeito",
+			"phrase2": "Ou será que não?",
+		},
+		"frame3": {
+			"phrase1": "Os códigos são de qualidade... mas escondem também perigos graves...",
+		},
+		"frame4": {
+			"phrase1": "Os primeiros erros apareceram...",
+		},
+		"frame5": {
+			"phrase1": "...mas, desta vez, não os ignoramos",
+		},
+		"frame6": {
+			"phrase1": "Pequenos erros revelaram falhas profundas, e cada falha nos mostrou o caminho da correção",
+			"phrase2": "Sistemas quebraram, mas cada colapso nos ensinou a enxergar além da superfície do algoritmo",
+			"phrase3": "Aprendemos a revisar, testar e questionar cada linha — reassumindo o controle do nosso próprio código",
+			"phrase4": "Por fim, a IA deixou de ser a dona do mundo para se tornar nossa maior aliada",
+			"phrase5": "E a jornada do RetroCODE continua..."
+		}
+	},
+	"set2": {
+		"frame1": {
+			"phrase1": "Diante o caos da cidade, uma empresa foi teimosa",
+			"phrase2": "Enquanto outros recuaram, você assumiu a frente",
+		},
+		"frame2": {
+			"phrase1": "Agora, com tudo em Total Meltdown, o sistema emite alertas sem fim",
+			"phrase2": "Cada linha de código corrompida clama por sua correção. O mundo inteiro depende dos seus comandos",
+		},
+		"frame3": {
+			"phrase1": "Você é a última barreira entre a IA e o colapso definitivo",
+			"phrase2": "Mas os erros surgem mais rápido do que você pode corrigir. São tarefas demais, tempo de menos",
+			"phrase3": "Por mais que tente, suas mãos não alcançam todos os nós. A IA se espalha... e você percebe que, desta vez, não será o bastante"
+		}
+	}
+}

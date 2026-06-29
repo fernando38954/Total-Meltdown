@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://lwi4dqbg1cxi" path="res://assets/sprites/workspace/button/CreditButtonPressed.png" id="14_a8ip2"]
 [ext_resource type="Texture2D" uid="uid://jyywwrsax4r5" path="res://assets/sprites/workspace/button/CreditButtonHover.png" id="15_03l4r"]
 [ext_resource type="PackedScene" uid="uid://b62dwh5ln2nx" path="res://scenes/developer_screen/DeveloperPanel.tscn" id="15_kxqg4"]
-[ext_resource type="PackedScene" uid="uid://cixmygurc8m6" path="res://scenes/component/GameFinishScreen.tscn" id="15_lpvha"]
 [ext_resource type="Texture2D" uid="uid://pud5nus8sw6n" path="res://assets/sprites/workspace/button/ExitButtonNormal.png" id="16_3t3mo"]
 [ext_resource type="Texture2D" uid="uid://d2to08gb2bokc" path="res://assets/sprites/workspace/button/ExitButtonPressed.png" id="17_a8ip2"]
 [ext_resource type="Texture2D" uid="uid://nppcp048gb0r" path="res://assets/sprites/workspace/button/ExitButtonHover.png" id="18_03l4r"]
@@ -30,13 +29,12 @@
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 scale = Vector2(3.3999987, 3.3999987)
 
-[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "finish_screen", "swebok", "swebok_region", "developer_screen", "developer_screen_region", "map_screen", "map_screen_region", "left_button", "right_button", "return_button")]
+[node name="Workspace" type="Sprite2D" parent="." unique_id=2114382166 node_paths=PackedStringArray("workspace_camera", "swebok", "swebok_region", "developer_screen", "developer_screen_region", "map_screen", "map_screen_region", "left_button", "right_button", "return_button")]
 position = Vector2(576, 324)
 scale = Vector2(0.295, 0.295)
 texture = ExtResource("1_qitmq")
 script = ExtResource("2_kxqg4")
 workspace_camera = NodePath("../Camera2D")
-finish_screen = NodePath("../CanvasLayer/GameFinishScreen")
 swebok = NodePath("../Swebok")
 swebok_region = NodePath("Swebok")
 developer_screen = NodePath("../DeveloperScreenMask/DeveloperPanel")
@@ -247,15 +245,6 @@ scale = Vector2(0.41274443, 0.41274443)
 
 [node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("11_f2kej")]
 visible = false
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1890244953]
-
-[node name="GameFinishScreen" parent="CanvasLayer" unique_id=22837909 instance=ExtResource("15_lpvha")]
-visible = false
-offset_left = 8.999878
-offset_top = 7.0
-offset_right = 9.0
-offset_bottom = 7.0
 
 [connection signal="input_event" from="Workspace/MapScreen" to="Workspace/MapScreen" method="_on_input_event"]
 [connection signal="mouse_entered" from="Workspace/MapScreen" to="Workspace/MapScreen" method="_on_mouse_entered"]

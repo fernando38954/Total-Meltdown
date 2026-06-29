@@ -8,6 +8,7 @@ class_name FinishScreen
 @onready var score_label = $FinalScore
 
 func _ready() -> void:
+	hide()
 	scale = Vector2.ZERO
 
 func show_screen():
@@ -29,8 +30,8 @@ func set_content():
 	money_label.text = "Quantidade de Dinheiro Adquirido: %.2f" % total_money
 	score_label.text = "Pontuação Final: %.2f" % total_score
 
-
-func _on_menu_button_pressed() -> void:
+func _on_exit_button_pressed() -> void:
+	AudioManager.stop_bgm()
 	await Fade.fade_out().finished  
 	get_tree().change_scene_to_file("res://scenes/StartMenu.tscn")
 	Fade.fade_in()

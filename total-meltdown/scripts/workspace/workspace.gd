@@ -7,7 +7,6 @@ const EXIT_POPUP_SCENE = preload("res://scenes/component/ExitPopup.tscn")
 
 @export var workspace_camera: WorkspaceCamera
 var current_region: Region = null
-@export var finish_screen: FinishScreen
 
 @export_category("Swebok")
 @export var swebok: Swebok
@@ -42,7 +41,10 @@ func _ready() -> void:
 	GlobalSignal.emit_signal("start_tutorial", "Introduction")
 
 func game_finish():
-	finish_screen.show_screen()
+	AudioManager.stop_bgm()
+	await Fade.fade_out().finished
+	get_tree().change_scene_to_file("res://scenes/EndCutscene.tscn")
+	await Fade.fade_in().finished
 
 func switch_region(region: Region):
 	if current_region == region:
