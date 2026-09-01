@@ -28,6 +28,18 @@ func format_datetime(datetime: Dictionary) -> String:
 	var second: int = datetime.get("second", 0)
 	return "%02d-%02d-%04d %02d:%02d:%02d" % [day, month, year, hour, minute, second]
 
+func format_time(msec: int) -> String:
+	@warning_ignore("integer_division")
+	var hours = msec / 3600000
+	var remainder = msec % 3600000
+	@warning_ignore("integer_division")
+	var minutes = remainder / 60000
+	remainder = remainder % 60000
+	@warning_ignore("integer_division")
+	var seconds = remainder / 1000
+	var milliseconds = remainder % 1000
+	return "%d:%02d:%02d:%03d" % [hours, minutes, seconds, milliseconds]
+
 func generate_random_id(length: int) -> String:
 	const CHARSET := "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	var result := ""
@@ -91,11 +103,14 @@ func _download_json_in_browser(json_string: String) -> void:
 	JavaScriptBridge.eval(script)
 
 func generate_readable_log() -> String:
+	var game_time = format_time(GlobalResource.game_finish_time - GlobalResource.game_start_time)
 	var content := ""
 	content += "=== PLAYER ACTION LOG ===\n"
 	content += "Session ID: %s\n" % session_id
 	content += "Started at: %s\n" % session_started_at
 	content += "Platform: %s\n" % OS.get_name()
+	content += "Game Time: %s\n" % game_time
+	content += "Game Current Quarter: %s\n" % GlobalResource.current_quarter
 	content += "Total Actions: %d\n" % recorded_actions.size()
 	content += "\n"
 	

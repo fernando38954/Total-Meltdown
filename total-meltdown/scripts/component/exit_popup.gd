@@ -43,6 +43,7 @@ func _on_no_button_pressed() -> void:
 	close_popup()
 
 func _on_yes_button_pressed() -> void:
+	GlobalResource.game_finish()
 	close_panel()
 	AudioManager.stop_bgm()
 	await Fade.fade_out().finished

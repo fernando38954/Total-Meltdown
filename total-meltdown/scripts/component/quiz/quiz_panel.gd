@@ -25,6 +25,7 @@ var current_question_idx: int = 0
 var quiz_type: QuizType
 var response_key: String = ""
 var correct_counter: int = 0
+var quiz_start_time: int
 var tween: Tween
 
 func _ready() -> void:
@@ -57,6 +58,7 @@ func set_content(question_idx: int):
 		push_error("ERROR: question index %d exceed question list limit" % question_idx)
 		return
 	
+	quiz_start_time = Time.get_ticks_msec()
 	current_question_idx = question_idx
 	var question_data = question_list[current_question_idx]
 	question.text = question_data.description
@@ -98,11 +100,13 @@ func choice_answer(answer_is_correct: bool, choice_text: String):
 func register_log(answer_is_correct: bool, choice_text: String):
 	var question_data = question_list[current_question_idx]
 	var correct_answer = question_data.choices["correct"]
+	var time_spent = Time.get_ticks_msec() - quiz_start_time
 	var log_details = {
 		"question": question_data.description,
 		"correct_answer": "✓ " + correct_answer,
 		"player_answer": ("✗ " if not answer_is_correct else "✓ ") + choice_text,
 		"is_correct": answer_is_correct,
+		"time_spent_seconds": time_spent / 1000.0,
 		"quiz_type": "Exam" if quiz_type == QuizType.Exam else "Bug",
 		"question_number": current_question_idx + 1,
 		"total_questions": question_list.size(),

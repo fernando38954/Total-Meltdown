@@ -5,6 +5,8 @@ var game_timer: Timer
 var timer_delta_time: float = 1.0
 var base_question_reward: int = 30
 var base_developer_salary: int = 10
+var game_start_time: int
+var game_finish_time: int
 
 # Language Settings
 const GAME_CONTENT_PATH = "res://contents/"
@@ -13,6 +15,7 @@ var current_language = "pt-br"
 # Quarter Mechanic
 const TOTAL_QUARTER = 5
 var current_quarter: int = 0
+var quarter_start_time: int
 var developer_quarter_distribution: Array
 var pattern_quarter_distribution: Array
 var quest_quarter_distribution: Array
@@ -30,8 +33,10 @@ var pattern_learned: Array
 var quarter_start_value: Array = []
 
 func initialize():
+	game_start_time = Time.get_ticks_msec()
 	money = 200
 	current_quarter = 0
+	quarter_start_time = Time.get_ticks_msec()
 	developer_quarter_distribution = [2, 2, 2, -1, 0]
 	pattern_quarter_distribution = [1, 2, 2, 2, 0]
 	quest_quarter_distribution = [1, 3, 3, 3, 0]
@@ -58,6 +63,9 @@ func _on_timer_timeout():
 func set_interval(seconds: float):
 	timer_delta_time = seconds
 	game_timer.wait_time = timer_delta_time
+
+func game_finish():
+	game_finish_time = Time.get_ticks_msec()
 
 #region Money System
 func change_money(value: float):
@@ -124,6 +132,7 @@ func record_pattern_learning():
 	pattern_learned[current_quarter] += 1
 
 func show_quarter_report(correct_counter: int):
+	register_log()
 	var report = QUARTER_REPORT_SCENE.instantiate()
 	var report_data = write_report_data(correct_counter)
 	end_quarter_money_update(correct_counter)
@@ -147,12 +156,24 @@ func proceed_next_quarter():
 	await Fade.fade_out().finished
 	await Fade.fade_in().finished
 	current_quarter += 1
+	quarter_start_time = Time.get_ticks_msec()
 	quarter_start_value.append(money)
 	match current_quarter:
 		1: GlobalSignal.emit_signal("start_tutorial", "NewQuarter")
 		2: GlobalSignal.emit_signal("start_tutorial", "ContractTimeLimit")
 		3: pass
 		_: GlobalSignal.emit_signal("game_finished")
+
+func register_log():
+	var time_spent = Time.get_ticks_msec() - quarter_start_time
+	var log_details = {
+		"current_quarter": current_quarter,
+		"money": money,
+		"total_gain": money - quarter_start_value[current_quarter],
+		"developer_hired_number": developer_hired[current_quarter],
+		"time_spent_seconds": time_spent / 1000.0,
+	}
+	LoggerManager.record_action("quarter_finished", log_details, "progression")
 #endregion
 
 #region Player Setting

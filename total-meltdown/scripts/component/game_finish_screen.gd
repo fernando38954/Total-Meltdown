@@ -31,6 +31,7 @@ func set_content():
 	score_label.text = "Pontuação Final: %.2f" % total_score
 
 func _on_exit_button_pressed() -> void:
+	GlobalResource.game_finish()
 	AudioManager.stop_bgm()
 	await Fade.fade_out().finished  
 	get_tree().change_scene_to_file("res://scenes/StartMenu.tscn")
