@@ -11,7 +11,7 @@
 		"Interaction Capability": 1.1,
 		"Reliability": 0.7,
 		"Security": 1.0,
-		"Maintainability": 1.4,
+		"Maintainability": 0.7,
 		"Flexibility": 1.1,
 		"Safety": 1.0,
 	},
