@@ -12,10 +12,13 @@ class_name ContentViewer
 @export var font = ThemeDB.fallback_font
 
 enum ContentType{
-	Tutorial, Pattern
+	Tutorial, Pattern, None
 }
 
 func show_content(content_data: Dictionary, content_type: ContentType):
+	if content_type == ContentType.None:
+		return
+	
 	title_label.text = "[b]%s[/b]\n\n" % [content_data.title]
 	description_label.text = "%s" % [content_data.description]
 	if content_type == ContentType.Tutorial:

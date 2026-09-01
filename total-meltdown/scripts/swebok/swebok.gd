@@ -24,6 +24,7 @@ signal move_animation_finished
 var tween: Tween
 var current_page_idx: int
 var tutorial_page_qty: int = 0
+var book_open_time: float = 0.0
 
 #region Internal Classes
 var BookPage = {
@@ -47,6 +48,16 @@ func _ready():
 	click_blocker.hide()
 	show()
 
+func register_log():
+	if book_open_time > 0.0:
+		var time_spent = Time.get_ticks_msec() - book_open_time
+		var log_details = {
+			"time_spent_seconds": time_spent / 1000.0,
+			"final_page": get_current_page_content().title,
+		}
+		LoggerManager.record_action("swebok_closed", log_details, "interaction")
+		book_open_time = 0.0
+
 #region Book Action
 func move_book(target_position: Vector2, duration: float = 1.0):
 	if tween and tween.is_running():
@@ -57,6 +68,7 @@ func move_book(target_position: Vector2, duration: float = 1.0):
 	tween.tween_callback(move_animation_finished.emit)
 
 func close_book(duration: float = 0.5, target_position: Vector2 = hide_position, play_animation: bool = true):
+	register_log()
 	move_book(target_position, duration)
 	show_page(BookPage.close)
 	if play_animation:
@@ -68,6 +80,7 @@ func close_book(duration: float = 0.5, target_position: Vector2 = hide_position,
 		book_sprite.frame = 0
 
 func minimize_book(duration: float = 0.5, initial_position: Vector2 = book_sprite.position, play_animation: bool = true):
+	register_log()
 	book_sprite.position = initial_position
 	move_book(minimize_position, duration)
 	show_page(BookPage.half_close)
@@ -80,6 +93,9 @@ func minimize_book(duration: float = 0.5, initial_position: Vector2 = book_sprit
 		book_sprite.frame = 0
 
 func open_book(duration: float = 0.5, is_half_book: bool = false):
+	# Start tracking time when book opens
+	book_open_time = Time.get_ticks_msec()
+	
 	current_page_idx = BookPage.opening
 	book_sprite.position = minimize_position if is_half_book else hide_position
 	move_book(open_position, duration)
@@ -118,17 +134,32 @@ func _on_minimize_book_region_gui_input(event: InputEvent) -> void:
 #endregion
 
 #region Book Content
+func get_current_page_type():
+	if current_page_idx >= BookPage.tutorialPageLimit:
+		return ContentViewer.ContentType.Pattern
+	elif current_page_idx > BookPage.catalogPage:
+		return ContentViewer.ContentType.Tutorial
+	else:
+		return ContentViewer.ContentType.None
+
+func get_current_page_content():
+	var content_type = get_current_page_type()
+	var content_key = catalog.marker_list[current_page_idx].get_meta("key", "Unknown")
+	if content_type == ContentViewer.ContentType.Pattern:
+		return PatternManager.get_pattern_by_key(content_key)
+	elif content_type == ContentViewer.ContentType.Tutorial:
+		return TutorialPageManager.get_page_by_key(content_key)
+	else:
+		return {}
+
 func show_page(page_idx: int):
 	current_page_idx = page_idx
 	update_page_visibility()
 	update_buttons_visibility()
 	
-	var content_type = ContentViewer.ContentType.Pattern if page_idx >= BookPage.tutorialPageLimit else ContentViewer.ContentType.Tutorial
-	var content_key = catalog.marker_list[page_idx].get_meta("key", "Unknown")
-	if content_type == ContentViewer.ContentType.Pattern:
-		content_view.show_content(PatternManager.get_pattern_by_key(content_key), content_type)
-	elif page_idx > BookPage.catalogPage:
-		content_view.show_content(TutorialPageManager.get_page_by_key(content_key), content_type)
+	var content_type = get_current_page_type()
+	var content = get_current_page_content()
+	content_view.show_content(content, content_type)
 
 func update_page_visibility():
 	catalog.visible = current_page_idx >= BookPage.turning

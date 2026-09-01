@@ -57,6 +57,18 @@ texture_normal = ExtResource("9_5v8q3")
 texture_pressed = ExtResource("10_72q55")
 texture_hover = ExtResource("11_wacnh")
 
+[node name="Test" type="TextureButton" parent="." unique_id=1292589538]
+offset_left = 1565.0
+offset_top = 219.0
+offset_right = 2353.0
+offset_bottom = 405.0
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(394, 93)
+texture_normal = ExtResource("9_5v8q3")
+texture_pressed = ExtResource("10_72q55")
+texture_hover = ExtResource("11_wacnh")
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
 [connection signal="pressed" from="CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="Test" to="." method="_on_test_pressed"]

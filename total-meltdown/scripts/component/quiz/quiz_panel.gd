@@ -71,7 +71,7 @@ func disable_all_options():
 	for option in option_container.get_children():
 		option.set_disabled(true)
 
-func choice_answer(answer_is_correct: bool):
+func choice_answer(answer_is_correct: bool, choice_text: String):
 	# Check if answer is correct
 	if answer_is_correct:
 		correct_counter += 1
@@ -92,6 +92,22 @@ func choice_answer(answer_is_correct: bool):
 				ContractManager.contract_bug_resolved(response_key)
 			else:
 				ContractManager.contract_bug_tried(response_key)
+	
+	register_log(answer_is_correct, choice_text)
+
+func register_log(answer_is_correct: bool, choice_text: String):
+	var question_data = question_list[current_question_idx]
+	var correct_answer = question_data.choices["correct"]
+	var log_details = {
+		"question": question_data.description,
+		"correct_answer": "✓ " + correct_answer,
+		"player_answer": ("✗ " if not answer_is_correct else "✓ ") + choice_text,
+		"is_correct": answer_is_correct,
+		"quiz_type": "Exam" if quiz_type == QuizType.Exam else "Bug",
+		"question_number": current_question_idx + 1,
+		"total_questions": question_list.size(),
+	}
+	LoggerManager.record_action("quiz_answer", log_details, "learning")
 
 #region Animation
 func rescale_panel(target_panel_scale: Vector2, duration: float = 1.0):

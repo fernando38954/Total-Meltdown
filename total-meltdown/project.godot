@@ -14,10 +14,10 @@ universal_fade/patterns_directory="res://addons/UniversalFade/Patterns"
 
 [application]
 
-config/name="Total-Meltdown"
+config/name="Total Meltdown"
 run/main_scene="uid://dso7wo6ebgl4r"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dug7typense55"
 
 [autoload]
 
@@ -31,6 +31,7 @@ AudioManager="*uid://b08aaruvsaysr"
 TutorialPageManager="*uid://d0kjkfoa2j7wp"
 ExamManager="*uid://1hqqeh6vgjve"
 TutorialManager="uid://bx078ueg7miyr"
+LoggerManager="*uid://dwy46nxvilqfp"
 
 [display]
 

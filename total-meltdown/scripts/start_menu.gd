@@ -29,3 +29,7 @@ func _on_config_button_pressed() -> void:
 func _on_credit_button_pressed() -> void:
 	var credit_popup = CREDIT_POPUP_SCENE.instantiate()
 	get_tree().root.add_child(credit_popup)
+
+
+func _on_test_pressed() -> void:
+	LoggerManager.save_now()

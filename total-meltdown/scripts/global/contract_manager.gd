@@ -18,6 +18,7 @@ func start_contract(quest_key: String, pattern_key: String, developer_data_list:
 	var new_contract = ContractData.new(quest_key, pattern_key, developer_data_list, total_attribute)
 	awaked_contracts[quest_key] = new_contract
 	active_contract_list.append(quest_key)
+	register_log(quest_key, pattern_key, total_attribute)
 	GlobalSignal.emit_signal("contract_list_changed", quest_key)
 
 func mark_contract_claimable(target_contract_key: String):
@@ -82,3 +83,16 @@ func give_reward(target_contrat_data: ContractData):
 	var reward_popup = REWARD_POPUP_SCENE.instantiate()
 	get_tree().root.add_child(reward_popup)
 	reward_popup.show_reward(target_contrat_data, profit)
+
+func register_log(quest_key: String, pattern_key: String, total_attribute: Dictionary):
+	var quest_data = QuestManager.get_quest_by_key(quest_key)
+	var pattern_data = PatternManager.get_pattern_by_key(pattern_key)
+	var log_details = {
+		"quest_name": quest_data.title if quest_data else "Unknown",
+		"quest_description": str(quest_data.description) if quest_data else "Unknown",
+		"pattern_required": str(quest_data.requirements) if quest_data else "Unknown",
+		"pattern_chosen": pattern_data.title if pattern_data else "Unknown",
+		"total_attribute_provided": total_attribute,
+		"required_attribute": quest_data.attribute if quest_data else {},
+	}
+	LoggerManager.record_action("contract_started", log_details, "progression")

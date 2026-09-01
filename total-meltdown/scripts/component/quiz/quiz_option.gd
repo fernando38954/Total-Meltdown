@@ -22,5 +22,5 @@ func show_mark(is_correct_mark: bool):
 		answer_mark.texture = wrong_mark
 
 func _on_pressed() -> void:
-	panel.choice_answer(is_correct)
+	panel.choice_answer(is_correct, description.text)
 	show_mark(is_correct)

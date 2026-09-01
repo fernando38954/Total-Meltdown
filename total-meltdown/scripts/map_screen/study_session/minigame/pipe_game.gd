@@ -42,6 +42,8 @@ var wrong_bullets: Array
 @export var display_almost: Texture2D
 @export var display_error: Texture2D
 
+var pattern_key: String
+var game_open_time: float = 0.0
 var open_scale = Vector2(0.8, 0.8)
 var tween: Tween
 
@@ -70,6 +72,7 @@ func close_game(duration: float = 0.5):
 	rescale_game(Vector2.ZERO, duration)
 
 func open_game(duration: float = 0.5):
+	game_open_time = Time.get_ticks_msec()
 	rescale_game(open_scale, duration)
 #endregion
 
@@ -117,11 +120,12 @@ func set_minigame_visual(target_pattern_key: String):
 	icon.texture = target_pattern_data.icon
 	pattern_name.text = target_pattern_data.title
 
-func generate_and_build_grid(target_pattern_key: String):
-	set_minigame_visual(target_pattern_key)
+func generate_and_build_grid(_target_pattern_key: String):
+	pattern_key = _target_pattern_key
+	set_minigame_visual(pattern_key)
 	while true: # Repeat until get a valid map
 		generate_random_constraints()
-		get_random_bullet_points(target_pattern_key)
+		get_random_bullet_points(pattern_key)
 		game_finished = false
 		var data_grid = generator.generate_random_map(rows, cols, must_connect, must_not_connect)
 		if data_grid.is_empty():
@@ -208,9 +212,23 @@ func game_win_check():
 	
 	if sink_connected and all_required_connected and all_prohibited_unconnected:
 		game_finished = true
+		register_log()
 		AudioManager.play_sfx(minigame_finish_SFX)
 		await get_tree().create_timer(3).timeout
 		close_game()
 		GlobalSignal.emit_signal("start_tutorial", "AfterStudy")
 		GlobalSignal.emit_signal("minigame_finished")
+
+func register_log():
+	var time_spent = Time.get_ticks_msec() - game_open_time
+	var pattern_data = PatternManager.get_pattern_by_key(pattern_key)
+	var log_details = {
+			"pattern_name": pattern_data.title if pattern_data else "Unknown",
+			"correct_bullets_count": len(correct_bullets),
+			"correct_bullets": correct_bullets,
+			"wrong_bullets_count": len(wrong_bullets),
+			"wrong_bullets": wrong_bullets,
+			"time_spent_seconds": time_spent / 1000.0,
+		}
+	LoggerManager.record_action("minigame_pipe_finished", log_details, "learning")
 #endregion
