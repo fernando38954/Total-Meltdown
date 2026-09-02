@@ -1,5 +1,5 @@
 extends Node
-const LOG_FILE_NAME := "study_log.json"
+const LOG_FILE_NAME := "study_log.txt"
 const ID_LENGTH := 8
 
 var session_id: String = ""
@@ -69,7 +69,7 @@ func save_now() -> bool:
 
 func write_log_file(json_string: String) -> bool:
 	if OS.get_name() == "Web":
-		_download_json_in_browser(json_string)
+		_download_text_in_browser(json_string)
 		return true
 
 	var file := FileAccess.open(get_log_path(), FileAccess.WRITE)
@@ -81,14 +81,14 @@ func write_log_file(json_string: String) -> bool:
 	file.close()
 	return true
 
-func _download_json_in_browser(json_string: String) -> void:
+func _download_text_in_browser(text_content: String) -> void:
 	if OS.get_name() != "Web":
 		push_warning("LoggerManager: Browser download is only available in the web export.")
 		return
 
 	var script := (
 		"window.savePlayerLog = function(filename, text) { "
-		+ "const blob = new Blob([text], { type: 'application/json;charset=utf-8' }); "
+		+ "const blob = new Blob([text], { type: 'text/plain;charset=utf-8' }); "
 		+ "const url = URL.createObjectURL(blob); "
 		+ "const a = document.createElement('a'); "
 		+ "a.href = url; "
@@ -98,7 +98,7 @@ func _download_json_in_browser(json_string: String) -> void:
 		+ "a.remove(); "
 		+ "setTimeout(function() { URL.revokeObjectURL(url); }, 0); "
 		+ "}; "
-		+ "window.savePlayerLog(%s, %s);" % [JSON.stringify(LOG_FILE_NAME), JSON.stringify(json_string)]
+		+ "window.savePlayerLog(%s, %s);" % [JSON.stringify(LOG_FILE_NAME), JSON.stringify(text_content)]
 	)
 	JavaScriptBridge.eval(script)
 

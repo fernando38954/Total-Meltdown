@@ -2,6 +2,7 @@ extends Node2D
 
 const CONFIG_POPUP_SCENE = preload("res://scenes/component/ConfigPopup.tscn")
 const CREDIT_POPUP_SCENE = preload("res://scenes/component/CreditPopup.tscn")
+const EXPORT_POPUP_SCENE = preload("res://scenes/component/LogSavedPopup.tscn")
 
 @export_category("SFX")
 @export var start_game_SFX: AudioStream
@@ -9,8 +10,12 @@ const CREDIT_POPUP_SCENE = preload("res://scenes/component/CreditPopup.tscn")
 @export_category("BGM")
 @export var main_BGM: AudioStream
 
+@export_category("Button")
+@export var export_button: TextureButton
+
 func _ready() -> void:
 	AudioManager.play_bgm(main_BGM)
+	export_button.disabled = LoggerManager.session_id.is_empty()
 
 
 func _on_start_button_pressed() -> void:
@@ -31,5 +36,7 @@ func _on_credit_button_pressed() -> void:
 	get_tree().root.add_child(credit_popup)
 
 
-func _on_test_pressed() -> void:
+func _on_export_button_pressed() -> void:
 	LoggerManager.save_now()
+	var confirmation_popup = EXPORT_POPUP_SCENE.instantiate()
+	get_tree().root.add_child(confirmation_popup)

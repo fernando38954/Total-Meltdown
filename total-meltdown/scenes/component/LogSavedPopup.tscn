@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dcxslnxq31vey"]
+
+[ext_resource type="Script" uid="uid://rvtt4i52sdec" path="res://scripts/component/log_saved_popup.gd" id="1_osmas"]
+[ext_resource type="Texture2D" uid="uid://v18qgbamn0oq" path="res://assets/sprites/component/log_saved_popup/ConfirmationPage.png" id="2_2x200"]
+[ext_resource type="AudioStream" uid="uid://b6p7l18m1iv04" path="res://assets/sfx/OpenWindow.mp3" id="2_ogb1m"]
+[ext_resource type="AudioStream" uid="uid://bnlx4vly6ghfv" path="res://assets/sfx/PanelClose.mp3" id="3_3o12l"]
+[ext_resource type="Texture2D" uid="uid://bvdnpxoq22vp6" path="res://assets/sprites/navigation_button/ReturnButtonNormal.png" id="5_oajur"]
+[ext_resource type="Texture2D" uid="uid://dk30bhnxo1qv" path="res://assets/sprites/tutorial/Clipper_admiring.png" id="5_ogb1m"]
+[ext_resource type="Texture2D" uid="uid://duw8dbs8bsp05" path="res://assets/sprites/navigation_button/ReturnButonHover.png" id="6_vyj3d"]
+
+[node name="LogSavedPopup" type="CanvasLayer" unique_id=679863771]
+script = ExtResource("1_osmas")
+open_SFX = ExtResource("2_ogb1m")
+close_SFX = ExtResource("3_3o12l")
+
+[node name="ClickBlocker" type="ColorRect" parent="." unique_id=1789498546]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.28235295)
+
+[node name="ConfirmationPage" type="TextureRect" parent="." unique_id=1086161797]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -971.44556
+offset_top = -592.5
+offset_right = 971.44556
+offset_bottom = 592.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(971.5, 592.5)
+mouse_filter = 0
+texture = ExtResource("2_2x200")
+
+[node name="ConfirmationLabel" type="RichTextLabel" parent="ConfirmationPage" unique_id=1097887665]
+layout_mode = 0
+offset_left = 101.44556
+offset_top = 229.5
+offset_right = 1842.4456
+offset_bottom = 423.5
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_constants/paragraph_separation = 50
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "Log Salvado com Sucesso!"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="TextureButton" parent="ConfirmationPage" unique_id=1961340804]
+layout_mode = 0
+offset_left = 1679.4456
+offset_top = 58.499943
+offset_right = 1808.4456
+offset_bottom = 187.49994
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("5_oajur")
+texture_hover = ExtResource("6_vyj3d")
+
+[node name="ClipperAdmiring" type="Sprite2D" parent="ConfirmationPage" unique_id=2106633216]
+position = Vector2(954.44556, 548.5)
+texture = ExtResource("5_ogb1m")
+
+[node name="PathLabel" type="RichTextLabel" parent="ConfirmationPage" unique_id=2135546648]
+layout_mode = 0
+offset_left = 104.44556
+offset_top = 770.5
+offset_right = 1845.4456
+offset_bottom = 1075.5
+theme_override_colors/default_color = Color(0.050980393, 0.16470589, 1, 1)
+theme_override_constants/paragraph_separation = 50
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius, odio aliquet elementum porta, nunc lectus cursus est, quis ultricies ligula turpis sit amet tortor."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="ClickBlocker" to="." method="_on_click_blocker_gui_input"]
+[connection signal="pressed" from="ConfirmationPage/ReturnButton" to="." method="_on_return_button_pressed"]
