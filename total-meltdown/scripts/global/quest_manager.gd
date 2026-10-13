@@ -9,6 +9,8 @@ var accepted_quests: Array = []
 var completed_quests: Array = []
 var creation_finished = false
 
+var quest_mutex = Mutex.new()
+
 #region Load Data
 func _ready():
 	load_quests()
@@ -107,12 +109,15 @@ func get_quest_by_key(key: String) -> Dictionary:
 	return all_quests.get(key, {})
 
 func prepare_random_quest() -> String:
+	quest_mutex.lock()
 	var quest_stock = pending_quests[GlobalResource.current_quarter]
 	if quest_stock.is_empty():
+		quest_mutex.unlock()
 		return ""
 	var quest_entry = quest_stock.pick_random()
 	quest_stock.erase(quest_entry)
 	actived_quests.append(quest_entry)
+	quest_mutex.unlock()
 	return quest_entry
 
 func start_quest(target_quest_key: String):
