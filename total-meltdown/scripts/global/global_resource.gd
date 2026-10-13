@@ -10,7 +10,7 @@ var game_finish_time: int
 
 # Language Settings
 const GAME_CONTENT_PATH = "res://contents/"
-var current_language = "pt-br"
+var current_language = "en"
 
 # Quarter Mechanic
 const TOTAL_QUARTER = 5

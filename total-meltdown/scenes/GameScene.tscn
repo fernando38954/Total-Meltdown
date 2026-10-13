@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://pud5nus8sw6n" path="res://assets/sprites/workspace/button/ExitButtonNormal.png" id="16_3t3mo"]
 [ext_resource type="Texture2D" uid="uid://d2to08gb2bokc" path="res://assets/sprites/workspace/button/ExitButtonPressed.png" id="17_a8ip2"]
 [ext_resource type="Texture2D" uid="uid://nppcp048gb0r" path="res://assets/sprites/workspace/button/ExitButtonHover.png" id="18_03l4r"]
+[ext_resource type="Texture2D" uid="uid://dup8lm0ymj6bm" path="res://assets/sprites/developer_panel/DeveloperPanel_English.png" id="25_3t3mo"]
 
 [node name="Node2D" type="Node2D" unique_id=1602338920]
 scale = Vector2(3.3999987, 3.3999987)
@@ -242,6 +243,7 @@ offset_top = -306.0
 offset_right = 1910.0
 offset_bottom = 1189.0
 scale = Vector2(0.41274443, 0.41274443)
+texture = ExtResource("25_3t3mo")
 
 [node name="Swebok" parent="." unique_id=129603859 instance=ExtResource("11_f2kej")]
 visible = false

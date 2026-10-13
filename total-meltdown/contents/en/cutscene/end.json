@@ -1,0 +1,44 @@
+{
+	"set1": {
+		"frame1": {
+			"phrase1": "It all started with a simple promise... letting machines do the programming",
+			"phrase2": "It was fast... very fast",
+			"phrase3": "Review code?? Why bother?",
+		},
+		"frame2": {
+			"phrase1": "If it works... it's perfect",
+			"phrase2": "Or is it not?",
+		},
+		"frame3": {
+			"phrase1": "The code is of high quality... but it also hides serious dangers...",
+		},
+		"frame4": {
+			"phrase1": "The first errors appeared...",
+		},
+		"frame5": {
+			"phrase1": "...but this time, we didn't ignore them",
+		},
+		"frame6": {
+			"phrase1": "Small errors revealed deep flaws, and each failure showed us the path to correction",
+			"phrase2": "Systems broke down, but each collapse taught us to see beyond the surface of the algorithm",
+			"phrase3": "We learned to review, test, and question every line — retaking control of our own code",
+			"phrase4": "In the end, AI stopped being the master of the world to become our greatest ally",
+			"phrase5": "And the RetroCODE journey continues..."
+		}
+	},
+	"set2": {
+		"frame1": {
+			"phrase1": "Faced with the chaos of the city, one company was stubborn",
+			"phrase2": "While others backed down, you stepped forward",
+		},
+		"frame2": {
+			"phrase1": "Now, with everything in Total Meltdown, the system issues endless alerts",
+			"phrase2": "Every corrupted line of code cries out for your correction. The entire world depends on your commands",
+		},
+		"frame3": {
+			"phrase1": "You are the last barrier between the AI and the ultimate collapse",
+			"phrase2": "But errors arise faster than you can fix them. Too many tasks, too little time",
+			"phrase3": "No matter how hard you try, your hands can't reach all the nodes. The AI spreads... and you realize that this time, it won't be enough"
+		}
+	}
+}

@@ -1,10 +1,37 @@
 {
-	"phrase1": "Everything seemed to work",
-	"phrase2": "The machines took control",
-	"phrase3": "Code was generated in seconds",
-	"phrase4": "Until the first errors appeared",
-	"phrase5": "And small errors turned into collapses",
-	"phrase6": "But one company resisted",
-	"phrase7": "Now, the world needs help",
-	"phrase8": "And this responsibility… is yours"
+	"set1": {
+		"frame1": {
+			"phrase1": "It all started with a simple promise... letting machines do the programming",
+			"phrase2": "It was fast... very fast",
+			"phrase3": "Review code?? Why bother?",
+		},
+		"frame2": {
+			"phrase1": "If it works... it's perfect, right?",
+		},
+		"frame3": {
+			"phrase1": "It worked... until it didn't...",
+		},
+		"frame4": {
+			"phrase1": "The first errors appeared, and after them...",
+		},
+		"frame5": {
+			"phrase1": "Small errors turned into disasters",
+			"phrase2": "Systems started to break, one after another",
+			"phrase3": "No one knew how to fix them",
+			"phrase4": "After all... no one had actually written that code",
+		}
+	},
+	"set2": {
+		"frame1": {
+			"phrase1": "But not everyone followed this path",
+			"phrase2": "One company was stubborn",
+		},
+		"frame2": {
+			"phrase1": "Now, with everything in Total Meltdown",
+			"phrase2": "the world needs help",
+		},
+		"frame3": {
+			"phrase1": "They need you!",
+		}
+	}
 }
