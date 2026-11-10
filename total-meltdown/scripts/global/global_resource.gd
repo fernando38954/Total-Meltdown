@@ -22,9 +22,19 @@ var quest_quarter_distribution: Array
 var exam_quarter_distribution: Array
 
 # Player Settings
+var Difficulty : Dictionary = {
+	"Beginner": 2,
+	"Intermediate": 1,
+	"Expert": 0.8
+}
+const DIFFICULTY_ORDER: Array[String] = ["Beginner", "Intermediate", "Expert"]
 var volume_level: float = 0.8
 var base_typing_speed: float = 0.1
 var typing_speed_level: float = 0.45
+var current_difficulty: String = "Beginner"
+var difficulty_modifier: float = Difficulty.Beginner
+var question_reward: float = base_question_reward
+var developer_salary: float = base_developer_salary
 
 # Player Status
 var money: int = 0
@@ -35,6 +45,7 @@ var quarter_start_value: Array = []
 func initialize():
 	game_start_time = Time.get_ticks_msec()
 	money = 200
+	set_difficult(Difficulty[current_difficulty])
 	current_quarter = 0
 	quarter_start_time = Time.get_ticks_msec()
 	developer_quarter_distribution = [2, 2, 2, -1, 0]
@@ -64,6 +75,11 @@ func set_interval(seconds: float):
 	timer_delta_time = seconds
 	game_timer.wait_time = timer_delta_time
 
+func set_difficult(difficult_value: float):
+	difficulty_modifier = difficult_value
+	question_reward = base_question_reward * difficulty_modifier
+	developer_salary = base_developer_salary / difficulty_modifier
+
 func game_finish():
 	game_finish_time = Time.get_ticks_msec()
 
@@ -73,8 +89,8 @@ func change_money(value: float):
 	GlobalSignal.emit_signal("money_value_changed")
 
 func end_quarter_money_update(correct_counter: int):
-	change_money(correct_counter * base_question_reward)
-	change_money(-1 * DeveloperManager.owned_developers.size() * base_developer_salary)
+	change_money(correct_counter * question_reward)
+	change_money(-1 * DeveloperManager.owned_developers.size() * developer_salary)
 #endregion
 
 #region Language System
@@ -139,6 +155,7 @@ func show_quarter_report(correct_counter: int):
 	report_data.final_money = money
 	get_tree().root.add_child(report)
 	report.set_content(report_data)
+	update_difficult_level(correct_counter)
 
 func write_report_data(correct_counter: int) -> Dictionary:
 	var content: Dictionary
@@ -148,8 +165,8 @@ func write_report_data(correct_counter: int) -> Dictionary:
 	content.gain_is_positive = (content.total_gain >= 0)
 	content.developer_hired = developer_hired[current_quarter]
 	content.pattern_learned = pattern_learned[current_quarter]
-	content.exam_bonus = correct_counter * base_question_reward
-	content.developer_salary = DeveloperManager.owned_developers.size() * base_developer_salary
+	content.exam_bonus = correct_counter * question_reward
+	content.developer_salary = DeveloperManager.owned_developers.size() * developer_salary
 	return content
 
 func proceed_next_quarter():
@@ -186,4 +203,29 @@ func update_typing_speed_level(new_level: float):
 
 func get_typing_speed():
 	return base_typing_speed * (1 - typing_speed_level)
+
+func cubic(number: float):
+	return number * number * number
+
+func update_difficult_level(correct_counter: int):
+	var update_probability: float = 0.0
+	var time_spent_second = (Time.get_ticks_msec() - quarter_start_time) / 1000.0
+	var total_gain = money - quarter_start_value[current_quarter]
+	
+	update_probability += (correct_counter - 1.5) * 20
+	update_probability -= cubic((time_spent_second - 480) / 60)
+	update_probability += cubic((total_gain - 40) / 30)
+	update_probability = clampf(update_probability, -100, 100)
+	
+	var rand = randf_range(0, 100)
+	if rand > abs(update_probability):
+		return
+	
+	var index = DIFFICULTY_ORDER.find(current_difficulty)
+	if update_probability >= 0:
+		index = mini(index + 1, DIFFICULTY_ORDER.size() - 1)
+	else:
+		index = maxi(index - 1, 0)
+	current_difficulty = DIFFICULTY_ORDER[index]
+	set_difficult(Difficulty[current_difficulty])
 #endregion

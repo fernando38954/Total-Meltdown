@@ -6,6 +6,7 @@ var actived_quest: String
 
 func _ready() -> void:
 	countdown_progress.value = 0
+	countdown_progress.max_value = 100 * GlobalResource.difficulty_modifier
 	GlobalSignal.timer_update.connect(update_countdown)
 
 func initialize_data():
@@ -14,7 +15,7 @@ func initialize_data():
 func update_countdown():
 	if GlobalResource.current_quarter >= 2:
 		countdown_progress.value += 1
-		if countdown_progress.value >= 100:
+		if countdown_progress.value >= countdown_progress.max_value:
 			map_screen.close_event_button(self)
 
 func _on_pressed() -> void:
